@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="delete_old_data_user" model="res.groups">
+	        <field name="name">Хуучин барааг устгах</field>
+	        <field name="comment">Энэ бүлгийн хэрэглэгчид дууссан хэрэггүй болсон Хуучин барааны ангилалд байгаа барааг идэвхигүй болгох эрхтэй байна.</field>
+	    </record>
+
+    </data>
+</openerp>

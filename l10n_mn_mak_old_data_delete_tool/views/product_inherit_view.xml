@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="view_mak_product_product_form" model="ir.ui.view">
+            <field name="name">product.product.mak.form.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet" position="inside">
+                    <header>
+                        <button name="action_delete_data" string="Хуучин бараа устгах" type="object" class="oe_highlight" groups = "l10n_mn_mak_old_data_delete_tool.delete_old_data_user"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
