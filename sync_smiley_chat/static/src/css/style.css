@@ -1,0 +1,29 @@
+.smiley_load{
+    cursor: pointer;
+    margin-right: 4px;
+}
+.smiley-list{
+    width: 196px;
+    bottom: 45%;
+    background-color: #404040;
+    position: absolute;
+    opacity: 0.9;
+    border-radius: 10px;
+    padding: 4px 0px;
+    margin: 0px 0px 18px 14px;
+}
+.smiley-list span img{
+    cursor: pointer;
+    margin: 2px;
+}
+.close-smiley{
+    cursor: pointer;
+    position: absolute;
+    float: right;
+    margin-left: 181px;
+    margin-top: -25px;
+    font-size: 22px
+}
+.grayscale {
+    -webkit-filter: grayscale(100%);
+}

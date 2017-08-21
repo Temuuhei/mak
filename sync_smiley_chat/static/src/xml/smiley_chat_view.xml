@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+	<t t-extend="im_chat.Conversation">
+		<t t-jquery=".oe_im_chatview_input" t-operation="before">
+			<div class="smiley-list" style="display: none">
+            	<div class="close-smiley">×</div>
+	        </div>
+		</t>
+	</t>
+</template>
