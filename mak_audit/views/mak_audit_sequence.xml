@@ -11,7 +11,7 @@
 		<record id="sequence_audit" model="ir.sequence">
 			<field name="name">Audit permission</field>
 			<field name="code">mak.audit</field>
-			<field name="prefix">ДХМТГ№%(year)s/%(month)s/</field>
+			<field name="prefix">ДХМТГ-№%(year)s/%(month)s/</field>
 			<field name="padding">4</field>
 			<field name="reset_monthly">True</field>
 		</record>
