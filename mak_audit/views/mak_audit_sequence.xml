@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+		<!-- Sequences for Audit -->
+
+		<record id="seq_type_audit" model="ir.sequence.type">
+			<field name="name">Audit permission Sequence</field>
+			<field name="code">mak.audit</field>
+		</record>
+		<record id="sequence_audit" model="ir.sequence">
+			<field name="name">Audit permission</field>
+			<field name="code">mak.audit</field>
+			<field name="prefix">ДХМТГ№%(year)s/%(month)s/</field>
+			<field name="padding">4</field>
+			<field name="reset_monthly">True</field>
+		</record>
+
+
+	</data>
+</openerp>

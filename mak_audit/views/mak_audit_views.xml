@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="view_mak_audit_form">
+        <field name="name">mak.audit.form</field>
+        <field name="model">mak.audit</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        	<form string="Mak Audit Department">
+                <sheet>
+                    <div class="pull-left">
+						<label for="sequence_id" class="oe_inline"/>
+          				<h1>
+							<field name="sequence_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+
+                    <div class="pull-right">
+						<label for="user_id" class="oe_inline"/>
+          				<h1>
+							<field name="user_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+
+                <group>
+                    <group>
+                        <field name="num_received_document" required="1" />
+                        <field name="received_date" required="1" />
+                        <field name="department_id" required="1" widget="selection" />
+                        <field name="type_doc" />
+                        <field name="doc_name" colspan="2"/>
+                        <field name="partner_id"/>
+                    </group>
+                    <group>
+                        <field name="num_delivery_document" required="1"/>
+                        <field name="location" required="1"/>
+                        <field name="received_value" on_change="onchange_diff(received_value,check_budget,difference)"/>
+                        <field name="check_budget" on_change="onchange_diff(received_value,check_budget,difference)"/>
+                        <field name="difference"/>
+                    </group>
+                </group>
+                    <separator string="Description"/>
+                    <field name="description" placeholder="Add a Description..."/>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+	<record id="mak_audit_search_view" model="ir.ui.view">
+        <field name="name">mak.audit.search</field>
+        <field name="model">mak.audit</field>
+        <field name="arch" type="xml">
+            <search string="Mak Audit Search">
+            	<field name="doc_name"/>
+                <field name="department_id"/>
+                <field name="type_doc"/>
+                <group expand="0" string="Group By">
+                    <filter string="Type" domain="[]" context="{'group_by':'type_doc'}"/>
+                    <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                    <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter string="Year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mak_audit_tree">
+        <field name="name">mak.audit.tree</field>
+        <field name="model">mak.audit</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Audit input">
+            	<field name="num_received_document"/>
+	            <field name="received_date"/>
+	            <field name="department_id"/>
+	            <field name="type_doc"/>
+	            <field name="doc_name"/>
+	            <field name="partner_id"/>
+	            <field name="location"/>
+	            <field name="received_value"/>
+	            <field name="check_budget"/>
+	            <field name="difference"/>
+	            <field name="num_delivery_document"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_mak_audit_window" model="ir.actions.act_window">
+        <field name="name">Mak Audit works</field>
+        <field name="res_model">mak.audit</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain"></field>
+        <field name="context">{}</field>
+    </record>
+
+
+    <menuitem id="menu_mak_audit_mail_main" name="Mak Audit" parent="mail.mail_feeds_main" sequence="30" />
+    <menuitem action="action_mak_audit_window" name="Mak Audit Department" id="menu_mak_audit" sequence="2" parent="menu_mak_audit_mail_main"/>
+
+	</data>
+</openerp>
