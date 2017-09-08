@@ -185,6 +185,11 @@ msgid "Received date"
 msgstr "Ирсэн огноо"
 
 #. module: mak_audit
+#: field:mak.audit,delivered_date:0
+msgid "Delivered date"
+msgstr "Гарсан огноо"
+
+#. module: mak_audit
 #: field:mak.audit,department_id:0
 msgid "Sector"
 msgstr "Ирүүлсэн газар нэгж"

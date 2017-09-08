@@ -50,6 +50,7 @@ class mak_audit(osv.osv):
         'sequence_id': fields.char('Audit Sequence', size=32, required=True),
         'num_received_document': fields.char('Number of Received Documents',required = True),
         'received_date': fields.datetime('Received date',required = True),
+        'delivered_date': fields.datetime('Delivered date'),
         'department_id': fields.many2one('hr.department','Sector', domain = [('type', '=', 'sector')]),
         'type_doc': fields.selection([('budget','Budget'),('description','Description'),('complain','Complain')], 'Document Type'),
         'doc_name': fields.text('Name',size=160,required = True),

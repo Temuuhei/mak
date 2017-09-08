@@ -34,6 +34,7 @@
                     </group>
                     <group>
                         <field name="num_delivery_document"/>
+                        <field name="delivered_date"/>
                         <field name="location"/>
                         <field name="received_value" on_change="onchange_diff(received_value,check_budget,difference)"/>
                         <field name="check_budget" on_change="onchange_diff(received_value,check_budget,difference)"/>
