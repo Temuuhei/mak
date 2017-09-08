@@ -33,6 +33,11 @@ msgid "Budget"
 msgstr "Төсөв"
 
 #. module: mak_audit
+#: selection:mak.audit,type_doc:0
+msgid "Complain"
+msgstr "Өргөдөл, гомдол"
+
+#. module: mak_audit
 #: field:mak.audit,check_budget:0
 msgid "Check Budget"
 msgstr "Хяналтын төсөв"
