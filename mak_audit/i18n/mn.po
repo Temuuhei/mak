@@ -61,7 +61,7 @@ msgstr "Ирүүлсэн газар нэгж"
 #: view:mak.audit:mak_audit.view_mak_audit_form field:mak.audit,description:0
 #: selection:mak.audit,type_doc:0
 msgid "Description"
-msgstr "Шийдвэрлэгдсэн байдал"
+msgstr "Тайлбар, дүгнэлт"
 
 #. module: mak_audit
 #: field:mak.audit,difference:0
