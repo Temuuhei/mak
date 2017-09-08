@@ -127,7 +127,7 @@ msgstr "МАК - ДХМТГ"
 #: model:ir.ui.menu,name:mak_audit.menu_mak_audit
 #: view:mak.audit:mak_audit.view_mak_audit_form
 msgid "Mak Audit Department"
-msgstr "Дотоод хяналт, Мэдээлэл технологийн газар"
+msgstr "ДХМТГ-ын АЖЛЫН БҮРТГЭЛ"
 
 #. module: mak_audit
 #: view:mak.audit:mak_audit.mak_audit_search_view
