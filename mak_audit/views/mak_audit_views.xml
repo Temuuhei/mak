@@ -33,6 +33,7 @@
                         <field name="partner_id"/>
                     </group>
                     <group>
+                        <field name="assigned_id"/>
                         <field name="num_delivery_document"/>
                         <field name="delivered_date"/>
                         <field name="location"/>

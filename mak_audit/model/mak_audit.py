@@ -47,6 +47,7 @@ class mak_audit(osv.osv):
 
     _columns = {
         'user_id': fields.many2one('res.users', 'Employee', required=True, readonly=True),
+        'assigned_id': fields.many2one('res.users', 'Assigned To'),
         'sequence_id': fields.char('Audit Sequence', size=32, required=True),
         'num_received_document': fields.char('Number of Received Documents',required = True),
         'received_date': fields.datetime('Received date',required = True),

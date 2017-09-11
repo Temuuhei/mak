@@ -6,21 +6,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-08 16:31+0900\n"
-"PO-Revision-Date: 2017-09-08 16:44+0900\n"
+"POT-Creation-Date: 2017-09-11 02:17+0000\n"
+"PO-Revision-Date: 2017-09-11 11:45+0900\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
+"Language: mn\n"
 "X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: \n"
-"Language: mn_MN\n"
 
 #. module: mak_audit
 #: view:mak.audit:mak_audit.view_mak_audit_form
 msgid "Add a Description..."
 msgstr "Энд тайлбар бичнэ үү..."
+
+#. module: mak_audit
+#: field:mak.audit,assigned_id:0
+msgid "Assigned To"
+msgstr "Хариуцаж буй ажилтан:"
 
 #. module: mak_audit
 #: field:mak.audit,sequence_id:0
@@ -33,14 +38,14 @@ msgid "Budget"
 msgstr "Төсөв"
 
 #. module: mak_audit
-#: selection:mak.audit,type_doc:0
-msgid "Complain"
-msgstr "Өргөдөл, гомдол"
-
-#. module: mak_audit
 #: field:mak.audit,check_budget:0
 msgid "Check Budget"
 msgstr "Хяналтын төсөв"
+
+#. module: mak_audit
+#: selection:mak.audit,type_doc:0
+msgid "Complain"
+msgstr "Өргөдөл, гомдол"
 
 #. module: mak_audit
 #: field:mak.audit,create_uid:0
@@ -56,6 +61,11 @@ msgstr "Үүсгэсэн огноо"
 #: view:mak.audit:mak_audit.mak_audit_search_view field:mak.audit,day:0
 msgid "Day"
 msgstr "Өдөр"
+
+#. module: mak_audit
+#: field:mak.audit,delivered_date:0
+msgid "Delivered date"
+msgstr "Гарсан огноо"
 
 #. module: mak_audit
 #: view:mak.audit:mak_audit.mak_audit_search_view
@@ -101,17 +111,17 @@ msgstr "Дугаар"
 #. module: mak_audit
 #: field:mak.audit,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Last Modified on"
 
 #. module: mak_audit
 #: field:mak.audit,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Last Updated by"
 
 #. module: mak_audit
 #: field:mak.audit,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Last Updated on"
 
 #. module: mak_audit
 #: field:mak.audit,location:0
@@ -183,11 +193,6 @@ msgstr "Ирсэн үнийн дүн"
 #: field:mak.audit,received_date:0
 msgid "Received date"
 msgstr "Ирсэн огноо"
-
-#. module: mak_audit
-#: field:mak.audit,delivered_date:0
-msgid "Delivered date"
-msgstr "Гарсан огноо"
 
 #. module: mak_audit
 #: field:mak.audit,department_id:0
