@@ -32,6 +32,10 @@ DATE_FORMAT = "%Y-%m-%d"
 class mak_audit(osv.osv):
     _name = 'mak.audit'
     _description = "MAK Audit department"
+    _inherit = ['mail.thread']
+    STATE_SELECTION = [
+        ('draft', 'Draft'),
+        ('approved', 'Approved'),]
 
     # Өдөрөөр салгах
     def _set_date(self, cr, uid, ids, name, args, context=None):
@@ -65,12 +69,14 @@ class mak_audit(osv.osv):
         'year': fields.function(_set_date, type='integer', string='Year', multi='dates', readonly=True, store=True),
         'month': fields.function(_set_date, type='integer', string='Month', multi='dates', readonly=True, store=True),
         'day': fields.function(_set_date, type='integer', string='Day', multi='dates', readonly=True, store=True),
+        'state': fields.selection(STATE_SELECTION, 'State', readonly=True, track_visibility='onchange'),
     }
 
     _defaults = {
         'user_id': lambda s, cr, uid, c: uid,
         'received_date': fields.datetime.now,
         'sequence_id':'/',
+        'state':'draft',
     }
 
     def onchange_diff(self, cr, uid, ids, received_value, check_budget, difference, context=None):
@@ -86,3 +92,13 @@ class mak_audit(osv.osv):
         vals['sequence_id'] = self.pool.get('ir.sequence').get(cr, uid, 'mak.audit')
         audit = super(mak_audit, self).create(cr, uid, vals, context=context)
         return audit
+
+    # by Тэмүүжин Батлах
+    def action_approve(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state': 'approved'})
+        return True
+
+    # by Тэмүүжин Цуцлах
+    def action_draft(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state': 'draft'})
+        return True
