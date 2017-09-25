@@ -1,26 +1,29 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* mak_audit
+#	* mak_audit
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-11 02:17+0000\n"
-"PO-Revision-Date: 2017-09-11 11:45+0900\n"
+"POT-Creation-Date: 2017-09-20 02:01+0000\n"
+"PO-Revision-Date: 2017-09-20 02:01+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: mn\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: mak_audit
 #: view:mak.audit:mak_audit.view_mak_audit_form
 msgid "Add a Description..."
 msgstr "Энд тайлбар бичнэ үү..."
+
+#. module: mak_audit
+#: selection:mak.audit,state:0
+msgid "Approved"
+msgstr "Хийгдсэн"
 
 #. module: mak_audit
 #: field:mak.audit,assigned_id:0
@@ -58,7 +61,13 @@ msgid "Created on"
 msgstr "Үүсгэсэн огноо"
 
 #. module: mak_audit
-#: view:mak.audit:mak_audit.mak_audit_search_view field:mak.audit,day:0
+#: help:mak.audit,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: mak_audit
+#: view:mak.audit:mak_audit.mak_audit_search_view
+#: field:mak.audit,day:0
 msgid "Day"
 msgstr "Өдөр"
 
@@ -73,7 +82,8 @@ msgid "Department"
 msgstr "Ирүүлсэн газар нэгж"
 
 #. module: mak_audit
-#: view:mak.audit:mak_audit.view_mak_audit_form field:mak.audit,description:0
+#: view:mak.audit:mak_audit.view_mak_audit_form
+#: field:mak.audit,description:0
 #: selection:mak.audit,type_doc:0
 msgid "Description"
 msgstr "Тайлбар, дүгнэлт"
@@ -94,9 +104,19 @@ msgid "Document Type"
 msgstr "Албан бичгийн төрөл"
 
 #. module: mak_audit
+#: selection:mak.audit,state:0
+msgid "Draft"
+msgstr "Шинэ"
+
+#. module: mak_audit
 #: field:mak.audit,user_id:0
 msgid "Employee"
 msgstr "Мэргэжилтэн:"
+
+#. module: mak_audit
+#: field:mak.audit,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
 
 #. module: mak_audit
 #: view:mak.audit:mak_audit.mak_audit_search_view
@@ -104,9 +124,29 @@ msgid "Group By"
 msgstr "Бүлэглэх"
 
 #. module: mak_audit
+#: help:mak.audit,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: mak_audit
 #: field:mak.audit,id:0
 msgid "ID"
 msgstr "Дугаар"
+
+#. module: mak_audit
+#: help:mak.audit,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: mak_audit
+#: field:mak.audit,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: mak_audit
+#: field:mak.audit,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
 
 #. module: mak_audit
 #: field:mak.audit,__last_update:0
@@ -160,7 +200,18 @@ msgid "Mak Audit works"
 msgstr "ДХМТГ-ын АЖЛЫН БҮРТГЭЛ"
 
 #. module: mak_audit
-#: view:mak.audit:mak_audit.mak_audit_search_view field:mak.audit,month:0
+#: field:mak.audit,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: mak_audit
+#: help:mak.audit,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: mak_audit
+#: view:mak.audit:mak_audit.mak_audit_search_view
+#: field:mak.audit,month:0
 msgid "Month"
 msgstr "Сар"
 
@@ -180,7 +231,8 @@ msgid "Number of Received Documents"
 msgstr "Ирсэн бичгийн дугаар"
 
 #. module: mak_audit
-#: view:mak.audit:mak_audit.mak_audit_search_view field:mak.audit,partner_id:0
+#: view:mak.audit:mak_audit.mak_audit_search_view
+#: field:mak.audit,partner_id:0
 msgid "Partner"
 msgstr "Гүйцэтгэгч байгууллагын нэр"
 
@@ -201,10 +253,28 @@ msgstr "Ирүүлсэн газар нэгж"
 
 #. module: mak_audit
 #: view:mak.audit:mak_audit.mak_audit_search_view
+#: field:mak.audit,state:0
+msgid "State"
+msgstr "Төлөв"
+
+#. module: mak_audit
+#: field:mak.audit,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: mak_audit
+#: view:mak.audit:mak_audit.mak_audit_search_view
 msgid "Type"
 msgstr "Албан бичгийн төрөл"
 
 #. module: mak_audit
-#: view:mak.audit:mak_audit.mak_audit_search_view field:mak.audit,year:0
+#: field:mak.audit,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: mak_audit
+#: view:mak.audit:mak_audit.mak_audit_search_view
+#: field:mak.audit,year:0
 msgid "Year"
 msgstr "Жил"
+
