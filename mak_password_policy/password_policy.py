@@ -139,6 +139,7 @@ class user_password_policy(osv.osv):
         return
 
     def _password_alarm(self, cr, uid):
+        print 'Өдөр бүрийн автомат үйлдэл. Тухайн хэрэглэгчийн нууц үгийн баталгаат хугацааг шалгаж байна. Хугацаа 90 хоног'
         self.send_password_alarm(cr, uid,)
         
     def send_password_alarm(self, cr, uid,):
