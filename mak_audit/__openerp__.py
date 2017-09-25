@@ -17,7 +17,7 @@
 """,
     "website" : False,
     "category" : "MAK",
-    "depends" : [],
+    "depends" : ['mail'],
     "init": [],
     "update_xml" : [
         'views/mak_audit_views.xml',
