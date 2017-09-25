@@ -1,0 +1,24 @@
+.file_upload_btn {
+    border: none;
+    background: none;
+    font-size: 13px;
+    outline: none;
+}
+.hidden_drop {
+	display: none;
+}
+.hidden_drop .msg_content{
+  margin: 130px 0px 0px 40px;
+  position: absolute;
+  font-size: medium;
+  font-style: italic;
+  color: rgb(190, 190, 190);
+}
+.hidden_drop_highlight {
+  border: 4px dashed grey !important;
+  overflow: hidden;
+  margin-top: -287px;
+  width: 240px;
+  display: table;
+  height: 287px;
+}
