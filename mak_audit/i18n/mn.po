@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 02:01+0000\n"
-"PO-Revision-Date: 2017-09-20 02:01+0000\n"
+"POT-Creation-Date: 2017-10-03 02:19+0000\n"
+"PO-Revision-Date: 2017-10-03 02:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,11 @@ msgstr "Хяналтын төсөв"
 #: selection:mak.audit,type_doc:0
 msgid "Complain"
 msgstr "Өргөдөл, гомдол"
+
+#. module: mak_audit
+#: field:mak.audit,contract_num:0
+msgid "Contract Number"
+msgstr "Байгуулагдсан гэрээний дугаар"
 
 #. module: mak_audit
 #: field:mak.audit,create_uid:0

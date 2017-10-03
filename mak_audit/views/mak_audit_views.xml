@@ -45,6 +45,7 @@
                         <field name="received_value" on_change="onchange_diff(received_value,check_budget,difference)"/>
                         <field name="check_budget" on_change="onchange_diff(received_value,check_budget,difference)"/>
                         <field name="difference"/>
+                        <field name="contract_num"/>
                     </group>
                 </group>
                     <separator string="Description"/>
@@ -97,6 +98,7 @@
 	            <field name="check_budget"/>
 	            <field name="difference"/>
 	            <field name="num_delivery_document"/>
+	            <field name="contract_num"/>
 	            <field name="state"/>
             </tree>
         </field>

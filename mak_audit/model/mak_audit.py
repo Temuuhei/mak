@@ -70,6 +70,7 @@ class mak_audit(osv.osv):
         'month': fields.function(_set_date, type='integer', string='Month', multi='dates', readonly=True, store=True),
         'day': fields.function(_set_date, type='integer', string='Day', multi='dates', readonly=True, store=True),
         'state': fields.selection(STATE_SELECTION, 'State', readonly=True, track_visibility='onchange'),
+        'contract_num': fields.char('Contract Number'),
     }
 
     _defaults = {
