@@ -19,7 +19,7 @@
     "depends": ['hr_holidays', ],
     "init": [],
     "update_xml": [
-        'view/hr_holiday_view.xml',
+        # 'view/hr_holiday_view.xml',
     ],
     "demo_xml": [
     ],
