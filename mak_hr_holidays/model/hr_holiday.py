@@ -27,10 +27,6 @@ class hr_holidays(osv.osv):
     _description = "Leave"
     _order = "type desc, date_from asc"
 
-    _columns = {
-        'is_lunch':fields.boolean('Is lunch time'),
-    }
-
     # TODO: can be improved using resource calendar method
     def _get_number_of_days(self, date_from, date_to):
         """Returns a float equals to the timedelta between two dates given as string."""
@@ -41,14 +37,6 @@ class hr_holidays(osv.osv):
         timedelta = to_dt - from_dt
         diff_day = timedelta.days + float(timedelta.seconds) / 86400
         return diff_day
-
-    def onchange_lunch(self, cr, uid, ids, is_lunch,number_of_days_temp):
-        print'LUNCHHHHHHHHHHHHHHHHHHHHH!!!!!!'
-        result = {'value': {}}
-        if is_lunch:
-            result['value']['number_of_days_temp'] = number_of_days_temp - 0.1250
-        return result
-
 
 
     def onchange_date_from(self, cr, uid, ids, date_to, date_from):
@@ -72,12 +60,20 @@ class hr_holidays(osv.osv):
         # Compute and update the number of days
         if (date_to and date_from) and (date_from <= date_to):
             diff_day = self._get_number_of_days(date_from, date_to)
-            print'\n\n\n diff_day date from',diff_day
             result['value']['number_of_days_temp'] = round(math.floor(diff_day)) + 1
             from_dt = datetime.datetime.strptime(date_from, DATETIME_FORMAT)
             to_dt = datetime.datetime.strptime(date_to, DATETIME_FORMAT)
-            if from_dt.date() == to_dt.date():
+            total = diff_day * 3
+            if total <= 1.0:
+                dt1 = datetime.datetime.combine(from_dt, datetime.time(12, 0))
+                dt2 = datetime.datetime.combine(to_dt, datetime.time(14, 0))
+                # Цайны цаг орсон эсэхийг шалгаж байна
+                if from_dt < dt1 and to_dt >= dt2:
+                    result['value']['number_of_days_temp'] = (diff_day * 3) - 0.1250
+                else:
                     result['value']['number_of_days_temp'] = diff_day * 3
+            else:
+                result['value']['number_of_days_temp'] = 1
         else:
             result['value']['number_of_days_temp'] = 0
         return result
@@ -93,26 +89,24 @@ class hr_holidays(osv.osv):
         # Compute and update the number of days
         if (date_to and date_from) and (date_from <= date_to):
             diff_day = self._get_number_of_days(date_from, date_to)
-            print'\n\n\n diff_day date to', diff_day
             result['value']['number_of_days_temp'] = round(math.floor(diff_day)) + 1
             from_dt = datetime.datetime.strptime(date_from, DATETIME_FORMAT)
             to_dt = datetime.datetime.strptime(date_to, DATETIME_FORMAT)
             if from_dt.date() == to_dt.date():
-                print'SAME DAY', from_dt.date(), to_dt.date()
                 from_dt = datetime.datetime.strptime(date_from, DATETIME_FORMAT)
                 to_dt = datetime.datetime.strptime(date_to, DATETIME_FORMAT)
                 timedelta = to_dt - from_dt
-                print 'Time delta \n\n',timedelta
                 total = diff_day * 3
                 if total <= 1.0:
-                    print 'TYpe of DATE FROM\n\n\n',type(from_dt)
-                    if from_dt < from_dt.strftime('%Y-%m-%d 12:00:00') and to_dt >= from_dt.strftime('%Y-%m-%d 14:00:00'):
+                    dt1 = datetime.datetime.combine(from_dt, datetime.time(12, 0))
+                    dt2 = datetime.datetime.combine(to_dt, datetime.time(14, 0))
+                    # Цайны цаг орсон эсэхийг шалгаж байна
+                    if from_dt < dt1 and to_dt >= dt2 :
                         result['value']['number_of_days_temp'] = (diff_day * 3) - 0.1250
                     else:
                         result['value']['number_of_days_temp'] = diff_day * 3
                 else:
                     result['value']['number_of_days_temp'] = 1
-                print '\n\n\n', result['value']['number_of_days_temp']
         else:
             result['value']['number_of_days_temp'] = 0
 
