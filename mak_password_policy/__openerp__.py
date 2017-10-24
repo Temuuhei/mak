@@ -24,7 +24,7 @@
     ],
     "demo_xml": [
     ],
-    'icon': '/logo/mak.png',
+    'icon': '/logo/static/src/img/mak.png',
     "active": False,
     "installable": True,
 }
