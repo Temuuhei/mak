@@ -10,21 +10,23 @@
 ##############################################################################
 
 {
-    "name" : "MAK - Password Policy",
-    "version" : "1.0",
-    "author" : "Temuujin",
-    "description": """Password Policy""",
-    "website" : True,
-    "category" : "base",
-    "depends" : ['base',],
+    "name": "MAK - HR Regulations",
+    "version": "1.0",
+    "author": "Temuujin",
+    "description": """Human Resource Regulations""",
+    "website": True,
+    "category": "base",
+    "depends": ['hr','mail','l10n_mn_hr_regulation'],
     "init": [],
-    "update_xml" : [
-        'security/password_reset_security.xml',          
-         
+    "update_xml": [
+        'email_template/mak_reg_email_template_to_assigned.xml',
+        'email_template/mak_reg_email_template_user.xml',
+        'security/mak_regulation_sequence.xml',
+        'views/mak_regulation_view.xml',
     ],
     "demo_xml": [
     ],
-    'icon': '/logo/static/src/img/mak.png',
+    'icon': '/logo/mak.png',
     "active": False,
     "installable": True,
 }

@@ -23,7 +23,7 @@
         'views/mak_audit_views.xml',
         'views/mak_audit_sequence.xml',],
     "demo_xml": [],
-    'icon': '/logo/mak.png',
+    'icon': '/logo/static/src/img/mak.png',
     "active": False,
     "installable": True,
     # "auto_install":True,

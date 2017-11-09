@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+	 <record id="regulation_user" model="res.groups">
+        <field name="name">Regulation Manager</field>
+        <field name="comment">the user will have an access to the human resources regulations and documents.</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+		<!-- Sequences for Mak Regulation -->
+
+		<record id="seq_type_audit" model="ir.sequence.type">
+			<field name="name">MAK HR permission Sequence</field>
+			<field name="code">mak.regulation</field>
+		</record>
+		<record id="sequence_audit" model="ir.sequence">
+			<field name="name">Audit permission</field>
+			<field name="code">mak.regulation</field>
+			<field name="prefix">БХГ-№%(year)s/%(month)s/</field>
+			<field name="padding">3</field>
+			<field name="reset_monthly">True</field>
+		</record>
+
+
+	</data>
+</openerp>

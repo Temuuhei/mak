@@ -40,6 +40,7 @@ class hr_holidays(osv.osv):
 
 
     def onchange_date_from(self, cr, uid, ids, date_to, date_from):
+        print'HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEee'
         """
         If there are no date set for date_to, automatically set one 8 hours later than
         the date_from.
@@ -79,6 +80,7 @@ class hr_holidays(osv.osv):
         return result
 
     def onchange_date_to(self, cr, uid, ids, date_to, date_from):
+        print'HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEee\n\n\n'
         """
         Update the number_of_days.
         """
@@ -88,6 +90,7 @@ class hr_holidays(osv.osv):
         result = {'value': {}}
         # Compute and update the number of days
         if (date_to and date_from) and (date_from <= date_to):
+            print'1111111111111111111111111111111111111111111'
             diff_day = self._get_number_of_days(date_from, date_to)
             result['value']['number_of_days_temp'] = round(math.floor(diff_day)) + 1
             from_dt = datetime.datetime.strptime(date_from, DATETIME_FORMAT)
