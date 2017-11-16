@@ -17,7 +17,7 @@
 			<field name="code">mak.regulation</field>
 		</record>
 		<record id="sequence_audit" model="ir.sequence">
-			<field name="name">Audit permission</field>
+			<field name="name">MAK Regulation permission</field>
 			<field name="code">mak.regulation</field>
 			<field name="prefix">БХГ-№%(year)s/%(month)s/</field>
 			<field name="padding">3</field>
