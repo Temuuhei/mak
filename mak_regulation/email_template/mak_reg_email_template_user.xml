@@ -4,9 +4,9 @@
 <!-- Email template of employee -->
 
 			<record id="reg_email_template_to_user" model="email.template">
-			<field name="name">Тушаал болон Албан бичгийн мэдээлэл</field>
+			<field name="name">Албан бичгийн мэдээлэл</field>
 			<field name="email_from">${(user.login or '')|safe}</field>
-			<field name="subject">[Тушаал болон Албан бичгийн мэдээлэл] ${user.company_id.name}</field>
+			<field name="subject">[Албан бичгийн мэдээлэл] ${user.company_id.name}</field>
 			<field name="email_to">${object.email|safe}</field>
 			<field name="lang">${object.lang}</field>
 			<field name="model_id" ref="base.model_res_users" />
