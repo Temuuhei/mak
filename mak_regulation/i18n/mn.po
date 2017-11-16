@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-09 07:08+0000\n"
-"PO-Revision-Date: 2017-11-09 07:08+0000\n"
+"POT-Creation-Date: 2017-11-16 04:35+0000\n"
+"PO-Revision-Date: 2017-11-16 04:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -181,7 +181,7 @@ msgstr "Хавсралт"
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Цуцлагдсан"
 
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
@@ -271,9 +271,15 @@ msgid "Email Thread"
 msgstr "Хөрөнгийн худалдан авалт"
 
 #. module: mak_regulation
+#: field:mak.regulation,employee_id:0
 #: field:mak.regulation,user_id:0
 msgid "Employee"
 msgstr "Бүртгэсэн"
+
+#. module: mak_regulation
+#: field:mak.regulation,employee_id:0
+msgid "Employee"
+msgstr "Ажилтан"
 
 #. module: mak_regulation
 #: field:mak.regulation,message_follower_ids:0
@@ -400,7 +406,12 @@ msgstr "Хүлээгдэж буй(II шат)"
 #. module: mak_regulation
 #: field:hr.regulation,origin:0
 msgid "Origin document"
-msgstr "Origin document"
+msgstr "Эх баримт"
+
+#. module: mak_regulation
+#: field:mak.regulation,partner_id:0
+msgid "Partner"
+msgstr "Харилцагч"
 
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
@@ -439,11 +450,12 @@ msgstr "Дотоод дугаар"
 
 #. module: mak_regulation
 #: model:ir.model,name:mak_regulation.model_hr_regulation
+#: model:ir.ui.menu,name:mak_regulation.hr_regulation_menu_mak
 msgid "Regulation registry"
 msgstr "Тушаалын бүртгэл"
 
 #. module: mak_regulation
-#: field:mak.regulation,secotor_id:0
+#: field:mak.regulation,sector_id:0
 msgid "Sector"
 msgstr "Газар нэгж"
 
@@ -475,8 +487,8 @@ msgid "Waiting for command"
 msgstr "Шийд хүлээсэн"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:83
-#: code:addons/mak_regulation/model/mak_regulation.py:280
+#: code:addons/mak_regulation/model/mak_regulation.py:90
+#: code:addons/mak_regulation/model/mak_regulation.py:300
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -498,7 +510,7 @@ msgid "Year"
 msgstr "Жил"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:83
+#: code:addons/mak_regulation/model/mak_regulation.py:90
 #, python-format
 msgid "You don't have related employee. Please contact administrator."
 msgstr "You don't have related employee. Please contact administrator."
@@ -515,7 +527,8 @@ msgid "the user will have an access to the human resources regulations and docum
 msgstr "the user will have an access to the human resources regulations and documents."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:280
+#: code:addons/mak_regulation/model/mak_regulation.py:300
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
+
