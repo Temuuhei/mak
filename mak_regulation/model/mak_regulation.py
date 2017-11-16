@@ -61,6 +61,13 @@ class mak_regulation(osv.osv):
         ('cancel', 'Cancel'),
          ]
 
+
+    def name_get(self, cr, uid, ids, context=None):
+        res = []
+        for doc in self.browse(cr, uid, ids, context=context):
+            res.append( (doc.id, u'%s %s' % (doc.num_received_document, doc.doc_name)))
+        return res
+
     # Өдөрөөр салгах
     def _set_date(self, cr, uid, ids, name, args, context=None):
         res = {}
@@ -91,7 +98,7 @@ class mak_regulation(osv.osv):
         'num_received_document': fields.char('Number of Received Documents', required=True,states={'done': [('readonly', True)]}),
         'date': fields.datetime('Regulation Date', required=True,states={'done': [('readonly', True)]}),
         'received_date': fields.datetime('Received date', required=True,states={'done': [('readonly', True)]}),
-        'secotor_id': fields.many2one('hr.department', 'Sector', domain=[('type', '=', 'sector')],states={'done': [('readonly', True)]}),
+        'sector_id': fields.many2one('hr.department', 'Sector', domain=[('type', '=', 'sector')],states={'done': [('readonly', True)]},invisible = True),
         'type': fields.selection([('local', 'Local'), ('abroad', 'Abroad')],'Type',states={'done': [('readonly', True)]}),
         'type_doc': fields.selection([('official_doc', 'Official Document'), ('complain', 'Complain')],'Document Type',states={'done': [('readonly', True)]}),
         'doc_name': fields.text('Name', size=160, required=True,states={'done': [('readonly', True)]}),
@@ -105,6 +112,8 @@ class mak_regulation(osv.osv):
         'reg_attachment_id': fields.many2many('ir.attachment', 'regulation_ir_attachments_rel', 'reg_id', 'attachment_id',
                                                'Attachment'),
         'date_deadline': fields.datetime('Deadline',states={'done': [('readonly', True)]}),
+        'partner_id' : fields.many2one('res.partner', 'Partner', invisible = True),
+        'employee_id' : fields.many2one ('hr.employee', 'Employee',invisible = True),
     }
 
     _defaults = {
@@ -143,7 +152,7 @@ class mak_regulation(osv.osv):
             self.write(cr, uid, ids, {'state': 'pending2'})
         return True
 
-    def action_previos(self, cr, uid, ids, context=None):
+    def action_previous(self, cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids)[0]
         if obj.state == 'assigned':
             self.write(cr, uid, ids, {'state': 'wait'})
@@ -171,7 +180,18 @@ class mak_regulation(osv.osv):
         return True
 
     def action_create_reg(self,cr, uid, ids, context=None):
+        return {
+            'name': ('Regulation Registry'),
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'hr.regulation',
+            'view_id': False,
+            'type': 'ir.actions.act_window',
+            'target': 'new',
+        }
         self.write(cr, uid, ids,{'state':'created_reg'})
+
+
 
     # by Тэмүүжин Батлах
     def action_check(self, cr, uid, ids, context=None):
@@ -252,7 +272,7 @@ class mak_regulation(osv.osv):
             domain = self.pool.get("ir.config_parameter").get_param(cr, uid, "mail.catchall.domain", context=None)
 
             data = {
-                'name': reg.doc_name,
+                'doc_name': reg.doc_name,
                 'department': reg.department_id.name,
                 'base_url': self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url'),
                 'action_id': self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation','action_mak_regulation_window')[1],
