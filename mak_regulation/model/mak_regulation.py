@@ -130,6 +130,17 @@ class mak_regulation(osv.osv):
         reg = super(mak_regulation, self).create(cr, uid, vals, context=context)
         return reg
 
+    def unlink(self, cr, uid, ids, context=None):
+        regulation = self.read(cr, uid, ids, ['state'], context=context)
+        unlink_ids = []
+        for s in regulation:
+            if s['state'] in ['draft']:
+                unlink_ids.append(s['id'])
+                super(mak_regulation, self).unlink(cr, uid, unlink_ids, context=context)
+            else:
+                raise osv.except_osv(_('Invalid Action!'),
+                                     _('In order to delete a regulation, you must Draft it first.'))
+
     def action_second_stage(self, cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids)[0]
         if obj.state == 'pending1':
