@@ -16,7 +16,7 @@
 Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>
 </p>
 <p>
-Таньд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["doc_name"]}</b> утгатай Тушаал болон Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.
+Таньд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["doc_name"]}</b> утгатай Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.
 </p>
 
 <p>
@@ -29,7 +29,7 @@
 
 <p>
 Холбоос:
-<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.regulationk&action=${ctx["action_id"]}">Тушаал болон Албан бичгийн мэдээлэл </a></b>
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.regulationk&action=${ctx["action_id"]}">Албан бичгийн мэдээлэл </a></b>
 
 
 </p>

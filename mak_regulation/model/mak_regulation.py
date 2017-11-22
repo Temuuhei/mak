@@ -113,6 +113,7 @@ class mak_regulation(osv.osv):
                                                'Attachment'),
         'date_deadline': fields.datetime('Deadline',states={'done': [('readonly', True)]}),
         'partner_id' : fields.many2one('res.partner', 'Partner', invisible = True),
+        'partner' : fields.char('Partner', invisible = True),
         'employee_id' : fields.many2one ('hr.employee', 'Employee',invisible = True),
     }
 
