@@ -126,6 +126,8 @@ class mak_regulation(osv.osv):
         'department_id': _set_department,
     }
 
+    _order = 'date desc'
+
     def create (self, cr, uid, vals, context=None):
         vals['sequence_id'] = self.pool.get('ir.sequence').get(cr, uid, 'mak.regulation')
         reg = super(mak_regulation, self).create(cr, uid, vals, context=context)
