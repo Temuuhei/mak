@@ -68,10 +68,10 @@ class res_users(osv.osv):
                     res=super(res_users, self).write(cr, uid, ids, values, context)  
                 else :
                     raise osv.except_osv(_('Error'),
-                        _(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
+                        _(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, том жижиг үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
             else :
                 raise osv.except_osv(_('Error'),
-                        _('Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
+                        _('Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, том жижиг үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
         return res
     
     def password_policy (self , cr, uid, new_passwd):  
@@ -83,14 +83,14 @@ class res_users(osv.osv):
             split_username = re.split(r'[0-9@#$%^&+=.]',str(user_obj.login))
             for split in split_new_pass :
                 if split.lower() ==split_username[0].lower():
-                     raise SignupError(_(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
+                     raise SignupError(_(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, том жижиг үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
             if user:
                 users.check_password(cr , uid, user[0], new_passwd )
             else :
                 users.create(cr, SUPERUSER_ID,{'sequence':'1','user_id':uid,'first_password':new_passwd})    
             return
         else:
-            raise SignupError(_(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
+            raise SignupError(_(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, том жижиг үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
         
     def change_password(self, cr, uid, old_passwd, new_passwd, context=None):
         """Change current user password. Old password must be provided explicitly
@@ -105,7 +105,7 @@ class res_users(osv.osv):
         self.password_policy(cr, uid, new_passwd)
         if new_passwd:
             return self.write(cr, uid, uid, {'password': new_passwd})
-        raise SignupError(_(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))    
+        raise SignupError(_(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, том жижиг үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
         
 res_users()
 
