@@ -22,7 +22,7 @@
 
 <p>
 Холбоос:
-<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.regulation&action=${ctx["action_id"]}">Тушаал болон Албан бичгийн мэдээлэл </a></b>
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.regulation&action=${ctx["action_id"]}">Албан бичгийн мэдээлэл </a></b>
 </p>
 
 <p>
@@ -42,7 +42,7 @@ MAK ERP Автомат Имэйл
 <!-- Email template of employee -->
 
 			<record id="reg_email_template_to_user" model="email.template">
-			<field name="name">Тушаал болон Албан бичгийн мэдээлэл</field>
+			<field name="name">Албан бичгийн мэдээлэл</field>
 			<field name="email_from">${(user.login or '')|safe}</field>
 			<field name="subject">[Албан бичгийн мэдээлэл] ${user.company_id.name}</field>
 			<field name="email_to">${object.email|safe}</field>
@@ -54,7 +54,7 @@ MAK ERP Автомат Имэйл
 Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>
 </p>
 <p>
-Таньд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["doc_name"]}</b> утгатай Тушаал болон Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.
+Таньд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["doc_name"]}</b> утгатай Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.
 </p>
 
 <p>
@@ -67,7 +67,7 @@ MAK ERP Автомат Имэйл
 
 <p>
 Холбоос:
-<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.regulationk&action=${ctx["action_id"]}">Тушаал болон Албан бичгийн мэдээлэл </a></b>
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.regulationk&action=${ctx["action_id"]}">Албан бичгийн мэдээлэл </a></b>
 
 
 </p>

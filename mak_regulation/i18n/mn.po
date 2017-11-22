@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-16 04:35+0000\n"
-"PO-Revision-Date: 2017-11-16 04:35+0000\n"
+"POT-Creation-Date: 2017-11-22 02:54+0000\n"
+"PO-Revision-Date: 2017-11-22 02:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgid "\n"
 "\n"
 "<p>\n"
 "Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulation&action=${ctx[\"action_id\"]}\">Тушаал болон Албан бичгийн мэдээлэл </a></b>\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulation&action=${ctx[\"action_id\"]}\">Албан бичгийн мэдээлэл </a></b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -50,7 +50,7 @@ msgstr "\n"
 "\n"
 "<p>\n"
 "Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulation&action=${ctx[\"action_id\"]}\">Тушаал болон Албан бичгийн мэдээлэл </a></b>\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulation&action=${ctx[\"action_id\"]}\">Албан бичгийн мэдээлэл </a></b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -71,7 +71,7 @@ msgid "\n"
 "Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>\n"
 "</p>\n"
 "<p>\n"
-"Таньд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Тушаал болон Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
+"Таньд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -84,7 +84,7 @@ msgid "\n"
 "\n"
 "<p>\n"
 "Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Тушаал болон Албан бичгийн мэдээлэл </a></b>\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Албан бичгийн мэдээлэл </a></b>\n"
 "\n"
 "\n"
 "</p>\n"
@@ -109,7 +109,7 @@ msgstr "\n"
 "Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>\n"
 "</p>\n"
 "<p>\n"
-"Таньд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Тушаал болон Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
+"Таньд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -122,7 +122,7 @@ msgstr "\n"
 "\n"
 "<p>\n"
 "Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Тушаал болон Албан бичгийн мэдээлэл </a></b>\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Албан бичгийн мэдээлэл </a></b>\n"
 "\n"
 "\n"
 "</p>\n"
@@ -268,18 +268,13 @@ msgstr "Шинэ"
 #. module: mak_regulation
 #: model:ir.model,name:mak_regulation.model_mak_regulation
 msgid "Email Thread"
-msgstr "Хөрөнгийн худалдан авалт"
+msgstr "Имэйл Салбар"
 
 #. module: mak_regulation
 #: field:mak.regulation,employee_id:0
 #: field:mak.regulation,user_id:0
 msgid "Employee"
 msgstr "Бүртгэсэн"
-
-#. module: mak_regulation
-#: field:mak.regulation,employee_id:0
-msgid "Employee"
-msgstr "Ажилтан"
 
 #. module: mak_regulation
 #: field:mak.regulation,message_follower_ids:0
@@ -305,6 +300,18 @@ msgstr "ID"
 #: help:mak.regulation,message_unread:0
 msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
+
+#. module: mak_regulation
+#: code:addons/mak_regulation/model/mak_regulation.py:143
+#, python-format
+msgid "In order to delete a regulation, you must Draft it first."
+msgstr "In order to delete a regulation, you must Draft it first."
+
+#. module: mak_regulation
+#: code:addons/mak_regulation/model/mak_regulation.py:142
+#, python-format
+msgid "Invalid Action!"
+msgstr "Invalid Action!"
 
 #. module: mak_regulation
 #: field:mak.regulation,message_is_follower:0
@@ -409,9 +416,15 @@ msgid "Origin document"
 msgstr "Эх баримт"
 
 #. module: mak_regulation
+#: field:mak.regulation,partner:0
 #: field:mak.regulation,partner_id:0
 msgid "Partner"
 msgstr "Харилцагч"
+
+#. module: mak_regulation
+#: field:mak.regulation,partner:0
+msgid "Partner"
+msgstr "Гадаад харилцагч"
 
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
@@ -488,7 +501,7 @@ msgstr "Шийд хүлээсэн"
 
 #. module: mak_regulation
 #: code:addons/mak_regulation/model/mak_regulation.py:90
-#: code:addons/mak_regulation/model/mak_regulation.py:300
+#: code:addons/mak_regulation/model/mak_regulation.py:312
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -518,8 +531,8 @@ msgstr "You don't have related employee. Please contact administrator."
 #. module: mak_regulation
 #: model:email.template,subject:mak_regulation.mak_hr_email_template_to_assigned
 #: model:email.template,subject:mak_regulation.reg_email_template_to_user
-msgid "[Тушаал болон Албан бичгийн мэдээлэл] ${user.company_id.name}"
-msgstr "[Тушаал болон Албан бичгийн мэдээлэл] ${user.company_id.name}"
+msgid "[Албан бичгийн мэдээлэл] ${user.company_id.name}"
+msgstr "[Албан бичгийн мэдээлэл] ${user.company_id.name}"
 
 #. module: mak_regulation
 #: model:res.groups,comment:mak_regulation.regulation_user
@@ -527,8 +540,7 @@ msgid "the user will have an access to the human resources regulations and docum
 msgstr "the user will have an access to the human resources regulations and documents."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:300
+#: code:addons/mak_regulation/model/mak_regulation.py:312
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
-

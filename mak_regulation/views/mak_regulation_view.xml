@@ -43,6 +43,7 @@
                         <field name="sector_id" attrs="{'invisible':[('type','!=','local')]}" options="{'no_quick_create':True,'no_create_edit':True}"/>
                         <field name="type_doc" />
                         <field name="partner_id" attrs="{'invisible':[('type','!=','abroad'),('type_doc','!=','official_doc')]}" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                        <field name="partner" attrs="{'invisible':[('type','!=','abroad'),('type_doc','!=','official_doc')]}"/>
                         <field name="employee_id" attrs="{'invisible':[('type','!=','local'),('type_doc','!=','complain')]}" options="{'no_quick_create':True,'no_create_edit':True}"/>
                         <field name="doc_name" colspan="2"/>
                         <field name="assigned_id" states="wait,assigned,open1,pending1,assigned2,open2,pending2,check,done"/>
