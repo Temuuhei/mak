@@ -110,7 +110,7 @@ class mak_regulation(osv.osv):
         'memo': fields.html('Content',track_visibility='onchange',states={'done': [('readonly', True)]}),
         'department_id': fields.many2one('hr.department', 'Department of employee', required=True, readonly=True),
         'reg_attachment_id': fields.many2many('ir.attachment', 'regulation_ir_attachments_rel', 'reg_id', 'attachment_id',
-                                               'Attachment'),
+                                               'Attachment',track_visibility='onchange'),
         'date_deadline': fields.datetime('Deadline',states={'done': [('readonly', True)]}),
         'partner_id' : fields.many2one('res.partner', 'Partner', invisible = True),
         'partner' : fields.char('Partner', invisible = True),
@@ -183,11 +183,13 @@ class mak_regulation(osv.osv):
         if obj.state == 'check':
             self.write(cr, uid, ids, {'state': 'pending2'})
         return True
+
     # by Тэмүүжин Батлах
     def action_approve(self, cr, uid, ids, context=None):
         self.send_notification(cr, uid, ids, 'wait', context=context)
         self.write(cr, uid, ids, {'state': 'wait'})
         return True
+    
     # by Тэмүүжин Батлах
     def action_cancel(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state': 'cancel'})
