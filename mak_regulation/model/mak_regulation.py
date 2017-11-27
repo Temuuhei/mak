@@ -65,7 +65,7 @@ class mak_regulation(osv.osv):
     def name_get(self, cr, uid, ids, context=None):
         res = []
         for doc in self.browse(cr, uid, ids, context=context):
-            res.append( (doc.id, u'[%s] [%s] [%s]' % (doc.sequence_id,doc.num_received_document, doc.doc_name)))
+            res.append( (doc.id, u'[%s] [%s] [%s] [%s]' % (doc.sequence_id,doc.num_received_document, doc.employee_id,doc.doc_name)))
         return res
 
     # Өдөрөөр салгах
