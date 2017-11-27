@@ -156,7 +156,7 @@ class user_password_policy(osv.osv):
         if records:
             template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_password_policy', 'password_policy_reset')[1]
             for record in records:
-                my_date = datetime.strptime(record['date'][0:19], "%`Y-%m-%d %H:%M:%S")
+                my_date = datetime.strptime(record['date'][0:19], "%Y-%m-%d %H:%M:%S")
                 send_date = my_date+timedelta(days=90)
                 if date < send_date < date_end:
                     # if date < date_end:
