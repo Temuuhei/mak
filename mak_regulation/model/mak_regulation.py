@@ -111,7 +111,7 @@ class mak_regulation(osv.osv):
         'department_id': fields.many2one('hr.department', 'Department of employee', required=True, readonly=True),
         'reg_attachment_id': fields.many2many('ir.attachment', 'regulation_ir_attachments_rel', 'reg_id', 'attachment_id',
                                                'Attachment',track_visibility='onchange'),
-        'reg_attachment_director_id': fields.binary('Attachment of Director', track_visibility='onchange'),
+        'reg_attachment_director_id': fields.binary('Attachment of Director'),
         'date_deadline': fields.date('Deadline',states={'done': [('readonly', True)]}),
         'partner_id' : fields.many2one('res.partner', 'Partner', invisible = True),
         'partner' : fields.char('Partner', invisible = True),
