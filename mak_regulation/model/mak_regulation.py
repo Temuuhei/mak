@@ -72,7 +72,7 @@ class mak_regulation(osv.osv):
     def _set_date(self, cr, uid, ids, name, args, context=None):
         res = {}
         obj = self.browse(cr, uid, ids)[0]
-        date_object = datetime.strptime(obj.date, '%Y-%m-%d %H:%M:%S')
+        date_object = datetime.strptime(obj.date, '%Y-%m-%d')
         res[obj.id] = {
             'year': date_object.year,
             'month': date_object.month,
@@ -96,8 +96,8 @@ class mak_regulation(osv.osv):
         'assigned_id2': fields.many2one('res.users', '2nd Assigned To',states={'done': [('readonly', True)]}),
         'sequence_id': fields.char('Regulation Sequence', size=32, required=True),
         'num_received_document': fields.char('Number of Received Documents', required=True,states={'done': [('readonly', True)]}),
-        'date': fields.datetime('Regulation Date', required=True,states={'done': [('readonly', True)]}),
-        'received_date': fields.datetime('Received date', required=True,states={'done': [('readonly', True)]}),
+        'date': fields.date('Regulation Date', required=True,states={'done': [('readonly', True)]}),
+        'received_date': fields.date('Received date', required=True,states={'done': [('readonly', True)]}),
         'sector_id': fields.many2one('hr.department', 'Sector', domain=[('type', '=', 'sector')],states={'done': [('readonly', True)]},invisible = True),
         'type': fields.selection([('local', 'Local'), ('abroad', 'Abroad')],'Type',states={'done': [('readonly', True)]}),
         'type_doc': fields.selection([('official_doc', 'Official Document'), ('complain', 'Complain')],'Document Type',states={'done': [('readonly', True)]}),
@@ -111,7 +111,8 @@ class mak_regulation(osv.osv):
         'department_id': fields.many2one('hr.department', 'Department of employee', required=True, readonly=True),
         'reg_attachment_id': fields.many2many('ir.attachment', 'regulation_ir_attachments_rel', 'reg_id', 'attachment_id',
                                                'Attachment',track_visibility='onchange'),
-        'date_deadline': fields.datetime('Deadline',states={'done': [('readonly', True)]}),
+        'reg_attachment_director_id': fields.binary('Attachment of Director', track_visibility='onchange'),
+        'date_deadline': fields.date('Deadline',states={'done': [('readonly', True)]}),
         'partner_id' : fields.many2one('res.partner', 'Partner', invisible = True),
         'partner' : fields.char('Partner', invisible = True),
         'employee_id' : fields.many2one ('hr.employee', 'Employee',invisible = True),
