@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-27 08:45+0000\n"
-"PO-Revision-Date: 2017-11-27 08:45+0000\n"
+"POT-Creation-Date: 2017-11-29 09:41+0000\n"
+"PO-Revision-Date: 2017-11-29 09:41+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -184,6 +184,11 @@ msgid "Attachment"
 msgstr "Хавсралт"
 
 #. module: mak_regulation
+#: field:mak.regulation,reg_attachment_director_id:0
+msgid "Attachment of Director"
+msgstr "БХГ-н захирлын хавсралт"
+
+#. module: mak_regulation
 #: selection:mak.regulation,state:0
 msgid "Cancel"
 msgstr "Цуцлагдсан"
@@ -312,13 +317,13 @@ msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:145
+#: code:addons/mak_regulation/model/mak_regulation.py:146
 #, python-format
 msgid "In order to delete a regulation, you must Draft it first."
 msgstr "In order to delete a regulation, you must Draft it first."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:144
+#: code:addons/mak_regulation/model/mak_regulation.py:145
 #, python-format
 msgid "Invalid Action!"
 msgstr "Invalid Action!"
@@ -511,7 +516,7 @@ msgstr "Шийд хүлээсэн"
 
 #. module: mak_regulation
 #: code:addons/mak_regulation/model/mak_regulation.py:90
-#: code:addons/mak_regulation/model/mak_regulation.py:316
+#: code:addons/mak_regulation/model/mak_regulation.py:317
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -550,7 +555,7 @@ msgid "the user will have an access to the human resources regulations and docum
 msgstr "the user will have an access to the human resources regulations and documents."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:316
+#: code:addons/mak_regulation/model/mak_regulation.py:317
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"

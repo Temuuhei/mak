@@ -53,6 +53,7 @@
                     <group>
                         <field name="memo" widget="html" class="oe_memo" editor_height="350px" />
                          <field name="reg_attachment_id" widget="many2many_binary"/>
+                         <field name="reg_attachment_director_id"/>
                     </group>
                 </group>
                     <separator string="Description"/>
