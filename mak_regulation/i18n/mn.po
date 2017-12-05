@@ -608,7 +608,7 @@ msgstr "Тушаалын менежер"
 #. module: mak_regulation
 #: model:res.groups,name:mak_regulation.regulation_president
 msgid "Regulation President"
-msgstr "Regulation President"
+msgstr "Тушаал батлах Ерөнхийлөгч"
 
 #. module: mak_regulation
 #: field:mak.regulation,sequence_id:0
