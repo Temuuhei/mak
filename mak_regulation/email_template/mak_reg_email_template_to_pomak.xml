@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<openerp>
+	<data>
+<!-- Email template of employee -->
+
+			<record id="reg_email_template_to_pomak" model="email.template">
+			<field name="name">Тушаал болон Албан бичгийн мэдээлэл</field>
+			<field name="email_from">${(user.login or '')|safe}</field>
+			<field name="subject">[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэх талаар шийдвэр авах тухай] ${user.company_id.name}</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="base.model_res_users" />
+			<field name="auto_delete" eval="True" />
+			<field name="body_html"><![CDATA[
+<p>
+Сайн байна уу, Ерөнхийлөгч өө </br>
+</p>
+<p>
+Таньд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.
+</p>
+<p>
+		Үүнд:
+</p>
+<p>
+		Дугаар: <b>${ctx["num_received_document"]}</b>
+</p>
+<p>
+		Ажилтан:       <b>${ctx["last_name"]}</b> овогтой <b>${ctx["employee_id"]}</b>
+</p>
+<p>
+		Хэлтэс : 	   <b>${ctx["department_id"]}</b>
+</p>
+<p>
+		Албан тушаал : <b>${ctx["job_id"]}</b>
+</p>
+<p>
+		Товч утга: <b>${ctx["doc_name"]}</b>
+</p>
+<p>
+		Төрөл: <b>${ctx["type_doc"]}</b>
+</p>
+<p>
+		Албан бичиг ирсэн огноо: <b>${ctx["date"]}</b>
+</p>
+<p>
+		Дотоод дугаар: <b>${ctx["sequence_id"]}</b>
+</p>
+<p>
+		Төлөв: <b>${ctx["state"]}</b>
+</p>
+
+<p>
+Холбоос:
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.regulationk&action=${ctx["action_id"]}">Тушаалын төсөл болон Албан бичгийн мэдээлэл </a></b>
+
+
+</p>
+
+<p>
+Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Б.Цолмон (Байгууллага хөгжлийн газрын захирал)-д хандана уу.
+</p>
+
+<p>
+    Баярлалаа,
+</p>
+
+<pre>
+--
+MAK ERP Автомат Имэйл
+
+</pre>
+
+      ]]></field>
+		</record>
+
+
+	</data>
+</openerp>

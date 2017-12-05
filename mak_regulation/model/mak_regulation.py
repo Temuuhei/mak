@@ -57,6 +57,9 @@ class mak_regulation(osv.osv):
         ('pending2', 'Penging(II)'),
         ('check', 'Check'),
         ('done', 'Done'),
+        ('send_pomak', 'Sent to PoMAK'),
+        ('to_allow', 'Allow of PoMAK'),
+        ('to_reject', 'Reject of PoMAK'),
         ('created_reg', 'Created Regulation'),
         ('cancel', 'Cancel'),
          ]
@@ -65,7 +68,7 @@ class mak_regulation(osv.osv):
     def name_get(self, cr, uid, ids, context=None):
         res = []
         for doc in self.browse(cr, uid, ids, context=context):
-            res.append( (doc.id, u'[%s] [%s] [%s] [%s]' % (doc.sequence_id,doc.num_received_document, doc.employee_id,doc.doc_name)))
+            res.append( (doc.id, u'[%s] [%s] [%s] [%s]' % (doc.sequence_id,doc.num_received_document, doc.employee_id.name,doc.doc_name)))
         return res
 
     # Өдөрөөр салгах
@@ -192,8 +195,21 @@ class mak_regulation(osv.osv):
         return True
     
     # by Тэмүүжин Батлах
-    def action_cancel(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'state': 'cancel'})
+    def action_send_pomak(self, cr, uid, ids, context=None):
+        self.send_notification(cr, uid, ids, 'send_pomak', context=context)
+        self.write(cr, uid, ids, {'state': 'send_pomak'})
+        return True
+
+    # by Тэмүүжин Батлах
+    def action_allow(self, cr, uid, ids, context=None):
+        self.send_notification(cr, uid, ids, 'to_allow', context=context)
+        self.write(cr, uid, ids, {'state': 'to_allow'})
+        return True
+
+    # by Тэмүүжин Батлах
+    def action_reject(self, cr, uid, ids, context=None):
+        self.send_notification(cr, uid, ids, 'to_reject', context=context)
+        self.write(cr, uid, ids, {'state': 'to_reject'})
         return True
 
     def action_create_reg(self,cr, uid, ids, context=None):
@@ -240,6 +256,9 @@ class mak_regulation(osv.osv):
                 'done': 'base.group_user',
                 'cancel': 'base.group_user',
                 'created_reg': 'base.group_user',
+                'send_pomak': 'group_regulation_president',
+                'to_allow': 'base.group_user',
+                'to_reject': 'base.group_user',
             }
             states = {
                 'wait': u'Шийд хүлээсэн',
@@ -249,6 +268,9 @@ class mak_regulation(osv.osv):
                 'done': u'"БХГ-ийн захиралд илгээгдсэн" → "Дууссан" төлөвт шилжсэн',
                 'cancel': u'Цуцлагдсан',
                 'created_reg': u'"Дууссан" → "Тушаал үүссэн" төлөвт шилжсэн',
+                'send_pomak': u'"Дууссан" → "Ерөнхийлөгчид илгээсэн" төлөвт шилжсэн',
+                'to_allow': u'"Ерөнхийлөгчид илгээсэн" → "Ерөнхийлөгч зөвшөөрсөн" төлөвт шилжсэн',
+                'to_reject': u'"Ерөнхийлөгчид илгээсэн" → "Ерөнхийлөгч татгалзсан" төлөвт шилжсэн',
             }
 
             group_user_ids = []
@@ -260,7 +282,7 @@ class mak_regulation(osv.osv):
                 template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
                                                                                   'mak_hr_email_template_to_assigned')[1]
             else:
-                if signal in ['assigned','done']:
+                if signal in ['assigned','done','to_allow','to_reject']:
                     # notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                     #                                               groups[signal])
                     template_id = \
@@ -268,7 +290,7 @@ class mak_regulation(osv.osv):
                                                                         'reg_email_template_to_user')[1]
                     group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,
                                                                            [('id', '=', reg.assigned_id.id)])
-                elif signal in ['assigned2','done']:
+                elif signal in ['assigned2','done','to_allow','to_reject']:
 
                     # notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                     #                                               groups[signal])
@@ -277,11 +299,17 @@ class mak_regulation(osv.osv):
                                                                             'reg_email_template_to_user')[1]
                     group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,
                                                                        [('id', '=', reg.assigned_id2.id)])
-                elif signal in ['check']:
+                elif signal in ['check','to_allow','to_reject']:
                     notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                                                                   'regulation_user')
                     template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
                                                                                       'reg_email_template_to_user')[1]
+                elif signal in ['send_pomak']:
+                    notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
+                                                                  'regulation_president')
+                    template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
+                                                                                      'reg_email_template_to_pomak')[1]
+
 
             if notif_groups:
                 sel_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,
@@ -298,6 +326,13 @@ class mak_regulation(osv.osv):
                 'db_name': request.session.db,
                 'state': states[signal],
                 'date_deadline': reg.date_deadline,
+                'doc_type': reg.type_doc,
+                'date': reg.date,
+                'last_name': reg.employee_id.last_name,
+                'department_id': reg.employee_id.department_id.name,
+                'job_id': reg.employee_id.job_id.name,
+                'num_received_document': reg.num_received_document,
+                'employee_id': reg.employee_id.name,
                 'sender': self.pool.get('res.users').browse(cr, uid, uid).name,
             }
             if not group_user_ids:
