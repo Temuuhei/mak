@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 09:41+0000\n"
-"PO-Revision-Date: 2017-11-29 09:41+0000\n"
+"POT-Creation-Date: 2017-12-05 04:50+0000\n"
+"PO-Revision-Date: 2017-12-05 04:50+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -144,6 +144,129 @@ msgstr "\n"
 "      "
 
 #. module: mak_regulation
+#: model:email.template,body_html:mak_regulation.reg_email_template_to_pomak
+msgid "\n"
+"<p>\n"
+"Сайн байна уу, Ерөнхийлөгч өө </br>\n"
+"</p>\n"
+"<p>\n"
+"Таньд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.\n"
+"</p>\n"
+"<p>\n"
+"		Үүнд:\n"
+"</p>\n"
+"<p>\n"
+"		Дугаар: <b>${ctx[\"num_received_document\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Ажилтан:       <b>${ctx[\"last_name\"]}</b> овогтой <b>${ctx[\"employee_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Хэлтэс : 	   <b>${ctx[\"department_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Албан тушаал : <b>${ctx[\"job_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Төрөл: <b>${ctx[\"type_doc\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Албан бичиг ирсэн огноо: <b>${ctx[\"date\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Дотоод дугаар: <b>${ctx[\"sequence_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Тушаалын төсөл болон Албан бичгийн мэдээлэл </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Б.Цолмон (Байгууллага хөгжлийн газрын захирал)-д хандана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
+msgstr "\n"
+"<p>\n"
+"Сайн байна уу, Ерөнхийлөгч өө </br>\n"
+"</p>\n"
+"<p>\n"
+"Таньд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.\n"
+"</p>\n"
+"<p>\n"
+"		Үүнд:\n"
+"</p>\n"
+"<p>\n"
+"		Дугаар: <b>${ctx[\"num_received_document\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Ажилтан:       <b>${ctx[\"last_name\"]}</b> овогтой <b>${ctx[\"employee_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Хэлтэс : 	   <b>${ctx[\"department_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Албан тушаал : <b>${ctx[\"job_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Төрөл: <b>${ctx[\"type_doc\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Албан бичиг ирсэн огноо: <b>${ctx[\"date\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Дотоод дугаар: <b>${ctx[\"sequence_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Тушаалын төсөл болон Албан бичгийн мэдээлэл </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Б.Цолмон (Байгууллага хөгжлийн газрын захирал)-д хандана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
+
+#. module: mak_regulation
 #: field:mak.regulation,assigned_id2:0
 msgid "2nd Assigned To"
 msgstr "II Шатны Хариуцагч"
@@ -157,6 +280,11 @@ msgstr "Гадаад"
 #: view:mak.regulation:mak_regulation.view_mak_regulation_form
 msgid "Add a Description..."
 msgstr "Тайлбарыг энд бичнэ үү..."
+
+#. module: mak_regulation
+#: selection:mak.regulation,state:0
+msgid "Allow of PoMAK"
+msgstr "Ерөнхийлөгч зөвшөөрсөн"
 
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
@@ -186,7 +314,7 @@ msgstr "Хавсралт"
 #. module: mak_regulation
 #: field:mak.regulation,reg_attachment_director_id:0
 msgid "Attachment of Director"
-msgstr "БХГ-н захирлын хавсралт"
+msgstr "БХГ-н захиралын хавсралт"
 
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
@@ -287,6 +415,12 @@ msgid "Employee"
 msgstr "Бүртгэсэн"
 
 #. module: mak_regulation
+#: field:mak.regulation,employee_id:0
+#: field:mak.regulation,user_id:0
+msgid "Employee"
+msgstr "Бүртгэсэн"
+
+#. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
 msgid "EmployeeS"
 msgstr "Ажилтан"
@@ -317,13 +451,13 @@ msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:146
+#: code:addons/mak_regulation/model/mak_regulation.py:149
 #, python-format
 msgid "In order to delete a regulation, you must Draft it first."
 msgstr "In order to delete a regulation, you must Draft it first."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:145
+#: code:addons/mak_regulation/model/mak_regulation.py:148
 #, python-format
 msgid "Invalid Action!"
 msgstr "Invalid Action!"
@@ -472,6 +606,11 @@ msgid "Regulation Manager"
 msgstr "Тушаалын менежер"
 
 #. module: mak_regulation
+#: model:res.groups,name:mak_regulation.regulation_president
+msgid "Regulation President"
+msgstr "Regulation President"
+
+#. module: mak_regulation
 #: field:mak.regulation,sequence_id:0
 msgid "Regulation Sequence"
 msgstr "Дотоод дугаар"
@@ -483,9 +622,19 @@ msgid "Regulation registry"
 msgstr "Тушаалын бүртгэл"
 
 #. module: mak_regulation
+#: selection:mak.regulation,state:0
+msgid "Reject of PoMAK"
+msgstr "Ерөнхийлөгч татгалзсан"
+
+#. module: mak_regulation
 #: field:mak.regulation,sector_id:0
 msgid "Sector"
 msgstr "Газар нэгж"
+
+#. module: mak_regulation
+#: selection:mak.regulation,state:0
+msgid "Sent to PoMAK"
+msgstr "Ерөнхийлөгчид илгээгдсэн"
 
 #. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
@@ -515,8 +664,8 @@ msgid "Waiting for command"
 msgstr "Шийд хүлээсэн"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:90
-#: code:addons/mak_regulation/model/mak_regulation.py:317
+#: code:addons/mak_regulation/model/mak_regulation.py:93
+#: code:addons/mak_regulation/model/mak_regulation.py:352
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -538,7 +687,7 @@ msgid "Year"
 msgstr "Жил"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:90
+#: code:addons/mak_regulation/model/mak_regulation.py:93
 #, python-format
 msgid "You don't have related employee. Please contact administrator."
 msgstr "You don't have related employee. Please contact administrator."
@@ -550,12 +699,22 @@ msgid "[Албан бичгийн мэдээлэл] ${user.company_id.name}"
 msgstr "[Албан бичгийн мэдээлэл] ${user.company_id.name}"
 
 #. module: mak_regulation
+#: model:email.template,subject:mak_regulation.reg_email_template_to_pomak
+msgid "[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэх талаар шийдвэр авах тухай] ${user.company_id.name}"
+msgstr "[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэх талаар шийдвэр авах тухай] ${user.company_id.name}"
+
+#. module: mak_regulation
+#: model:res.groups,comment:mak_regulation.regulation_president
+msgid "the user will have an access to the human resources regulations and documents and allow or reject regulation (President of MAK)."
+msgstr "the user will have an access to the human resources regulations and documents and allow or reject regulation (President of MAK)."
+
+#. module: mak_regulation
 #: model:res.groups,comment:mak_regulation.regulation_user
 msgid "the user will have an access to the human resources regulations and documents."
 msgstr "the user will have an access to the human resources regulations and documents."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:317
+#: code:addons/mak_regulation/model/mak_regulation.py:352
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
