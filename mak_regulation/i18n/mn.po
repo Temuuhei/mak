@@ -421,6 +421,11 @@ msgid "Employee"
 msgstr "Бүртгэсэн"
 
 #. module: mak_regulation
+#: field:mak.regulation,employee_id:0
+msgid "Employee"
+msgstr "Ажилтан"
+
+#. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
 msgid "EmployeeS"
 msgstr "Ажилтан"
