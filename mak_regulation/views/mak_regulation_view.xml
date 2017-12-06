@@ -105,6 +105,7 @@
             <tree string="Mak Regulation input" colors="gray:state == 'approved';blue:state == 'draft';">
             	<field name="sequence_id"/>
             	<field name="num_received_document"/>
+            	<field name="assigned_id"/>
 	            <field name="date"/>
 	            <field name="received_date"/>
 	            <field name="partner"/>
