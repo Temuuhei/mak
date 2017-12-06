@@ -415,7 +415,6 @@ msgid "Employee"
 msgstr "Бүртгэсэн"
 
 #. module: mak_regulation
-#: field:mak.regulation,employee_id:0
 #: field:mak.regulation,user_id:0
 msgid "Employee"
 msgstr "Бүртгэсэн"
@@ -571,9 +570,13 @@ msgstr "Эх баримт"
 
 #. module: mak_regulation
 #: field:mak.regulation,partner:0
+msgid "Partner"
+msgstr "Харилцагч /бичих/"
+
+#. module: mak_regulation
 #: field:mak.regulation,partner_id:0
 msgid "Partner"
-msgstr "Харилцагч"
+msgstr "Харилцагч /сонгох/"
 
 #. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
