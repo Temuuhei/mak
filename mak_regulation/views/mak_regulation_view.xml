@@ -55,7 +55,7 @@
                     </group>
                     <group>
                         <field name="memo" widget="html" class="oe_memo" editor_height="350px" />
-                         <field name="reg_attachment_id" widget="many2many_binary"/>
+                         <field name="reg_attachment_id" widget="many2many_binary" options="{'limit': 3,'no_create_edit': True,'no_quick_create': True}"/>
                          <field name="reg_attachment_director_id"/>
                     </group>
                 </group>
