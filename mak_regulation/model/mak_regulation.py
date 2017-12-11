@@ -290,9 +290,9 @@ class mak_regulation(osv.osv):
                                                                         'reg_email_template_to_user')[1]
                     group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,
                                                                            [('id', '=', reg.assigned_id.id)])
-                    notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
-                                                                  'regulation_user')
-                    print 'NOTIFF GROUPS \n\n',notif_groups,group_user_ids
+                    # notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
+                    #                                               'regulation_user')
+                    # print 'NOTIFF GROUPS \n\n',notif_groups,group_user_ids
 
                 elif signal in ['assigned2','done','to_allow','to_reject']:
 
