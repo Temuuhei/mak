@@ -342,7 +342,7 @@ class mak_regulation(osv.osv):
             if not group_user_ids:
                 group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID, [('id', 'in', sel_user_ids)])
             if group_user_ids:
-                group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID, [('id', 'in', sel_user_ids)])
+                # group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID, [('id', 'in', sel_user_ids)])
                 users = self.pool.get('res.users').browse(cr, uid, group_user_ids)
                 user_emails = []
                 for user in users:
