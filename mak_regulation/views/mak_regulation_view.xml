@@ -49,9 +49,9 @@
                         <field name="partner" attrs="{'invisible':[('type','!=','abroad'),('type_doc','!=','official_doc')]}"/>
                         <field name="employee_id" attrs="{'invisible':[('type','!=','local'),('type_doc','!=','complain')]}" options="{'no_quick_create':True,'no_create_edit':True}"/>
                         <field name="doc_name" colspan="2"/>
-                        <field name="assigned_id" states="wait,assigned,open1,pending1,assigned2,open2,pending2,check,done"/>
+                        <field name="assigned_id" states="wait,assigned,open1,pending1,assigned2,open2,pending2,check,done,send_pomak,to_allow,to_reject"/>
                         <field name="date_deadline"/>
-                        <field name="assigned_id2" states="pending1,assigned2,open2,pending2,check,done"/>
+                        <field name="assigned_id2" states="pending1,assigned2,open2,pending2,check,done,"/>
                     </group>
                     <group>
                         <field name="memo" widget="html" class="oe_memo" editor_height="350px" />
