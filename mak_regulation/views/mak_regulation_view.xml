@@ -117,12 +117,42 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="view_mak_regulation_done_tree">
+        <field name="name">mak.regulation.tree</field>
+        <field name="model">mak.regulation</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Regulation input" create="false" colors="gray:state == 'approved';blue:state == 'draft';">
+            	<field name="sequence_id"/>
+            	<field name="num_received_document"/>
+            	<field name="assigned_id"/>
+	            <field name="date"/>
+	            <field name="received_date"/>
+	            <field name="partner"/>
+	            <field name="sector_id"/>
+	            <field name="type_doc"/>
+	            <field name="doc_name"/>
+	            <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
     <record id="action_mak_regulation_window" model="ir.actions.act_window">
         <field name="name">Mak Regulations</field>
         <field name="res_model">mak.regulation</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain"></field>
+        <field name="domain">[('state','not in',['done'])]</field>
+        <field name="context">{"search_default_group_state":1}</field>
+    </record>
+
+    <record id="action_mak_done_regulation_window" model="ir.actions.act_window">
+        <field name="name">Mak Regulations</field>
+        <field name="res_model">mak.regulation</field>
+        <field name="view_id" ref="view_mak_regulation_done_tree"/>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','in',['done'])]</field>
         <field name="context">{"search_default_group_state":1}</field>
     </record>
 
@@ -158,6 +188,7 @@
     <menuitem name="Mak HR Regulation" id="menu_mak_hr_regulation" sequence="1" parent="menu_mak_hr_regulation_main"/>
     <menuitem action="action_mak_regulation_window" name="Mak HR Regulation" id="menu_sub_mak_hr_regulation" sequence="1" parent="menu_mak_hr_regulation"/>
     <menuitem name="Regulation registry" parent="menu_mak_hr_regulation" id="hr_regulation_menu_mak" sequence="2" action='l10n_mn_hr_regulation.action_hr_regulation'/>
+    <menuitem name="Done regulation" parent="menu_mak_hr_regulation" id="hr_done_regulation_menu_mak" sequence="3" action='action_mak_done_regulation_window'/>
 
 	</data>
 </openerp>
