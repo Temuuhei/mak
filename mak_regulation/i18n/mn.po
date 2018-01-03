@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-05 04:50+0000\n"
-"PO-Revision-Date: 2017-12-05 04:50+0000\n"
+"POT-Creation-Date: 2018-01-03 09:06+0000\n"
+"PO-Revision-Date: 2018-01-03 09:06+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgid "\n"
 "Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>\n"
 "</p>\n"
 "<p>\n"
-"Таньд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -109,7 +109,7 @@ msgstr "\n"
 "Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>\n"
 "</p>\n"
 "<p>\n"
-"Таньд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -150,7 +150,7 @@ msgid "\n"
 "Сайн байна уу, Ерөнхийлөгч өө </br>\n"
 "</p>\n"
 "<p>\n"
-"Таньд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.\n"
+"Танд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.\n"
 "</p>\n"
 "<p>\n"
 "		Үүнд:\n"
@@ -210,7 +210,7 @@ msgstr "\n"
 "Сайн байна уу, Ерөнхийлөгч өө </br>\n"
 "</p>\n"
 "<p>\n"
-"Таньд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.\n"
+"Танд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.\n"
 "</p>\n"
 "<p>\n"
 "		Үүнд:\n"
@@ -314,7 +314,7 @@ msgstr "Хавсралт"
 #. module: mak_regulation
 #: field:mak.regulation,reg_attachment_director_id:0
 msgid "Attachment of Director"
-msgstr "БХГ-н захиралын хавсралт"
+msgstr "БХГ-ын захирлын хавсралт"
 
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
@@ -399,6 +399,11 @@ msgid "Done"
 msgstr "Дууссан"
 
 #. module: mak_regulation
+#: model:ir.ui.menu,name:mak_regulation.hr_done_regulation_menu_mak
+msgid "Done regulation"
+msgstr "Архив"
+
+#. module: mak_regulation
 #: selection:mak.regulation,state:0
 msgid "Draft"
 msgstr "Шинэ"
@@ -406,23 +411,13 @@ msgstr "Шинэ"
 #. module: mak_regulation
 #: model:ir.model,name:mak_regulation.model_mak_regulation
 msgid "Email Thread"
-msgstr "Имэйл Салбар"
+msgstr "Хөрөнгийн худалдан авалт"
 
 #. module: mak_regulation
 #: field:mak.regulation,employee_id:0
 #: field:mak.regulation,user_id:0
 msgid "Employee"
 msgstr "Бүртгэсэн"
-
-#. module: mak_regulation
-#: field:mak.regulation,user_id:0
-msgid "Employee"
-msgstr "Бүртгэсэн"
-
-#. module: mak_regulation
-#: field:mak.regulation,employee_id:0
-msgid "Employee"
-msgstr "Ажилтан"
 
 #. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
@@ -518,6 +513,7 @@ msgid "Mak Regulation input"
 msgstr "Тушаалын төсөл - БХГ"
 
 #. module: mak_regulation
+#: model:ir.actions.act_window,name:mak_regulation.action_mak_done_regulation_window
 #: model:ir.actions.act_window,name:mak_regulation.action_mak_regulation_window
 msgid "Mak Regulations"
 msgstr "Тушаалын төслүүд"
@@ -570,13 +566,9 @@ msgstr "Эх баримт"
 
 #. module: mak_regulation
 #: field:mak.regulation,partner:0
-msgid "Partner"
-msgstr "Харилцагч /бичих/"
-
-#. module: mak_regulation
 #: field:mak.regulation,partner_id:0
 msgid "Partner"
-msgstr "Харилцагч /сонгох/"
+msgstr "Харилцагч /бичих/"
 
 #. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
@@ -673,7 +665,7 @@ msgstr "Шийд хүлээсэн"
 
 #. module: mak_regulation
 #: code:addons/mak_regulation/model/mak_regulation.py:93
-#: code:addons/mak_regulation/model/mak_regulation.py:352
+#: code:addons/mak_regulation/model/mak_regulation.py:357
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -722,7 +714,7 @@ msgid "the user will have an access to the human resources regulations and docum
 msgstr "the user will have an access to the human resources regulations and documents."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:352
+#: code:addons/mak_regulation/model/mak_regulation.py:357
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
