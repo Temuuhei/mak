@@ -168,6 +168,28 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="l10n_mn_hr_regulation.hr_regulation_search_view">
+        <field name="name">Regulation user search</field>
+        <field name="model">hr.regulation</field>
+        <field name="arch" type="xml">
+            <search>
+                    <field name="name"/>
+                    <field name="reg_number"/>
+                    <field name="employee_id"/>
+                    <field name="employees"/>
+                    <field name="regulation_type_id"/>
+                    <group expand="0" string="Group by...">
+                        <filter name="group_regulation_type_id" domain="" context="{'group_by' : 'regulation_type_id'}" string="Regulation Type"/>
+                        <filter string="State" icon="terp-stage" domain="" context="{'group_by':'state'}"/>
+                        <filter string="Employee" icon="terp-stage" domain="" context="{'group_by':'employee_id'}"/>
+                        <filter name ="group_year" string="Year" icon="terp-stage" domain="" context="{'group_by':'year'}"/>
+                        <filter string="Month" icon="terp-stage" domain="" context="{'group_by':'month'}"/>
+                        <filter string="Day" icon="terp-stage" domain="" context="{'group_by':'day'}"/>
+                    </group>
+           </search>
+        </field>
+    </record>
+
 
     <record model='ir.actions.act_window' id='l10n_mn_hr_regulation.action_hr_regulation'>
         <field name="name">Regulation registry</field>
