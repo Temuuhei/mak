@@ -220,7 +220,7 @@ class mak_regulation(osv.osv):
             'res_model': 'hr.regulation',
             'view_id': False,
             'type': 'ir.actions.act_window',
-            'target': 'current',
+            'target': 'new',
         }
         self.write(cr, uid, ids,{'state':'created_reg'})
 
