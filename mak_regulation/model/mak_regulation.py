@@ -213,6 +213,7 @@ class mak_regulation(osv.osv):
         return True
 
     def action_create_reg(self,cr, uid, ids, context=None):
+        obj = self.browse(cr, uid, ids)[0]
         return {
             'name': ('Regulation Registry'),
             'view_type': 'form',
@@ -221,6 +222,7 @@ class mak_regulation(osv.osv):
             'view_id': False,
             'type': 'ir.actions.act_window',
             'target': 'new',
+            'context': {'default_origin': obj.id,}
         }
         self.write(cr, uid, ids,{'state':'created_reg'})
 
