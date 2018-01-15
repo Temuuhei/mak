@@ -627,6 +627,11 @@ msgid "Reject of PoMAK"
 msgstr "Ерөнхийлөгч татгалзсан"
 
 #. module: mak_regulation
+#: field:mak.regulation,regulation_id:0
+msgid "Related Regulation"
+msgstr "Батлагдсан тушаал"
+
+#. module: mak_regulation
 #: field:mak.regulation,sector_id:0
 msgid "Sector"
 msgstr "Газар нэгж"

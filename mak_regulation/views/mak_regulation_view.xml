@@ -57,6 +57,7 @@
                         <field name="memo" widget="html" class="oe_memo" editor_height="350px" attrs="{'readonly': ['|',('state','=','send_pomak'),('state','=','to_allow')]}"/>
                          <field name="reg_attachment_id" widget="many2many_binary" options="{'limit': 3,'no_create_edit': True,'no_quick_create': True}"/>
                          <field name="reg_attachment_director_id" attrs="{'readonly': ['|',('state','=','send_pomak'),('state','=','to_allow')]}"/>
+                         <field name="regulation_id" states="created_reg"/>
                     </group>
                 </group>
                     <separator string="Description"/>
