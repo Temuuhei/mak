@@ -34,7 +34,7 @@ class hr_regulation(osv.osv):
 
     _columns = {
 
-        'origin': fields.many2one('mak.regulation', 'Origin document',
+        'origin': fields.many2one('mak.regulation', 'Origin document',domain=['|',('state', '=', 'to_allow'),('state', '=', 'done')],
                                               states={'confirmed': [('readonly', True)]}),
 
     }
