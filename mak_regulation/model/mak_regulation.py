@@ -119,6 +119,7 @@ class mak_regulation(osv.osv):
         'partner_id' : fields.many2one('res.partner', 'Partner', invisible = True),
         'partner' : fields.char('Partner', invisible = True),
         'employee_id' : fields.many2one ('hr.employee', 'Employee',invisible = True),
+        'regulation_id' : fields.many2one ('hr.regulation', 'Related Regulation',invisible = True),
     }
 
     _defaults = {
@@ -214,6 +215,7 @@ class mak_regulation(osv.osv):
 
     def action_create_reg(self,cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids)[0]
+        self.write(cr, uid, ids, {'state': 'created_reg'})
         return {
             'name': ('Regulation Registry'),
             'view_type': 'form',
@@ -224,7 +226,6 @@ class mak_regulation(osv.osv):
             'target': 'new',
             'context': {'default_origin': obj.id,}
         }
-        self.write(cr, uid, ids,{'state':'created_reg'})
 
 
 
