@@ -64,6 +64,16 @@ class mak_regulation(osv.osv):
         ('cancel', 'Cancel'),
          ]
 
+    def name_search(self, cr, uid, name, args=None, operator='ilike', context=None, limit=100):
+            args = args or []
+            if name:
+                ids = self.search(cr, uid, [('doc_name', operator, name)] + args, limit=limit, context=context or {})
+                if not ids:
+                    ids = self.search(cr, uid, [('employee_id', operator, name)] + args, limit=limit, context=context or {})
+            else:
+                ids = self.search(cr, uid, args, limit=limit, context=context or {})
+            return self.name_get(cr, uid, ids, context or {})
+
 
     def name_get(self, cr, uid, ids, context=None):
         res = []
