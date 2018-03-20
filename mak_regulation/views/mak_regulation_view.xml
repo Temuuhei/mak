@@ -51,6 +51,7 @@
                         <field name="doc_name" colspan="2" attrs="{'readonly': ['|',('state','=','send_pomak'),('state','=','to_allow')]}"/>
                         <field name="assigned_id" states="wait,assigned,open1,pending1,assigned2,open2,pending2,check,done,send_pomak,to_allow,to_reject" attrs="{'readonly': ['|',('state','=','send_pomak'),('state','=','to_allow')]}"/>
                         <field name="date_deadline" attrs="{'readonly': ['|',('state','=','send_pomak'),('state','=','to_allow')]}"/>
+                        <field name="priority"/>
                         <field name="assigned_id2" states="pending1,assigned2,open2,pending2,check,done," attrs="{'readonly': ['|',('state','=','send_pomak'),('state','=','to_allow')]}"/>
                     </group>
                     <group>
@@ -103,7 +104,7 @@
         <field name="model">mak.regulation</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="Mak Regulation input" colors="gray:state == 'approved';blue:state == 'draft';">
+            <tree string="Mak Regulation input" colors="gray:state == 'approved';blue:state == 'draft';red:priority == 'high'">
             	<field name="sequence_id"/>
             	<field name="num_received_document"/>
             	<field name="assigned_id"/>
@@ -113,6 +114,7 @@
 	            <field name="sector_id"/>
 	            <field name="type_doc"/>
 	            <field name="doc_name"/>
+                <field name="priority"/>
 	            <field name="state"/>
             </tree>
         </field>

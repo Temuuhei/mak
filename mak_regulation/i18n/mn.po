@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-03 09:06+0000\n"
-"PO-Revision-Date: 2018-01-03 09:06+0000\n"
+"POT-Creation-Date: 2018-03-20 01:11+0000\n"
+"PO-Revision-Date: 2018-03-20 01:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -435,6 +435,11 @@ msgid "Group By"
 msgstr "Бүлэглэх"
 
 #. module: mak_regulation
+#: selection:mak.regulation,priority:0
+msgid "High"
+msgstr "Нэн яаралтай"
+
+#. module: mak_regulation
 #: help:mak.regulation,message_summary:0
 msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
 msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
@@ -450,13 +455,13 @@ msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:149
+#: code:addons/mak_regulation/model/mak_regulation.py:162
 #, python-format
 msgid "In order to delete a regulation, you must Draft it first."
 msgstr "In order to delete a regulation, you must Draft it first."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:148
+#: code:addons/mak_regulation/model/mak_regulation.py:161
 #, python-format
 msgid "Invalid Action!"
 msgstr "Invalid Action!"
@@ -492,6 +497,11 @@ msgid "Local"
 msgstr "Дотоод"
 
 #. module: mak_regulation
+#: selection:mak.regulation,priority:0
+msgid "Low"
+msgstr "Энгийн"
+
+#. module: mak_regulation
 #: model:ir.ui.menu,name:mak_regulation.menu_mak_hr_regulation
 #: model:ir.ui.menu,name:mak_regulation.menu_sub_mak_hr_regulation
 msgid "Mak HR Regulation"
@@ -508,6 +518,7 @@ msgid "Mak Regulation"
 msgstr "Тушаалын төсөл"
 
 #. module: mak_regulation
+#: view:mak.regulation:mak_regulation.view_mak_regulation_done_tree
 #: view:mak.regulation:mak_regulation.view_mak_regulation_tree
 msgid "Mak Regulation input"
 msgstr "Тушаалын төсөл - БХГ"
@@ -517,6 +528,11 @@ msgstr "Тушаалын төсөл - БХГ"
 #: model:ir.actions.act_window,name:mak_regulation.action_mak_regulation_window
 msgid "Mak Regulations"
 msgstr "Тушаалын төслүүд"
+
+#. module: mak_regulation
+#: selection:mak.regulation,priority:0
+msgid "Medium"
+msgstr "Яаралтай"
 
 #. module: mak_regulation
 #: field:mak.regulation,message_ids:0
@@ -584,6 +600,11 @@ msgstr "Хийгдэж байна"
 #: selection:mak.regulation,state:0
 msgid "Penging(II)"
 msgstr "Хийгдэж байна(II)"
+
+#. module: mak_regulation
+#: field:mak.regulation,priority:0
+msgid "Priority"
+msgstr "Яаралтай эсэх ?"
 
 #. module: mak_regulation
 #: field:mak.regulation,received_date:0
@@ -669,8 +690,8 @@ msgid "Waiting for command"
 msgstr "Шийд хүлээсэн"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:93
-#: code:addons/mak_regulation/model/mak_regulation.py:357
+#: code:addons/mak_regulation/model/mak_regulation.py:103
+#: code:addons/mak_regulation/model/mak_regulation.py:372
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -692,7 +713,7 @@ msgid "Year"
 msgstr "Жил"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:93
+#: code:addons/mak_regulation/model/mak_regulation.py:103
 #, python-format
 msgid "You don't have related employee. Please contact administrator."
 msgstr "You don't have related employee. Please contact administrator."
@@ -719,7 +740,7 @@ msgid "the user will have an access to the human resources regulations and docum
 msgstr "the user will have an access to the human resources regulations and documents."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_regulation.py:357
+#: code:addons/mak_regulation/model/mak_regulation.py:372
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
