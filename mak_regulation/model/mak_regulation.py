@@ -130,6 +130,8 @@ class mak_regulation(osv.osv):
         'partner' : fields.char('Partner', invisible = True),
         'employee_id' : fields.many2one ('hr.employee', 'Employee',invisible = True),
         'regulation_id' : fields.many2one ('hr.regulation', 'Related Regulation',invisible = True),
+        'priority': fields.selection([('low', 'Low'), ('medium', 'Medium'), ('high', 'High')], 'Priority',
+                                     track_visibility='onchange'),
     }
 
     _defaults = {
