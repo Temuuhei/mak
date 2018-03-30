@@ -63,7 +63,7 @@ class res_users(osv.osv):
         self._context_get.clear_cache(self)
         if 'password' in values:
             print'Temka all right\n\n'
-            if re.match(r'[A-Za-z0-9@#$%^&+=]{8,}', values['password']):
+            if re.match(r'[A-Za-z0-9@#$%^&+=_-]{8,}', values['password']):
                 if re.search(r'[A-Z]', values['password']) and re.search(r'[a-z]', values['password']) and re.search(r'[0-9]', values['password']):
                     res=super(res_users, self).write(cr, uid, ids, values, context)  
                 else :
@@ -77,10 +77,10 @@ class res_users(osv.osv):
     def password_policy (self , cr, uid, new_passwd):  
         users = self.pool.get('user.password.policy')
         user_obj = self.browse(cr, uid, uid)
-        if re.match(r'[A-Za-z0-9@#$%^&+=]{8,}', new_passwd):
+        if re.match(r'[A-Za-z0-9@#$%^&+=_-]{8,}', new_passwd):
             user=users.search(cr, SUPERUSER_ID,[('user_id','=',uid)])
-            split_new_pass = re.split(r'[0-9@#$%^&+=.]',new_passwd)
-            split_username = re.split(r'[0-9@#$%^&+=.]',str(user_obj.login))
+            split_new_pass = re.split(r'[0-9@#$%^&+=._-]',new_passwd)
+            split_username = re.split(r'[0-9@#$%^&+=._-]',str(user_obj.login))
             for split in split_new_pass :
                 if split.lower() ==split_username[0].lower():
                      raise SignupError(_(u'Нууц үгийн урт 8-аас дээш тэмдэгтээс бүтсэн, том жижиг үсэг, тоо, тусгай тэмдэгт ашигласан байх шаардлагатай.'))
