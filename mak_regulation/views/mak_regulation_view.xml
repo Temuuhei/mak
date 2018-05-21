@@ -82,6 +82,7 @@
                 <field name="sector_id"/>
                 <field name="type_doc"/>
                 <field name="assigned_id"/>
+                <field name="assigned_id2"/>
                 <field name="partner_id"/>
                 <field name="employee_id"/>
                 <group expand="0" string="Group By">
@@ -92,6 +93,7 @@
                     <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
                     <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
                     <filter string="Assigned ToS" domain="[]" context="{'group_by':'assigned_id'}"/>
+                    <filter string="Assigned II" domain="[]" context="{'group_by':'assigned_id2'}"/>
                     <filter string="PartnerS" domain="[]" context="{'group_by':'partner_id'}"/>
                     <filter string="EmployeeS" domain="[]" context="{'group_by':'employee_id'}"/>
                 </group>
