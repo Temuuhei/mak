@@ -62,7 +62,7 @@
                     </group>
                 </group>
                     <separator string="Description"/>
-                    <field name="description" placeholder="Add a Description..." attrs="{'readonly': ['|',('state','=','send_pomak'),('state','=','to_allow')]}"/>
+                    <field name="description" placeholder="Add a Description..." widget="html" class="oe_memo" editor_height="350px" attrs="{'readonly': ['|',('state','=','send_pomak'),('state','=','to_allow')]}"/>
                 </sheet>
                  <div class="oe_chatter">
                     	<field name="message_follower_ids" widget="mail_followers"/>
