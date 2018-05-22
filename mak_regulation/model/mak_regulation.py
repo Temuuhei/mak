@@ -77,8 +77,8 @@ class mak_regulation(osv.osv):
 
     def name_get(self, cr, uid, ids, context=None):
         res = []
-        for doc in self.browse(cr, uid, ids, context=context):
-            res.append( (doc.id, u'[%s] [%s] [%s] [%s]' % (doc.sequence_id,doc.num_received_document, doc.employee_id.name,doc.doc_name)))
+        for doc in self.browse(cr, uid, ids, context=None):
+            res.append( (doc.id, u'[%s] [%s] [%s] [%s]' % (doc.sequence_id,doc.num_received_document,doc.employee_id.name, doc.doc_name)))
         return res
 
     # Өдөрөөр салгах
@@ -104,7 +104,7 @@ class mak_regulation(osv.osv):
             return None
 
     _columns = {
-        'user_id': fields.many2one('res.users', 'Employee', required=True, readonly=True),
+        'user_id': fields.many2one('res.users', 'Username', required=True, readonly=True),
         'assigned_id': fields.many2one('res.users', 'Assigned To',states={'done': [('readonly', True)]}),
         'assigned_id2': fields.many2one('res.users', '2nd Assigned To',states={'done': [('readonly', True)]}),
         'sequence_id': fields.char('Regulation Sequence', size=32, required=True),
@@ -128,7 +128,7 @@ class mak_regulation(osv.osv):
         'date_deadline': fields.date('Deadline',states={'done': [('readonly', True)]}),
         'partner_id' : fields.many2one('res.partner', 'Partner', invisible = True),
         'partner' : fields.char('Partner', invisible = True),
-        'employee_id' : fields.many2one ('hr.employee', 'Employee',invisible = True),
+        'employee_id' : fields.many2one ('hr.employee', 'Employee123',invisible = True),
         'regulation_id' : fields.many2one ('hr.regulation', 'Related Regulation',invisible = True),
         'priority': fields.selection([('low', 'Low'), ('medium', 'Medium'), ('high', 'High')], 'Priority',
                                      track_visibility='onchange'),
