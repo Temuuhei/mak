@@ -10,7 +10,7 @@
         	<form string="Mak Regulation">
                 <header>
                     <button name="action_approve" states="draft" String="Шийдвэр авах" icon="gtk-apply" type="object" class="oe_highlight"/>
-                    <button name="action_draft" states="wait,assigned,done,cancel" String="Ноороглох" type="object" />
+                    <button name="action_draft" states="wait,done,cancel" String="Ноороглох" type="object" />
                     <button name="action_next" states="wait,assigned,open1,assigned2,open2" String="Дараах →" type="object" class="oe_highlight"/>
                     <button name="action_previous" states="open1,pending1,assigned2,open2,pending2,check" String="← Буцах" type="object"/>
                     <button name="action_second_stage" states="pending1" String="II шатанд илгээх" type="object" class="oe_highlight"/>
