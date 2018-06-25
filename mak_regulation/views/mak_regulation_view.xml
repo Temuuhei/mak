@@ -17,7 +17,7 @@
                     <button name="action_check" states="pending2,pending1" String="БХГ-т захиралд илгээх" type="object" class="oe_highlight"/>
                     <button name="action_done" states="check" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_regulation.regulation_user"/>
                     <button name="action_cancel" states="check" String="Цуцлах" type="object" class="oe_highlight"/>
-                    <button name="action_create_reg" states="to_allow" String="Тушаал үүсгэх" type="object" class="oe_highlight" />
+                    <button name="action_create_reg" states="to_allow,send_pomak" String="Тушаал үүсгэх" type="object" class="oe_highlight" />
                     <button name="action_send_pomak" states="done,wait" String="Ерөнхийлөгчид илгээх" type="object" class="oe_highlight" groups ="mak_regulation.regulation_user"/>
                     <button name="action_allow" states="send_pomak" String="Зөвшөөрөх" type="object" class="oe_highlight" groups ="mak_regulation.regulation_president"/>
                     <button name="action_reject" states="send_pomak" String="Татгалзах" type="object" class="oe_highlight" groups ="mak_regulation.regulation_president"/>
