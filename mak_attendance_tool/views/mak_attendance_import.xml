@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <!--<record model="ir.actions.server" id="get_load_report_action">-->
+            <!--<field name="name">Get Attendance Data</field>-->
+            <!--<field name="model_id" ref="model_zk_main"/>-->
+            <!--<field name="code">-->
+            	<!--self.get_date(cr, user.id)-->
+            <!--</field>-->
+    <!--</record>-->
+
+
+
+
+        <record id="view_zk_device_download" model="ir.ui.view">
+          <field name="name">zk.download.device.form</field>
+			<field name="model">zk.download.device</field>
+			<field name="arch" type="xml">
+                <form string="Download Attendance">
+                      <group colspan="2">
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="employee_ids" widget="many2many_tags"/>
+                        </group>
+                    <footer>
+                        <button name="get_date" type="object" string="Download" class="oe_highlight"/>
+                        <button name="delete_date" type="object" string="Delete" class="oe_highlight"/>
+                        <button name="generate_attendance" type="object" string="Generate" class="oe_highlight"/>
+                        <button special="cancel" string="Close" type="object" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_zk_download_attendance_form" model="ir.actions.act_window">
+            <field name="name">Download Attendances</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">zk.download.device</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_zk_device_download" />
+            <field name="target">new</field>
+        </record>
+
+
+        <record id="zk_main_view_tree" model="ir.ui.view">
+			<field name="name">zk.main.tree</field>
+			<field name="model">zk.main</field>
+			<field name="arch" type="xml">
+				<tree string="Zk Main Info" create="false" edit="false" delete="false">
+                    <field name="employee_id" />
+                    <field name="create_uid" />
+					<field name="emp_other_id" />
+					<field name="inpdate" />
+					<field name="device_id" />
+					<field name="inout" />
+					<field name="create_date" />
+				</tree>
+			</field>
+		</record>
+
+         <record id="zk_main_view_form" model="ir.ui.view">
+			<field name="name">zk.main.form</field>
+			<field name="model">zk.main</field>
+			<field name="arch" type="xml">
+				<form string="Zk Main Info" create="false" edit="false" delete="false">
+                        <sheet>
+                            <group>
+                                <field name="create_uid" />
+                                <field name="emp_other_id" />
+                                <field name="employee_id" />
+                                <field name="inpdate" />
+                                <field name="device_id" />
+                                <field name="inout" />
+                                <field name="create_date" />
+                            </group>
+                        </sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+				</form>
+			</field>
+		</record>
+
+        <record id="zk_main_view_search" model="ir.ui.view">
+			<field name="name">zk.main.search</field>
+			<field name="model">zk.main</field>
+			<field name="arch" type="xml">
+				<search string="Zk Main Search">
+					<field name="device_id" />
+					<field name="employee_id" />
+					<group expand="0" string="Group By">
+						<filter string="Device" domain="[]" context="{'group_by':'device_id'}" />
+						<filter string="Employee" domain="[]" context="{'group_by':'employee_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+        <record id="action_zk_main_tree" model="ir.actions.act_window">
+            <field name="name">Zk main Attendances</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">zk.main</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="zk_main_view_search" />
+        </record>
+
+
+        <menuitem id="id_zk_device_data" parent="hr.menu_hr_root" sequence="3" name="Zk Device Data get" />
+
+        <menuitem id="id_zk_device_data_integ_wizard" parent="id_zk_device_data"  name="Download from zk" action="action_zk_download_attendance_form" />
+        <menuitem id="id_zk_device_data_tree_menu" parent="id_zk_device_data"  name="Attendance Machine" action="action_zk_main_tree" />
+
+
+    </data>
+</openerp>
