@@ -1,0 +1,219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mak_attendance_tool
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-26 08:24+0000\n"
+"PO-Revision-Date: 2018-10-26 08:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mak_attendance_tool
+#: model:ir.ui.menu,name:mak_attendance_tool.id_zk_device_data_tree_menu
+msgid "Attendance Machine"
+msgstr "Ирцийн машины мэдээлэл"
+
+#. module: mak_attendance_tool
+#: view:zk.download.device:mak_attendance_tool.view_zk_device_download
+msgid "Close"
+msgstr "Хаах"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,create_uid:0
+msgid "Created by"
+msgstr "Үүсгэсэн"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,create_date:0
+msgid "Created on"
+msgstr "Үүссэн огноо"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,date_from:0
+msgid "Date From"
+msgstr "Эхлэх өдөр"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,date_to:0
+msgid "Date To"
+msgstr "Дуусах өдөр"
+
+#. module: mak_attendance_tool
+#: help:zk.main,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: mak_attendance_tool
+#: view:zk.download.device:mak_attendance_tool.view_zk_device_download
+msgid "Delete"
+msgstr "Устгах"
+
+#. module: mak_attendance_tool
+#: view:zk.main:mak_attendance_tool.zk_main_view_search
+msgid "Device"
+msgstr "Төхөөрөмж"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mak_attendance_tool
+#: view:zk.download.device:mak_attendance_tool.view_zk_device_download
+msgid "Download"
+msgstr "Татах"
+
+#. module: mak_attendance_tool
+#: view:zk.download.device:mak_attendance_tool.view_zk_device_download
+msgid "Download Attendance"
+msgstr "Ирц татах"
+
+#. module: mak_attendance_tool
+#: model:ir.actions.act_window,name:mak_attendance_tool.action_zk_download_attendance_form
+msgid "Download Attendances"
+msgstr "Ирцүүд татах"
+
+#. module: mak_attendance_tool
+#: model:ir.ui.menu,name:mak_attendance_tool.id_zk_device_data_integ_wizard
+msgid "Download from zk"
+msgstr "Zk төхөөрөмжөөс ирц татах"
+
+#. module: mak_attendance_tool
+#: view:zk.main:mak_attendance_tool.zk_main_view_search
+msgid "Employee"
+msgstr "Ажилтан"
+
+#. module: mak_attendance_tool
+#: field:zk.main,emp_other_id:0
+msgid "Employee ID"
+msgstr "Ажилтны Бусад дугаар"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,employee_ids:0
+msgid "Employees"
+msgstr "Ажилчид"
+
+#. module: mak_attendance_tool
+#: field:zk.main,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: mak_attendance_tool
+#: view:zk.download.device:mak_attendance_tool.view_zk_device_download
+msgid "Generate"
+msgstr "ERP-н ирц рүү хөрвүүлэх"
+
+#. module: mak_attendance_tool
+#: view:zk.main:mak_attendance_tool.zk_main_view_search
+msgid "Group By"
+msgstr "Group By"
+
+#. module: mak_attendance_tool
+#: help:zk.main,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mak_attendance_tool
+#: help:zk.main,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: mak_attendance_tool
+#: field:zk.main,inout:0
+#: field:zk.tmp,inout:0
+msgid "InOut"
+msgstr "InOut"
+
+#. module: mak_attendance_tool
+#: field:zk.main,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: mak_attendance_tool
+#: field:zk.main,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mak_attendance_tool
+#: field:zk.download.device,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mak_attendance_tool
+#: field:zk.main,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: mak_attendance_tool
+#: help:zk.main,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: mak_attendance_tool
+#: field:zk.main,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: mak_attendance_tool
+#: model:ir.model,name:mak_attendance_tool.model_zk_tmp
+msgid "Tmp table of zk info"
+msgstr "Tmp table of zk info"
+
+#. module: mak_attendance_tool
+#: field:zk.main,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: mak_attendance_tool
+#: model:ir.ui.menu,name:mak_attendance_tool.id_zk_device_data
+msgid "Zk Device Data get"
+msgstr "Zk төхөөрөмжөөс ирц татах"
+
+#. module: mak_attendance_tool
+#: model:ir.model,name:mak_attendance_tool.model_zk_download_device
+msgid "Zk Download Wizard"
+msgstr "Zk төхөөрөмжөөс ирц татах"
+
+#. module: mak_attendance_tool
+#: view:zk.main:mak_attendance_tool.zk_main_view_form
+#: view:zk.main:mak_attendance_tool.zk_main_view_tree
+msgid "Zk Main Info"
+msgstr "Zk-н мэдээлэл"
+
+#. module: mak_attendance_tool
+#: view:zk.main:mak_attendance_tool.zk_main_view_search
+msgid "Zk Main Search"
+msgstr "Zk Main Search"
+
+#. module: mak_attendance_tool
+#: model:ir.actions.act_window,name:mak_attendance_tool.action_zk_main_tree
+msgid "Zk main Attendances"
+msgstr "Zk main Attendances"
+
+#. module: mak_attendance_tool
+#: model:ir.model,name:mak_attendance_tool.model_zk_main
+msgid "Zk main table"
+msgstr "Zk main table"
+

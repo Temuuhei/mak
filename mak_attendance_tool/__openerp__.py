@@ -17,10 +17,10 @@
 """,
     "website" : False,
     "category" : "MAK",
-    "depends" : ['mail'],
+    "depends" : ['hr'],
     "init": [],
     "update_xml" : [
-        # 'views/mak_attendance_import.xml',
+        'views/mak_attendance_import.xml',
     ],
     "demo_xml": [],
     'icon': '/logo/static/src/img/mak.png',
