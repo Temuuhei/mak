@@ -28,7 +28,7 @@ class zkDownloadDevice(models.TransientModel):
     def get_date(self):
         _logger.info(u'<===================== Downloading Attendances ========================>')
         if not self.employee_ids:
-            conn = psycopg2.connect("host=192.168.1.102 dbname=timeattden user=postgres")
+            conn = psycopg2.connect("host=192.168.1.102 dbname=timeattden user=postgres password=MakErptimeAtt#@2018")
             cur = conn.cursor()
             cur.execute('SELECT * FROM timetable WHERE inpdate >= %s and inpdate <= %s', (self.date_from,self.date_to))
             all = cur.fetchall()
