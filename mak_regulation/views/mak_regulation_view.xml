@@ -106,7 +106,7 @@
         <field name="model">mak.regulation</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="Mak Regulation input" colors="gray:state == 'approved';blue:state == 'draft';red:priority == 'high'">
+            <tree string="Mak Regulation input" colors="gray:state == 'approved';skyblue:state == 'draft';red:priority == 'high';blue:priority == 'medium'">
             	<field name="sequence_id"/>
             	<field name="num_received_document"/>
             	<field name="assigned_id"/>
