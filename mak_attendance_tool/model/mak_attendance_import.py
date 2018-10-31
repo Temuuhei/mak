@@ -62,7 +62,7 @@ class zkDownloadDevice(models.TransientModel):
             return True
         else:
             for emp in self.employee_ids:
-                conn = psycopg2.connect("host=192.168.1.102 dbname=timeattden user=postgres")
+                conn = psycopg2.connect("host=192.168.1.102 dbname=timeattden user=postgres password=MakErptimeAtt#@2018")
                 cur = conn.cursor()
                 cur.execute('SELECT * FROM timetable WHERE inpdate >= %s and inpdate <= %s and userid = %s', (self.date_from, self.date_to,emp.otherid))
                 one = cur.fetchone()
