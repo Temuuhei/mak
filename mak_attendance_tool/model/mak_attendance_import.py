@@ -121,7 +121,7 @@ class zkDownloadDevice(models.TransientModel):
         if self.date_from and self.date_to:
             if not self.employee_ids:
                 self.env.cr.execute(
-                    'SELECT employee_id,inpdate FROM zk_main WHERE inpdate >= %s and inpdate <= %s',
+                    'SELECT employee_id,inpdate FROM zk_main WHERE date(inpdate) >= %s and date(inpdate) <= %s',
                     (self.date_from,self.date_to)
                 )
                 ditch = self.env.cr.fetchall()
@@ -156,7 +156,7 @@ class zkDownloadDevice(models.TransientModel):
                 emp_list = []
                 for emp in self.employee_ids:
                     self.env.cr.execute(
-                        'SELECT employee_id,inpdate FROM zk_main WHERE inpdate >= %s and inpdate <= %s and employee_id = %s',
+                        'SELECT employee_id,inpdate FROM zk_main WHERE date(inpdate) >= %s and date(inpdate) <= %s and employee_id = %s',
                         (self.date_from, self.date_to,emp.id)
                     )
                     ditch_picked = self.env.cr.fetchall()
