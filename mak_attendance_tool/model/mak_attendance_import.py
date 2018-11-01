@@ -30,7 +30,7 @@ class zkDownloadDevice(models.TransientModel):
         if not self.employee_ids:
             conn = psycopg2.connect("host=192.168.1.102 dbname=timeattden user=postgres password=MakErptimeAtt#@2018")
             cur = conn.cursor()
-            cur.execute('SELECT * FROM timetable WHERE inpdate >= %s and inpdate <= %s', (self.date_from,self.date_to))
+            cur.execute('SELECT * FROM timetable WHERE date(inpdate) >= %s and date(inpdate) <= %s', (self.date_from,self.date_to))
             all = cur.fetchall()
             conn.close()
             if all:
@@ -64,7 +64,7 @@ class zkDownloadDevice(models.TransientModel):
             for emp in self.employee_ids:
                 conn = psycopg2.connect("host=192.168.1.102 dbname=timeattden user=postgres password=MakErptimeAtt#@2018")
                 cur = conn.cursor()
-                cur.execute('SELECT * FROM timetable WHERE inpdate >= %s and inpdate <= %s and userid = %s', (self.date_from, self.date_to,emp.otherid))
+                cur.execute('SELECT * FROM timetable WHERE date(inpdate) >= %s and date(inpdate) <= %s and userid = %s', (self.date_from, self.date_to,emp.otherid))
                 one = cur.fetchone()
                 all = cur.fetchall()
                 employee_id = ''
@@ -79,7 +79,6 @@ class zkDownloadDevice(models.TransientModel):
                                 (devid, inout, emp_id, inp)
                             )
                             ditch = self.env.cr.fetchone()
-                            print 'ditch\n\n\n', ditch
                             if not ditch:
                                 self.env.cr.execute("""
                                                                   INSERT INTO zk_main
