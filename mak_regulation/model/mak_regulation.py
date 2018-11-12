@@ -143,7 +143,13 @@ class mak_regulation(osv.osv):
         'department_id': _set_department,
     }
 
-    _order = 'date desc, priority desc'
+    _order = 'date desc'
+
+    def _generate_order_by(self, order_spec, query):
+        my_order = "CASE WHEN priority='high'  THEN 0   WHEN priority = 'medium'  THEN 1 ELSE 2 END,  date desc"
+        if order_spec:
+            return super(mak_regulation, self)._generate_order_by(order_spec, query) + ", " + my_order
+        return " order by " + my_order
 
     def create (self, cr, uid, vals, context=None):
         vals['sequence_id'] = self.pool.get('ir.sequence').get(cr, uid, 'mak.regulation')
@@ -318,6 +324,7 @@ class mak_regulation(osv.osv):
                                                                             'reg_email_template_to_user')[1]
                     group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,
                                                                        [('id', '=', reg.assigned_id2.id)])
+
                 elif signal in ['check','to_allow','to_reject']:
                     notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                                                                   'regulation_user')
