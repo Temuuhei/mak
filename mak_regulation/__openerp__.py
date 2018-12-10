@@ -22,8 +22,10 @@
         'email_template/mak_reg_email_template_to_assigned.xml',
         'email_template/mak_reg_email_template_user.xml',
         'email_template/mak_reg_email_template_to_pomak.xml',
+        'email_template/mak_document_email_tmp.xml',
         'security/mak_regulation_sequence.xml',
         'views/mak_regulation_view.xml',
+        'views/mak_document_view.xml',
     ],
     "demo_xml": [
     ],
