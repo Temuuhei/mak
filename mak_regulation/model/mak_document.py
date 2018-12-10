@@ -302,7 +302,7 @@ class mak_document(osv.osv):
                 'send_coworker': 'base.group_user',
                 'check': 'base.group_user',
                 'done': 'base.group_user',
-                # 'cancel': 'base.group_user',
+                'send_pomak': 'base.group_user',
 
             }
             states = {
@@ -310,7 +310,7 @@ class mak_document(osv.osv):
                 'send_coworker': u'"Хариуцах албан тушаалтанд илгээгдсэн" төлөвт шилжсэн',
                 'check': u'"Захиргааны ажилтанд илгээгдсэн" төлөвт шилжсэн',
                 'done': u'"Дууссан" төлөвт шилжсэн',
-                # 'cancel': u'"Цуцлагдсан" төлөвт шилжсэн',
+                'send_pomak': u'"Ерөнхийлөгчид илгээгдсэн" төлөвт шилжсэн',
             }
 
             group_user_ids = []
