@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<openerp>
+	<data>
+	<!-- Email template of President -->
+
+			<record id="doc_email_template_to_pomak" model="email.template">
+			<field name="name">Гадаад албан бичгийн мэдээлэл</field>
+			<field name="email_from">${(user.login or '')|safe}</field>
+			<field name="subject">[Гадаад албан бичиг] ${user.company_id.name}</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="base.model_res_users" />
+			<field name="auto_delete" eval="True" />
+			<field name="body_html"><![CDATA[
+<p>
+Сайн байна уу, Ерөнхийлөгч өө </br>
+</p>
+<p>
+Танд хамааралтай доорх утгуудтай гадаад албан бичиг MAK ERP системд бүртгэгдсэн учир системээс автомат имэйл ирлээ.
+</p>
+<p>
+		Үүнд:
+</p>
+<p>
+		Дугаар: <b>${ctx["num_received_document"]}</b>
+</p>
+<p>
+		Товч утга: <b>${ctx["doc_name"]}</b>
+</p>
+<p>
+		Урьтамж: <b>${ctx["priority"]}</b>
+</p>
+<p>
+		Төрөл: <b>${ctx["partner_id"]}</b>
+</p>
+<p>
+		Албан бичиг ирсэн огноо: <b>${ctx["date"]}</b>
+</p>
+<p>
+		Дотоод дугаар: <b>${ctx["sequence_id"]}</b>
+</p>
+<p>
+		Төлөв: <b>${ctx["state"]}</b>
+</p>
+
+<p>
+Холбоос:
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.document&action=${ctx["action_id"]}">Гадаад албан бичгийн мэдээлэл </a></b>
+
+
+</p>
+
+<p>
+Танд гадаад албан бичигтэй холбоотой санал хүсэлт байгаа бол Б.Цолмон (Байгууллага хөгжлийн газрын захирал)-д хандана уу.
+</p>
+
+<p>
+    Баярлалаа,
+</p>
+
+<pre>
+--
+MAK ERP Автомат Имэйл
+
+</pre>
+
+      ]]></field>
+		</record>
+
+<!-- Email template of employee -->
+<!-- Email template of employee -->
+
+			<record id="doc_email_template_to_assigned_at" model="email.template">
+			<field name="name">Гадаад Албан бичгийн мэдээлэл</field>
+			<field name="email_from">${(user.login or '')|safe}</field>
+			<field name="subject">[Гадаад албан бичиг] ${user.company_id.name} ${ctx["priority"]} [Дуусах хугацаа:] ${ctx["date_deadline"]}</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="base.model_res_users" />
+			<field name="auto_delete" eval="True" />
+			<field name="body_html"><![CDATA[
+<p>
+Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>
+</p>
+<p>
+Танд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["doc_name"]}</b> утгатай Гадаад албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.
+</p>
+
+<p>
+		Төлөв: <b>${ctx["state"]}</b>
+</p>
+
+<p>
+		Дуусах хугацаа: <b>${ctx["date_deadline"]}</b>
+</p>
+
+
+<p>
+Холбоос:
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.document&action=${ctx["action_id"]}">Албан бичгийн мэдээлэл </a></b>
+
+
+</p>
+
+<p>
+Танд Гадаан Албан бичгийн мэдээлэлтэй холбоотой санал хүсэлт асуух зүйл байгаа бол Б.Цолмон (Байгууллага хөгжлийн газрын захирал)-д болон захиргааны мэргэжилтэнд хандана уу.
+</p>
+
+<p>
+Танд гадаад албан бичгийн талаарх гарсан санал,дүгнэлтийг заавал бүртгэлд оруулна уу
+</p>
+<p>
+    Баярлалаа,
+</p>
+
+<pre>
+--
+MAK ERP Автомат Имэйл
+
+</pre>
+
+      ]]></field>
+		</record>
+
+
+<!-- Email template of employee result -->
+
+	<record id="doc_email_template_to_gov_user" model="email.template">
+	<field name="name">Гадаад албан бичгийн мэдээлэл</field>
+	<field name="email_from">${(user.login or '')|safe}</field>
+	<field name="subject">[Гадаад албан бичигийн хариу] ${user.company_id.name} ${ctx["priority"]} [Дуусах хугацаа:] ${ctx["date_deadline"]}</field>
+	<field name="email_to">${object.email|safe}</field>
+	<field name="lang">${object.lang}</field>
+	<field name="model_id" ref="base.model_res_users" />
+	<field name="auto_delete" eval="True" />
+	<field name="body_html"><![CDATA[
+<p>
+Сайн байна уу, Гадаад албан бичгийн хариу ирэв </br>
+</p>
+<p>
+Танд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["doc_name"]}</b> утгатай  гадаад албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.
+</p>
+
+<p>
+		Гарсан үр дүн /тайлбар/: <b>${ctx["result"]}</b>
+</p>
+
+<p>
+		Төлөв: <b>${ctx["state"]}</b>
+</p>
+
+<p>
+		Дуусах хугацаа: <b>${ctx["date_deadline"]}</b>
+</p>
+
+
+<p>
+Холбоос:
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.document&action=${ctx["action_id"]}">Гадаад албан бичгийн мэдээлэл </a></b>
+
+
+</p>
+
+<p>
+Та гадаад албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Б.Цолмон (Байгууллага хөгжлийн газрын захирал)-д хандана уу.
+</p>
+
+<p>
+    Баярлалаа,
+</p>
+
+<pre>
+--
+MAK ERP Автомат Имэйл
+
+</pre>
+
+      ]]></field>
+		</record>
+
+
+		<!-- Email template of director of hr -->
+
+	<record id="doc_email_template_to_hr_director" model="email.template">
+	<field name="name">Гадаад албан бичгийн мэдээлэл</field>
+	<field name="email_from">${(user.login or '')|safe}</field>
+	<field name="subject">[Гадаад албан бичиг] ${user.company_id.name} ${ctx["priority"]} [Дуусах хугацаа:] ${ctx["date_deadline"]}</field>
+	<field name="email_to">${object.email|safe}</field>
+	<field name="lang">${object.lang}</field>
+	<field name="model_id" ref="base.model_res_users" />
+	<field name="auto_delete" eval="True" />
+	<field name="body_html"><![CDATA[
+<p>
+Сайн байна уу, Гадаад албан бичгийн мэдээлэл системд бүртгэгдсэн байна </br>
+</p>
+<p>
+Танд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["doc_name"]}</b> утгатай  гадаад албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.
+</p>
+
+<p>
+		Товч утга: <b>${ctx["doc_name"]}</b>
+</p>
+<p>
+		Төлөв: <b>${ctx["state"]}</b>
+</p>
+
+<p>
+		Дуусах хугацаа: <b>${ctx["date_deadline"]}</b>
+</p>
+
+
+<p>
+Холбоос:
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=mak.document&action=${ctx["action_id"]}">Гадаад албан бичгийн мэдээлэл </a></b>
+
+
+</p>
+
+<p>
+Танд гадаад албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол <b>${ctx["sender"]}</b>- с лавлана уу.
+</p>
+
+<p>
+    Баярлалаа,
+</p>
+
+<pre>
+--
+MAK ERP Автомат Имэйл
+
+</pre>
+
+      ]]></field>
+		</record>
+	</data>
+</openerp>
