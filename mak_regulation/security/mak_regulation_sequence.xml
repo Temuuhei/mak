@@ -32,6 +32,33 @@
 			<field name="reset_monthly">True</field>
 		</record>
 
+		<!-- Sequences for Mak Document -->
+
+		<record id="seq_type_document" model="ir.sequence.type">
+			<field name="name">MAK Document permission Sequence</field>
+			<field name="code">mak.document</field>
+		</record>
+		<record id="sequence_mak_document" model="ir.sequence">
+			<field name="name">MAK Document permission</field>
+			<field name="code">mak.document</field>
+			<field name="prefix">МАК-№%(year)s/%(month)s/</field>
+			<field name="padding">3</field>
+			<field name="reset_monthly">True</field>
+		</record>
+		<!-- Sequences for Mak Sent Document -->
+		<record id="seq_type_sent_document" model="ir.sequence.type">
+			<field name="name">MAK Sent Document permission Sequence</field>
+			<field name="code">mak.sent.document</field>
+		</record>
+		<record id="sequence_mak_sent_document" model="ir.sequence">
+			<field name="name">MAK Sent Document permission</field>
+			<field name="code">mak.sent.document</field>
+			<field name="prefix">МАК-ЯБ№%(year)s/%(month)s/</field>
+			<field name="padding">3</field>
+			<field name="reset_monthly">True</field>
+		</record>
+
+
 
 	</data>
 </openerp>

@@ -13,10 +13,10 @@
                     <button name="action_send_coworker" states="draft,wait" String="Хариуцах албан тушаалтанд илгээх" icon="gtk-apply" type="object" class="oe_highlight"/>
                     <button name="action_draft" states="wait,done,cancel" String="Ноороглох" type="object" />
                     <button name="action_check" states="send_coworker" String="Захиргааны ажилтанд илгээх" type="object" class="oe_highlight"/>
-                    <button name="action_done" states="check,sent_pomak" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_regulation.regulation_user"/>
+                    <button name="action_done" states="check,send_pomak" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_regulation.regulation_user"/>
                     <button name="action_draft" states="check" String="Ноорог болгох" type="object" class="oe_highlight"/>
                     <button name="action_send_pomak" states="done" String="Шууд Ерөнхийлөгчид илгээх" type="object" class="oe_highlight"
-                    attrs="{'invisible':[('is_pomak','=',False)]}"/>
+                    attrs="{'invisible':['|',('is_pomak','=',False),('state', '=', 'send_pomak')]}"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -45,6 +45,7 @@
                         <field name="priority"/>
                         <field name="is_pomak" attrs="{'readonly': ['|',('state','=','wait'),('state','=','send_coworker'),('state','=','check')]}"/>
                         <field name="send_coworker" widget="many2many_tags"/>
+                        <field name="sent_doc_id"/>
                     </group>
                     <group>
                         <field name="memo" widget="html" class="oe_memo" editor_height="350px"
@@ -140,6 +141,35 @@
         </field>
     </record>
 
+
+     <record model="ir.ui.view" id="view_mak_sent_document_tree">
+        <field name="name">mak.sent.document.tree</field>
+        <field name="model">mak.sent.document</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Sent Document" create="true">
+            	<field name="sequence_id"/>
+            	<field name="num_sent_doc"/>
+	            <field name="employee_id"/>
+	            <field name="sector_id"/>
+	            <field name="partner_id"/>
+	            <field name="director_id"/>
+	            <field name="doc_name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_mak_sent_document_window" model="ir.actions.act_window">
+        <field name="name">Mak Sent Documents</field>
+        <field name="res_model">mak.sent.document</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">[]</field>
+    </record>
+
+
     <record id="action_mak_document_window" model="ir.actions.act_window">
         <field name="name">Mak Documents</field>
         <field name="res_model">mak.document</field>
@@ -162,6 +192,7 @@
     <menuitem name="Mak Document" id="menu_mak_hr_documents" sequence="2" parent="mak_regulation.menu_mak_hr_regulation_main"/>
     <menuitem action="action_mak_document_window" name="Mak 1 Document" id="menu_sub_mak_hr_documents" sequence="1" parent="menu_mak_hr_documents"/>
     <menuitem name="2 Done Document" parent="menu_mak_hr_documents" id="hr_done_document_menu_mak" sequence="2" action='action_mak_done_document_window'/>
+    <menuitem name="Sent Document" parent="menu_mak_hr_documents" id="hr_sent_document_menu_mak" sequence="3" action='action_mak_sent_document_window'/>
 
 	</data>
 </openerp>

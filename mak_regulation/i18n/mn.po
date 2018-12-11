@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 03:13+0000\n"
-"PO-Revision-Date: 2018-12-10 03:13+0000\n"
+"POT-Creation-Date: 2018-12-11 07:06+0000\n"
+"PO-Revision-Date: 2018-12-11 07:06+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -550,7 +550,7 @@ msgid "\n"
 "		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
 "</p>\n"
 "<p>\n"
-"		Товч утга: <b>${ctx[\"priority\"]}</b>\n"
+"		Урьтамж: <b>${ctx[\"priority\"]}</b>\n"
 "</p>\n"
 "<p>\n"
 "		Төрөл: <b>${ctx[\"partner_id\"]}</b>\n"
@@ -604,7 +604,7 @@ msgstr "\n"
 "		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
 "</p>\n"
 "<p>\n"
-"		Товч утга: <b>${ctx[\"priority\"]}</b>\n"
+"		Урьтамж: <b>${ctx[\"priority\"]}</b>\n"
 "</p>\n"
 "<p>\n"
 "		Төрөл: <b>${ctx[\"partner_id\"]}</b>\n"
@@ -658,17 +658,18 @@ msgid "2nd Assigned To"
 msgstr "II Шатны Хариуцагч"
 
 #. module: mak_regulation
+#: field:mak.sent.document,doc_name:0
+msgid "About"
+msgstr "Товч утга"
+
+#. module: mak_regulation
 #: selection:mak.regulation,type:0
 msgid "Abroad"
 msgstr "Гадаад"
 
 #. module: mak_regulation
-#: view:mak.regulation:mak_regulation.view_mak_regulation_form
-msgid "Add a Description..."
-msgstr "Тайлбарыг энд бичнэ үү..."
-
-#. module: mak_regulation
 #: view:mak.document:mak_regulation.view_mak_document_form
+#: view:mak.regulation:mak_regulation.view_mak_regulation_form
 msgid "Add a Description..."
 msgstr "Гарсан үр дүн болонТайлбарыг энд бичнэ үү..."
 
@@ -688,6 +689,11 @@ msgid "Assigned (II)"
 msgstr "Хариуцагчтай(II шат)"
 
 #. module: mak_regulation
+#: field:mak.sent.document,director_id:0
+msgid "Assigned Director"
+msgstr "Баталсан албан тушаалтан"
+
+#. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
 msgid "Assigned II"
 msgstr "Хариуцагч 2"
@@ -701,6 +707,11 @@ msgstr "Хариуцагч"
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
 msgid "Assigned ToS"
 msgstr "Хариуцагч"
+
+#. module: mak_regulation
+#: field:mak.sent.document,employee_id:0
+msgid "Assigned employee"
+msgstr "Хариуцагч, Боловсруулсан"
 
 #. module: mak_regulation
 #: field:mak.regulation,reg_attachment_id:0
@@ -719,10 +730,14 @@ msgid "Cancel"
 msgstr "Цуцлагдсан"
 
 #. module: mak_regulation
-#: selection:mak.document,state:0
 #: selection:mak.regulation,state:0
 msgid "Check"
 msgstr "БХГ-т захиралд илгээсэн"
+
+#. module: mak_regulation
+#: selection:mak.document,state:0
+msgid "Check"
+msgstr "БХГ-т илгээсэн"
 
 #. module: mak_regulation
 #: selection:mak.regulation,type_doc:0
@@ -738,7 +753,7 @@ msgstr "Агуулга"
 #. module: mak_regulation
 #: view:mak.document:mak_regulation.mak_document_search_view
 msgid "Coworker"
-msgstr "Coworker"
+msgstr "Хариуцсан албан тушаалтан"
 
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
@@ -749,6 +764,7 @@ msgstr "Тушаал үүссэн"
 #: field:mak.document,create_uid:0
 #: field:mak.document.state.history,create_uid:0
 #: field:mak.regulation,create_uid:0
+#: field:mak.sent.document,create_uid:0
 msgid "Created by"
 msgstr "Үүсгэсэн"
 
@@ -756,11 +772,13 @@ msgstr "Үүсгэсэн"
 #: field:mak.document,create_date:0
 #: field:mak.document.state.history,create_date:0
 #: field:mak.regulation,create_date:0
+#: field:mak.sent.document,create_date:0
 msgid "Created on"
 msgstr "Үүссэн огноо"
 
 #. module: mak_regulation
 #: field:mak.document.state.history,date:0
+#: field:mak.sent.document,date_doc:0
 msgid "Date"
 msgstr "Өдөр"
 
@@ -797,14 +815,10 @@ msgid "Department of employee"
 msgstr "Хэлтэс"
 
 #. module: mak_regulation
-#: view:mak.regulation:mak_regulation.view_mak_regulation_form
-#: field:mak.regulation,description:0
-msgid "Description"
-msgstr "Албан бичгийн утга"
-
-#. module: mak_regulation
 #: view:mak.document:mak_regulation.view_mak_document_form
 #: field:mak.document,description:0
+#: view:mak.regulation:mak_regulation.view_mak_regulation_form
+#: field:mak.regulation,description:0
 msgid "Description"
 msgstr "Гарсан үр дүн, тайлбар"
 
@@ -812,6 +826,7 @@ msgstr "Гарсан үр дүн, тайлбар"
 #: field:mak.document,display_name:0
 #: field:mak.document.state.history,display_name:0
 #: field:mak.regulation,display_name:0
+#: field:mak.sent.document,display_name:0
 msgid "Display Name"
 msgstr "Тушаал"
 
@@ -901,6 +916,7 @@ msgstr "Holds the Chatter summary (number of messages, ...). This summary is dir
 #: field:mak.document,id:0
 #: field:mak.document.state.history,id:0
 #: field:mak.regulation,id:0
+#: field:mak.sent.document,id:0
 msgid "ID"
 msgstr "ID"
 
@@ -911,14 +927,19 @@ msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:161
+#: code:addons/mak_regulation/model/mak_document.py:204
 #: code:addons/mak_regulation/model/mak_regulation.py:162
 #, python-format
 msgid "In order to delete a regulation, you must Draft it first."
 msgstr "In order to delete a regulation, you must Draft it first."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:160
+#: field:mak.sent.document,num_sent_doc:0
+msgid "Index"
+msgstr "Index"
+
+#. module: mak_regulation
+#: code:addons/mak_regulation/model/mak_document.py:203
 #: code:addons/mak_regulation/model/mak_regulation.py:161
 #, python-format
 msgid "Invalid Action!"
@@ -945,6 +966,7 @@ msgstr "Last Message Date"
 #: field:mak.document,__last_update:0
 #: field:mak.document.state.history,__last_update:0
 #: field:mak.regulation,__last_update:0
+#: field:mak.sent.document,__last_update:0
 msgid "Last Modified on"
 msgstr "Last Modified on"
 
@@ -952,6 +974,7 @@ msgstr "Last Modified on"
 #: field:mak.document,write_uid:0
 #: field:mak.document.state.history,write_uid:0
 #: field:mak.regulation,write_uid:0
+#: field:mak.sent.document,write_uid:0
 msgid "Last Updated by"
 msgstr "Last Updated by"
 
@@ -959,6 +982,7 @@ msgstr "Last Updated by"
 #: field:mak.document,write_date:0
 #: field:mak.document.state.history,write_date:0
 #: field:mak.regulation,write_date:0
+#: field:mak.sent.document,write_date:0
 msgid "Last Updated on"
 msgstr "Last Updated on"
 
@@ -1006,7 +1030,7 @@ msgstr "Гадаад албан бичиг хайлт"
 #: model:ir.ui.menu,name:mak_regulation.menu_mak_hr_regulation
 #: model:ir.ui.menu,name:mak_regulation.menu_sub_mak_hr_regulation
 msgid "Mak HR Regulation"
-msgstr "Өргөдөл, дотоод албан бичиг"
+msgstr "Тушаал"
 
 #. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
@@ -1029,6 +1053,16 @@ msgstr "Тушаалын төсөл - БХГ"
 #: model:ir.actions.act_window,name:mak_regulation.action_mak_regulation_window
 msgid "Mak Regulations"
 msgstr "Тушаалын төслүүд"
+
+#. module: mak_regulation
+#: view:mak.sent.document:mak_regulation.view_mak_sent_document_tree
+msgid "Mak Sent Document"
+msgstr "Явуулсан албан бичиг"
+
+#. module: mak_regulation
+#: model:ir.actions.act_window,name:mak_regulation.action_mak_sent_document_window
+msgid "Mak Sent Documents"
+msgstr "Явуулсан албан бичиг"
 
 #. module: mak_regulation
 #: selection:mak.document,priority:0
@@ -1094,13 +1128,10 @@ msgid "Origin document"
 msgstr "Эх баримт"
 
 #. module: mak_regulation
+#: field:mak.document,partner_id:0
 #: field:mak.regulation,partner:0
 #: field:mak.regulation,partner_id:0
-msgid "Partner"
-msgstr "Харилцагч /бичих/"
-
-#. module: mak_regulation
-#: field:mak.document,partner_id:0
+#: field:mak.sent.document,partner_id:0
 msgid "Partner"
 msgstr "Харилцагч"
 
@@ -1178,6 +1209,7 @@ msgstr "Батлагдсан тушаал"
 #. module: mak_regulation
 #: field:mak.document,sector_id:0
 #: field:mak.regulation,sector_id:0
+#: field:mak.sent.document,sector_id:0
 msgid "Sector"
 msgstr "Газар нэгж"
 
@@ -1190,6 +1222,17 @@ msgstr "Хариуцах албан тушаалтанд илгээгдсэн"
 #: field:mak.document,send_coworker:0
 msgid "Send Coworkers"
 msgstr "Хариуцах албан тушаалтан"
+
+#. module: mak_regulation
+#: model:ir.ui.menu,name:mak_regulation.hr_sent_document_menu_mak
+#: field:mak.document,sent_doc_id:0
+msgid "Sent Document"
+msgstr "Явсан бичиг"
+
+#. module: mak_regulation
+#: field:mak.sent.document,sequence_id:0
+msgid "Sent Document Sequence"
+msgstr "Явсан бичиг дугаар"
 
 #. module: mak_regulation
 #: selection:mak.document,state:0
@@ -1245,9 +1288,10 @@ msgid "Waiting for command"
 msgstr "Шийд хүлээсэн"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:99
-#: code:addons/mak_regulation/model/mak_document.py:170
-#: code:addons/mak_regulation/model/mak_document.py:396
+#: code:addons/mak_regulation/model/mak_document.py:45
+#: code:addons/mak_regulation/model/mak_document.py:141
+#: code:addons/mak_regulation/model/mak_document.py:213
+#: code:addons/mak_regulation/model/mak_document.py:439
 #: code:addons/mak_regulation/model/mak_regulation.py:103
 #: code:addons/mak_regulation/model/mak_regulation.py:373
 #, python-format
@@ -1275,7 +1319,8 @@ msgid "Year"
 msgstr "Жил"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:99
+#: code:addons/mak_regulation/model/mak_document.py:45
+#: code:addons/mak_regulation/model/mak_document.py:141
 #: code:addons/mak_regulation/model/mak_regulation.py:103
 #, python-format
 msgid "You don't have related employee. Please contact administrator."
@@ -1324,13 +1369,13 @@ msgid "Албан тушаалтанд илгээх боломжтой ба эн
 msgstr "Албан тушаалтанд илгээх боломжтой ба энэ тохиолдолд заавал үр дүн талбарыг бичих ёстой."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:171
+#: code:addons/mak_regulation/model/mak_document.py:214
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та Хариуцах Албан Тушаалтан талбарыг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та Хариуцах Албан Тушаалтан талбарыг бүртгэнэ үү!"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:396
+#: code:addons/mak_regulation/model/mak_document.py:439
 #: code:addons/mak_regulation/model/mak_regulation.py:373
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"

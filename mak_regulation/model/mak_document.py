@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -31,6 +32,45 @@ _logger = logging.getLogger('openerp')
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATE_FORMAT = "%Y-%m-%d"
 
+class mak_sent_document(osv.osv):
+    _name = 'mak.sent.document'
+
+    def _set_department(self, cr, uid, ids, context=None):
+        user = self.pool.get('res.users').browse(cr, uid, uid)
+        employee_ids = self.pool.get('hr.employee').search(cr, uid, [('user_id', '=', user.id)])
+        if employee_ids:
+            employee = self.pool.get('hr.employee').browse(cr, uid, employee_ids)[0]
+            return employee.department_id.id
+        else:
+            raise osv.except_osv(_('Warning!'), _('You don\'t have related employee. Please contact administrator.'))
+            return None
+
+    _columns = {
+        'sequence_id': fields.char('Sent Document Sequence', size=32, required=True),
+        'num_sent_doc':fields.char('Index'),
+        'doc_name':fields.char('About'),
+        'date_doc':fields.date('Date',required=True),
+        'employee_id': fields.many2one('hr.employee', 'Assigned employee'),
+        'sector_id': fields.many2one('hr.department', 'Sector', domain=[('type', '=', 'sector')]),
+        'director_id': fields.many2one('hr.employee', 'Assigned Director'),
+        'partner_id': fields.many2one('res.partner', 'Partner'),
+
+    }
+    _defaults = {
+        'date_doc': fields.datetime.now,
+        'sequence_id': '/',
+        'department_id': _set_department,
+    }
+
+    _order = 'sequence_id desc'
+
+    def create(self, cr, uid, vals, context=None):
+        vals['sequence_id'] = self.pool.get('ir.sequence').get(cr, uid, 'mak.sent.document')
+
+        reg = super(mak_sent_document, self).create(cr, uid, vals, context=context)
+
+        return reg
+
 
 class mak_document_state_history(osv.osv):
     _name = 'mak.document.state.history'
@@ -45,6 +85,8 @@ class mak_document_state_history(osv.osv):
         'duration':fields.float('Duration of Day')
     }
 
+
+
 class mak_document(osv.osv):
     _name = 'mak.document'
     _descriptions = " MAK Documents"
@@ -57,7 +99,7 @@ class mak_document(osv.osv):
         ('check', 'Check'),
         ('done', 'Done'),
         ('cancel', 'Cancel'),
-        ('sent_pomak', 'Sent PoMAK'),
+        ('send_pomak', 'Sent PoMAK'),
     ]
 
     def name_search(self, cr, uid, name, args=None, operator='ilike', context=None, limit=100):
@@ -126,6 +168,7 @@ class mak_document(osv.osv):
                                           help="Албан тушаалтанд илгээх боломжтой ба энэ тохиолдолд заавал үр дүн талбарыг бичих ёстой."),
         'history_ids':fields.one2many('mak.document.state.history', 'document_id', 'History Documents',
                                                       readonly=True),
+        'sent_doc_id':fields.many2one('mak.sent.document', 'Sent Document', readonly=True, states={'done': [('readonly', False)]})
     }
 
     _defaults = {
@@ -302,7 +345,7 @@ class mak_document(osv.osv):
                 'send_coworker': 'base.group_user',
                 'check': 'base.group_user',
                 'done': 'base.group_user',
-                # 'cancel': 'base.group_user',
+                'send_pomak': 'base.group_user',
 
             }
             states = {
@@ -310,7 +353,7 @@ class mak_document(osv.osv):
                 'send_coworker': u'"Хариуцах албан тушаалтанд илгээгдсэн" төлөвт шилжсэн',
                 'check': u'"Захиргааны ажилтанд илгээгдсэн" төлөвт шилжсэн',
                 'done': u'"Дууссан" төлөвт шилжсэн',
-                # 'cancel': u'"Цуцлагдсан" төлөвт шилжсэн',
+                'send_pomak': u'"Ерөнхийлөгчид илгээгдсэн" төлөвт шилжсэн',
             }
 
             group_user_ids = []
@@ -354,11 +397,11 @@ class mak_document(osv.osv):
             domain = self.pool.get("ir.config_parameter").get_param(cr, uid, "mail.catchall.domain", context=None)
             priority = ''
             if reg.priority == 'c':
-                priority = 'Энгийн'
+                priority = u'Энгийн'
             elif reg.priority == 'b':
-                priority = 'Яаралтай'
+                priority = u'Яаралтай'
             elif reg.priority == 'a':
-                priority = 'Нэн яаралтай'
+                priority = u'Нэн яаралтай'
 
             data = {
                 'doc_name': reg.doc_name,
