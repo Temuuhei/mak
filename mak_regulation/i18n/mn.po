@@ -691,7 +691,7 @@ msgstr "Хариуцагчтай(II шат)"
 #. module: mak_regulation
 #: field:mak.sent.document,director_id:0
 msgid "Assigned Director"
-msgstr "Баталсан албан тушаалтан"
+msgstr "Батласан албан тушаалтан"
 
 #. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
@@ -866,7 +866,7 @@ msgstr "Хугацаа (өдөр)"
 #: model:ir.model,name:mak_regulation.model_mak_document
 #: model:ir.model,name:mak_regulation.model_mak_regulation
 msgid "Email Thread"
-msgstr "Өргөдөл, Албан бичгийн бүртгэл"
+msgstr "Өргөдөл, Дотоод албан бичгийн бүртгэл"
 
 #. module: mak_regulation
 #: field:mak.regulation,employee_id:0
