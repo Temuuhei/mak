@@ -11,13 +11,14 @@
                 <header>
                     <button name="action_approve" states="draft" String="Шийдвэр авах" icon="gtk-apply" type="object" class="oe_highlight"/>
                     <button name="action_send_coworker" states="draft,wait" String="Хариуцах албан тушаалтанд илгээх" icon="gtk-apply" type="object" class="oe_highlight"/>
+                    <button name="action_second_coworker" states="send_coworker,done" String="Албан тушаалтанд шилжүүлэх" type="object" />
                     <button name="action_draft" states="wait,done,cancel" String="Ноороглох" type="object" />
                     <button name="action_check" states="send_coworker" String="Захиргааны ажилтанд илгээх" type="object" class="oe_highlight"/>
                     <button name="action_done" states="check,send_pomak" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_regulation.regulation_user"/>
                     <button name="action_draft" states="check" String="Ноорог болгох" type="object" class="oe_highlight"/>
                     <button name="action_send_pomak" states="done" String="Шууд Ерөнхийлөгчид илгээх" type="object" class="oe_highlight"
                     attrs="{'invisible':['|',('is_pomak','=',False),('state', '=', 'send_pomak')]}"/>
-                    <field name="state" widget="statusbar"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,wait,send_coworker,check,done"/>
                 </header>
                 <sheet>
                     <div class="pull-left">
@@ -45,6 +46,7 @@
                         <field name="priority"/>
                         <field name="is_pomak" attrs="{'readonly': ['|',('state','=','wait'),('state','=','send_coworker'),('state','=','check')]}"/>
                         <field name="send_coworker" widget="many2many_tags"/>
+                        <field name="send_second_stage" widget="many2many_tags"/>
                         <field name="sent_doc_id"/>
                     </group>
                     <group>

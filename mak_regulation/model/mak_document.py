@@ -96,6 +96,7 @@ class mak_document(osv.osv):
         ('draft', 'Draft'),
         ('wait', 'Waiting for command'),
         ('send_coworker', 'Send Coworker'),
+        ('send_second_stage', 'Send 2nd stage'),
         ('check', 'Check'),
         ('done', 'Done'),
         ('cancel', 'Cancel'),
@@ -164,8 +165,12 @@ class mak_document(osv.osv):
         'priority': fields.selection([('c', 'Low'), ('b', 'Medium'), ('a', 'High')], 'Priority',
                                      track_visibility='onchange', required = True),
         'send_coworker': fields.many2many('res.users', 'send_coworker_rel', 'regilation_id',
-                                          'user_id', string='Send Coworkers',
+                                          'user_id', string='Send Coworkers', track_visibility='onchange',  readonly=True ,
+                                              states={'wait,send_second_stage': [('readonly', False)]},
                                           help="Албан тушаалтанд илгээх боломжтой ба энэ тохиолдолд заавал үр дүн талбарыг бичих ёстой."),
+        'send_second_stage': fields.many2many('res.users', 'send_coworker_rel2', 'regulation_id',
+                                          'user_id', string='Send Coworkers2', track_visibility='onchange', readonly=True ,
+                                              states={'send_coworker,': [('readonly', False)]}, help="Албан тушаалтанд илгээх боломжтой ба энэ тохиолдолд заавал үр дүн талбарыг бичих ёстой."),
         'history_ids':fields.one2many('mak.document.state.history', 'document_id', 'History Documents',
                                                       readonly=True),
         'sent_doc_id':fields.many2one('mak.sent.document', 'Sent Document', readonly=True, states={'done': [('readonly', False)]})
@@ -227,6 +232,33 @@ class mak_document(osv.osv):
             'duration': diff_day,
         })
         self.write(cr, uid, ids, {'state': 'send_coworker'})
+        document_history_obj.write(cr, uid, new_history, {'new_state': obj.state})
+        return True
+
+    # by Тэмүүжин 2 р шатанд бусад албан тушаалтанд илгээх
+
+    def action_second_coworker(self, cr, uid, ids, context=None):
+        obj = self.browse(cr, uid, ids)[0]
+        DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
+
+        if not obj.send_second_stage:
+            raise osv.except_osv(_('Warning!'),
+                                 _(u'Та бусад албан тушаалтанд шилжүүлэх гэж байгаа бол Шилжүүлэх албан тушаалтан талбарыг бөглөнө үү!'))
+        self.send_notification(cr, uid, ids, 'send_coworker', context=context)
+
+        document_history_obj = self.pool.get('mak.document.state.history')
+        from_dt = datetime.datetime.strptime(obj.create_date, DATETIME_FORMAT)
+        to_dt = datetime.datetime.now()
+        timedelta = to_dt - from_dt
+        diff_day = timedelta.days + float(timedelta.seconds) / 86400
+        new_history = document_history_obj.create(cr, uid, {
+            'document_id': obj.id,
+            'date': datetime.datetime.now(),
+            'user_id': uid,
+            'old_state': obj.state,
+            'duration': diff_day,
+        })
+        self.write(cr, uid, ids, {'state': 'send_second_stage'})
         document_history_obj.write(cr, uid, new_history, {'new_state': obj.state})
         return True
 
