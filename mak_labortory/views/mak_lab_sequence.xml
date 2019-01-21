@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+		<!-- Sequences for Labortory Sampler -->
+
+		<record id="seq_type_sampler" model="ir.sequence.type">
+			<field name="name">Sampler permission Sequence</field>
+			<field name="code">mak.sampler</field>
+		</record>
+		<record id="sequence_sampler" model="ir.sequence">
+			<field name="name">Sampler permission</field>
+			<field name="code">mak.sampler</field>
+			<field name="prefix">ТСТ-№%(year)s/%(month)s/</field>
+			<field name="padding">4</field>
+			<field name="reset_monthly">True</field>
+		</record>
+
+		<!-- Sequences for Research Sampler -->
+
+		<record id="seq_type_research" model="ir.sequence.type">
+			<field name="name">Research permission Sequence</field>
+			<field name="code">mak.research</field>
+		</record>
+		<record id="sequence_research" model="ir.sequence">
+			<field name="name">Research permission</field>
+			<field name="code">mak.research</field>
+			<field name="prefix">ШИНЖИЛГЭЭ-№%(year)s/%(month)s/</field>
+			<field name="padding">4</field>
+			<field name="reset_monthly">True</field>
+		</record>
+
+	</data>
+</openerp>

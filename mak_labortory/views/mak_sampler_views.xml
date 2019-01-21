@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="view_mak_sampler_form">
+        <field name="name">mak.sampler.form</field>
+        <field name="model">mak.sampler</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        	<form string="Mak TRC Sampler">
+                <header>
+                    <button name="action_approve" states="draft" String="Approve" icon="gtk-apply" type="object" class="oe_highlight"/>
+                    <button name="action_draft" states="approved" String="Draft" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
+                </header>
+                <sheet>
+                    <div class="pull-left">
+						<label for="sequence_id" class="oe_inline"/>
+          				<h1>
+							<field name="sequence_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+
+                    <div class="pull-right">
+						<label for="user_id" class="oe_inline"/>
+          				<h1>
+							<field name="user_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+
+                <group>
+                    <group>
+                        <field name="date" required="1" />
+                        <field name="partner_id" required="1" />
+                        <field name="location"/>
+                        <field name="type" />
+                        <field name="qty" />
+                        <field name="pure_weight" colspan="2"/>
+                    </group>
+                    <group>
+                        <field name="partner_num"/>
+                        <field name="is_duplicate"/>
+                        <field name="is_analytic"/>
+                    </group>
+                </group>
+                    <group>
+                        <button name="action_generate" String="Import" icon="STOCK_JUMP_TO" type="object"></button>
+                        <field name="line_qty"/>
+                    </group>
+                 <group>
+                        <notebook>
+                            <page string="Detail Line">
+                                <field name="line_id" attrs="{'readonly': [('state', '=', 'approved')]}">
+                                    <tree string="Sampler's Details" editable="True">
+                                        <field name="name"/>
+                                        <field name="weight" sum ="Total"/>
+                                        <field name="sampler_id" invisible="1"/>
+                                    </tree>
+                                 </field>
+                             </page>
+                        </notebook>
+                </group>
+                </sheet>
+                 <div class="oe_chatter">
+                    	<field name="message_follower_ids" widget="mail_followers"/>
+                    	<field name="message_ids" widget="mail_thread"/>
+                	</div>
+            </form>
+        </field>
+    </record>
+
+	<record id="mak_sampler_search_view" model="ir.ui.view">
+        <field name="name">mak.sampler.search</field>
+        <field name="model">mak.sampler</field>
+        <field name="arch" type="xml">
+            <search string="Mak Sampler Search">
+            	<field name="state"/>
+            	<field name="partner_id"/>
+                <field name="type"/>
+                <field name="location"/>
+                <group expand="0" string="Group By">
+                    <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Type" domain="[]" context="{'group_by':'type'}"/>
+                    <filter string="location" domain="[]" context="{'group_by':'location'}"/>
+                    <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter string="Year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mak_sampler_tree">
+        <field name="name">mak.sampler.tree</field>
+        <field name="model">mak.sampler</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Sampler input" colors="black:state == 'sale_order_created';blue:state == 'draft';">
+            	<field name="sequence_id"/>
+            	<field name="date"/>
+	            <field name="partner_id"/>
+	            <field name="type"/>
+	            <field name="location"/>
+	            <field name="partner_num"/>
+	            <field name="qty" sum="Total Qty"/>
+	            <field name="pure_weight" sum="Total weight"/>
+	            <field name="is_analytic"/>
+	            <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_mak_sampler_window" model="ir.actions.act_window">
+        <field name="name">Mak Sampler</field>
+        <field name="res_model">mak.sampler</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain"></field>
+        <field name="context">{}</field>
+    </record>
+
+        <!-- Шинжилгээний цонх-->
+
+         <record model="ir.ui.view" id="view_mak_research_form">
+        <field name="name">mak.research.form</field>
+        <field name="model">mak.research</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        	<form string="Mak TRC Research">
+                <header>
+                    <button name="action_approve" states="draft" String="Approve" icon="gtk-apply" type="object" class="oe_highlight"/>
+                    <button name="action_draft" states="sale_order_created" String="Draft" type="object"/>
+                     <button name="print_report" type="object" string="Print" class="oe_highlight" states="sale_order_created"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sale_order_created"/>
+                </header>
+                <sheet>
+                    <div class="pull-left">
+						<label for="sequence_id" class="oe_inline"/>
+          				<h1>
+							<field name="sequence_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+                <group>
+                    <group>
+                        <field name="lab_id" required="1" />
+                        <field name="element_union" required="1" />
+                        <field name="sampler_id" required="1" />
+                        <field name="research_type" required="1" />
+                        <field name="deadline"/>
+                        <field name="sale_category"/>
+                        <field domain="[('type','=','sale')]" name="pricelist_id" groups="product.group_sale_pricelist" on_change="onchange_pricelist_id(pricelist_id,line_id)"/>
+                        <field name="currency_id"/>
+                        <field name="warehouse_id"/>
+                        <field name="sale_order" attrs="{'invisible': [('sale_order', '=', False)]}"/>
+                    </group>
+                    <group String = "Sampler">
+                        <field name="date" />
+                        <field name="partner_id"/>
+                        <field name="location"/>
+                        <field name="type" />
+                        <field name="qty" />
+                        <field name="pure_weight" colspan="2"/>
+                        <field name="is_duplicate"/>
+                        <field name="is_analytic"/>
+                    </group>
+                </group>
+                 <group>
+                        <notebook>
+                            <page string="Detail Line">
+                                <field name="line_id" attrs="{'readonly': [('state', '=', 'sale_order_created')]}">
+                                    <tree string="Research's Details" editable="True">
+                                        <field name="product_id" domain="[('type','=','service')]"/>
+                                        <field name="qty"/>
+                                        <field name="weight"/>
+                                        <!--<field name="sampler_process" sum ="Total" on_change="onchange_total(sampler_process, sampler_prepare,sampler_research,total)"/>-->
+                                        <!--<field name="sampler_prepare" sum ="Total" on_change="onchange_total(sampler_process, sampler_prepare,sampler_research,total)"/>-->
+                                        <!--<field name="sampler_research" sum ="Total" on_change="onchange_total(sampler_process, sampler_prepare,sampler_research,total)"/>-->
+                                        <field name="tax_id" widget="many2many_tags"/>
+                                        <field name="research_id" invisible="1"/>
+                                        <!--<field name="total" on_change="onchange_total(sampler_process, sampler_prepare,sampler_research,total)"/>-->
+                                    </tree>
+                                 </field>
+                             </page>
+                        </notebook>
+                </group>
+                </sheet>
+                 <div class="oe_chatter">
+                    	<field name="message_follower_ids" widget="mail_followers"/>
+                    	<field name="message_ids" widget="mail_thread"/>
+                	</div>
+            </form>
+        </field>
+    </record>
+
+	<record id="mak_research_search_view" model="ir.ui.view">
+        <field name="name">mak.research.search</field>
+        <field name="model">mak.research</field>
+        <field name="arch" type="xml">
+            <search string="Mak Research Search">
+            	<field name="state"/>
+            	<field name="lab_id"/>
+            	<field name="partner_id"/>
+            	<field name="element_union"/>
+                <field name="type"/>
+                <field name="location"/>
+                <group expand="0" string="Group By">
+                    <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Type" domain="[]" context="{'group_by':'type'}"/>
+                    <filter string="Labortory" domain="[]" context="{'group_by':'lab_id'}"/>
+                    <filter string="Element Union" domain="[]" context="{'group_by':'element_union'}"/>
+                    <filter string="location" domain="[]" context="{'group_by':'location'}"/>
+                    <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter string="Year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mak_research_tree">
+        <field name="name">mak.research.tree</field>
+        <field name="model">mak.research</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Research input" colors="gray:state == 'approved';blue:state == 'draft';">
+                <field name="sequence_id"/>
+                <field name="lab_id"/>
+                <field name="partner_id"/>
+                <field name="date"/>
+                <field name="element_union"/>
+	            <field name="type"/>
+	            <field name="location"/>
+	            <field name="qty" sum="Total Qty"/>
+	            <field name="pure_weight" sum="Total weight"/>
+	            <field name="is_analytic"/>
+	            <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_mak_research_window" model="ir.actions.act_window">
+        <field name="name">Mak Research</field>
+        <field name="res_model">mak.research</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain"></field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="tech_research_center_menu" name="Technology Research Center" parent="base.menu_base_partner"
+        sequence="2" />
+    <menuitem id="mak_sampler_menu" name="TRC Sampler" parent="tech_research_center_menu"
+         sequence="2" action="action_mak_sampler_window" />
+
+    <menuitem id="mak_research" name="Research Data" parent="tech_research_center_menu"
+         sequence="1" action="action_mak_research_window" />
+
+        <record id="view_l10n_mn_sale_inherited_tst_research" model="ir.ui.view">
+            <field name="name">sale.order.form.tst.research</field>
+            <field name="model">sale.order</field>
+        	<field name="inherit_id" ref="l10n_mn_sale.view_order_form_inherit_l10n_mn_sale"/>
+            <field name="arch" type="xml">
+            	<xpath expr='//field[@name="sale_category_id"]' position="after">
+                     <field name="mak_research_id" attrs="{'invisible': [('mak_research_id', '=', False)]}"/>
+	            </xpath>
+            </field>
+        </record>
+
+
+	</data>
+</openerp>
