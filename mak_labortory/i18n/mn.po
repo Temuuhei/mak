@@ -1,0 +1,538 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mak_labortory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-21 02:17+0000\n"
+"PO-Revision-Date: 2019-01-21 02:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mak_labortory
+#: selection:mak.sampler,state:0
+msgid "Approved"
+msgstr "Хүлээн авсан"
+
+#. module: mak_labortory
+#: field:mak.research,sale_category:0
+msgid "Category"
+msgstr "Борлуулалтын төрөл"
+
+#. module: mak_labortory
+#: model:ir.model,name:mak_labortory.model_research_mak_create_sale
+msgid "Create sale order from research mak"
+msgstr "Лабораторын Шинжилгээнээс үүссэн борлуулалтын захиалга"
+
+#. module: mak_labortory
+#: field:mak.labortory,create_uid:0
+#: field:mak.research,create_uid:0
+#: field:mak.research.line,create_uid:0
+#: field:mak.sampler,create_uid:0
+#: field:mak.sampler.line,create_uid:0
+msgid "Created by"
+msgstr "Үүсгэсэн хэрэглэгч"
+
+#. module: mak_labortory
+#: field:mak.labortory,create_date:0
+#: field:mak.research,create_date:0
+#: field:mak.research.line,create_date:0
+#: field:mak.sampler,create_date:0
+#: field:mak.sampler.line,create_date:0
+msgid "Created on"
+msgstr "Үүссэн огноо"
+
+#. module: mak_labortory
+#: field:mak.research,currency_id:0
+msgid "Currency"
+msgstr "Валют"
+
+#. module: mak_labortory
+#: help:mak.labortory,message_last_post:0
+#: help:mak.research,message_last_post:0
+#: help:mak.sampler,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Хамгийн сүүлд засвар хийсэн тэмдэглэл."
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: field:mak.research,day:0
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+#: field:mak.sampler,day:0
+msgid "Day"
+msgstr "Өдөр"
+
+#. module: mak_labortory
+#: field:mak.research,deadline:0
+msgid "Deadline"
+msgstr "Шинжилгээ гүйцэтгэх огноо"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.view_mak_research_form
+#: view:mak.sampler:mak_labortory.view_mak_sampler_form
+msgid "Detail Line"
+msgstr "Ерөнхий мэдээлэл"
+
+#. module: mak_labortory
+#: field:mak.labortory,display_name:0
+#: field:mak.research,display_name:0
+#: field:mak.research.line,display_name:0
+#: field:mak.sampler,display_name:0
+#: field:mak.sampler.line,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mak_labortory
+#: selection:mak.research,state:0
+#: selection:mak.sampler,state:0
+msgid "Draft"
+msgstr "Шинэ"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: field:mak.research,element_union:0
+msgid "Element Union"
+msgstr "Шинжлэх элемент, нэгдэл"
+
+#. module: mak_labortory
+#: field:mak.research,user_id:0
+#: field:mak.sampler,user_id:0
+msgid "Employee"
+msgstr "Ажилтан"
+
+#. module: mak_labortory
+#: field:mak.labortory,message_follower_ids:0
+#: field:mak.research,message_follower_ids:0
+#: field:mak.sampler,message_follower_ids:0
+msgid "Followers"
+msgstr "Дагагчид"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+msgid "Group By"
+msgstr "Group By"
+
+#. module: mak_labortory
+#: help:mak.labortory,message_summary:0
+#: help:mak.research,message_summary:0
+#: help:mak.sampler,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: mak_labortory
+#: field:mak.labortory,id:0
+#: field:mak.research,id:0
+#: field:mak.research.line,id:0
+#: field:mak.sampler,id:0
+#: field:mak.sampler.line,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mak_labortory
+#: help:mak.labortory,message_unread:0
+#: help:mak.research,message_unread:0
+#: help:mak.sampler,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: mak_labortory
+#: code:addons/mak_labortory/model/mak_labortory.py:266
+#, python-format
+msgid "If you change the pricelist of this order (and eventually the currency), prices of existing order lines will not be updated."
+msgstr "If you change the pricelist of this order (and eventually the currency), prices of existing order lines will not be updated."
+
+#. module: mak_labortory
+#: field:mak.research,is_analytic:0
+#: field:mak.sampler,is_analytic:0
+msgid "Is Analytic"
+msgstr "Аналитик дээж буцааж авах эсэх"
+
+#. module: mak_labortory
+#: field:mak.research,is_duplicate:0
+#: field:mak.sampler,is_duplicate:0
+msgid "Is Duplicate"
+msgstr "Дубликат дээж буцааж авах эсэх"
+
+#. module: mak_labortory
+#: field:mak.labortory,message_is_follower:0
+#: field:mak.research,message_is_follower:0
+#: field:mak.sampler,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: field:mak.research,lab_id:0
+msgid "Labortory"
+msgstr "Лаборатор"
+
+#. module: mak_labortory
+#: field:mak.labortory,message_last_post:0
+#: field:mak.research,message_last_post:0
+#: field:mak.sampler,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: mak_labortory
+#: field:mak.labortory,__last_update:0
+#: field:mak.research,__last_update:0
+#: field:mak.research.line,__last_update:0
+#: field:mak.sampler,__last_update:0
+#: field:mak.sampler.line,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mak_labortory
+#: field:mak.labortory,write_uid:0
+#: field:mak.research,write_uid:0
+#: field:mak.research.line,write_uid:0
+#: field:mak.sampler,write_uid:0
+#: field:mak.sampler.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mak_labortory
+#: field:mak.labortory,write_date:0
+#: field:mak.research,write_date:0
+#: field:mak.research.line,write_date:0
+#: field:mak.sampler,write_date:0
+#: field:mak.sampler.line,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mak_labortory
+#: field:mak.research,line_id:0
+#: field:mak.sampler,line_id:0
+msgid "Line"
+msgstr "Мөрүүд"
+
+#. module: mak_labortory
+#: field:mak.research,location:0
+#: field:mak.sampler,location:0
+msgid "Location"
+msgstr "Обьектийн нэр"
+
+#. module: mak_labortory
+#: model:ir.model,name:mak_labortory.model_mak_labortory
+#: model:ir.model,name:mak_labortory.model_mak_sampler
+msgid "MAK TRC Labortory"
+msgstr "MAK TRC Labortory"
+
+#. module: mak_labortory
+#: model:ir.model,name:mak_labortory.model_mak_research
+msgid "MAK TRC Research"
+msgstr "МАК Технологи Судалгааны төв"
+
+#. module: mak_labortory
+#: model:ir.actions.act_window,name:mak_labortory.action_mak_research_window
+msgid "Mak Research"
+msgstr "МАК Шинжилгээ"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+msgid "Mak Research Search"
+msgstr "МАК Шинжилгээ хайлт"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.view_mak_research_tree
+msgid "Mak Research input"
+msgstr "МАК Шинжилгээ"
+
+#. module: mak_labortory
+#: model:ir.actions.act_window,name:mak_labortory.action_mak_sampler_window
+msgid "Mak Sampler"
+msgstr "МАК Дээжийн бүртгэл"
+
+#. module: mak_labortory
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+msgid "Mak Sampler Search"
+msgstr "МАК Дээжийн бүртгэл хайлт"
+
+#. module: mak_labortory
+#: view:mak.sampler:mak_labortory.view_mak_sampler_tree
+msgid "Mak Sampler input"
+msgstr "МАК Дээжийн бүртгэл"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.view_mak_research_form
+msgid "Mak TRC Research"
+msgstr "МАК Шинжилгээ"
+
+#. module: mak_labortory
+#: view:mak.sampler:mak_labortory.view_mak_sampler_form
+msgid "Mak TRC Sampler"
+msgstr "МАК ТСТ Дээж"
+
+#. module: mak_labortory
+#: field:mak.labortory,message_ids:0
+#: field:mak.research,message_ids:0
+#: field:mak.sampler,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: mak_labortory
+#: help:mak.labortory,message_ids:0
+#: help:mak.research,message_ids:0
+#: help:mak.sampler,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: field:mak.research,month:0
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+#: field:mak.sampler,month:0
+msgid "Month"
+msgstr "Сар"
+
+#. module: mak_labortory
+#: field:mak.labortory,name:0
+#: field:mak.sampler.line,name:0
+msgid "Name"
+msgstr "Нэр"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: field:mak.research,partner_id:0
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+#: field:mak.sampler,partner_id:0
+msgid "Partner"
+msgstr "Харилцагч"
+
+#. module: mak_labortory
+#: field:mak.sampler,partner_num:0
+msgid "Partner Number"
+msgstr "Захиалагчийн дээжний дугаар"
+
+#. module: mak_labortory
+#: field:mak.research,pricelist_id:0
+msgid "Pricelist"
+msgstr "Үнийн хүснэгт"
+
+#. module: mak_labortory
+#: code:addons/mak_labortory/model/mak_labortory.py:265
+#, python-format
+msgid "Pricelist Warning!"
+msgstr "Үнийн хүснэгт анхааруулга!"
+
+#. module: mak_labortory
+#: help:mak.research,pricelist_id:0
+msgid "Pricelist for current sales order."
+msgstr "Борлуулалтын захиалгад зориулсан Үнийн хүснэгт"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.view_mak_research_form
+msgid "Print"
+msgstr "Захиалгын хуудал хэвлэх"
+
+#. module: mak_labortory
+#: field:mak.research.line,product_id:0
+msgid "Product"
+msgstr "Бараа"
+
+#. module: mak_labortory
+#: field:mak.research.line,qty:0
+msgid "Quant"
+msgstr "Тоо хэмжээ"
+
+#. module: mak_labortory
+#: field:mak.research,qty:0
+#: field:mak.sampler,line_qty:0
+#: field:mak.sampler,qty:0
+msgid "Quantity"
+msgstr "Тоо хэмжээ"
+
+#. module: mak_labortory
+#: field:mak.research,date:0
+#: field:mak.sampler,date:0
+msgid "Received date"
+msgstr "Огноо"
+
+#. module: mak_labortory
+#: field:mak.research.line,research_id:0
+#: field:sale.order,mak_research_id:0
+msgid "Research"
+msgstr "Шинжилгээ"
+
+#. module: mak_labortory
+#: model:ir.ui.menu,name:mak_labortory.mak_research
+msgid "Research Data"
+msgstr "ТСТ Шинжилгээ"
+
+#. module: mak_labortory
+#: field:mak.research,sequence_id:0
+msgid "Research Sequence"
+msgstr "Захиалгын хуудас"
+
+#. module: mak_labortory
+#: field:mak.research,research_type:0
+msgid "Research Type"
+msgstr "Шинжилгээний төрөл"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.view_mak_research_form
+msgid "Research's Details"
+msgstr "Research's Details"
+
+#. module: mak_labortory
+#: field:mak.research,sale_order:0
+msgid "Sale Order"
+msgstr "Борлуулалтын захилга"
+
+#. module: mak_labortory
+#: selection:mak.research,state:0
+msgid "Sale order created"
+msgstr "Борлуулалтын захиалга үүссэн"
+
+#. module: mak_labortory
+#: field:mak.research,sampler_id:0
+#: field:mak.sampler.line,sampler_id:0
+msgid "Sampler"
+msgstr "Дээж"
+
+#. module: mak_labortory
+#: field:mak.sampler,sequence_id:0
+msgid "Sampler Sequence"
+msgstr "Дээжийн №"
+
+#. module: mak_labortory
+#: view:mak.sampler:mak_labortory.view_mak_sampler_form
+msgid "Sampler's Details"
+msgstr "Дээжийн дэлгэрэнгүй"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: field:mak.research,state:0
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+#: field:mak.sampler,state:0
+msgid "State"
+msgstr "Төлөв"
+
+#. module: mak_labortory
+#: field:mak.labortory,message_summary:0
+#: field:mak.research,message_summary:0
+#: field:mak.sampler,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: mak_labortory
+#: model:ir.ui.menu,name:mak_labortory.mak_sampler_menu
+msgid "TRC Sampler"
+msgstr "ТСТ Дээж"
+
+#. module: mak_labortory
+#: field:mak.research.line,tax_id:0
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: mak_labortory
+#: model:ir.ui.menu,name:mak_labortory.tech_research_center_menu
+msgid "Technology Research Center"
+msgstr "Технологи Судалгааны Төв"
+
+#. module: mak_labortory
+#: view:mak.sampler:mak_labortory.view_mak_sampler_form
+msgid "Total"
+msgstr "Нийт"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.view_mak_research_tree
+#: view:mak.sampler:mak_labortory.view_mak_sampler_tree
+msgid "Total Qty"
+msgstr "Нийт тоом хэмжээ"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.view_mak_research_tree
+#: view:mak.sampler:mak_labortory.view_mak_sampler_tree
+msgid "Total weight"
+msgstr "Total weight"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: field:mak.research,type:0
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+#: field:mak.sampler,type:0
+msgid "Type"
+msgstr "Дээжний төрөл"
+
+#. module: mak_labortory
+#: field:mak.labortory,message_unread:0
+#: field:mak.research,message_unread:0
+#: field:mak.sampler,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: mak_labortory
+#: field:mak.research,warehouse_id:0
+msgid "Warehouse"
+msgstr "Борлуулалт хийх агуулах"
+
+#. module: mak_labortory
+#: code:addons/mak_labortory/model/mak_labortory.py:280
+#: code:addons/mak_labortory/model/mak_labortory.py:294
+#: code:addons/mak_labortory/model/mak_labortory.py:319
+#, python-format
+msgid "Warning!"
+msgstr "Warning!"
+
+#. module: mak_labortory
+#: field:mak.labortory,website_message_ids:0
+#: field:mak.research,website_message_ids:0
+#: field:mak.sampler,website_message_ids:0
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: mak_labortory
+#: help:mak.labortory,website_message_ids:0
+#: help:mak.research,website_message_ids:0
+#: help:mak.sampler,website_message_ids:0
+msgid "Website communication history"
+msgstr "Website communication history"
+
+#. module: mak_labortory
+#: field:mak.research,pure_weight:0
+#: field:mak.research.line,weight:0
+#: field:mak.sampler,pure_weight:0
+#: field:mak.sampler.line,weight:0
+msgid "Weight"
+msgstr "Жин"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: field:mak.research,year:0
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+#: field:mak.sampler,year:0
+msgid "Year"
+msgstr "Жил"
+
+#. module: mak_labortory
+#: view:mak.research:mak_labortory.mak_research_search_view
+#: view:mak.sampler:mak_labortory.mak_sampler_search_view
+msgid "location"
+msgstr "Обьектийн нэр"
+
+#. module: mak_labortory
+#: code:addons/mak_labortory/model/mak_labortory.py:320
+#, python-format
+msgid "Та эхлээд агуулахын бүртгэлийн шинжилгээний хуваарилалт талбарыг бүртгэх шаардлагатай!"
+msgstr "Та эхлээд агуулахын бүртгэлийн шинжилгээний хуваарилалт талбарыг бүртгэх шаардлагатай!"
+
+#. module: mak_labortory
+#: code:addons/mak_labortory/model/mak_labortory.py:294
+#, python-format
+msgid "Та эхлээд холбоотой борлуулалтын захиалга /Үнийн санал/ устгах шаардлагатай!"
+msgstr "Та эхлээд холбоотой борлуулалтын захиалга /Үнийн санал/ устгах шаардлагатай!"
+
+#. module: mak_labortory
+#: code:addons/mak_labortory/model/mak_labortory.py:281
+#, python-format
+msgid "Хэвлэх хөгжүүлэлт хийгдэж байна"
+msgstr "Хэвлэх хөгжүүлэлт хийгдэж байна"
+
