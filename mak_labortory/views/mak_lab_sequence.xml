@@ -4,7 +4,7 @@
 
 		<!-- Sequences for Labortory Sampler -->
 
-		<record id="seq_type_mak_sampler" model="ir.sequence.type">
+		<record id="seq_type_sampler" model="ir.sequence.type">
 			<field name="name">Sampler permission Sequence</field>
 			<field name="code">mak.sampler</field>
 		</record>
@@ -18,7 +18,7 @@
 
 		<!-- Sequences for Research Sampler -->
 
-		<record id="seq_type_mak_research" model="ir.sequence.type">
+		<record id="seq_type_research" model="ir.sequence.type">
 			<field name="name">Research permission Sequence</field>
 			<field name="code">mak.research</field>
 		</record>
