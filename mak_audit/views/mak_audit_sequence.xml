@@ -2,6 +2,11 @@
 <openerp>
 	<data noupdate="1">
 
+		 <record id="group_mak_audit" model="res.groups">
+        <field name="name">Харилцагч гүйлгээ хийхэд имэйл хүлээн авах</field>
+        <field name="comment">Энэ бүлгийн хэрэглэгчид хар жагсаалтад орсон харилцагчтай гүйлгээ хийхэд имэйл хүлээн авах эрхтэй байна</field>
+    </record>
+
 		<!-- Sequences for Audit -->
 
 		<record id="seq_type_audit" model="ir.sequence.type">
@@ -15,6 +20,17 @@
 			<field name="padding">4</field>
 			<field name="reset_monthly">True</field>
 		</record>
+
+
+		<record model="ir.cron" id="cron_check_partner_mak_audit">
+           <field name="name">Cron check partner for mak audit</field>
+           <field name="interval_number">1</field>
+           <field name="interval_type">hours</field>
+           <field name="numbercall">-1</field>
+           <field name="model" eval="'mak.audit'"/>
+           <field name="function" eval="'_cron_check_black_list'"/>
+           <field name="args" eval="'()'"/>
+      </record>
 
 
 	</data>

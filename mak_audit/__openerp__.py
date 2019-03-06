@@ -20,8 +20,9 @@
     "depends" : ['mail'],
     "init": [],
     "update_xml" : [
-        'views/mak_audit_views.xml',
-        'views/mak_audit_sequence.xml',],
+        'email_template/mak_audit_email_template.xml',
+        'views/mak_audit_sequence.xml',
+        'views/mak_audit_views.xml',],
     "demo_xml": [],
     'icon': '/logo/static/src/img/mak.png',
     "active": False,

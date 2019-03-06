@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<openerp>
+	<data>
+<!-- Email template of employee -->
+
+			<record id="audit_email_template_to_audit" model="email.template">
+			<field name="name">Хар жагсаалтанд орсон харилцагчийн гүйлгээний мэдээлэл</field>
+			<field name="email_from">${(user.login or '')|safe}</field>
+			<field name="subject">[Хар жагсаалтанд орсон харилцагчийн гүйлгээний мэдээлэл] ${user.company_id.name}</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="base.model_res_users" />
+			<field name="auto_delete" eval="True" />
+			<field name="body_html"><![CDATA[
+<p>
+Сайн байна уу, Хар жагсаалтанд орсон харилцагчийн гүйлгээ системд бүртгэгдлээ </br>
+</p>
+
+<p>
+		Ажил гүйлгээ: <b>${ctx["move_id"]}</b>
+</p>
+<p>
+		Огноо: <b>${ctx["date"]}</b>
+</p>
+<p>
+		Харилцагч: <b>${ctx["partner_id"]}</b>
+</p>
+<p>
+		Лавлах: <b>${ctx["ref"]}</b>
+</p>
+<p>
+		Үүсгэсэн хэрэглэгч: <b>${ctx["create_uid"]}</b>
+</p>
+
+
+
+
+<p>
+Холбоос:
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=account.move&action=${ctx["action_id"]}">Ажил гүйлгээ </a></b>
+
+
+</p>
+
+<p>
+Та энхүү имэйлийг дахин хүлээн авахыг хүсэхгүй байгаа бол ERP дээрх харилцагчийн мэдээллийг засварлана уу.
+</p>
+
+<p>
+    Баярлалаа,
+</p>
+
+<pre>
+--
+MAK ERP Автомат Имэйл
+
+</pre>
+
+      ]]></field>
+		</record>
+
+
+	</data>
+</openerp>

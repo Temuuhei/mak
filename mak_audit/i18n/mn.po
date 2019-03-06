@@ -6,14 +6,109 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-03 02:19+0000\n"
-"PO-Revision-Date: 2017-10-03 02:19+0000\n"
+"POT-Creation-Date: 2019-03-06 06:03+0000\n"
+"PO-Revision-Date: 2019-03-06 06:03+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: mak_audit
+#: model:email.template,body_html:mak_audit.audit_email_template_to_audit
+msgid "\n"
+"<p>\n"
+"Сайн байна уу, Хар жагсаалтанд орсон харилцагчийн гүйлгээ системд бүртгэгдлээ </br>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Ажил гүйлгээ: <b>${ctx[\"move_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Огноо: <b>${ctx[\"date\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Харилцагч: <b>${ctx[\"partner_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Лавлах: <b>${ctx[\"ref\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Үүсгэсэн хэрэглэгч: <b>${ctx[\"create_uid\"]}</b>\n"
+"</p>\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=account.move.line&action=${ctx[\"action_id\"]}\">Ажил гүйлгээ </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Та энхүү имэйлийг дахин хүлээн авахыг хүсэхгүй байгаа бол ERP дээрх харилцагчийн мэдээллийг засварлана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
+msgstr "\n"
+"<p>\n"
+"Сайн байна уу, Хар жагсаалтанд орсон харилцагчийн гүйлгээ системд бүртгэгдлээ </br>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Ажил гүйлгээ: <b>${ctx[\"move_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Огноо: <b>${ctx[\"date\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Харилцагч: <b>${ctx[\"partner_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Лавлах: <b>${ctx[\"ref\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Үүсгэсэн хэрэглэгч: <b>${ctx[\"create_uid\"]}</b>\n"
+"</p>\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=account.move.line&action=${ctx[\"action_id\"]}\">Ажил гүйлгээ </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Та энхүү имэйлийг дахин хүлээн авахыг хүсэхгүй байгаа бол ERP дээрх харилцагчийн мэдээллийг засварлана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
 
 #. module: mak_audit
 #: view:mak.audit:mak_audit.view_mak_audit_form
@@ -34,6 +129,16 @@ msgstr "Хариуцаж буй ажилтан:"
 #: field:mak.audit,sequence_id:0
 msgid "Audit Sequence"
 msgstr "Дотоод дугаар"
+
+#. module: mak_audit
+#: view:res.partner:mak_audit.partner_view_form_inherit_mak_audit
+msgid "Black List"
+msgstr "Хар жагсаалт"
+
+#. module: mak_audit
+#: view:res.partner:mak_audit.partner_view_form_inherit_mak_audit
+msgid "Blackened date"
+msgstr "Хар жагсаалтанд орсон огноо"
 
 #. module: mak_audit
 #: selection:mak.audit,type_doc:0
@@ -144,6 +249,11 @@ msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
 
 #. module: mak_audit
+#: view:res.partner:mak_audit.partner_view_form_inherit_mak_audit
+msgid "Is Blackened"
+msgstr "Хар жагсаалтад оруулах"
+
+#. module: mak_audit
 #: field:mak.audit,message_is_follower:0
 msgid "Is a Follower"
 msgstr "Is a Follower"
@@ -236,10 +346,11 @@ msgid "Number of Received Documents"
 msgstr "Ирсэн бичгийн дугаар"
 
 #. module: mak_audit
+#: model:ir.model,name:mak_audit.model_res_partner
 #: view:mak.audit:mak_audit.mak_audit_search_view
 #: field:mak.audit,partner_id:0
 msgid "Partner"
-msgstr "Гүйцэтгэгч байгууллагын нэр"
+msgstr "Харилцагч"
 
 #. module: mak_audit
 #: field:mak.audit,received_value:0
@@ -283,3 +394,17 @@ msgstr "Unread Messages"
 msgid "Year"
 msgstr "Жил"
 
+#. module: mak_audit
+#: model:email.template,subject:mak_audit.audit_email_template_to_audit
+msgid "[Хар жагсаалтанд орсон харилцагчийн гүйлгээний мэдээлэл] ${user.company_id.name}"
+msgstr "[Хар жагсаалтанд орсон харилцагчийн гүйлгээний мэдээлэл] ${user.company_id.name}"
+
+#. module: mak_audit
+#: model:res.groups,name:mak_audit.group_mak_audit
+msgid "Харилцагч гүйлгээ хийхэд имэйл хүлээн авах"
+msgstr "Харилцагч гүйлгээ хийхэд имэйл хүлээн авах"
+
+#. module: mak_audit
+#: model:res.groups,comment:mak_audit.group_mak_audit
+msgid "Энэ бүлгийн хэрэглэгчид хар жагсаалтад орсон харилцагчтай гүйлгээ хийхэд имэйл хүлээн авах эрхтэй байна"
+msgstr "Энэ бүлгийн хэрэглэгчид хар жагсаалтад орсон харилцагчтай гүйлгээ хийхэд имэйл хүлээн авах эрхтэй байна"
