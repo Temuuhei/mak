@@ -117,5 +117,21 @@
     <menuitem id="menu_mak_audit_mail_main" name="Mak Audit" parent="mail.mail_feeds_main" sequence="30" />
     <menuitem action="action_mak_audit_window" name="Mak Audit Department" id="menu_mak_audit" sequence="2" parent="menu_mak_audit_mail_main"/>
 
+    <record id="partner_view_form_inherit_mak_audit"
+        model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr='//form/sheet/notebook/page[last()]' position="after">
+                <page string="Black List" groups = "mak_audit.group_mak_audit">
+                     <field name="is_blackened" string = "Хар жагсаалтанд орсон эсэх" groups = "mak_audit.group_mak_audit"/>
+                    <label for="is_blackened"/>
+                    <field name="date_blackened" string = "Хар жагсаалтанд орсон огноо" groups = "mak_audit.group_mak_audit"/>
+                    <label for="date_blackened"/>
+                </page>
+             </xpath>
+        </field>
+    </record>
 	</data>
 </openerp>
