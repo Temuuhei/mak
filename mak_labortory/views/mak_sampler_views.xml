@@ -32,26 +32,31 @@
                     <group>
                         <field name="date" required="1" />
                         <field name="partner_id" required="1" />
+                        <field name="lab_id" required="1" />
                         <field name="location"/>
                         <field name="type" />
                         <field name="qty" />
-                        <field name="pure_weight" colspan="2"/>
+                        <field name="pure_weight" colspan="2" required="1"/>
                     </group>
                     <group>
                         <field name="partner_num"/>
                         <field name="is_duplicate"/>
                         <field name="is_analytic"/>
+                        <field name="last_seq" readonly="1"/>
+                        <field name="last_sample_num"/>
                     </group>
                 </group>
+                    <button name="action_generate" String="Import" icon="STOCK_JUMP_TO" type="object"></button>
                     <group>
-                        <button name="action_generate" String="Import" icon="STOCK_JUMP_TO" type="object"></button>
                         <field name="line_qty"/>
+                        <field name="continue_seq"/>
                     </group>
                  <group>
                         <notebook>
                             <page string="Detail Line">
                                 <field name="line_id" attrs="{'readonly': [('state', '=', 'approved')]}">
                                     <tree string="Sampler's Details" editable="True">
+                                        <field name="in_name"/>
                                         <field name="name"/>
                                         <field name="weight" sum ="Total"/>
                                         <field name="sampler_id" invisible="1"/>
@@ -176,7 +181,7 @@
                                         <!--<field name="sampler_process" sum ="Total" on_change="onchange_total(sampler_process, sampler_prepare,sampler_research,total)"/>-->
                                         <!--<field name="sampler_prepare" sum ="Total" on_change="onchange_total(sampler_process, sampler_prepare,sampler_research,total)"/>-->
                                         <!--<field name="sampler_research" sum ="Total" on_change="onchange_total(sampler_process, sampler_prepare,sampler_research,total)"/>-->
-                                        <field name="tax_id" widget="many2many_tags"/>
+                                        <field name="tax_id" widget="many2many_tags" invisible="1"/>
                                         <field name="research_id" invisible="1"/>
                                         <!--<field name="total" on_change="onchange_total(sampler_process, sampler_prepare,sampler_research,total)"/>-->
                                     </tree>
