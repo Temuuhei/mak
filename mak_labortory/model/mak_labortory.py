@@ -35,6 +35,7 @@ class mak_sampler_line(osv.osv):
     _name = 'mak.sampler.line'
 
     _columns = {
+        'in_name':fields.char('Local Name'),
         'name':fields.char('Name'),
         'weight':fields.float('Weight'),
         'sampler_id':fields.many2one('mak.sampler', 'Sampler')
@@ -90,11 +91,17 @@ class mak_sampler(osv.osv):
         'day': fields.function(_set_date, type='integer', string='Day', multi='dates', readonly=True, store=True),
         'state': fields.selection(STATE_SELECTION, 'State', readonly=True, track_visibility='onchange'),
         'qty': fields.float('Quantity', states={'approved': [('readonly', True)]}, track_visibility='onchange',required=True),
-        'line_qty': fields.integer('Quantity', states={'approved': [('readonly', True)]}, track_visibility='onchange',required=True),
+        'line_qty': fields.integer(' ', states={'approved': [('readonly', True)]}, track_visibility='onchange',required=True),
         'pure_weight': fields.float('Weight', states={'approved': [('readonly', True)]}, track_visibility='onchange'),
         'is_duplicate': fields.boolean('Is Duplicate', states={'approved': [('readonly', True)]}, track_visibility='onchange'),
         'is_analytic': fields.boolean('Is Analytic', states={'approved': [('readonly', True)]}, track_visibility='onchange'),
         'line_id':fields.one2many('mak.sampler.line','sampler_id','Line', copy = True),
+        'lab_id': fields.many2one('mak.labortory', 'Labortory', states={'approved': [('readonly', True)]}),
+        'continue_seq':fields.boolean('Is continue'),
+        'last_seq': fields.related('lab_id', 'last_seq',
+                                       type='char', relation='mak.labortory', string='Last Sequence'),
+        'last_sample_num': fields.related('lab_id', 'last_sample_num',
+                                   type='integer', relation='mak.labortory', string='Last Sample num'),
     }
 
 
@@ -113,11 +120,19 @@ class mak_sampler(osv.osv):
 
     # by Тэмүүжин Батлах
     def action_approve(self, cr, uid, ids, context=None):
+        last_seq = 0.0
+        obj = self.browse(cr, uid, ids)[0]
+        last_seq = obj.lab_id.last_sample_num
+        obj.lab_id.write({'last_sample_num': last_seq + int(len(obj.line_id))})
         self.write(cr, uid, ids, {'state': 'approved'})
         return True
 
     # by Тэмүүжин Цуцлах
     def action_draft(self, cr, uid, ids, context=None):
+        last_seq = 0.0
+        obj = self.browse(cr, uid, ids)[0]
+        last_seq = obj.lab_id.last_sample_num
+        obj.lab_id.write({'last_sample_num': last_seq - int(len(obj.line_id))})
         self.write(cr, uid, ids, {'state': 'draft'})
         return True
 
@@ -125,19 +140,42 @@ class mak_sampler(osv.osv):
     def action_generate(self,cr,uid,ids,context=None):
         res = {}
         obj = self.browse(cr, uid, ids)[0]
-        if obj.partner_num and obj.pure_weight:
+        if obj.partner_num and obj.pure_weight and not obj.continue_seq:
             cr.execute('Delete from mak_sampler_line where sampler_id=%s',
                        (obj.id,))
-            i = 1
-            while i <= obj.line_qty:
-                print(i)
-                data = {
-                    'name': obj.partner_num + '-' + str(i),
-                    'weight': obj.pure_weight / obj.line_qty,
-                    'sampler_id': obj.id}
-                m_line_ids = self.pool.get('mak.sampler.line').create(cr, uid, data, context=context)
-                i += 1
+            if obj.lab_id.short_name and obj.lab_id.last_seq and obj.lab_id.last_sample_num:
+                i = 1
+                while i <= obj.line_qty:
+                    print(i)
 
+                    data = {
+                        'in_name': obj.lab_id.short_name + '-' + obj.lab_id.last_seq + '-' + str(
+                            obj.lab_id.last_sample_num + i),
+                        'name': obj.partner_num + '-' + str(i),
+                        'weight': obj.pure_weight / obj.line_qty,
+                        'sampler_id': obj.id}
+                    m_line_ids = self.pool.get('mak.sampler.line').create(cr, uid, data, context=context)
+                    i += 1
+            else:
+                raise osv.except_osv(_('Warning!'),
+                                     _(u"ТА лаборторын богино нэр, дараалал, хамгийн сүүлийн дугаар гэх талбаруудыг бөглөнө үү!! "))
+        else:
+            print 'Temka'
+            if obj.lab_id.short_name and obj.lab_id.last_seq and obj.lab_id.last_sample_num:
+                i = 1
+                while i <= obj.line_qty:
+                    print(i)
+                    data = {
+                        'in_name': obj.lab_id.short_name + '-' + obj.lab_id.last_seq + '-' + str(obj.lab_id.last_sample_num + i),
+                        'name': obj.partner_num + '-' + str(i),
+                        'weight': obj.pure_weight / obj.line_qty,
+                        'sampler_id': obj.id}
+                    m_line_ids = self.pool.get('mak.sampler.line').create(cr, uid, data, context=context)
+                    i += 1
+            else:
+                raise osv.except_osv(_('Warning!'),
+                                     _(
+                                         u"ТА лаборторын богино нэр, дараалал, хамгийн сүүлийн дугаар гэх талбаруудыг бөглөнө үү!! "))
         return True
 
 class mak_labortory(osv.osv):
@@ -146,7 +184,11 @@ class mak_labortory(osv.osv):
     _inherit = ['mail.thread']
 
     _columns = {
-           'name':fields.char('Name')
+           'name':fields.char('Name'),
+           'short_name':fields.char('Short Name'),
+           'last_seq':fields.char('Sequence'),
+           'last_sample_num':fields.integer('Last Sample Number')
+
        }
 
 class mak_research_line(osv.osv):
