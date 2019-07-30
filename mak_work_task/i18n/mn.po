@@ -22,7 +22,7 @@ msgid "\n"
 "Сайн байна уу, </br>\n"
 "</p>\n"
 "<p>\n"
-"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"name\"]}</b> утгатай ЭЗГ-н хуваарьт ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"name\"]}</b> утгатай хуваарьт ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -49,13 +49,13 @@ msgid "\n"
 "\n"
 "<p>\n"
 "Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\">ЭЗГ-н хуваарьт ажил</a></b>\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\"> хуваарьт ажил</a></b>\n"
 "\n"
 "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
+"Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -72,7 +72,7 @@ msgstr "\n"
 "Сайн байна уу, </br>\n"
 "</p>\n"
 "<p>\n"
-"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"name\"]}</b> утгатай ЭЗГ-н хуваарьт ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"name\"]}</b> утгатай хуваарьт ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -99,13 +99,13 @@ msgstr "\n"
 "\n"
 "<p>\n"
 "Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\">ЭЗГ-н хуваарьт ажил</a></b>\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\"> хуваарьт ажил</a></b>\n"
 "\n"
 "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
+"Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -151,13 +151,13 @@ msgid "\n"
 "\n"
 "<p>\n"
 "Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\"> ЭЗГ-н хуваарьт ажил </a></b>\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\"> хуваарьт ажил </a></b>\n"
 "\n"
 "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
+"Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -202,13 +202,13 @@ msgstr "\n"
 "\n"
 "<p>\n"
 "Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\"> ЭЗГ-н хуваарьт ажил </a></b>\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\"> Хуваарьт ажил </a></b>\n"
 "\n"
 "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
+"Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -322,7 +322,7 @@ msgstr "Гүйцэтгэсэн хугацаа /өдөр/"
 #. module: mak_work_task
 #: model:ir.model,name:mak_work_task.model_task_management
 msgid "Task Management"
-msgstr "ЭЗГ-н хуваарьт ажил"
+msgstr "Хуваарьт ажил"
 
 #. module: mak_work_task
 #: field:task.management,message_follower_ids:0
@@ -407,17 +407,17 @@ msgstr "Энгийн"
 #: model:ir.ui.menu,name:mak_work_task.menu_task_management
 #: view:task.management:mak_work_task.view_mak_task_management_form
 msgid "Mak Task Management"
-msgstr "ЭЗГ-н хуваарьт ажлын бүртгэл"
+msgstr "Хуваарьт ажлын бүртгэл"
 
 #. module: mak_work_task
 #: view:task.management:mak_work_task.task_management_search_view
 msgid "Mak Task Management Search"
-msgstr "ЭЗГ-н хуваарьт ажлын бүртгэлийн хайлт"
+msgstr "Хуваарьт ажлын бүртгэлийн хайлт"
 
 #. module: mak_work_task
 #: view:task.management:mak_work_task.view_task_management_tree
 msgid "Mak Task Management input"
-msgstr "ЭЗГ-н хуваарьт ажлын бүртгэл"
+msgstr Хуваарьт ажлын бүртгэл"
 
 #. module: mak_work_task
 #: selection:task.management,priority:0
@@ -480,7 +480,7 @@ msgstr "Summary"
 #. module: mak_work_task
 #: model:res.groups,name:mak_work_task.task_management_manager
 msgid "Task Manager"
-msgstr "ЭЗГ-н хуваарьт ажлын бүртгэл"
+msgstr "Хуваарьт ажлын бүртгэл"
 
 #. module: mak_work_task
 #: field:task.management,sequence_id:0
@@ -530,8 +530,8 @@ msgstr "Жил"
 #. module: mak_work_task
 #: model:email.template,subject:mak_work_task.task_email_template_to_manager
 #: model:email.template,subject:mak_work_task.task_management_email_template_to_user
-msgid "[Эрх зүйн газрын хуваарьт ажил] ${user.company_id.name}"
-msgstr "[Шинэ ажлын даалгавар] ${user.company_id.name}"
+msgid "[Шинэ ажлын даалгавар]"
+msgstr "[Шинэ ажлын даалгавар]"
 
 #. module: mak_work_task
 #: model:res.groups,comment:mak_work_task.task_management_manager
