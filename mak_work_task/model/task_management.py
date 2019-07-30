@@ -165,6 +165,12 @@ class task_management(osv.osv):
         self.write(cr, uid, ids, {'state': 'cancel'})
         return True
 
+        # by Тэмүүжин цуцлах
+    def action_back(self, cr, uid, ids, context=None):
+        self.send_notification(cr, uid, ids, 'assigned', context=context)
+        self.write(cr, uid, ids, {'state': 'assigned'})
+        return True
+
     # by Тэмүүжин Цуцлах
     def action_draft(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state': 'draft'})
