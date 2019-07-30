@@ -38,7 +38,7 @@
                         <field name="is_expired" states="check,done" groups ="mak_work_task.task_management_manager"/>
                     </group>
                     <group>
-                        <field name="memo" widget="html" class="oe_memo" editor_height="350px" attrs="{'readonly': ['|',('state','=','assigned'),('state','=','check'),('state','=','done')]}"/>
+                        <field name="memo" widget="html" class="oe_memo" editor_height="350px" attrs="{'readonly': ['|',('state','=','done')]}"/>
                     </group>
                 </group>
                 </sheet>
