@@ -5,13 +5,12 @@
 	 <record id="task_management_manager" model="res.groups">
         <field name="name">Task Manager</field>
         <field name="comment">the user will have an access to the task's and change the states and checker role.</field>
-        <field name="category_id" ref="base.other"/>
+        <field name="category_id" ref="base.module_category_human_resources"/>
         <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
 	 </record>
 
-
-		<!-- Sequences for Mak Task management -->
+		<!-- Sequences for Mak Regulation -->
 
 		<record id="seq_type_task_management" model="ir.sequence.type">
 			<field name="name">MAK task management Sequence</field>
