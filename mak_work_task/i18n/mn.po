@@ -1,0 +1,556 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mak_work_task
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-30 16:04+0000\n"
+"PO-Revision-Date: 2019-07-30 16:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mak_work_task
+#: model:email.template,body_html:mak_work_task.task_email_template_to_manager
+msgid "\n"
+"<p>\n"
+"Сайн байна уу, </br>\n"
+"</p>\n"
+"<p>\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"name\"]}</b> утгатай ЭЗГ-н хуваарьт ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Хариуцсан хуульч: <b>${ctx[\"assigned_id\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Газар нэгж: <b>${ctx[\"department\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Дуусах хугацаа: <b>${ctx[\"date_deadline\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Гүйцэтгэсэн хугацаа /Өдөр/: <b>${ctx[\"duration\"]}</b>\n"
+"</p>\n"
+"\n"
+"\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\">ЭЗГ-н хуваарьт ажил</a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>  "
+msgstr "\n"
+"<p>\n"
+"Сайн байна уу, </br>\n"
+"</p>\n"
+"<p>\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"name\"]}</b> утгатай ЭЗГ-н хуваарьт ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Хариуцсан хуульч: <b>${ctx[\"assigned_id\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Газар нэгж: <b>${ctx[\"department\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Дуусах хугацаа: <b>${ctx[\"date_deadline\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Гүйцэтгэсэн хугацаа /Өдөр/: <b>${ctx[\"duration\"]}</b>\n"
+"</p>\n"
+"\n"
+"\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\">ЭЗГ-н хуваарьт ажил</a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>  "
+
+#. module: mak_work_task
+#: model:email.template,body_html:mak_work_task.task_management_email_template_to_user
+msgid "\n"
+"<p>\n"
+"Сайн байна уу</br>\n"
+"</p>\n"
+"<p>\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"name\"]}</b> утгатай ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Хариуцсан хуульч: <b>${ctx[\"assigned_id\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Газар нэгж: <b>${ctx[\"department\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Газар нэгж: <b>${ctx[\"type\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Дуусах хугацаа: <b>${ctx[\"date_deadline\"]}</b>\n"
+"</p>\n"
+"\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\"> ЭЗГ-н хуваарьт ажил </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
+msgstr "\n"
+"<p>\n"
+"Сайн байна уу</br>\n"
+"</p>\n"
+"<p>\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"name\"]}</b> утгатай ажлын даалгавар ирлээ.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Хариуцсан хуульч: <b>${ctx[\"assigned_id\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Газар нэгж: <b>${ctx[\"department\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Газар нэгж: <b>${ctx[\"type\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Дуусах хугацаа: <b>${ctx[\"date_deadline\"]}</b>\n"
+"</p>\n"
+"\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=task.management&action=${ctx[\"action_id\"]}\"> ЭЗГ-н хуваарьт ажил </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
+
+#. module: mak_work_task
+#: selection:task.management,state:0
+msgid "Assigned"
+msgstr "Хуульч томилогдсон"
+
+#. module: mak_work_task
+#: field:task.management,assigned_date:0
+msgid "Assigned Date"
+msgstr "Хариуцуулсан огноо"
+
+#. module: mak_work_task
+#: field:task.management,assigned_id:0
+msgid "Assigned To"
+msgstr "Хариуцсан хуульч"
+
+#. module: mak_work_task
+#: selection:task.management,state:0
+msgid "Cancel"
+msgstr "Цуцлагдсан"
+
+#. module: mak_work_task
+#: selection:task.management,state:0
+msgid "Check"
+msgstr "Хянах"
+
+#. module: mak_work_task
+#: field:task.management,check_date:0
+msgid "Checked Date"
+msgstr "Хянуулсан огноо"
+
+#. module: mak_work_task
+#: field:task.management,memo:0
+msgid "Content"
+msgstr "Тайлбар"
+
+#. module: mak_work_task
+#: selection:task.management,type:0
+msgid "Contract"
+msgstr "Гэрээ"
+
+#. module: mak_work_task
+#: field:task.management,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: mak_work_task
+#: field:task.management,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: mak_work_task
+#: field:task.management,date:0
+msgid "Date"
+msgstr "Огноо"
+
+#. module: mak_work_task
+#: help:task.management,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+#: field:task.management,day:0
+msgid "Day"
+msgstr "Өдөр"
+
+#. module: mak_work_task
+#: field:task.management,date_deadline:0
+msgid "Deadline"
+msgstr "Дуусах огноо"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+msgid "Department"
+msgstr "Газар нэгж"
+
+#. module: mak_work_task
+#: field:task.management,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mak_work_task
+#: selection:task.management,state:0
+msgid "Done"
+msgstr "Дууссан"
+
+#. module: mak_work_task
+#: selection:task.management,state:0
+msgid "Draft"
+msgstr "Ноорог"
+
+#. module: mak_work_task
+#: field:task.management,duration:0
+msgid "Duration"
+msgstr "Гүйцэтгэсэн хугацаа /өдөр/"
+
+#. module: mak_work_task
+#: model:ir.model,name:mak_work_task.model_task_management
+msgid "Task Management"
+msgstr "ЭЗГ-н хуваарьт ажил"
+
+#. module: mak_work_task
+#: field:task.management,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+msgid "Group By"
+msgstr "Group By"
+
+#. module: mak_work_task
+#: selection:task.management,priority:0
+msgid "High"
+msgstr "Нэн яаралтай"
+
+#. module: mak_work_task
+#: help:task.management,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: mak_work_task
+#: field:task.management,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mak_work_task
+#: help:task.management,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: mak_work_task
+#: code:addons/mak_work_task/model/task_management.py:134
+#, python-format
+msgid "In order to delete a task, you must Draft it first."
+msgstr "Устгахын тулд ноорог төлөвт оруулах ёстой."
+
+#. module: mak_work_task
+#: code:addons/mak_work_task/model/task_management.py:133
+#: code:addons/mak_work_task/model/task_management.py:140
+#, python-format
+msgid "Invalid Action!"
+msgstr "Хэрэглэгчийн алдаа!"
+
+#. module: mak_work_task
+#: field:task.management,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: mak_work_task
+#: field:task.management,is_expired:0
+msgid "Is expired?"
+msgstr "Хугацаандаа амжсан эсэх?"
+
+#. module: mak_work_task
+#: field:task.management,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: mak_work_task
+#: field:task.management,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mak_work_task
+#: field:task.management,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mak_work_task
+#: field:task.management,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mak_work_task
+#: selection:task.management,priority:0
+msgid "Low"
+msgstr "Энгийн"
+
+#. module: mak_work_task
+#: model:ir.actions.act_window,name:mak_work_task.action_task_management_window
+#: model:ir.ui.menu,name:mak_work_task.menu_task_management
+#: view:task.management:mak_work_task.view_mak_task_management_form
+msgid "Mak Task Management"
+msgstr "ЭЗГ-н хуваарьт ажлын бүртгэл"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+msgid "Mak Task Management Search"
+msgstr "ЭЗГ-н хуваарьт ажлын бүртгэлийн хайлт"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.view_task_management_tree
+msgid "Mak Task Management input"
+msgstr "ЭЗГ-н хуваарьт ажлын бүртгэл"
+
+#. module: mak_work_task
+#: selection:task.management,priority:0
+msgid "Medium"
+msgstr "Яаралтай"
+
+#. module: mak_work_task
+#: field:task.management,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: mak_work_task
+#: help:task.management,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+#: field:task.management,month:0
+msgid "Month"
+msgstr "Сар"
+
+#. module: mak_work_task
+#: field:task.management,name:0
+msgid "Name"
+msgstr "Товч агуулга"
+
+#. module: mak_work_task
+#: selection:task.management,type:0
+msgid "Other"
+msgstr "Бусад"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+#: field:task.management,partner_id:0
+msgid "Partner"
+msgstr "Харилцагч"
+
+#. module: mak_work_task
+#: field:task.management,priority:0
+msgid "Priority"
+msgstr "Яаралтай эсэх?"
+
+#. module: mak_work_task
+#: field:task.management,sector_id:0
+msgid "Sector"
+msgstr "Газар нэгж"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+#: field:task.management,state:0
+msgid "State"
+msgstr "Төлөв"
+
+#. module: mak_work_task
+#: field:task.management,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: mak_work_task
+#: model:res.groups,name:mak_work_task.task_management_manager
+msgid "Task Manager"
+msgstr "ЭЗГ-н хуваарьт ажлын бүртгэл"
+
+#. module: mak_work_task
+#: field:task.management,sequence_id:0
+msgid "Task Sequence"
+msgstr "Д/Дугаар"
+
+#. module: mak_work_task
+#: model:res.groups,name:mak_work_task.task_management_user
+msgid "Task User"
+msgstr "Task User"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+#: field:task.management,type:0
+msgid "Type"
+msgstr "Төрөл"
+
+#. module: mak_work_task
+#: field:task.management,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: mak_work_task
+#: code:addons/mak_work_task/model/task_management.py:82
+#: code:addons/mak_work_task/model/task_management.py:253
+#, python-format
+msgid "Warning!"
+msgstr "Warning!"
+
+#. module: mak_work_task
+#: field:task.management,website_message_ids:0
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: mak_work_task
+#: help:task.management,website_message_ids:0
+msgid "Website communication history"
+msgstr "Website communication history"
+
+#. module: mak_work_task
+#: view:task.management:mak_work_task.task_management_search_view
+#: field:task.management,year:0
+msgid "Year"
+msgstr "Жил"
+
+
+#. module: mak_work_task
+#: model:email.template,subject:mak_work_task.task_email_template_to_manager
+#: model:email.template,subject:mak_work_task.task_management_email_template_to_user
+msgid "[Эрх зүйн газрын хуваарьт ажил] ${user.company_id.name}"
+msgstr "[Шинэ ажлын даалгавар] ${user.company_id.name}"
+
+#. module: mak_work_task
+#: model:res.groups,comment:mak_work_task.task_management_manager
+msgid "the user will have an access to the task's and change the states and checker role."
+msgstr "the user will have an access to the task's and change the states and checker role."
+
+#. module: mak_work_task
+#: model:res.groups,comment:mak_work_task.task_management_user
+msgid "the user will have an access to the task's data that relative with her/him."
+msgstr "the user will have an access to the task's data that relative with her/him."
+
+#. module: mak_work_task
+#: code:addons/mak_work_task/model/task_management.py:141
+#, python-format
+msgid "you must choose assigner it first."
+msgstr "Хариуцах хуульчийг сонгоно уу."
+
+#. module: mak_work_task
+#: code:addons/mak_work_task/model/task_management.py:253
+#, python-format
+msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
+msgstr "Хүлээн авах хүн олдсонгүй! Та систем админд хандана уу!"

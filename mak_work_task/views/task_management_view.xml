@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="view_mak_task_management_form">
+        <field name="name">task.management</field>
+        <field name="model">task.management</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        	<form string="Mak Task Management">
+                <header>
+                    <button name="action_assigned" states="draft" String="Илгээх" icon="gtk-apply" type="object" class="oe_highlight"/>
+                    <button name="action_draft" states="wait,done,cancel" String="Ноороглох" type="object" />
+                    <button name="action_check" states="assigned" String="Хянуулах" type="object" class="oe_highlight"/>
+                    <button name="action_done" states="check" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_work_task.task_management_manager"/>
+                    <button name="action_cancel" states="check" String="Цуцлах" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,assigned,check,done,cancel"/>
+                </header>
+                <sheet>
+                    <div class="pull-left">
+						<label for="sequence_id" class="oe_inline"/>
+          				<h1>
+							<field name="sequence_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+                <group>
+                    <group>
+                        <field name="date" required="1" />
+                        <field name="type" attrs="{'readonly': ['|','|',('state','=','assigned'),('state','=','check'),('state','=','done')]}"/>
+                        <field name="sector_id" attrs="{'readonly':['|' ,'|',('state','=','assigned'),('state','=','check'),('state','=','done')]}" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                        <field name="partner_id" attrs="{'readonly':['|' ,'|',('state','=','assigned'),('state','=','check'),('state','=','done')]}" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                        <field name="name" colspan="2" attrs="{'readonly': ['|','|',('state','=','assigned'),('state','=','check'),('state','=','done')]}"/>
+                        <field name="assigned_id" widget="many2many_tags" attrs="{'readonly': ['|' ,'|',('state','=','assigned'),('state','=','check'),('state','=','done')]}"/>
+                        <field name="date_deadline" attrs="{'readonly': ['|','|',('state','=','assigned'),('state','=','check'),('state','=','done')]}"/>
+                        <field name="priority"/>
+                        <field name="duration" states="check,done" groups ="mak_work_task.task_management_manager"/>
+                        <field name="is_expired" states="check,done" groups ="mak_work_task.task_management_manager"/>
+                    </group>
+                    <group>
+                        <field name="memo" widget="html" class="oe_memo" editor_height="350px" attrs="{'readonly': ['|',('state','=','assigned'),('state','=','check'),('state','=','done')]}"/>
+                    </group>
+                </group>
+                </sheet>
+                 <div class="oe_chatter">
+                    	<field name="message_follower_ids" widget="mail_followers"/>
+                    	<field name="message_ids" widget="mail_thread"/>
+                	</div>
+            </form>
+        </field>
+    </record>
+
+	<record id="task_management_search_view" model="ir.ui.view">
+        <field name="name">task.management.search</field>
+        <field name="model">task.management</field>
+        <field name="arch" type="xml">
+            <search string="Mak Task Management Search">
+            	<field name="state"/>
+                <field name="type"/>
+                <field name="sector_id"/>
+                <field name="assigned_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Type" domain="[]" context="{'group_by':'type'}"/>
+                    <filter string="Department" domain="[]" context="{'group_by':'sector_id'}"/>
+                    <filter string="Year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
+                    <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_task_management_tree">
+        <field name="name">task.management.tree</field>
+        <field name="model">task.management</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Task Management input" colors="gray:state == 'assigned';skyblue:state == 'draft';red:priority == 'high';blue:priority == 'medium'">
+            	<field name="sequence_id"/>
+            	<field name="assigned_id"/>
+            	<field name="partner_id"/>
+	            <field name="date"/>
+	            <field name="sector_id"/>
+	            <field name="type"/>
+	            <field name="name"/>
+                <field name="priority"/>
+	            <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_task_management_window" model="ir.actions.act_window">
+        <field name="name">Mak Task Management</field>
+        <field name="res_model">task.management</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+
+      <menuitem action="action_task_management_window" id="menu_task_management"
+            parent="l10n_mn_contract_management.menu_contract_action" sequence="7" />
+
+
+	</data>
+</openerp>
