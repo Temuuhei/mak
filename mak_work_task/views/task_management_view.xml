@@ -11,7 +11,7 @@
                 <header>
                     <button name="action_assigned" states="draft" String="Илгээх" icon="gtk-apply" type="object" class="oe_highlight"/>
                     <button name="action_draft" states="wait,done,cancel" String="Ноороглох" type="object" />
-                    <button name="action_back" states="check,done,cancel" String="Буцаах" type="object" />
+                    <button name="action_back" states="check,done,cancel" String="Буцаах" type="object" groups ="mak_work_task.task_management_manager" />
                     <button name="action_check" states="assigned" String="Хянуулах" type="object" class="oe_highlight"/>
                     <button name="action_done" states="check" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_work_task.task_management_manager"/>
                     <button name="action_cancel" states="check" String="Цуцлах" type="object" class="oe_highlight" groups ="mak_work_task.task_management_manager"/>
