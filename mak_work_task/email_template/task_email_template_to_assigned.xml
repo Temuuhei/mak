@@ -5,9 +5,9 @@
 
 
 		<record id="task_email_template_to_manager" model="email.template">
-			<field name="name">ЭЗГ-н хуваарьт ажил</field>
+			<field name="name">Шинэ ажлын даалгавар</field>
 			<field name="email_from">${(user.login or '')|safe}</field>
-			<field name="subject">[Эрх зүйн газарын хуваарьт ажил] ${user.company_id.name}</field>
+			<field name="subject">[Эрх зүйн газарын хуваарьт ажил]</field>
 			<field name="email_to">${object.email|safe}</field>
 			<field name="lang">${object.lang}</field>
 			<field name="model_id" ref="base.model_res_users" />
@@ -17,7 +17,7 @@
 Сайн байна уу, </br>
 </p>
 <p>
-Танд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["name"]}</b> утгатай ЭЗГ-н хуваарьт ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.
+Танд хамааралтай <b>${ctx["sequence_id"]}</b> дугаартай  <b>${ctx["name"]}</b> утгатай хуваарьт ажлын бүртгэл дараах байдлаар өөрчлөгдлөө.
 </p>
 
 <p>
@@ -44,7 +44,7 @@
 
 <p>
 Холбоос:
-<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=task.management&action=${ctx["action_id"]}">ЭЗГ-н хуваарьт ажил</a></b>
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=task.management&action=${ctx["action_id"]}"> хуваарьт ажил</a></b>
 
 
 </p>
@@ -69,9 +69,9 @@ MAK ERP Автомат Имэйл
 <!-- Email template of employee -->
 
 			<record id="task_management_email_template_to_user" model="email.template">
-			<field name="name">ЭЗГ-н хуваарьт ажил</field>
+			<field name="name">Шинэ ажлын даалгавар</field>
 			<field name="email_from">${(user.login or '')|safe}</field>
-			<field name="subject">[Шинэ ажлын даалгавар] ${user.company_id.name}</field>
+			<field name="subject">[Шинэ ажлын даалгавар]</field>
 			<field name="email_to">${object.email|safe}</field>
 			<field name="lang">${object.lang}</field>
 			<field name="model_id" ref="base.model_res_users" />
@@ -107,13 +107,13 @@ MAK ERP Автомат Имэйл
 
 <p>
 Холбоос:
-<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=task.management&action=${ctx["action_id"]}"> ЭЗГ-н хуваарьт ажил </a></b>
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=task.management&action=${ctx["action_id"]}"> хуваарьт ажил </a></b>
 
 
 </p>
 
 <p>
-Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.
+Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.
 </p>
 
 <p>
