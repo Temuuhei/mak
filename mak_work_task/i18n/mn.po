@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 18:34+0000\n"
-"PO-Revision-Date: 2019-07-30 18:34+0000\n"
+"POT-Creation-Date: 2019-08-01 15:40+0000\n"
+"PO-Revision-Date: 2019-08-01 15:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgid "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
+"Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -105,7 +105,7 @@ msgstr "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
+"Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол хариуцсан хуульчаас лавлана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -141,7 +141,7 @@ msgid "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"		Газар нэгж: <b>${ctx[\"type\"]}</b>\n"
+"		Төрөл: <b>${ctx[\"type\"]}</b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -157,7 +157,7 @@ msgid "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
+"Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -192,7 +192,7 @@ msgstr "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"		Газар нэгж: <b>${ctx[\"type\"]}</b>\n"
+"		Төрөл: <b>${ctx[\"type\"]}</b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -208,7 +208,7 @@ msgstr "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд ЭЗГ-н хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
+"Танд хуваарьт ажилтай холбоотой санал хүсэлт байгаа бол бүртгэсэн хэрэглэгчээс лавлана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -355,14 +355,14 @@ msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
 
 #. module: mak_work_task
-#: code:addons/mak_work_task/model/task_management.py:125
+#: code:addons/mak_work_task/model/task_management.py:126
 #, python-format
 msgid "In order to delete a task, you must Draft it first."
 msgstr "Устгахын тулд ноорог төлөвт оруулах ёстой."
 
 #. module: mak_work_task
-#: code:addons/mak_work_task/model/task_management.py:124
-#: code:addons/mak_work_task/model/task_management.py:131
+#: code:addons/mak_work_task/model/task_management.py:125
+#: code:addons/mak_work_task/model/task_management.py:132
 #, python-format
 msgid "Invalid Action!"
 msgstr "Хэрэглэгчийн алдаа!"
@@ -407,7 +407,7 @@ msgstr "Энгийн"
 #: model:ir.ui.menu,name:mak_work_task.menu_task_management
 #: view:task.management:mak_work_task.view_mak_task_management_form
 msgid "Mak Task Management"
-msgstr "ЭЗГ-н хуваарьт ажлын бүртгэл"
+msgstr "Хуваарьт ажлын бүртгэл"
 
 #. module: mak_work_task
 #: view:task.management:mak_work_task.task_management_search_view
@@ -488,6 +488,11 @@ msgid "Task Sequence"
 msgstr "Д/Дугаар"
 
 #. module: mak_work_task
+#: selection:task.management,state:0
+msgid "To partner"
+msgstr "Харилцагчид илгээгдсэн"
+
+#. module: mak_work_task
 #: view:task.management:mak_work_task.task_management_search_view
 #: field:task.management,type:0
 msgid "Type"
@@ -499,7 +504,7 @@ msgid "Unread Messages"
 msgstr "Unread Messages"
 
 #. module: mak_work_task
-#: code:addons/mak_work_task/model/task_management.py:251
+#: code:addons/mak_work_task/model/task_management.py:259
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -532,13 +537,13 @@ msgid "the user will have an access to the task's and change the states and chec
 msgstr "the user will have an access to the task's and change the states and checker role."
 
 #. module: mak_work_task
-#: code:addons/mak_work_task/model/task_management.py:132
+#: code:addons/mak_work_task/model/task_management.py:133
 #, python-format
 msgid "you must choose assigner it first."
 msgstr "Хариуцах хуульчийг сонгоно уу."
 
 #. module: mak_work_task
-#: code:addons/mak_work_task/model/task_management.py:251
+#: code:addons/mak_work_task/model/task_management.py:259
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та систем админд хандана уу!"

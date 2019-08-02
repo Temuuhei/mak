@@ -39,6 +39,7 @@ class task_management(osv.osv):
         ('draft', 'Draft'),
         ('assigned', 'Assigned'),
         ('check', 'Check'),
+        ('to_partner', 'To partner'),
         ('done', 'Done'),
         ('cancel', 'Cancel')
     ]
@@ -147,6 +148,7 @@ class task_management(osv.osv):
             d23 = datetime.strptime(obj.date_deadline, "%Y-%m-%d")
             duration = (d2 - d1).days
             print 'duration \n',duration
+            duration += duration
             self.write(cr, uid, ids, {'duration': duration})
             if d2 > d23:
                 self.write(cr, uid, ids, {'is_expired': True})
@@ -163,6 +165,12 @@ class task_management(osv.osv):
     def action_cancel(self, cr, uid, ids, context=None):
         self.send_notification(cr, uid, ids, 'cancel', context=context)
         self.write(cr, uid, ids, {'state': 'cancel'})
+        return True
+
+    # by Тэмүүжин харилцагчид илгээгдсэн
+    def action_to_partner(self, cr, uid, ids, context=None):
+        self.send_notification(cr, uid, ids, 'to_partner', context=context)
+        self.write(cr, uid, ids, {'state': 'to_partner'})
         return True
 
         # by Тэмүүжин цуцлах
