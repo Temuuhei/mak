@@ -107,7 +107,7 @@ class task_management(osv.osv):
         'is_expired': False,
     }
 
-    _order = 'priority asc ,date desc'
+    _order = 'assigned_id asc'
 
     def create(self, cr, uid, vals, context=None):
         vals['sequence_id'] = self.pool.get('ir.sequence').get(cr, uid, 'task.management')
