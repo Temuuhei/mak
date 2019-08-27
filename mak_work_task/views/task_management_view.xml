@@ -12,7 +12,7 @@
                     <button name="action_assigned" states="draft" String="Илгээх" icon="gtk-apply" type="object" class="oe_highlight"/>
                     <button name="action_draft" states="assigned,done,cancel" String="Ноороглох" type="object" groups ="mak_work_task.task_management_manager"/>
                     <button name="action_back" states="check,done,cancel,to_partner" String="Буцаах" type="object" groups ="mak_work_task.task_management_manager" />
-                    <button name="action_check" states="assigned" String="Хянуулах" type="object" class="oe_highlight"/>
+                    <button name="action_check" states="assigned,to_partner" String="Хянуулах" type="object" class="oe_highlight"/>
                     <button name="action_done" states="check,to_partner" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_work_task.task_management_manager"/>
                     <button name="action_to_partner" states="check" String="Харилцагчид илгээх" type="object" icon="gtk-apply" groups ="mak_work_task.task_management_manager"/>
                     <button name="action_cancel" states="check" String="Цуцлах" type="object" class="oe_highlight" groups ="mak_work_task.task_management_manager"/>
