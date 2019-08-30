@@ -153,6 +153,7 @@ class task_management(osv.osv):
             if d2 > d23:
                 self.write(cr, uid, ids, {'is_expired': True})
             self.send_notification(cr, uid, ids, 'check', context=context)
+            self.write(cr, uid, ids, {'state': 'check'})
         return True
 
     # by Тэмүүжин Дуусгах
@@ -173,7 +174,7 @@ class task_management(osv.osv):
         self.write(cr, uid, ids, {'state': 'to_partner'})
         return True
 
-        # by Тэмүүжин цуцлах
+        # by Тэмүүжин томилогдсон
     def action_back(self, cr, uid, ids, context=None):
         self.send_notification(cr, uid, ids, 'assigned', context=context)
         self.write(cr, uid, ids, {'state': 'assigned'})
