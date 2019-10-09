@@ -76,7 +76,7 @@ class task_management(osv.osv):
 
     _columns = {
         'assigned_id': fields.many2many('res.users', 'notify_task_assigners_rel', 'task_management_id',
-                                               'user_id', string='Assigned To'),
+                                               'user_id', string='Assigned To',track_visibility='onchange'),
         'sequence_id': fields.char('Task Sequence', size=32, required=True),
         'date': fields.date('Date', required=True, states={'done': [('readonly', True)]}),
         'assigned_date': fields.date('Assigned Date'),
