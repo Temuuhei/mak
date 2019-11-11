@@ -19,7 +19,7 @@
                     <button name="action_cancel" states="check" String="Цуцлах" type="object" class="oe_highlight"/>
                     <button name="action_done" states="check,send_pomak" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_regulation.regulation_ioe"/>
                     <button name="action_create_reg" states="to_allow,send_pomak" String="Тушаал үүсгэх" type="object" class="oe_highlight" />
-                    <button name="action_allow" states="send_pomak" String="Зөвшөөрсөн" type="object" class="oe_highlight" groups ="mak_regulation.regulation_ioe"/>
+                    <!--<button name="action_allow" states="send_pomak" String="Зөвшөөрсөн" type="object" class="oe_highlight" groups ="mak_regulation.regulation_ioe"/>-->
                     <button name="action_reject" states="send_pomak" String="Татгалзсан" type="object" class="oe_highlight" groups ="mak_regulation.regulation_ioe"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,sent,assigned,check,send_pomak,done"/>
                 </header>

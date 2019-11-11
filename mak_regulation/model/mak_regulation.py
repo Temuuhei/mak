@@ -228,6 +228,7 @@ class mak_regulation(osv.osv):
 
     def action_create_reg(self,cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids)[0]
+        self.send_notification(cr, uid, ids, 'created_reg', context=context)
         self.write(cr, uid, ids, {'state': 'created_reg'})
         return {
             'name': ('Regulation Registry'),
@@ -298,7 +299,7 @@ class mak_regulation(osv.osv):
                 template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
                                                                                   'mak_hr_email_template_to_assigned')[1]
             else:
-                if signal in ['assigned','done','to_allow','to_reject']:
+                if signal in ['assigned','done','to_allow','to_reject','created_reg']:
                     # notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                     #                                               groups[signal])
                     template_id = \
