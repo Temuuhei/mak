@@ -50,11 +50,11 @@ class mak_regulation(osv.osv):
         ('draft', 'Draft'),
         ('wait', 'Waiting for command'),
         ('assigned', 'Assigned'),
-        ('open1', 'Open(I)'),
-        ('pending1', 'Pending(I)'),
-        ('assigned2', 'Assigned (II)'),
-        ('open2', 'Open(II)'),
-        ('pending2', 'Penging(II)'),
+        # ('open1', 'Open(I)'),
+        # ('pending1', 'Pending(I)'),
+        # ('assigned2', 'Assigned (II)'),
+        # ('open2', 'Open(II)'),
+        # ('pending2', 'Pending(II)'),
         ('check', 'Check'),
         ('done', 'Done'),
         ('send_pomak', 'Sent to PoMAK'),
@@ -65,14 +65,14 @@ class mak_regulation(osv.osv):
          ]
 
     def name_search(self, cr, uid, name, args=None, operator='ilike', context=None, limit=100):
-            args = args or []
-            if name:
-                ids = self.search(cr, uid, [('doc_name', operator, name)] + args, limit=limit, context=context or {})
-                if not ids:
-                    ids = self.search(cr, uid, [('employee_id', operator, name)] + args, limit=limit, context=context or {})
-            else:
-                ids = self.search(cr, uid, args, limit=limit, context=context or {})
-            return self.name_get(cr, uid, ids, context or {})
+        args = args or []
+        if name:
+            ids = self.search(cr, uid, [('doc_name', operator, name)] + args, limit=limit, context=context or {})
+            if not ids:
+                ids = self.search(cr, uid, [('employee_id', operator, name)] + args, limit=limit, context=context or {})
+        else:
+            ids = self.search(cr, uid, args, limit=limit, context=context or {})
+        return self.name_get(cr, uid, ids, context or {})
 
 
     def name_get(self, cr, uid, ids, context=None):
@@ -105,7 +105,7 @@ class mak_regulation(osv.osv):
 
     _columns = {
         'user_id': fields.many2one('res.users', 'Username', required=True, readonly=True),
-        'assigned_id': fields.many2one('res.users', 'Assigned To',states={'done': [('readonly', True)]}),
+        'assigned_id': fields.many2one('res.users', 'Assigned To',states={'done': [('readonly', True)],'wait':[('required',True)]}),
         'assigned_id2': fields.many2one('res.users', '2nd Assigned To',states={'done': [('readonly', True)]}),
         'sequence_id': fields.char('Regulation Sequence', size=32, required=True),
         'num_received_document': fields.char('Number of Received Documents', required=True,states={'done': [('readonly', True)]}),
@@ -115,6 +115,7 @@ class mak_regulation(osv.osv):
         'type': fields.selection([('local', 'Local'), ('abroad', 'Abroad')],'Type',states={'done': [('readonly', True)]}),
         'type_doc': fields.selection([('official_doc', 'Official Document'), ('complain', 'Complain')],'Document Type',states={'done': [('readonly', True)]}),
         'doc_name': fields.text('Name', size=160, required=True,states={'done': [('readonly', True)]}),
+        'dir_comment': fields.text('Director Comment', size=160, states={'done': [('readonly', True)],'check':[('required',True)]}),
         'description': fields.text('Description', size=160,states={'done': [('readonly', True)]}),
         'year': fields.function(_set_date, type='integer', string='Year', multi='dates', readonly=True, store=True),
         'month': fields.function(_set_date, type='integer', string='Month', multi='dates', readonly=True, store=True),
@@ -173,32 +174,32 @@ class mak_regulation(osv.osv):
         if obj.state == 'wait':
             self.send_notification(cr, uid, ids, 'assigned', context=context)
             self.write(cr, uid, ids, {'state': 'assigned'})
-        elif obj.state == 'assigned':
-            self.write(cr, uid, ids, {'state': 'open1'})
-        elif obj.state == 'open1':
-            self.write(cr, uid, ids, {'state': 'pending1'})
-        elif obj.state == 'assigned2':
-            self.write(cr, uid, ids, {'state': 'open2'})
-        elif obj.state == 'open2':
-            self.write(cr, uid, ids, {'state': 'pending2'})
+        # elif obj.state == 'assigned':
+        #     self.write(cr, uid, ids, {'state': 'open1'})
+        # elif obj.state == 'open1':
+        #     self.write(cr, uid, ids, {'state': 'pending1'})
+        # elif obj.state == 'assigned2':
+        #     self.write(cr, uid, ids, {'state': 'open2'})
+        # elif obj.state == 'open2':
+        #     self.write(cr, uid, ids, {'state': 'pending2'})
         return True
 
     def action_previous(self, cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids)[0]
         if obj.state == 'assigned':
             self.write(cr, uid, ids, {'state': 'wait'})
-        if obj.state == 'open1':
-            self.write(cr, uid, ids, {'state': 'assigned'})
-        if obj.state == 'pending1':
-            self.write(cr, uid, ids, {'state': 'open1'})
-        if obj.state == 'assigned2':
-            self.write(cr, uid, ids, {'state': 'pending1'})
-        if obj.state == 'open2':
-            self.write(cr, uid, ids, {'state': 'assigned2'})
-        if obj.state == 'pending2':
-            self.write(cr, uid, ids, {'state': 'open2'})
+        # if obj.state == 'open1':
+        #     self.write(cr, uid, ids, {'state': 'assigned'})
+        # if obj.state == 'pending1':
+        #     self.write(cr, uid, ids, {'state': 'open1'})
+        # if obj.state == 'assigned2':
+        #     self.write(cr, uid, ids, {'state': 'pending1'})
+        # if obj.state == 'open2':
+        #     self.write(cr, uid, ids, {'state': 'assigned2'})
+        # if obj.state == 'pending2':
+        #     self.write(cr, uid, ids, {'state': 'open2'})
         if obj.state == 'check':
-            self.write(cr, uid, ids, {'state': 'pending2'})
+            self.write(cr, uid, ids, {'state': 'assigned'})
         return True
 
     # by Тэмүүжин Батлах
@@ -271,21 +272,21 @@ class mak_regulation(osv.osv):
                 'done': 'base.group_user',
                 'cancel': 'base.group_user',
                 'created_reg': 'base.group_user',
-                'send_pomak': 'group_regulation_president',
+                'send_pomak': 'group_regulation_ioe',
                 'to_allow': 'base.group_user',
                 'to_reject': 'base.group_user',
             }
             states = {
                 'wait': u'Шийд хүлээсэн',
                 'assigned': u'"Шийд хүлээсэн" → "Хариуцагч томилогдсон" төлөвт шилжсэн',
-                'assigned2': u'"Хийгдэж байна" → "Хариуцагчтай(II шат) томилогдсон" төлөвт шилжсэн',
-                'check': u'"Хийгдэж байна or Хйигдэж байна(II)" → "БХГ-ийн захиралд илгээгдсэн" төлөвт шилжсэн',
-                'done': u'"БХГ-ийн захиралд илгээгдсэн" → "Дууссан" төлөвт шилжсэн',
+                # 'assigned2': u'"Хийгдэж байна" → "Хариуцагчтай(II шат) томилогдсон" төлөвт шилжсэн',
+                'check': u'"Хариуцагчтай" → "Захиралд илгээгдсэн" төлөвт шилжсэн',
+                'send_pomak': u'"Захиралд илгээгдсэн" → "Бичиг хэргийн ажилтанд илгээгдсэн" төлөвт шилжсэн',
+                'done': u'"Бичиг хэргийн ажилтанд илгээгдсэн" → "Дууссан" төлөвт шилжсэн',
                 'cancel': u'Цуцлагдсан',
-                'created_reg': u'"Дууссан" → "Тушаал үүссэн" төлөвт шилжсэн',
-                'send_pomak': u'"Дууссан" → "Ерөнхийлөгчид илгээсэн" төлөвт шилжсэн',
-                'to_allow': u'"Ерөнхийлөгчид илгээсэн" → "Ерөнхийлөгч зөвшөөрсөн" төлөвт шилжсэн',
-                'to_reject': u'"Ерөнхийлөгчид илгээсэн" → "Ерөнхийлөгч татгалзсан" төлөвт шилжсэн',
+                'created_reg': u'"Бичиг хэргийн ажилтанд илгээгдсэн" → "Тушаал үүссэн" төлөвт шилжсэн',
+                'to_allow': u'"Бичиг хэргийн ажилтанд илгээгдсэн" → "Ерөнхийлөгч зөвшөөрсөн" төлөвт шилжсэн',
+                'to_reject': u'"Бичиг хэргийн ажилтанд илгээгдсэн" → "Ерөнхийлөгч татгалзсан" төлөвт шилжсэн',
             }
 
             group_user_ids = []
@@ -301,15 +302,16 @@ class mak_regulation(osv.osv):
                     # notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                     #                                               groups[signal])
                     template_id = \
-                    self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
-                                                                        'reg_email_template_to_user')[1]
+                        self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
+                                                                            'reg_email_template_to_user')[1]
                     group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,
-                                                                           [('id', '=', reg.assigned_id.id)])
+                                                                       [('id', 'in', (reg.assigned_id.id,reg.assigned_id2.id))])
                     # notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                     #                                               'regulation_user')
                     # print 'NOTIFF GROUPS \n\n',notif_groups,group_user_ids
 
-                elif signal in ['assigned2','done','to_allow','to_reject']:
+                #2019  11 сарын Агиймаагийн өөрчлөлт send_pomak бол бичиг хэрэгийн ажилтанд илгээж байгаа  төлөв
+                elif signal in ['done','to_allow','to_reject']:
 
                     # notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                     #                                               groups[signal])
@@ -317,18 +319,27 @@ class mak_regulation(osv.osv):
                         self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
                                                                             'reg_email_template_to_user')[1]
                     group_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,
-                                                                       [('id', '=', reg.assigned_id2.id)])
+                                                                       [('id', 'in',
+                                                                         (reg.assigned_id.id, reg.assigned_id2.id))])
 
                 elif signal in ['check','to_allow','to_reject']:
                     notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
-                                                                  'regulation_user')
+                                                                  'regulation_ioe')
                     template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
                                                                                       'reg_email_template_to_user')[1]
+
                 elif signal in ['send_pomak']:
                     notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
-                                                                  'regulation_president')
+                                                                  'regulation_ioe')
+
                     template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
                                                                                       'reg_email_template_to_pomak')[1]
+
+                # elif signal in ['send_pomak']:
+                #     notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
+                #                                                   'regulation_president')
+                #     template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
+                #                                                                       'reg_email_template_to_pomak')[1]
 
 
             if notif_groups:
@@ -338,6 +349,7 @@ class mak_regulation(osv.osv):
 
             data = {
                 'doc_name': reg.doc_name,
+                'dir_comment': reg.dir_comment,
                 'department': reg.department_id.name,
                 'base_url': self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url'),
                 'action_id': self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation','action_mak_regulation_window')[1],
