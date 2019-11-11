@@ -6,17 +6,17 @@
 			<record id="reg_email_template_to_pomak" model="email.template">
 			<field name="name">Тушаал болон Албан бичгийн мэдээлэл</field>
 			<field name="email_from">${(user.login or '')|safe}</field>
-			<field name="subject">[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэх талаар шийдвэр авах тухай] ${user.company_id.name}</field>
+			<field name="subject">[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэн шийдсэн талаар] ${user.company_id.name}</field>
 			<field name="email_to">${object.email|safe}</field>
 			<field name="lang">${object.lang}</field>
 			<field name="model_id" ref="base.model_res_users" />
 			<field name="auto_delete" eval="True" />
 			<field name="body_html"><![CDATA[
 <p>
-Сайн байна уу, Ерөнхийлөгч өө </br>
+Сайн байна уу</br>
 </p>
 <p>
-Танд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.
+Танд дараах утгуудтай тушаалын төслүүдийг дуусгах болон хэрхэн шийдсэн талаарх шинэчлэлтийг хийхийг сануулж MAK ERP системээс автомат имэйл ирлээ.
 </p>
 <p>
 		Үүнд:
@@ -26,6 +26,9 @@
 </p>
 <p>
 		Ажилтан:       <b>${ctx["last_name"]}</b> овогтой <b>${ctx["employee_id"]}</b>
+</p>
+<p>
+		Захирлын тайлбар : 	   <b>${ctx["dir_comment"]}</b>
 </p>
 <p>
 		Хэлтэс : 	   <b>${ctx["department_id"]}</b>
@@ -57,7 +60,7 @@
 </p>
 
 <p>
-Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Байгууллага хөгжлийн газрын захирал-д хандана уу.
+Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол захиралд хандана уу.
 </p>
 
 <p>

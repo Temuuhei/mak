@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-11 07:06+0000\n"
-"PO-Revision-Date: 2018-12-11 07:06+0000\n"
+"POT-Creation-Date: 2019-11-09 15:35+0000\n"
+"PO-Revision-Date: 2019-11-09 15:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -63,6 +63,87 @@ msgstr "\n"
 "\n"
 "</pre>\n"
 "  "
+
+#. module: mak_regulation
+#: model:email.template,body_html:mak_regulation.doc_email_template_to_assigned_at
+msgid "\n"
+"<p>\n"
+"Сайн байна уу, БХГ-аас мэдэгдэж байна </br>\n"
+"</p>\n"
+"<p>\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Гадаад албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Дуусах хугацаа: <b>${ctx[\"date_deadline\"]}</b>\n"
+"</p>\n"
+"\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.document&action=${ctx[\"action_id\"]}\">Албан бичгийн мэдээлэл </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд гадаад албан бичгийн мэдээлэлтэй холбоотой санал хүсэлт асуух зүйл байгаа бол БХГ-т (Байгууллага хөгжлийн газар) болон захиргааны мэргэжилтэнд хандана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Та гадаад албан бичгийн хариу, түүний дагуу хийгдсэн ажил, санал, дүгнэлтийг системд бүртгэж өгнө үү\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
+msgstr "\n"
+"<p>\n"
+"Сайн байна уу, БХГ-аас мэдэгдэж байна </br>\n"
+"</p>\n"
+"<p>\n"
+"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Гадаад албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"		Дуусах хугацаа: <b>${ctx[\"date_deadline\"]}</b>\n"
+"</p>\n"
+"\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.document&action=${ctx[\"action_id\"]}\">Албан бичгийн мэдээлэл </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд гадаад албан бичгийн мэдээлэлтэй холбоотой санал хүсэлт асуух зүйл байгаа бол БХГ-т (Байгууллага хөгжлийн газар) болон захиргааны мэргэжилтэнд хандана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Та гадаад албан бичгийн хариу, түүний дагуу хийгдсэн ажил, санал, дүгнэлтийг системд бүртгэж өгнө үү\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
 
 #. module: mak_regulation
 #: model:email.template,body_html:mak_regulation.reg_email_template_to_user
@@ -133,93 +214,6 @@ msgstr "\n"
 "Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Байгууллага хөгжлийн газрын захирал-д хандана уу.\n"
 "</p>\n"
 "\n"
-"<p>\n"
-"    Баярлалаа,\n"
-"</p>\n"
-"\n"
-"<pre>\n"
-"--\n"
-"MAK ERP Автомат Имэйл\n"
-"\n"
-"</pre>\n"
-"\n"
-"      "
-
-#. module: mak_regulation
-#: model:email.template,body_html:mak_regulation.doc_email_template_to_assigned_at
-msgid "\n"
-"<p>\n"
-"Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>\n"
-"</p>\n"
-"<p>\n"
-"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Гадаад албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"		Дуусах хугацаа: <b>${ctx[\"date_deadline\"]}</b>\n"
-"</p>\n"
-"\n"
-"\n"
-"<p>\n"
-"Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.document&action=${ctx[\"action_id\"]}\">Албан бичгийн мэдээлэл </a></b>\n"
-"\n"
-"\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Танд Гадаан Албан бичгийн мэдээлэлтэй холбоотой санал хүсэлт асуух зүйл байгаа бол Байгууллага хөгжлийн газрын захирал-д болон захиргааны мэргэжилтэнд хандана уу.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Танд гадаад албан бичгийн талаарх гарсан санал,дүгнэлтийг заавал бүртгэлд оруулна уу\n"
-"</p>\n"
-"<p>\n"
-"    Баярлалаа,\n"
-"</p>\n"
-"\n"
-"<pre>\n"
-"--\n"
-"MAK ERP Автомат Имэйл\n"
-"\n"
-"</pre>\n"
-"\n"
-"      "
-msgstr "\n"
-"<p>\n"
-"Сайн байна уу, БХГ-аас мэдэгдэж байна! </br>\n"
-"</p>\n"
-"<p>\n"
-"Танд хамааралтай <b>${ctx[\"sequence_id\"]}</b> дугаартай  <b>${ctx[\"doc_name\"]}</b> утгатай Гадаад албан бичгийн мэдээлэл дараах байдлаар өөрчлөгдлөө.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"		Дуусах хугацаа: <b>${ctx[\"date_deadline\"]}</b>\n"
-"</p>\n"
-"\n"
-"\n"
-"<p>\n"
-"Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.document&action=${ctx[\"action_id\"]}\">Албан бичгийн мэдээлэл </a></b>\n"
-"\n"
-"\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Танд Гадаан Албан бичгийн мэдээлэлтэй холбоотой санал хүсэлт асуух зүйл байгаа бол Байгууллага хөгжлийн газрын захирал-д болон захиргааны мэргэжилтэнд хандана уу.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Танд гадаад албан бичгийн талаарх гарсан санал,дүгнэлтийг заавал бүртгэлд оруулна уу\n"
-"</p>\n"
 "<p>\n"
 "    Баярлалаа,\n"
 "</p>\n"
@@ -350,12 +344,9 @@ msgid "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Та гадаад албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Байгууллага хөгжлийн газрын захирал-д хандана уу.\n"
+"Та гадаад албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол БХГ-т (Байгууллага хөгжлийн газар) хандана уу.\n"
 "</p>\n"
 "\n"
-"<p>\n"
-"    Баярлалаа,\n"
-"</p>\n"
 "\n"
 "<pre>\n"
 "--\n"
@@ -393,135 +384,9 @@ msgstr "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Та гадаад албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Байгууллага хөгжлийн газрын захирал-д хандана уу.\n"
+"Та гадаад албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол БХГ-т (Байгууллага хөгжлийн газар) хандана уу.\n"
 "</p>\n"
 "\n"
-"<p>\n"
-"    Баярлалаа,\n"
-"</p>\n"
-"\n"
-"<pre>\n"
-"--\n"
-"MAK ERP Автомат Имэйл\n"
-"\n"
-"</pre>\n"
-"\n"
-"      "
-
-#. module: mak_regulation
-#: model:email.template,body_html:mak_regulation.reg_email_template_to_pomak
-msgid "\n"
-"<p>\n"
-"Сайн байна уу, Ерөнхийлөгч өө </br>\n"
-"</p>\n"
-"<p>\n"
-"Танд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.\n"
-"</p>\n"
-"<p>\n"
-"		Үүнд:\n"
-"</p>\n"
-"<p>\n"
-"		Дугаар: <b>${ctx[\"num_received_document\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Ажилтан:       <b>${ctx[\"last_name\"]}</b> овогтой <b>${ctx[\"employee_id\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Хэлтэс : 	   <b>${ctx[\"department_id\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Албан тушаал : <b>${ctx[\"job_id\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Төрөл: <b>${ctx[\"type_doc\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Албан бичиг ирсэн огноо: <b>${ctx[\"date\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Дотоод дугаар: <b>${ctx[\"sequence_id\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Тушаалын төсөл болон Албан бичгийн мэдээлэл </a></b>\n"
-"\n"
-"\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Байгууллага хөгжлийн газрын захирал-д хандана уу.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"    Баярлалаа,\n"
-"</p>\n"
-"\n"
-"<pre>\n"
-"--\n"
-"MAK ERP Автомат Имэйл\n"
-"\n"
-"</pre>\n"
-"\n"
-"      "
-msgstr "\n"
-"<p>\n"
-"Сайн байна уу, Ерөнхийлөгч өө </br>\n"
-"</p>\n"
-"<p>\n"
-"Танд дараах утгуудтай тушаалын төслийг батлуулах зөвшөөрөл авах талаар MAK ERP системээс автомат имэйл ирлээ.\n"
-"</p>\n"
-"<p>\n"
-"		Үүнд:\n"
-"</p>\n"
-"<p>\n"
-"		Дугаар: <b>${ctx[\"num_received_document\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Ажилтан:       <b>${ctx[\"last_name\"]}</b> овогтой <b>${ctx[\"employee_id\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Хэлтэс : 	   <b>${ctx[\"department_id\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Албан тушаал : <b>${ctx[\"job_id\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Төрөл: <b>${ctx[\"type_doc\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Албан бичиг ирсэн огноо: <b>${ctx[\"date\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Дотоод дугаар: <b>${ctx[\"sequence_id\"]}</b>\n"
-"</p>\n"
-"<p>\n"
-"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Холбоос:\n"
-"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Тушаалын төсөл болон Албан бичгийн мэдээлэл </a></b>\n"
-"\n"
-"\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол Байгууллага хөгжлийн газрын захирал-д хандана уу.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"    Баярлалаа,\n"
-"</p>\n"
 "\n"
 "<pre>\n"
 "--\n"
@@ -541,19 +406,16 @@ msgid "\n"
 "Танд хамааралтай доорх утгуудтай гадаад албан бичиг MAK ERP системд бүртгэгдсэн учир системээс автомат имэйл ирлээ.\n"
 "</p>\n"
 "<p>\n"
-"		Үүнд:\n"
-"</p>\n"
-"<p>\n"
 "		Дугаар: <b>${ctx[\"num_received_document\"]}</b>\n"
 "</p>\n"
 "<p>\n"
 "		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
 "</p>\n"
 "<p>\n"
-"		Урьтамж: <b>${ctx[\"priority\"]}</b>\n"
+"		Яаралтай эсэх?: <b>${ctx[\"priority\"]}</b>\n"
 "</p>\n"
 "<p>\n"
-"		Төрөл: <b>${ctx[\"partner_id\"]}</b>\n"
+"		Хэнээс /Хаанаас/: <b>${ctx[\"partner_id\"]}</b>\n"
 "</p>\n"
 "<p>\n"
 "		Албан бичиг ирсэн огноо: <b>${ctx[\"date\"]}</b>\n"
@@ -573,7 +435,7 @@ msgid "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд гадаад албан бичигтэй холбоотой санал хүсэлт байгаа бол Байгууллага хөгжлийн газрын захирал-д хандана уу.\n"
+"Та гадаад албан бичигтэй холбоотой хариуцах албан тушаалтанг томилох болон чиглэл /шийдвэр/ өгнө үү.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -595,19 +457,16 @@ msgstr "\n"
 "Танд хамааралтай доорх утгуудтай гадаад албан бичиг MAK ERP системд бүртгэгдсэн учир системээс автомат имэйл ирлээ.\n"
 "</p>\n"
 "<p>\n"
-"		Үүнд:\n"
-"</p>\n"
-"<p>\n"
 "		Дугаар: <b>${ctx[\"num_received_document\"]}</b>\n"
 "</p>\n"
 "<p>\n"
 "		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
 "</p>\n"
 "<p>\n"
-"		Урьтамж: <b>${ctx[\"priority\"]}</b>\n"
+"		Яаралтай эсэх?: <b>${ctx[\"priority\"]}</b>\n"
 "</p>\n"
 "<p>\n"
-"		Төрөл: <b>${ctx[\"partner_id\"]}</b>\n"
+"		Хэнээс /Хаанаас/: <b>${ctx[\"partner_id\"]}</b>\n"
 "</p>\n"
 "<p>\n"
 "		Албан бичиг ирсэн огноо: <b>${ctx[\"date\"]}</b>\n"
@@ -627,7 +486,130 @@ msgstr "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"Танд гадаад албан бичигтэй холбоотой санал хүсэлт байгаа бол Байгууллага хөгжлийн газрын захирал-д хандана уу.\n"
+"Та гадаад албан бичигтэй холбоотой хариуцах албан тушаалтанг томилох болон чиглэл /шийдвэр/ өгнө үү.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
+
+#. module: mak_regulation
+#: model:email.template,body_html:mak_regulation.reg_email_template_to_pomak
+msgid "\n"
+"<p>\n"
+"Сайн байна уу</br>\n"
+"</p>\n"
+"<p>\n"
+"Танд дараах утгуудтай тушаалын төслүүдийг дуусгах болон хэрхэн шийдсэн талаарх шинэчлэлтийг хийхийг сануулж MAK ERP системээс автомат имэйл ирлээ.\n"
+"</p>\n"
+"<p>\n"
+"		Үүнд:\n"
+"</p>\n"
+"<p>\n"
+"		Дугаар: <b>${ctx[\"num_received_document\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Ажилтан:       <b>${ctx[\"last_name\"]}</b> овогтой <b>${ctx[\"employee_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Хэлтэс : 	   <b>${ctx[\"department_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Албан тушаал : <b>${ctx[\"job_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Төрөл: <b>${ctx[\"type_doc\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Албан бичиг ирсэн огноо: <b>${ctx[\"date\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Дотоод дугаар: <b>${ctx[\"sequence_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Тушаалын төсөл болон Албан бичгийн мэдээлэл </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол захиралд хандана уу.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Баярлалаа,\n"
+"</p>\n"
+"\n"
+"<pre>\n"
+"--\n"
+"MAK ERP Автомат Имэйл\n"
+"\n"
+"</pre>\n"
+"\n"
+"      "
+msgstr "\n"
+"<p>\n"
+"Сайн байна уу</br>\n"
+"</p>\n"
+"<p>\n"
+"Танд дараах утгуудтай тушаалын төслүүдийг дуусгах болон хэрхэн шийдсэн талаарх шинэчлэлтийг хийхийг сануулж MAK ERP системээс автомат имэйл ирлээ.\n"
+"</p>\n"
+"<p>\n"
+"		Үүнд:\n"
+"</p>\n"
+"<p>\n"
+"		Дугаар: <b>${ctx[\"num_received_document\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Ажилтан:       <b>${ctx[\"last_name\"]}</b> овогтой <b>${ctx[\"employee_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Хэлтэс : 	   <b>${ctx[\"department_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Албан тушаал : <b>${ctx[\"job_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Товч утга: <b>${ctx[\"doc_name\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Төрөл: <b>${ctx[\"type_doc\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Албан бичиг ирсэн огноо: <b>${ctx[\"date\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Дотоод дугаар: <b>${ctx[\"sequence_id\"]}</b>\n"
+"</p>\n"
+"<p>\n"
+"		Төлөв: <b>${ctx[\"state\"]}</b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Холбоос:\n"
+"<b><a href=\"${ctx[\"base_url\"]}/web?db=${ctx[\"db_name\"]}#id=${ctx[\"id\"]}&view_type=form&model=mak.regulationk&action=${ctx[\"action_id\"]}\">Тушаалын төсөл болон Албан бичгийн мэдээлэл </a></b>\n"
+"\n"
+"\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Танд Тушаал болон Албан бичгийн мэдээлэл шийдвэрлэсэнтэй холбоотой санал хүсэлт байгаа бол захиралд хандана уу.\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -655,7 +637,7 @@ msgstr "Архив (Гадаад албан бичиг)"
 #. module: mak_regulation
 #: field:mak.regulation,assigned_id2:0
 msgid "2nd Assigned To"
-msgstr "II Шатны Хариуцагч"
+msgstr "Нэмэлт Хариуцагч"
 
 #. module: mak_regulation
 #: field:mak.sent.document,doc_name:0
@@ -684,11 +666,6 @@ msgid "Assigned"
 msgstr "Хариуцагчтай"
 
 #. module: mak_regulation
-#: selection:mak.regulation,state:0
-msgid "Assigned (II)"
-msgstr "Хариуцагчтай(II шат)"
-
-#. module: mak_regulation
 #: field:mak.sent.document,director_id:0
 msgid "Assigned Director"
 msgstr "Батласан албан тушаалтан"
@@ -696,7 +673,7 @@ msgstr "Батласан албан тушаалтан"
 #. module: mak_regulation
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
 msgid "Assigned II"
-msgstr "Хариуцагч 2"
+msgstr "Нэмэлт Хариуцагч"
 
 #. module: mak_regulation
 #: field:mak.regulation,assigned_id:0
@@ -721,7 +698,7 @@ msgstr "Хавсралт"
 #. module: mak_regulation
 #: field:mak.regulation,reg_attachment_director_id:0
 msgid "Attachment of Director"
-msgstr "БХГ-ын захирлын хавсралт"
+msgstr "Захирлын хавсралт"
 
 #. module: mak_regulation
 #: selection:mak.document,state:0
@@ -730,14 +707,10 @@ msgid "Cancel"
 msgstr "Цуцлагдсан"
 
 #. module: mak_regulation
+#: selection:mak.document,state:0
 #: selection:mak.regulation,state:0
 msgid "Check"
-msgstr "БХГ-т захиралд илгээсэн"
-
-#. module: mak_regulation
-#: selection:mak.document,state:0
-msgid "Check"
-msgstr "БХГ-т илгээсэн"
+msgstr "Захиралд илгээсэн"
 
 #. module: mak_regulation
 #: selection:mak.regulation,type_doc:0
@@ -823,6 +796,11 @@ msgid "Description"
 msgstr "Гарсан үр дүн, тайлбар"
 
 #. module: mak_regulation
+#: field:mak.regulation,dir_comment:0
+msgid "Director Comment"
+msgstr "Захирлын тайлбар"
+
+#. module: mak_regulation
 #: field:mak.document,display_name:0
 #: field:mak.document.state.history,display_name:0
 #: field:mak.regulation,display_name:0
@@ -866,7 +844,7 @@ msgstr "Хугацаа (өдөр)"
 #: model:ir.model,name:mak_regulation.model_mak_document
 #: model:ir.model,name:mak_regulation.model_mak_regulation
 msgid "Email Thread"
-msgstr "Өргөдөл, Дотоод албан бичгийн бүртгэл"
+msgstr "Өргөдөл, Албан бичгийн бүртгэл"
 
 #. module: mak_regulation
 #: field:mak.regulation,employee_id:0
@@ -927,8 +905,8 @@ msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:204
-#: code:addons/mak_regulation/model/mak_regulation.py:162
+#: code:addons/mak_regulation/model/mak_document.py:209
+#: code:addons/mak_regulation/model/mak_regulation.py:163
 #, python-format
 msgid "In order to delete a regulation, you must Draft it first."
 msgstr "In order to delete a regulation, you must Draft it first."
@@ -939,8 +917,8 @@ msgid "Index"
 msgstr "Index"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:203
-#: code:addons/mak_regulation/model/mak_regulation.py:161
+#: code:addons/mak_regulation/model/mak_document.py:208
+#: code:addons/mak_regulation/model/mak_regulation.py:162
 #, python-format
 msgid "Invalid Action!"
 msgstr "Invalid Action!"
@@ -1028,7 +1006,6 @@ msgstr "Гадаад албан бичиг хайлт"
 
 #. module: mak_regulation
 #: model:ir.ui.menu,name:mak_regulation.menu_mak_hr_regulation
-#: model:ir.ui.menu,name:mak_regulation.menu_sub_mak_hr_regulation
 msgid "Mak HR Regulation"
 msgstr "Тушаал"
 
@@ -1113,16 +1090,6 @@ msgid "Old state"
 msgstr "Хуучин төлөв"
 
 #. module: mak_regulation
-#: selection:mak.regulation,state:0
-msgid "Open(I)"
-msgstr "Хүлээгдэж буй"
-
-#. module: mak_regulation
-#: selection:mak.regulation,state:0
-msgid "Open(II)"
-msgstr "Хүлээгдэж буй(II шат)"
-
-#. module: mak_regulation
 #: field:hr.regulation,origin:0
 msgid "Origin document"
 msgstr "Эх баримт"
@@ -1142,16 +1109,6 @@ msgid "PartnerS"
 msgstr "Харилцагч"
 
 #. module: mak_regulation
-#: selection:mak.regulation,state:0
-msgid "Pending(I)"
-msgstr "Хийгдэж байна"
-
-#. module: mak_regulation
-#: selection:mak.regulation,state:0
-msgid "Penging(II)"
-msgstr "Хийгдэж байна(II)"
-
-#. module: mak_regulation
 #: field:mak.document,priority:0
 #: field:mak.regulation,priority:0
 msgid "Priority"
@@ -1168,6 +1125,11 @@ msgstr "Албан бичиг хүлээж авсан огноо"
 #: field:mak.regulation,date:0
 msgid "Regulation Date"
 msgstr "Албан бичгийн огноо"
+
+#. module: mak_regulation
+#: model:res.groups,name:mak_regulation.regulation_ioe
+msgid "Regulation Information Employee"
+msgstr "Regulation Information Employee"
 
 #. module: mak_regulation
 #: model:ir.ui.menu,name:mak_regulation.menu_mak_hr_regulation_main
@@ -1215,6 +1177,11 @@ msgstr "Газар нэгж"
 
 #. module: mak_regulation
 #: selection:mak.document,state:0
+msgid "Send 2nd stage"
+msgstr "Send 2nd stage"
+
+#. module: mak_regulation
+#: selection:mak.document,state:0
 msgid "Send Coworker"
 msgstr "Хариуцах албан тушаалтанд илгээгдсэн"
 
@@ -1222,6 +1189,11 @@ msgstr "Хариуцах албан тушаалтанд илгээгдсэн"
 #: field:mak.document,send_coworker:0
 msgid "Send Coworkers"
 msgstr "Хариуцах албан тушаалтан"
+
+#. module: mak_regulation
+#: field:mak.document,send_second_stage:0
+msgid "Send Coworkers2"
+msgstr "Send Coworkers2"
 
 #. module: mak_regulation
 #: model:ir.ui.menu,name:mak_regulation.hr_sent_document_menu_mak
@@ -1237,12 +1209,12 @@ msgstr "Явсан бичиг дугаар"
 #. module: mak_regulation
 #: selection:mak.document,state:0
 msgid "Sent PoMAK"
-msgstr "Ерөнхийлөгчид илгээгдсэн"
+msgstr "Бичиг хэргийн ажилтанд илгээгдсэн"
 
 #. module: mak_regulation
 #: selection:mak.regulation,state:0
 msgid "Sent to PoMAK"
-msgstr "Ерөнхийлөгчид илгээгдсэн"
+msgstr "Бичиг хэргийн ажилтанд илгээгдсэн"
 
 #. module: mak_regulation
 #: view:mak.document:mak_regulation.mak_document_search_view
@@ -1289,11 +1261,12 @@ msgstr "Шийд хүлээсэн"
 
 #. module: mak_regulation
 #: code:addons/mak_regulation/model/mak_document.py:45
-#: code:addons/mak_regulation/model/mak_document.py:141
-#: code:addons/mak_regulation/model/mak_document.py:213
-#: code:addons/mak_regulation/model/mak_document.py:439
+#: code:addons/mak_regulation/model/mak_document.py:142
+#: code:addons/mak_regulation/model/mak_document.py:218
+#: code:addons/mak_regulation/model/mak_document.py:245
+#: code:addons/mak_regulation/model/mak_document.py:471
 #: code:addons/mak_regulation/model/mak_regulation.py:103
-#: code:addons/mak_regulation/model/mak_regulation.py:373
+#: code:addons/mak_regulation/model/mak_regulation.py:381
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -1320,7 +1293,7 @@ msgstr "Жил"
 
 #. module: mak_regulation
 #: code:addons/mak_regulation/model/mak_document.py:45
-#: code:addons/mak_regulation/model/mak_document.py:141
+#: code:addons/mak_regulation/model/mak_document.py:142
 #: code:addons/mak_regulation/model/mak_regulation.py:103
 #, python-format
 msgid "You don't have related employee. Please contact administrator."
@@ -1331,6 +1304,11 @@ msgstr "You don't have related employee. Please contact administrator."
 #: model:email.template,subject:mak_regulation.reg_email_template_to_user
 msgid "[Албан бичгийн мэдээлэл] ${user.company_id.name}"
 msgstr "[Албан бичгийн мэдээлэл] ${user.company_id.name}"
+
+#. module: mak_regulation
+#: model:email.template,subject:mak_regulation.doc_email_template_to_gov_user
+msgid "[Гадаад албан бичгийн хариу] ${user.company_id.name} ${ctx[\"priority\"]} [Дуусах хугацаа:] ${ctx[\"date_deadline\"]}"
+msgstr "[Гадаад албан бичгийн хариу] ${user.company_id.name} ${ctx[\"priority\"]} [Дуусах хугацаа:] ${ctx[\"date_deadline\"]}"
 
 #. module: mak_regulation
 #: model:email.template,subject:mak_regulation.doc_email_template_to_pomak
@@ -1344,19 +1322,19 @@ msgid "[Гадаад албан бичиг] ${user.company_id.name} ${ctx[\"prio
 msgstr "[Гадаад албан бичиг] ${user.company_id.name} ${ctx[\"priority\"]} [Дуусах хугацаа:] ${ctx[\"date_deadline\"]}"
 
 #. module: mak_regulation
-#: model:email.template,subject:mak_regulation.doc_email_template_to_gov_user
-msgid "[Гадаад албан бичигийн хариу] ${user.company_id.name} ${ctx[\"priority\"]} [Дуусах хугацаа:] ${ctx[\"date_deadline\"]}"
-msgstr "[Гадаад албан бичигийн хариу] ${user.company_id.name} ${ctx[\"priority\"]} [Дуусах хугацаа:] ${ctx[\"date_deadline\"]}"
-
-#. module: mak_regulation
 #: model:email.template,subject:mak_regulation.reg_email_template_to_pomak
-msgid "[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэх талаар шийдвэр авах тухай] ${user.company_id.name}"
-msgstr "[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэх талаар шийдвэр авах тухай] ${user.company_id.name}"
+msgid "[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэн шийдсэн талаар] ${user.company_id.name}"
+msgstr "[Тушаалын төсөл болон Албан бичгийн мэдээлэлийг хэрхэн шийдсэн талаар] ${user.company_id.name}"
 
 #. module: mak_regulation
 #: model:res.groups,comment:mak_regulation.regulation_president
 msgid "the user will have an access to the human resources regulations and documents and allow or reject regulation (President of MAK)."
 msgstr "the user will have an access to the human resources regulations and documents and allow or reject regulation (President of MAK)."
+
+#. module: mak_regulation
+#: model:res.groups,comment:mak_regulation.regulation_ioe
+msgid "the user will have an access to the human resources regulations and documents and allow or reject regulation by President's decision."
+msgstr "the user will have an access to the human resources regulations and documents and allow or reject regulation by President's decision."
 
 #. module: mak_regulation
 #: model:res.groups,comment:mak_regulation.regulation_user
@@ -1365,18 +1343,30 @@ msgstr "the user will have an access to the human resources regulations and docu
 
 #. module: mak_regulation
 #: help:mak.document,send_coworker:0
+#: help:mak.document,send_second_stage:0
 msgid "Албан тушаалтанд илгээх боломжтой ба энэ тохиолдолд заавал үр дүн талбарыг бичих ёстой."
 msgstr "Албан тушаалтанд илгээх боломжтой ба энэ тохиолдолд заавал үр дүн талбарыг бичих ёстой."
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:214
+#: code:addons/mak_regulation/model/mak_document.py:246
+#, python-format
+msgid "Та бусад албан тушаалтанд шилжүүлэх гэж байгаа бол Шилжүүлэх албан тушаалтан талбарыг бөглөнө үү!"
+msgstr "Та бусад албан тушаалтанд шилжүүлэх гэж байгаа бол Шилжүүлэх албан тушаалтан талбарыг бөглөнө үү!"
+
+#. module: mak_regulation
+#: code:addons/mak_regulation/model/mak_document.py:219
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та Хариуцах Албан Тушаалтан талбарыг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та Хариуцах Албан Тушаалтан талбарыг бүртгэнэ үү!"
 
 #. module: mak_regulation
-#: code:addons/mak_regulation/model/mak_document.py:439
-#: code:addons/mak_regulation/model/mak_regulation.py:373
+#: code:addons/mak_regulation/model/mak_document.py:471
+#: code:addons/mak_regulation/model/mak_regulation.py:381
 #, python-format
 msgid "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
 msgstr "Хүлээн авах хүн олдсонгүй! Та хариуцагчийг бүртгэнэ үү!"
+
+#. module: mak_regulation
+#: model:ir.ui.menu,name:mak_regulation.menu_sub_mak_hr_regulation
+msgid "Өргөдөл, Албан бичигийн бүртгэл"
+msgstr "Өргөдөл, Албан бичигийн бүртгэл"
