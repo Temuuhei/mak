@@ -208,22 +208,28 @@ class mak_regulation(osv.osv):
         self.write(cr, uid, ids, {'state': 'wait'})
         return True
     
-    # by Тэмүүжин Батлах
+    # by Тэмүүжин Илгээх
     def action_send_pomak(self, cr, uid, ids, context=None):
         self.send_notification(cr, uid, ids, 'send_pomak', context=context)
         self.write(cr, uid, ids, {'state': 'send_pomak'})
         return True
 
-    # by Тэмүүжин Батлах
+    # by Тэмүүжин Зөвшөөрсөн
     def action_allow(self, cr, uid, ids, context=None):
         self.send_notification(cr, uid, ids, 'to_allow', context=context)
         self.write(cr, uid, ids, {'state': 'to_allow'})
         return True
 
-    # by Тэмүүжин Батлах
+    # by Тэмүүжин Татгалзсан
     def action_reject(self, cr, uid, ids, context=None):
         self.send_notification(cr, uid, ids, 'to_reject', context=context)
         self.write(cr, uid, ids, {'state': 'to_reject'})
+        return True
+
+    # by Тэмүүжин Цуцлсан
+    def action_cancel(self, cr, uid, ids, context=None):
+        self.send_notification(cr, uid, ids, 'cancel', context=context)
+        self.write(cr, uid, ids, {'state': 'cancel'})
         return True
 
     def action_create_reg(self,cr, uid, ids, context=None):
@@ -299,7 +305,7 @@ class mak_regulation(osv.osv):
                 template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_regulation',
                                                                                   'mak_hr_email_template_to_assigned')[1]
             else:
-                if signal in ['assigned','done','to_allow','to_reject','created_reg']:
+                if signal in ['assigned','done','to_allow','to_reject','created_reg','cancel']:
                     # notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_regulation',
                     #                                               groups[signal])
                     template_id = \
