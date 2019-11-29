@@ -1,439 +1,108 @@
 <?xml version="1.0"?>
 <openerp>
-    <data noupdate="0">
+    <data>
+
+        <record id="seq_type_reminder" model="ir.sequence.type">
+			<field name="name">MAK Reminder Sequence</field>
+			<field name="code">mak.reminder</field>
+		</record>
+		<record id="sequence_reminder" model="ir.sequence">
+			<field name="name">MAK Reminder permission</field>
+			<field name="code">mak.reminder</field>
+			<field name="prefix">Reminder-№%(year)s/%(month)s/</field>
+			<field name="padding">3</field>
+			<field name="reset_monthly">True</field>
+		</record>
+
+        <record model="ir.ui.view" id="view_mak_reminder_form">
+        <field name="name">mak.reminder.form</field>
+        <field name="model">mak.reminder</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        	<form string="Mak Reminder">
+                <header>
+                    <button name="action_draft" states="done" String="Ноороглох" type="object" />
+                    <button name="action_done" states="draft" String="Дууссан" type="object" icon="gtk-apply"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="pull-left">
+						<label for="sequence_id" class="oe_inline"/>
+          				<h1>
+							<field name="sequence_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+
+                    <div class="pull-right">
+						<label for="user_id" class="oe_inline"/>
+          				<h1>
+							<field name="user_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+                <group>
+                    <group>
+                        <field name="assigned_id" widget="many2many_tags" attrs="{'readonly': [('state','=','done')]}"/>
+                        <field name="date_deadline" attrs="{'readonly': [('state','=','done')]}"/>
+                        <field name="notify_day"/>
+                        <field name="priority"/>
+                    </group>
+                    <group>
+                        <field name="description" placeholder="Add a Description..." widget="html" class="oe_memo" editor_height="350px" attrs="{'readonly': [('state','=','done')]}"/>
+                    </group>
+                </group>
+                </sheet>
+                 <div class="oe_chatter">
+                    	<field name="message_follower_ids" widget="mail_followers"/>
+                    	<field name="message_ids" widget="mail_thread"/>
+                	</div>
+            </form>
+        </field>
+    </record>
+
+	<record id="mak_reminder_search_view" model="ir.ui.view">
+        <field name="name">mak.reminder.search</field>
+        <field name="model">mak.reminder</field>
+        <field name="arch" type="xml">
+            <search string="Mak Reminder Search">
+            	<field name="state"/>
+                <group expand="0" string="Group By">
+                    <filter string="Year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mak_reminder_tree">
+        <field name="name">mak.reminder.tree</field>
+        <field name="model">mak.reminder</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Reminder" colors="gray:state == 'done';skyblue:state == 'draft';red:priority == 'high';blue:priority == 'medium'">
+                <field name="description"/>
+                <field name="assigned_id"/>
+                <field name="date_deadline"/>
+                <field name="priority"/>
+	            <field name="state"/>
+            </tree>
+        </field>
+    </record>
 
 
-        <record id="view_calendar_event_form_inherited_mak" model="ir.ui.view">
-            <field name="name">view.calendar.event.form.inherited.mak</field>
-            <field name="model">calendar.event</field>
-        	<field name="inherit_id" ref="calendar.view_calendar_event_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']"  position="replace">
-                    <label for="name">Reminder Title</label>
-                    <field name="name"/>
-                </xpath>
-                <xpath expr="//field[@name='categ_ids']"  position="attributes">
-                    <attribute name="invisible" >1</attribute>
-                </xpath>
-                <xpath expr="//field[@name='duration']" position="after">
-                            <field name="user_id" />
-                </xpath>
-                  <xpath expr="//field[@name='location']"  position="replace">
-                        <group>
-                                        <field name="recurrency"/>
-                                    </group>
-                                    <group attrs="{'invisible': [('recurrency','=',False)]}">
-                                        <label for="interval"/>
-                                        <div>
-                                            <field name="interval" attrs="{'required': [('recurrency','==',True)]}" class="oe_inline"/>
-                                            <field name="rrule_type" attrs="{'required': [('recurrency','==',True)]}" class="oe_inline"/>
-                                        </div>
-                                        <label string="Until" for="end_type"/>
-                                        <div>
-                                            <field name="end_type" attrs="{'required': [('recurrency','==',True)]}" class="oe_inline"/>
-                                            <field name="count" attrs="{'invisible': [('end_type', '!=', 'count')], 'required': [('recurrency','==',True)]}" class="oe_inline"/>
-                                            <field name="final_date" attrs="{'invisible': [('end_type', '!=', 'end_date')], 'required': [('end_type', '=', 'end_date')]}" class="oe_inline"/>
-                                        </div>
-                                        <label string="Select Weekdays" attrs="{'invisible' :[('rrule_type','not in', ['weekly'])]}"/>
-                                        <group col="2" colspan="1" name="weekdays" attrs="{'invisible' :[('rrule_type','not in', ['weekly'])]}" >
-                                            <field name="mo" />
-                                            <field name="tu" />
-                                            <field name="we" />
-                                            <field name="th" />
-                                            <field name="fr" />
-                                            <field name="sa" />
-                                            <field name="su" />
-                                        </group>
 
-                                        <label string="Day of Month"
-                                            attrs="{'invisible': [('rrule_type','!=','monthly')]}"/>
-
-                                        <div attrs="{'invisible': [('rrule_type','!=','monthly')]}">
-                                            <field name="month_by"/>
-                                            <field name="day"
-                                                attrs="{'required': [('month_by','=','date'), ('rrule_type','=','monthly')],
-                                                    'invisible': [('month_by','=','day')]}"/>
-                                            <field name="byday" string="The"
-                                                attrs="{'required': [('month_by','=','day'), ('rrule_type','=','monthly')], 'invisible': [('month_by','=','date')]}"/>
-                                            <field name="week_list" nolabel="1"
-                                                attrs="{'required': [('month_by','=','day'), ('rrule_type','=','monthly')], 'invisible': [('month_by','=','date')]}"/>
-                                        </div>
-                                    </group>
-                </xpath>
-                   <xpath expr="/form/sheet/notebook/page[@string='Options']" position="replace"/>
-                <xpath expr="/form/sheet/notebook/page[@string='Invitations']" position="replace"/>
-                   <xpath expr="/form/sheet/notebook/page[@string='Misc']" position="replace"/>
-            </field>
-        </record>
-         <record id="view_calendar_event_form_popup_inherited_mak" model="ir.ui.view">
-            <field name="name">view.calendar.event.form.popup.inherited.mak</field>
-            <field name="model">calendar.event</field>
-        	<field name="inherit_id" ref="calendar.view_calendar_event_form_popup"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']"  position="replace">
-                    <label for="name">Reminder Title</label>
-                    <field name="name"/>
-                </xpath>
-                  <xpath expr="//field[@name='location']" position="replace"></xpath>
-                <xpath expr="//field[@name='categ_ids']" position="replace"></xpath>
-            </field>
-         </record>
+    <record id="action_mak_reminder_window" model="ir.actions.act_window">
+        <field name="name">Mak Reminders</field>
+        <field name="res_model">mak.reminder</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
 
 
-        <record id="calendar_template_meeting_invitation_mak1" model="email.template">
-            <field name="name">reminder Invitation</field>
-            <field name="email_from">${object.event_id.user_id.email or ''}</field>
-            <field name="subject">${object.event_id.name}</field>
-            <field name="model_id" ref="calendar.model_calendar_attendee"/>
-            <field name="email_to" >${('' if object.partner_id and object.partner_id.email and object.partner_id.email==object.email else object.email|safe)}</field>
-            <field name="partner_to">${object.partner_id and object.partner_id.email and object.partner_id.email==object.email and object.partner_id.id or False }</field>
-            <field name="auto_delete" eval="True"/>
+    <menuitem name="Mak Reminder" id="menu_mak_hr_reminder" sequence="1" parent="mail.mail_my_stuff" action='action_mak_reminder_window'/>
 
-            <field name="body_html"><![CDATA[
-                <html>
-                    <head>
-                        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-                        <title>${object.event_id.name}</title>
-                        <style>
-                            span.oe_mail_footer_access {
-                                display:block;
-                                text-align:center;
-                                color:grey;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div style="border-radius: 2px; max-width: 1200px; height: auto;margin-left: auto;margin-right: auto;background-color:#f9f9f9;">
-                            <div style="height:auto;text-align: center;font-size : 30px;color: #8A89BA;">
-                                <strong>${object.event_id.name}</strong>
-                            </div>
-                            <div style="height: 50px;text-align: left;font-size : 14px;border-collapse: separate;margin-top:10px">
-                                <strong style="margin-left:12px">Dear ${object.cn}</strong> ,<br/><p style="margin-left:12px">${object.event_id.user_id.partner_id.name} invited you for the ${object.event_id.name} reminder of ${object.event_id.user_id.company_id.name}.</p>
-                            </div>
-                            <div style="height: auto;margin-left:12px;margin-top:30px;">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <table cellspacing="0" cellpadding="0" border="0" style="margin-top: 15px; margin-left: 10px;font-size: 16px;">
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if object.event_id.location:
-                                                                <div style="width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    Where
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td  style="vertical-align:top;">
-                                                            % if object.event_id.location:
-                                                                <div style = "font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;   font-size: 14px" >
-                                                                    : ${object.event_id.location}
-                                                                    <span style= "color:#A9A9A9; ">(<a href="http://maps.google.com/maps?oi=map&q=${object.event_id.location}">View Map</a>)
-                                                                        </span>
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
 
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if object.event_id.description :
-                                                                <div style="width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    What
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td style="vertical-align:text-top;">
-                                                            % if object.event_id.description :
-                                                                <div style="font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    : ${object.event_id.description}
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if not object.event_id.allday and object.event_id.duration:
-                                                                <div style="height:auto; width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    Duration
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td colspan="3" style="vertical-align:text-top;">
-                                                            % if not object.event_id.allday and object.event_id.duration:
-                                                                <div style="font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    : ${('%dH%02d' % (object.event_id.duration,(object.event_id.duration*60)%60))}
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
-                                                <tr style=" height: 30px;">
-                                                    <td style="height: 25px;width: 120px; background : # CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                        <div>
-                                                            Attendees
-                                                        </div>
-                                                    </td>
-                                                    <td colspan="3">
-                                                       :
-                                                        % for attendee in object.event_id.attendee_ids:
-                                                            <div style="display:inline-block; border-radius: 50%; width:10px; height:10px;background:${'color' in ctx and ctx['color'][attendee.state] or 'white'};"></div>
-                                                            % if attendee.cn != object.cn:
-                                                                <span style="margin-left:5px">${attendee.cn}</span>
-                                                            % else:
-                                                                <span style="margin-left:5px">You</span>
-                                                            % endif
-                                                        % endfor
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </body>
-                </html>
-                ]]>
-                </field>
-        </record>
-
-        <record id="calendar_template_reminder_changedate" model="email.template">
-            <field name="name">reminder Invitation</field>
-            <field name="email_from">${object.event_id.user_id.email or ''}</field>
-            <field name="subject">${object.event_id.name} - Date has been updated</field>
-            <field name="model_id" ref="calendar.model_calendar_attendee"/>
-
-            <field name="email_to" >${('' if object.partner_id and object.partner_id.email and object.partner_id.email==object.email else object.email|safe)}</field>
-            <field name="partner_to">${object.partner_id and object.partner_id.email and object.partner_id.email==object.email and object.partner_id.id or False }</field>
-            <field name="auto_delete" eval="True"/>
-
-            <field name="body_html"><![CDATA[
-                <html>
-                    <head>
-                        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-                        <title>${object.event_id.name}</title>
-                        <style>
-                            span.oe_mail_footer_access {
-                                display:block;
-                                text-align:center;
-                                color:grey;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div style="border-radius: 2px; max-width: 1200px; height: auto;margin-left: auto;margin-right: auto;background-color:#f9f9f9;">
-                            <div style="height:auto;text-align: center;font-size : 30px;color: #8A89BA;">
-                                <strong>${object.event_id.name}</strong>
-                            </div>
-                            <div style="height: 50px;text-align: left;font-size : 14px;border-collapse: separate;margin-top:10px">
-                                <strong style="margin-left:12px">Dear ${object.cn}</strong> ,<br/>
-                                <p style="margin-left:12px">The date of the reminder has been changed...<br/>
-                                The reminder created by ${object.event_id.user_id.partner_id.name} is now scheduled for : ${object.event_id.get_display_time_tz(tz=object.partner_id.tz)}.</p>
-                            </div>
-                            <div style="height: auto;margin-left:12px;margin-top:30px;">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <table cellspacing="0" cellpadding="0" border="0" style="margin-top: 15px; margin-left: 10px;font-size: 16px;">
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if object.event_id.location:
-                                                                <div style="width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    Where
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td  style="vertical-align:top;">
-                                                            % if object.event_id.location:
-                                                                <div style = "font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;   font-size: 14px" >
-                                                                    : ${object.event_id.location}
-                                                                    <span style= "color:#A9A9A9; ">(<a href="http://maps.google.com/maps?oi=map&q=${object.event_id.location}">View Map</a>)
-                                                                        </span>
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if object.event_id.description :
-                                                                <div style="width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    What
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td style="vertical-align:text-top;">
-                                                            % if object.event_id.description :
-                                                                <div style="font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    : ${object.event_id.description}
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if not object.event_id.allday and object.event_id.duration:
-                                                                <div style="height:auto; width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    Duration
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td colspan="3" style="vertical-align:text-top;">
-                                                            % if not object.event_id.allday and object.event_id.duration:
-                                                                <div style="font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    : ${('%dH%02d' % (object.event_id.duration,(object.event_id.duration*60)%60))}
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
-                                                <tr style=" height: 30px;">
-                                                    <td style="height: 25px;width: 120px; background : # CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                        <div>
-                                                            Attendees
-                                                        </div>
-                                                    </td>
-                                                    <td colspan="3">
-                                                       :
-                                                        % for attendee in object.event_id.attendee_ids:
-                                                            <div style="display:inline-block; border-radius: 50%; width:10px; height:10px;background:${'color' in ctx and ctx['color'][attendee.state] or 'white'};"></div>
-                                                            % if attendee.cn != object.cn:
-                                                                <span style="margin-left:5px">${attendee.cn}</span>
-                                                            % else:
-                                                                <span style="margin-left:5px">You</span>
-                                                            % endif
-                                                        % endfor
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </body>
-                </html>
-                ]]>
-                </field>
-        </record>
-
-        <record id="calendar_template_reminder_reminder" model="email.template">
-            <field name="name">reminder Invitation</field>
-            <field name="email_from">${object.event_id.user_id.email or ''}</field>
-            <field name="subject">${object.event_id.name} - Reminder</field>
-            <field name="model_id" ref="calendar.model_calendar_attendee"/>
-
-            <field name="email_to" >${('' if object.partner_id and object.partner_id.email and object.partner_id.email==object.email else object.email|safe)}</field>
-            <field name="partner_to">${object.partner_id and object.partner_id.email and object.partner_id.email==object.email and object.partner_id.id or False }</field>
-            <field name="auto_delete" eval="True"/>
-
-            <field name="body_html"><![CDATA[
-                <html>
-                    <head>
-                        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-                        <title>${object.event_id.name}</title>
-                        <style>
-                            span.oe_mail_footer_access {
-                                display:block;
-                                text-align:center;
-                                color:grey;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div style="border-radius: 2px; max-width: 1200px; height: auto;margin-left: auto;margin-right: auto;background-color:#f9f9f9;">
-                            <div style="height:auto;text-align: center;font-size : 30px;color: #8A89BA;">
-                                <strong>${object.event_id.name}</strong>
-                            </div>
-                            <div style="height: 50px;text-align: left;font-size : 14px;border-collapse: separate;margin-top:10px">
-                                <strong style="margin-left:12px">Dear ${object.cn}</strong> ,<br/>
-                                <p style="margin-left:12px">That is a reminder for the event below : </p>
-                            </div>
-                            <div style="height: auto;margin-left:12px;margin-top:30px;">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <table cellspacing="0" cellpadding="0" border="0" style="margin-top: 15px; margin-left: 10px;font-size: 16px;">
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if object.event_id.location:
-                                                                <div style="width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    Where
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td  style="vertical-align:top;">
-                                                            % if object.event_id.location:
-                                                                <div style = "font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;   font-size: 14px" >
-                                                                    : ${object.event_id.location}
-                                                                    <span style= "color:#A9A9A9; ">(<a href="http://maps.google.com/maps?oi=map&q=${object.event_id.location}">View Map</a>)
-                                                                        </span>
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if object.event_id.description :
-                                                                <div style="width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    What
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td style="vertical-align:text-top;">
-                                                            % if object.event_id.description :
-                                                                <div style="font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    : ${object.event_id.description}
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td style="vertical-align:top;">
-                                                            % if not object.event_id.allday and object.event_id.duration:
-                                                                <div style="height:auto; width: 120px; background : #CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    Duration
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                        <td colspan="3" style="vertical-align:text-top;">
-                                                            % if not object.event_id.allday and object.event_id.duration:
-                                                                <div style="font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                                    : ${('%dH%02d' % (object.event_id.duration,(object.event_id.duration*60)%60))}
-                                                                </div>
-                                                            % endif
-                                                        </td>
-                                                    </tr>
-                                                <tr style=" height: 30px;">
-                                                    <td style="height: 25px;width: 120px; background : # CCCCCC; font-family: Lucica Grande', Ubuntu, Arial, Verdana, sans-serif;">
-                                                        <div>
-                                                            Attendees
-                                                        </div>
-                                                    </td>
-                                                    <td colspan="3">
-                                                       :
-                                                        % for attendee in object.event_id.attendee_ids:
-                                                            <div style="display:inline-block; border-radius: 50%; width:10px; height:10px;background:${'color' in ctx and ctx['color'][attendee.state] or 'white'};"></div>
-                                                            % if attendee.cn != object.cn:
-                                                                <span style="margin-left:5px">${attendee.cn}</span>
-                                                            % else:
-                                                                <span style="margin-left:5px">You</span>
-                                                            % endif
-                                                        % endfor
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </body>
-                </html>
-                ]]>
-                </field>
-        </record>
     </data>
 </openerp>
