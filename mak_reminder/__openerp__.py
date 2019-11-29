@@ -20,6 +20,8 @@
     "init": [],
     "data": [
         'mak_calendar_view.xml',
+        'security/cron_data.xml',
+        'email_templates/mak_reminder_mail_template.xml',
     ],
     "demo_xml": [
     ],
