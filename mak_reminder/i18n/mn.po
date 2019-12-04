@@ -248,7 +248,8 @@ msgstr "Сар"
 #. module: mak_reminder
 #: field:mak.reminder,notify_day:0
 msgid "Notify Day"
-msgstr "Дуусах хугацаанаас хэдэн өдрийн өмнө мэдэгдэх /1,2,3 гэх мэт тоогоор бичнэ/"
+msgstr "Дуусах хугацаанаас хэдэн өдрийн өмнө
+мэдэгдэх /1,2,3 гэх мэт тоогоор бичнэ/"
 
 #. module: mak_reminder
 #: field:mak.reminder,priority:0
