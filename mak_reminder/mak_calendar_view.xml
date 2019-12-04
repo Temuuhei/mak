@@ -22,7 +22,7 @@
         	<form string="Mak Reminder">
                 <header>
                     <button name="action_draft" states="done" String="Ноороглох" type="object" />
-                    <button name="action_done" states="draft" String="Дууссан" type="object" icon="gtk-apply"/>
+                    <button name="action_done" states="draft" String="Батлах" type="object" icon="gtk-apply"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
                 </header>
                 <sheet>
