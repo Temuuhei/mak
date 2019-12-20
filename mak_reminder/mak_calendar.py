@@ -106,8 +106,10 @@ class  mak_reminder(osv.Model):
             reminders = reminder_obj.browse(cr,uid,land_ids)
             for l in reminders:
                 if l.assigned_id and l.notify_day > 0:
-                    current_date = datetime.strptime(current_date, '%Y-%m-%d') + timedelta(days=int(l.notify_day))
-                    if datetime.strptime(l.date_deadline, '%Y-%m-%d') <= current_date:
+                    print 'current_date1',current_date, type(current_date)
+                    current_date = datetime.datetime.strptime(current_date, '%Y-%m-%d') + timedelta(days=int(l.notify_day))
+                    print 'current_date2',current_date, type(current_date)
+                    if datetime.datetime.strptime(l.date_deadline, '%Y-%m-%d') <= current_date:
                         data = {
                             'name': l.description,
                             'notify_day': l.notify_day,
