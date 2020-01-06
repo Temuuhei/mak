@@ -814,6 +814,16 @@ msgid "Document Type"
 msgstr "Төрөл"
 
 #. module: mak_regulation
+#: field:mak.sent.document,doc_count:0
+msgid "Document count"
+msgstr "Явсан бичгийн тоо"
+
+#. module: mak_regulation
+#: field:mak.sent.document,paper_count:0
+msgid "Paper count"
+msgstr "Хуудасын тоо"
+
+#. module: mak_regulation
 #: view:mak.document:mak_regulation.view_mak_document_form
 msgid "Document history"
 msgstr "Түүх"
@@ -867,6 +877,11 @@ msgstr "Followers"
 #: view:mak.regulation:mak_regulation.mak_regulation_search_view
 msgid "Group By"
 msgstr "Бүлэглэх"
+
+#. module: mak_regulation
+#: field:mak.sent.document,is_attachment:0
+msgid "Have Attachment?"
+msgstr "Хавсралттай эсэх"
 
 #. module: mak_regulation
 #: selection:mak.document,priority:0
@@ -933,6 +948,11 @@ msgstr "Маш нууц албан бичиг"
 #: field:mak.regulation,message_is_follower:0
 msgid "Is a Follower"
 msgstr "Is a Follower"
+
+#. module: mak_regulation
+#: field:mak.sent.document,is_replied:0
+msgid "Is replied?"
+msgstr "Хариутай эсэх"
 
 #. module: mak_regulation
 #: field:mak.document,message_last_post:0

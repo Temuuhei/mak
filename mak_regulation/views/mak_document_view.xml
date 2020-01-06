@@ -157,6 +157,10 @@
 	            <field name="partner_id"/>
 	            <field name="director_id"/>
 	            <field name="doc_name"/>
+	            <field name="doc_count"/>
+	            <field name="paper_count"/>
+	            <field name="is_attachment"/>
+	            <field name="is_replied"/>
             </tree>
         </field>
     </record>

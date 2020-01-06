@@ -54,6 +54,10 @@ class mak_sent_document(osv.osv):
         'sector_id': fields.many2one('hr.department', 'Sector', domain=[('type', '=', 'sector')]),
         'director_id': fields.many2one('hr.employee', 'Assigned Director'),
         'partner_id': fields.many2one('res.partner', 'Partner'),
+        'doc_count': fields.integer('Document count'),
+        'paper_count': fields.integer('Paper count'),
+        'is_attachment': fields.boolean('Have Attachment?'),
+        'is_replied': fields.boolean('Is replied?'),
 
     }
     _defaults = {
