@@ -29,6 +29,15 @@ DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATE_FORMAT = "%Y-%m-%d"
 
 
+class hr_blank(osv.osv):
+    _name = "hr.blank"
+
+    _columns = {
+
+        'name': fields.char('Name'),
+
+    }
+
 class hr_regulation(osv.osv):
     _inherit = "hr.regulation"
 
