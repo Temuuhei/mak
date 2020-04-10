@@ -17,7 +17,7 @@
                     <button name="action_send_pomak" states="check" String="Бичиг хэргийн ажилтанд илгээх" type="object" class="oe_highlight" groups ="mak_regulation.regulation_user"/>
                     <button name="action_check" states="assigned" String="Захиралд илгээх" type="object" class="oe_highlight"/>
                     <button name="action_cancel" states="check" String="Цуцлах" type="object" class="oe_highlight"/>
-                    <button name="action_done" states="check,send_pomak" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_regulation.regulation_ioe,mak_regulation.regulation_user"/>
+                        <button name="action_done" states="check,send_pomak" String="Дууссан" type="object" icon="gtk-apply" groups ="mak_regulation.regulation_ioe,mak_regulation.regulation_user"/>
                     <button name="action_create_reg" states="to_allow,send_pomak" String="Тушаал үүсгэх" type="object" class="oe_highlight" />
                     <!--<button name="action_allow" states="send_pomak" String="Зөвшөөрсөн" type="object" class="oe_highlight" groups ="mak_regulation.regulation_ioe"/>-->
                     <button name="action_reject" states="send_pomak" String="Татгалзсан" type="object" class="oe_highlight" groups ="mak_regulation.regulation_ioe"/>
@@ -211,12 +211,30 @@
         </field>
     </record>
 
+    <record model="ir.actions.act_window" id="hr_document_template_archive">
+        <field name="name">Hr Blank Templates</field>
+        <field name="res_model">ir.attachment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_id" ref="mail.view_document_file_kanban"/>
+        <field name="domain">[('res_model','=','hr.blank')]</field>
+        <field name="context" eval="{'default_res_model': 'hr.blank'}"/>
+        <field name="help" type="html">
+        <p>
+         Search through archive of Hr Blank
+        </p>
+        </field>
+    </record>
 
-    <menuitem id="menu_mak_hr_regulation_main" name="Regulation MAK" sequence="1"/>
-    <menuitem name="Mak HR Regulation" id="menu_mak_hr_regulation" sequence="1" parent="menu_mak_hr_regulation_main"/>
-    <menuitem action="action_mak_regulation_window" name="Өргөдөл, Албан бичигийн бүртгэл" id="menu_sub_mak_hr_regulation" sequence="1" parent="menu_mak_hr_regulation"/>
-    <menuitem name="Regulation registry" parent="menu_mak_hr_regulation" id="hr_regulation_menu_mak" sequence="2" action='l10n_mn_hr_regulation.action_hr_regulation'/>
-    <menuitem name="Done regulation" parent="menu_mak_hr_regulation" id="hr_done_regulation_menu_mak" sequence="3" action='action_mak_done_regulation_window'/>
+
+
+        <menuitem id="menu_mak_hr_regulation_main" name="Regulation MAK" sequence="1"/>
+        <menuitem name="Mak HR Regulation" id="menu_mak_hr_regulation" sequence="1" parent="menu_mak_hr_regulation_main"/>
+        <menuitem action="action_mak_regulation_window" name="Өргөдөл, Албан бичигийн бүртгэл" id="menu_sub_mak_hr_regulation" sequence="1" parent="menu_mak_hr_regulation"/>
+        <menuitem name="Regulation registry" parent="menu_mak_hr_regulation" id="hr_regulation_menu_mak" sequence="2" action='l10n_mn_hr_regulation.action_hr_regulation'/>
+        <menuitem name="Done regulation" parent="menu_mak_hr_regulation" id="hr_done_regulation_menu_mak" sequence="3" action='action_mak_done_regulation_window'/>
+        <menuitem name="Document Templates" parent="menu_mak_hr_regulation_main" id="hr_sub_document_template" sequence="3"/>
+        <menuitem name="Document Templates" parent="hr_sub_document_template" id="menu_hr_sub_document_template" action="hr_document_template_archive" sequence="1"/>
 
 	</data>
 </openerp>

@@ -846,6 +846,12 @@ msgid "Draft"
 msgstr "Шинэ"
 
 #. module: mak_regulation
+#: model:ir.ui.menu,name:mak_regulation.hr_sub_document_template
+#: model:ir.ui.menu,name:mak_regulation.menu_hr_sub_document_template
+msgid "Document Templates"
+msgstr "Албан бичгийн маягт"
+
+#. module: mak_regulation
 #: field:mak.document.state.history,duration:0
 msgid "Duration of Day"
 msgstr "Хугацаа (өдөр)"
