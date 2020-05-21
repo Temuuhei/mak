@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="hse.my_safety">
+        <table>
+            <tr>
+                <td>
+                    <div id='hazard_report' style="width:400px; height:230px;"/>
+                </td>
+                <td>
+                    <div id='workplace_ispection' style="width:400px; height:230px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id='safety_meeting' style="width:400px; height:230px;"/>
+                </td>
+                <td>
+                    <div id='accident_entry' style="width:400px; height:230px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width: 170px; height: 20px; text-align: center;">
+                    Training attended
+                </td>
+                <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width: 170px; height: 20px; text-align: center;">
+                    Training to attend
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div id='sitting_training' style="border: none;"/>
+                </td>
+                <td>
+                    <div id='stay_training' style="padding-left:40px; border: none;"/>
+                </td>
+            </tr>
+            
+        </table>
+    </t>
+</templates>

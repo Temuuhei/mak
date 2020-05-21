@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="hse_report_injury_pdf">
+            <t>
+                
+            <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-size: 14px;">
+                        <t t-if="o and 'company_id' in o">
+                            <t t-set="company" t-value="o.company_id"></t>
+                        </t>
+                        <t t-if="not o or not 'company_id' in o">
+                            <t t-set="company" t-value="res_company"></t>
+                        </t>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
+                            </div>
+                            <div class="col-xs-9 text-right" style="margin-top:20px; " t-field="company.rml_header1"/>
+                        </div>
+                        <div class="row">
+                        <h4 class="text-center" style="font-weight: bold;">
+                            <span t-field="o.accident_type.name"/> <span t-field="o.name"/> тайлан
+                        </h4>
+                        </div>
+                        <div class="row">
+                            <div class="pull-left">
+                                <span style="font-weight: bold;">ХЭСЭГ 1: ТӨСӨЛ  ОСЛЫН ДЭЛГЭРЭНГҮЙ </span><span style="color: blue; font-size: 12px">ТУХАЙН ХЭЛТЭСИЙН АХЛАХ АЖИЛТАН ТАЙЛАНГ 4 ЦАГИЙН ДОТОР БИЧИЖ ХАБЭАБО -Ы ХЭЛТЭСТ ХҮРГҮҮЛНЭ! </span><span style="color: red; font-size: 10px">24 ЦАГИЙН ДОТОР РЕПОРТЫГ ХААНА.</span>
+                            </div>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td colspan="6" style="vertical-align: middle; font-weight: bold; background-color: #04b35b;">
+                                        <h4 class="text-center">
+                                            <span t-field="o.accident_name"/>
+                                        </h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Огноо</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.datetime"/></td>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Төсөл</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.project_id.name"/></td>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Төслийн менежер</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.project_manager_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Хэлтэс</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.department_id.name"/></td>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Хэлтсийн менежер</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.dep_manager_id.name"/></td>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Ерөнхий инженер</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.general_master_id.name"/></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Ээлжийн мастер</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.master_id.name"/></td>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Холбогдсон ажилтан</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;">
+                                        <t t-foreach="o.involved_employee" t-as="ooo"><span t-field="ooo.name"/> </t></td>
+                                    
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <h4 class="text-left">
+                                Осол тохиолдлын дэлгэрэнгүй
+                            </h4>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Осол гарсан газар</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.location_accident"/></td>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Болзошгүй үр дагавар</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.consequence_id.name"/></td>
+                                    <td style="vertical-align: middle; background-color: #04b35b;">Дахин тохиолдох магадлал</td>
+                                    <td style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.likelihood_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="vertical-align: middle; background-color: #04b35b;">Осол болохын өмнө юу болсон?</td>
+                                    <td colspan="4" style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.before_injury"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="vertical-align: middle; background-color: #04b35b;">Осол яаж болсон?</td>
+                                    <td colspan="4" style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.how_do_injury"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="vertical-align: middle; background-color: #04b35b;">Ослын дараа юу болсон?</td>
+                                    <td colspan="4" style="vertical-align: middle; text-align:left; font-weight: bold;"><span t-field="o.next_injury"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="pull-left">
+                                <span style="font-weight: bold;">ХЭСЭГ 2: ОСОЛ ГАРАХАД НӨЛӨӨЛСӨН ГОЛ ХҮЧИН ЗҮЙЛҮҮД:</span>
+                            </div>
+                        
+                            <table>
+                                <tr>
+                                    <td>
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td colspan="3">
+                                                    <span style="vertical-align: middle; text-align:center; font-weight: bold;">ШУУД ШАЛТГААН</span>
+                                                </td>
+                                                
+                                            </tr>
+                                            <t t-foreach="o.factor_line" t-as="factor">
+                                                <t t-if="factor.type == 'immediate_cause'">
+                                                    <tr>
+                                                    <td style="font-weight: bold;">
+                                                        <span t-field="factor.factor_id.name"/>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <span t-field="factor.notes"/>
+                                                    </td>
+                                                    </tr>
+                                                </t>
+                                            </t>
+                                        </table>
+                                        
+                                    </td>
+                                    <td>
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td colspan="3">
+                                                    <span style="vertical-align: middle; text-align:center; font-weight: bold;">СУУРЬ ШАЛТГААН</span>
+                                                </td>
+                                            </tr>
+                                            <t t-foreach="o.factor_line" t-as="factor">
+                                                <t t-if="factor.type == 'base_cause'">
+                                                    <tr>
+                                                    <td style="font-weight: bold;">
+                                                        <span t-field="factor.factor_id.name"/>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <span t-field="factor.notes"/>
+                                                    </td>
+                                                    </tr>
+                                                </t>
+                                            </t>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="pull-left">
+                                <span style="font-weight: bold;">ХЭСЭГ 3. ЦААШИД АВАХ ХАРИУ АРГА ХЭМЖЭЭ:</span>
+                                <br/>
+                                <span style="font-size: 10px">Жич: Ослын СУУРЬ шалтгаануудыг үндэслэж цаашид авах арга хэмжээг тодорхойлон ЮУГ ХЭН ХЭЗЭЭ авахыг дараах хүснэгтэнд бичнэ.</span>
+                            </div>
+                        
+                            <table class="table table-bordered">
+                                <tr style="background-color: #04b35b;">
+                                    <th>Хариу арга хэмжээ юуг?</th>
+                                    <th>Хэн </th>
+                                    <th>Хэрхэн яаж?</th>
+                                    <th>Хэзээ?</th>
+                                    <th>Авагдсан арга хэмжээ</th>
+                                    <th>Арга хэмжээ авсан ажилтан</th>
+                                    <th>Арга хэмжээ авсан огноо</th>
+                                </tr>
+                                <t t-foreach="o.corrective_action_line" t-as="corrective">
+                                    <tr>
+                                        <td><span t-field="corrective.corrective_action_what"/></td>
+                                        <td><t t-foreach="corrective.employee_ids" t-as="ooo"><span t-field="ooo.name"/></t><t t-foreach="corrective.partner_ids" t-as="ooo"><span t-field="ooo.name"/> </t></td>
+                                        <td><span t-field="corrective.how"/></td>
+                                        <td><span t-field="corrective.when_start"/> - <span t-field="corrective.when_end"/></td>
+                                        <td><span t-field="corrective.corrective_action_taken"/></td>
+                                        <td><span t-field="corrective.taken_employee_id.name"/></td>
+                                        <td><span t-field="corrective.taken_date"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="pull-left">
+                                <span style="font-weight: bold;">ХЭСЭГ 4. ШАЛГАЛТЫН БАГ БҮРЭЛДЭХҮҮН:</span>
+                            </div>
+                        
+                            <table class="table table-bordered" style="width: 100%;">
+                                <tr style="background-color: #04b35b;">
+                                    <th>Нэр</th>
+                                    <th>Албан тушаал</th>
+                                </tr>
+                                <t t-foreach="o.audit_line" t-as="audit">
+                                    <tr>
+                                        <td><span t-field="audit.employee_id.name"/></td>
+                                        <td><span t-field="audit.job_id.name"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="pull-left">
+                                <span style="font-weight: bold;">ХЭСЭГ 5. ШАЛГАЛТЫН ДҮГНЭЛТ:</span>
+                            </div>
+                        
+                            <table class="table table-bordered" style="width: 100%;">
+                                <tr style="background-color: #04b35b;">
+                                    <th>Нэр</th>
+                                    <th>Албан тушаал</th>
+                                    <th>Дүгнэлт</th>
+                                    <th>Огноо</th>
+                                </tr>
+                                <t t-foreach="o.audit_conclusion_line" t-as="audit">
+                                    <tr>
+                                        <td><span t-field="audit.employee_id.name"/></td>
+                                        <td><span t-field="audit.job_id.name"/></td>
+                                        <td><span t-field="audit.conclusion"/></td>
+                                        <td><span t-field="audit.date"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="pull-left">
+                                <span style="font-weight: bold;">ХЭСЭГ 6: ЗУРАГ БОЛОН ХАВСРАЛТ</span>
+                                <br/>
+                                <span style="font-size: 10px">Жич: Осолтой холбоотой фото зураг болон схем зургийг оруулж, бусад мэдээллийг ослын шалгалтын тайланд хавсаргана уу.</span>
+                            </div>
+                        
+                            <t t-foreach="o.attachment_ids" t-as="attachment">
+                                <tr>
+                                    <td>
+                                        <img t-att-src="'/web/binary/image?model=ir.attachment&amp;field=datas&amp;id=' + str(attachment.id) + '&amp;resize=400,200'"></img>
+                                    </td>
+                                    <td>
+                                        <img t-att-src="'/web/binary/image?model=ir.attachment&amp;field=datas&amp;id=' + str(attachment.id) + '&amp;resize=400,200'"></img>
+                                    </td>
+                                </tr>
+                            </t>
+                        </div>
+                        <div class="row">
+                            <div class="pull-left">
+                                <br/>
+                                <span style="font-size: 10px">Ажилтаны тайлбар</span>
+                            </div>
+                            <br/>
+                            <t t-foreach="o.desc_attach_ids" t-as="attachment">
+                                <tr>
+                                    <td>
+                                        <img t-att-src="'/web/binary/image?model=ir.attachment&amp;field=datas&amp;id=' + str(attachment.id) + '&amp;resize=400,200'"></img>
+                                    </td>
+                                    <td>
+                                        <img t-att-src="'/web/binary/image?model=ir.attachment&amp;field=datas&amp;id=' + str(attachment.id) + '&amp;resize=400,200'"></img>
+                                    </td>
+                                </tr>
+                            </t>
+                        </div>
+                    </div>
+                      
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

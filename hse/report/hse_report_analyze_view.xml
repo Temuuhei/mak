@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_report_hse_injury_entry_graph" model="ir.ui.view">
+            <field name="name">report.hse.injury.entry.graph</field>
+            <field name="model">report.hse.injury.entry</field>
+            <field name="arch" type="xml">
+                <graph string="Injury entry" type="pivot">
+                     <field name="accident_cause_id" type="row"/>
+                     <field name="factor_id" type="col"/>
+                </graph>
+             </field>
+        </record>
+
+        <record id="view_report_hse_injury_entry_search" model="ir.ui.view">
+            <field name="name">report.hse.injury.entry.search</field>
+            <field name="model">report.hse.injury.entry</field>
+            <field name="arch" type="xml">
+                <search string="Injury entry">
+                    <filter name="january" string="January" domain="[('datetime','like',time.strftime('%%Y-01'))]"/>
+                    <filter name="february" string="February" domain="[('datetime','like',time.strftime('%%Y-02'))]"/>
+                    <filter name="march" string="March" domain="[('datetime','like',time.strftime('%%Y-03'))]"/>
+                    <filter name="April" string="April" domain="[('datetime','like',time.strftime('%%Y-04'))]"/>
+                    <filter name="may" string="May" domain="[('datetime','like',time.strftime('%%Y-05'))]"/>
+                    <filter name="june" string="June" domain="[('datetime','like',time.strftime('%%Y-06'))]"/>
+                    <filter name="july" string="July" domain="[('datetime','like',time.strftime('%%Y-07'))]"/>
+                    <filter name="august" string="August" domain="[('datetime','like',time.strftime('%%Y-08'))]"/>
+                    <filter name="september" string="September" domain="[('datetime','like',time.strftime('%%Y-09'))]"/>
+                    <filter name="octomber" string="Octomber" domain="[('datetime','like',time.strftime('%%Y-10'))]"/>
+                    <filter name="november" string="November" domain="[('datetime','like',time.strftime('%%Y-11'))]"/>
+                    <filter name="december" string="December" domain="[('datetime','like',time.strftime('%%Y-12'))]"/>
+                    <filter name="year" string="This Year" domain="[('datetime','like',time.strftime('%%Y'))]"/>
+                    <separator />
+                    <group expand="1" string="Group By...">
+                        <filter string="Project" name="project" context="{'group_by':'project_id'}"/>
+                        <filter string="Date (day)" icon="terp-go-today" context="{'group_by':'datetime:day'}"/>
+                        <filter string="Date (week)" icon="terp-go-week" context="{'group_by':'datetime:week'}"/>
+                        <filter string="Date (month)" icon="terp-go-month" context="{'group_by':'datetime:month'}"/>
+                        <filter string="Date (quarter)" icon="terp-go-quarter" context="{'group_by':'datetime:quarter'}"/>
+                        <filter string="Date (year)" icon="terp-go-year" context="{'group_by':'datetime:year'}"/>
+                        
+                    </group>
+                </search>
+            </field>
+        </record>
+
+       <record id="action_report_hse_injury_entry_tree" model="ir.actions.act_window">
+            <field name="name">Injury entry</field>
+            <field name="res_model">report.hse.injury.entry</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="search_view_id" ref="view_report_hse_injury_entry_search"/>
+            <field name="context">{}</field>
+            <field name="help"></field>
+        </record>
+    </data>
+</openerp>

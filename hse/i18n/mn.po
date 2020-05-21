@@ -1,0 +1,2911 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hse
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 07:50+0000\n"
+"PO-Revision-Date: 2020-05-21 07:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2012"
+msgstr "2012"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2013"
+msgstr "2013"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2014"
+msgstr "2014"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2015"
+msgstr "2015"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2016"
+msgstr "2016"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2017"
+msgstr "2017"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2018"
+msgstr "2018"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2019"
+msgstr "2019"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2020"
+msgstr "2020"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2021"
+msgstr "2021"
+
+#. module: hse
+#: selection:hse.safety.plan,year:0
+msgid "2022"
+msgstr "2022"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "24 ЦАГИЙН ДОТОР РЕПОРТЫГ ХААНА."
+msgstr "24 ЦАГИЙН ДОТОР РЕПОРТЫГ ХААНА."
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+msgid "24 ЦАГИЙН ДОТОР РЕПОРТЫГ ХААНА."
+msgstr "24 ЦАГИЙН ДОТОР РЕПОРТЫГ ХААНА."
+
+#. module: hse
+#: field:hse.injury.accident.line,injury_id:0
+#: field:hse.injury.audit.conclusion.line,injury_id:0
+#: field:hse.injury.audit.line,injury_id:0
+#: field:hse.injury.corrective.action.line,injury_id:0
+#: field:hse.injury.factor.line,injury_id:0
+msgid "Accident ID"
+msgstr "Accident ID"
+
+#. module: hse
+#: field:hse.injury.accident.line,accident_cause_id:0
+#: field:report.hse.injury.entry,accident_cause_id:0
+msgid "Accident cause"
+msgstr "Ослын шалтгаан"
+
+#. module: hse
+#: field:hse.injury.entry,accident_line:0
+msgid "Accident line"
+msgstr "Ослын мөр"
+
+#. module: hse
+#: field:hse.injury.entry,accident_name:0
+#: field:report.hse.injury.entry,accident_name:0
+msgid "Accident name"
+msgstr "Ослын нэр"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_filter
+#: field:hse.injury.entry,accident_type:0
+#: field:report.hse.injury.entry,accident_type:0
+msgid "Accident type"
+msgstr "Ослын төрөл"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:450
+#: code:addons/hse/static/src/js/hse_js.js:269
+#: code:addons/hse/static/src/js/hse_my_safety.js:192
+#: code:addons/hse/static/src/xml/hse_corrective_actions.xml:16
+#, python-format
+msgid "Accident/Incident"
+msgstr "Осол тохиолдол"
+
+#. module: hse
+#: field:hse.safety.plan,actual:0
+msgid "Actual"
+msgstr "Гүйцэтгэл"
+
+#. module: hse
+#: field:hse.safety.plan,actual_percent:0
+msgid "Actual percent %"
+msgstr "Гүйцэтгэлийн хувь %"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "April"
+msgstr "4-р сар"
+
+#. module: hse
+#: field:hse.likelihood,assessment:0
+msgid "Assessment"
+msgstr "Үнэлгээ"
+
+#. module: hse
+#: field:hse.risk.assessment.table,risk_assessment_id:0
+msgid "Assessment ID"
+msgstr "Assessment ID"
+
+#. module: hse
+#: field:hse.risk.rating,assessment_description:0
+msgid "Assessment description"
+msgstr "Үнэлгээ тайлбар"
+
+#. module: hse
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_form
+msgid "Assessment team"
+msgstr "Үнэлгээний баг"
+
+#. module: hse
+#: field:hse.risk.rating,assessment_type:0
+msgid "Assessment type"
+msgstr "Үнэлгээ төрөл"
+
+#. module: hse
+#: field:hse.consequence,asset_damage:0
+msgid "Asset damage"
+msgstr "Хөрөнгийн хохирол"
+
+#. module: hse
+#: field:hse.injury.entry,attachment_ids:0
+#: field:hse.risk.assessment,attachment_ids:0
+#: field:hse.rules.documents,attachment_ids:0
+#: field:hse.safety.meeting,attachment_ids:0
+#: field:hse.workplace.ispection,attachment_ids:0
+msgid "Attachments"
+msgstr "Хавсралт"
+
+#. module: hse
+#: field:hse.injury.entry,audit_conclusion_line:0
+msgid "Audit conclusion line"
+msgstr "Audit conclusion line"
+
+#. module: hse
+#: field:hse.injury.entry,audit_line:0
+msgid "Audit line"
+msgstr "Шалгалтын мөр"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "August"
+msgstr "8-р сар"
+
+#. module: hse
+#: field:hse.hazard.report,auto_number:0
+msgid "Auto number"
+msgstr "Автомот дугаарлалт"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_xml.xml:56
+#: code:addons/hse/static/src/xml/hse_xml.xml:116
+#, python-format
+msgid "BASIC CAUSE"
+msgstr "СУУРЬ ШАЛТГААН"
+
+#. module: hse
+#: selection:hse.accident.factor,type:0
+msgid "Base cause"
+msgstr "Суурь шалтгаан"
+
+#. module: hse
+#: field:hse.injury.entry,before_injury:0
+msgid "Before injury"
+msgstr "Осол болохын өмнө юу болсон?"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:525
+#, python-format
+msgid "Between the period"
+msgstr "Хугацааны хооронд"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_report_xml.xml:68
+#: code:addons/hse/static/src/xml/hse_safety_report.xml:69
+#, python-format
+msgid "Bird's pyramid"
+msgstr "Bird's гурвалжин"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_mail
+#: view:hse.injury.entry:hse.view_hse_injury_entry_mail
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_mail
+msgid "Cancel"
+msgstr "Хэрэгсэхгүй"
+
+#. module: hse
+#: field:hse.risk.assessment,captian_user_id:0
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_form
+msgid "Captian"
+msgstr "Ахлагч"
+
+#. module: hse
+#: field:hse.workplace.ispection,captian_id:0
+msgid "Captians"
+msgstr "Ахлагч"
+
+#. module: hse
+#: field:hse.accident.category,accident_id:0
+#: model:ir.actions.act_window,name:hse.action_hse_accident_category
+#: model:ir.model,name:hse.model_hse_accident_category
+#: model:ir.ui.menu,name:hse.menu_hse_accident_category
+msgid "Categories of accidents"
+msgstr "Ослын ангилал"
+
+#. module: hse
+#: field:hse.accident.cause,name:0
+msgid "Cause"
+msgstr "Шалтгаан"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_accident_cause
+#: model:ir.model,name:hse.model_hse_accident_cause
+#: model:ir.ui.menu,name:hse.menu_hse_accident_cause
+msgid "Causes of accidents"
+msgstr "Ослын шалтгаан"
+
+#. module: hse
+#: field:hse.injury.accident.line,check:0
+msgid "Check"
+msgstr "Чагтлах"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_filter
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: selection:hse.injury.entry,state:0
+msgid "Closed"
+msgstr "Хаагдсан"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_code_config
+#: model:ir.model,name:hse.model_hse_code_config
+#: model:ir.ui.menu,name:hse.menu_hse_code_config
+msgid "Code config"
+msgstr "Кодын тохиргоо"
+
+#. module: hse
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_form
+#: field:hse.safety.meeting,comment:0
+msgid "Comment"
+msgstr "Санал"
+
+#. module: hse
+#: field:hse.injury.audit.conclusion.line,conclusion:0
+msgid "Conclusion"
+msgstr "Дүгнэлт"
+
+#. module: hse
+#: code:addons/hse/hse.py:1271
+#, python-format
+msgid "Conclusion is empty"
+msgstr "Дүгнэлт хоосон байна!!!"
+
+#. module: hse
+#: model:ir.ui.menu,name:hse.menu_hse_config
+msgid "Configure"
+msgstr "Тохиргоо"
+
+#. module: hse
+#: field:hse.risk.rating,consequence_id:0
+#: model:ir.actions.act_window,name:hse.action_hse_consequence
+#: model:ir.model,name:hse.model_hse_consequence
+#: model:ir.ui.menu,name:hse.menu_hse_consequence
+msgid "Consequence"
+msgstr "Үр дагавар"
+
+#. module: hse
+#: field:hse.consequence,consequence_rating:0
+msgid "Consequence rating"
+msgstr "Үр дагаварын зэрэг"
+
+#. module: hse
+#: field:hse.risk.assessment.table,controls_to_reduce_risk:0
+msgid "Controls to reduce risk"
+msgstr "Эрсдэлийг бууруулах хяналтын хэмжээ"
+
+#. module: hse
+#: field:hse.injury.entry,cor_act_attach_ids:0
+#: field:hse.workplace.ispection,cor_act_attach_ids:0
+msgid "Correct action image"
+msgstr "Арга хэмжээ авсан зураг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:299
+#, python-format
+msgid "Corrective action"
+msgstr "Хариу арга хэмжээ"
+
+#. module: hse
+#: field:hse.injury.entry,corrective_action_line:0
+msgid "Corrective action line"
+msgstr "Corrective action line"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_form
+#: field:hse.hazard.report,corrective_action_taken:0
+#: field:hse.injury.corrective.action.line,corrective_action_taken:0
+#: field:hse.workplace.ispection.line,corrective_action_taken:0
+msgid "Corrective action taken"
+msgstr "Авагдсан арга хэмжээ"
+
+#. module: hse
+#: code:addons/hse/hse.py:628
+#: code:addons/hse/hse.py:1440
+#, python-format
+msgid "Corrective action taken is empty"
+msgstr "Авагдсан арга хэмжээнд тайлбар бичнэ үү!!!!!"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_form
+#: field:hse.hazard.report,corrective_action_to_be_taken:0
+msgid "Corrective action to be taken"
+msgstr "Авах арга хэмжээ"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:296
+#, python-format
+msgid "Corrective action what"
+msgstr "Авагдах арга хэмжээ"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,corrective_action_what:0
+msgid "Corrective action what?"
+msgstr "Хариу арга хэмжээ юуг?"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_corrective_actions
+#: model:ir.model,name:hse.model_hse_corrective_actions
+#: model:ir.ui.menu,name:hse.menu_hse_corrective_actions
+msgid "Corrective actions"
+msgstr "Авах хариу арга хэмжээнүүд"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_filter
+#: selection:hse.injury.entry,state:0
+msgid "Corrective actions closed"
+msgstr "Хариу арга хэмжээ авагдсан"
+
+#. module: hse
+#: field:hse.safety.plan,count:0
+msgid "Count"
+msgstr "Тоо"
+
+#. module: hse
+#: field:hse.accident.category,create_uid:0
+#: field:hse.accident.cause,create_uid:0
+#: field:hse.accident.factor,create_uid:0
+#: field:hse.accident.type,create_uid:0
+#: field:hse.code.config,create_uid:0
+#: field:hse.consequence,create_uid:0
+#: field:hse.corrective.actions,create_uid:0
+#: field:hse.daily.report,create_uid:0
+#: field:hse.hazard.report,create_uid:0
+#: field:hse.hazard.report.mail.line,create_uid:0
+#: field:hse.hazard.type,create_uid:0
+#: field:hse.injury.accident.line,create_uid:0
+#: field:hse.injury.audit.conclusion.line,create_uid:0
+#: field:hse.injury.audit.line,create_uid:0
+#: field:hse.injury.corrective.action.line,create_uid:0
+#: field:hse.injury.entry,create_uid:0
+#: field:hse.injury.entry.mail.line,create_uid:0
+#: field:hse.injury.factor.line,create_uid:0
+#: field:hse.likelihood,create_uid:0
+#: field:hse.location,create_uid:0
+#: field:hse.my.safety,create_uid:0
+#: field:hse.nope.lti,create_uid:0
+#: field:hse.nope.lti.line,create_uid:0
+#: field:hse.partner,create_uid:0
+#: field:hse.project.man.hour,create_uid:0
+#: field:hse.risk.assessment,create_uid:0
+#: field:hse.risk.assessment.table,create_uid:0
+#: field:hse.risk.rating,create_uid:0
+#: field:hse.rules.documents,create_uid:0
+#: field:hse.safety.indicator,create_uid:0
+#: field:hse.safety.meeting,create_uid:0
+#: field:hse.safety.meeting.line,create_uid:0
+#: field:hse.safety.plan,create_uid:0
+#: field:hse.safety.report,create_uid:0
+#: field:hse.workplace.ispection,create_uid:0
+#: field:hse.workplace.ispection.line,create_uid:0
+#: field:hse.workplace.ispection.mail.line,create_uid:0
+msgid "Created by"
+msgstr "Үүсгэсэн"
+
+#. module: hse
+#: field:hse.accident.category,create_date:0
+#: field:hse.accident.cause,create_date:0
+#: field:hse.accident.factor,create_date:0
+#: field:hse.accident.type,create_date:0
+#: field:hse.code.config,create_date:0
+#: field:hse.consequence,create_date:0
+#: field:hse.corrective.actions,create_date:0
+#: field:hse.daily.report,create_date:0
+#: field:hse.hazard.report,create_date:0
+#: field:hse.hazard.report.mail.line,create_date:0
+#: field:hse.hazard.type,create_date:0
+#: field:hse.injury.accident.line,create_date:0
+#: field:hse.injury.audit.conclusion.line,create_date:0
+#: field:hse.injury.audit.line,create_date:0
+#: field:hse.injury.corrective.action.line,create_date:0
+#: field:hse.injury.entry,create_date:0
+#: field:hse.injury.entry.mail.line,create_date:0
+#: field:hse.injury.factor.line,create_date:0
+#: field:hse.likelihood,create_date:0
+#: field:hse.location,create_date:0
+#: field:hse.my.safety,create_date:0
+#: field:hse.nope.lti,create_date:0
+#: field:hse.nope.lti.line,create_date:0
+#: field:hse.partner,create_date:0
+#: field:hse.project.man.hour,create_date:0
+#: field:hse.risk.assessment,create_date:0
+#: field:hse.risk.assessment.table,create_date:0
+#: field:hse.risk.rating,create_date:0
+#: field:hse.rules.documents,create_date:0
+#: field:hse.safety.indicator,create_date:0
+#: field:hse.safety.meeting,create_date:0
+#: field:hse.safety.meeting.line,create_date:0
+#: field:hse.safety.plan,create_date:0
+#: field:hse.safety.report,create_date:0
+#: field:hse.workplace.ispection,create_date:0
+#: field:hse.workplace.ispection.line,create_date:0
+#: field:hse.workplace.ispection.mail.line,create_date:0
+msgid "Created on"
+msgstr "Үүссэн"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_daily_report
+#: model:ir.model,name:hse.model_hse_daily_report
+#: model:ir.ui.menu,name:hse.menu_hse_daily_report
+msgid "Daily report"
+msgstr "Өдөр тутмын мэдээ"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:293
+#: code:addons/hse/static/src/js/hse_my_safety.js:121
+#: field:hse.daily.report,date:0
+#: field:hse.injury.audit.conclusion.line,date:0
+#: field:hse.nope.lti,date:0
+#: field:hse.rules.documents,date:0
+#: field:hse.safety.meeting,date:0
+#: field:hse.workplace.ispection,date:0
+#, python-format
+msgid "Date"
+msgstr "Огноо"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "Date (day)"
+msgstr "Өдөр (өдөр)"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "Date (month)"
+msgstr "Өдөр (сар)"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "Date (quarter)"
+msgstr "Өдөр (улирал)"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "Date (week)"
+msgstr "Өдөр (долоо хоног)"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "Date (year)"
+msgstr "Өдөр (жил)"
+
+#. module: hse
+#: help:hse.accident.category,message_last_post:0
+#: help:hse.accident.cause,message_last_post:0
+#: help:hse.accident.factor,message_last_post:0
+#: help:hse.accident.type,message_last_post:0
+#: help:hse.code.config,message_last_post:0
+#: help:hse.consequence,message_last_post:0
+#: help:hse.hazard.report,message_last_post:0
+#: help:hse.hazard.type,message_last_post:0
+#: help:hse.injury.entry,message_last_post:0
+#: help:hse.likelihood,message_last_post:0
+#: help:hse.location,message_last_post:0
+#: help:hse.nope.lti,message_last_post:0
+#: help:hse.risk.assessment,message_last_post:0
+#: help:hse.risk.rating,message_last_post:0
+#: help:hse.rules.documents,message_last_post:0
+#: help:hse.safety.meeting,message_last_post:0
+#: help:hse.safety.plan,message_last_post:0
+#: help:hse.workplace.ispection,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:302
+#, python-format
+msgid "Date to take remedial action"
+msgstr "Авах огноо"
+
+#. module: hse
+#: field:hse.hazard.report,datetime:0
+#: field:hse.injury.entry,datetime:0
+#: field:hse.risk.assessment,datetime:0
+#: field:report.hse.injury.entry,datetime:0
+msgid "Datetime"
+msgstr "Огноо"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:548
+#: field:hse.hazard.report,day:0
+#: field:hse.injury.entry,day:0
+#: field:hse.nope.lti,day:0
+#: field:hse.risk.assessment,day:0
+#: field:hse.rules.documents,day:0
+#: field:hse.safety.meeting,day:0
+#: field:hse.workplace.ispection,day:0
+#, python-format
+msgid "Day"
+msgstr "Өдөр"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "December"
+msgstr "12-р сар"
+
+#. module: hse
+#: field:hse.injury.entry,department_id:0
+#: field:hse.location,department_id:0
+#: field:hse.safety.meeting,department_id:0
+#: field:hse.workplace.ispection,department_id:0
+#: field:report.hse.injury.entry,department_id:0
+msgid "Department"
+msgstr "Хэлтэс"
+
+#. module: hse
+#: field:hse.injury.entry,dep_manager_id:0
+#: field:report.hse.injury.entry,dep_manager_id:0
+msgid "Department manager"
+msgstr "Хэлтсийн менежер"
+
+#. module: hse
+#: field:hse.likelihood,description:0
+msgid "Description"
+msgstr "Тайлбар"
+
+#. module: hse
+#: field:hse.injury.entry,desc_attach_ids:0
+msgid "Description image"
+msgstr "Тайлбар зураг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:201
+#, python-format
+msgid "Detail of Accident/Incident"
+msgstr "Осол тохиолдлын дэлгэрэнгүй"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_corrective_actions.xml:36
+#, python-format
+msgid "Detail of Remedial Action"
+msgstr "Авах хариу арга хэмжээ дэлгэрэнгүй"
+
+#. module: hse
+#: field:hse.accident.category,display_name:0
+#: field:hse.accident.cause,display_name:0
+#: field:hse.accident.factor,display_name:0
+#: field:hse.accident.type,display_name:0
+#: field:hse.code.config,display_name:0
+#: field:hse.consequence,display_name:0
+#: field:hse.corrective.actions,display_name:0
+#: field:hse.daily.report,display_name:0
+#: field:hse.hazard.report,display_name:0
+#: field:hse.hazard.report.mail.line,display_name:0
+#: field:hse.hazard.type,display_name:0
+#: field:hse.injury.accident.line,display_name:0
+#: field:hse.injury.audit.conclusion.line,display_name:0
+#: field:hse.injury.audit.line,display_name:0
+#: field:hse.injury.corrective.action.line,display_name:0
+#: field:hse.injury.entry,display_name:0
+#: field:hse.injury.entry.mail.line,display_name:0
+#: field:hse.injury.factor.line,display_name:0
+#: field:hse.likelihood,display_name:0
+#: field:hse.location,display_name:0
+#: field:hse.my.safety,display_name:0
+#: field:hse.nope.lti,display_name:0
+#: field:hse.nope.lti.line,display_name:0
+#: field:hse.partner,display_name:0
+#: field:hse.project.man.hour,display_name:0
+#: field:hse.risk.assessment,display_name:0
+#: field:hse.risk.assessment.table,display_name:0
+#: field:hse.risk.rating,display_name:0
+#: field:hse.rules.documents,display_name:0
+#: field:hse.safety.indicator,display_name:0
+#: field:hse.safety.meeting,display_name:0
+#: field:hse.safety.meeting.line,display_name:0
+#: field:hse.safety.plan,display_name:0
+#: field:hse.safety.report,display_name:0
+#: field:hse.workplace.ispection,display_name:0
+#: field:hse.workplace.ispection.line,display_name:0
+#: field:hse.workplace.ispection.mail.line,display_name:0
+#: field:report.hse.injury.entry,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: hse
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_filter
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_form
+#: selection:hse.risk.assessment,state:0
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_filter
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_form
+#: selection:hse.safety.meeting,state:0
+msgid "Done"
+msgstr "Хийгдсэн"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_filter
+#: view:hse.hazard.report:hse.view_hse_hazard_report_form
+#: selection:hse.hazard.report,state:0
+#: view:hse.injury.entry:hse.view_hse_injury_entry_filter
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: selection:hse.injury.entry,state:0
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_filter
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_form
+#: selection:hse.risk.assessment,state:0
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_filter
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_form
+#: selection:hse.safety.meeting,state:0
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_filter
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_form
+#: selection:hse.workplace.ispection,state:0
+msgid "Draft"
+msgstr "Ноорог"
+
+#. module: hse
+#: field:hse.partner,email:0
+msgid "Email"
+msgstr "Майл хаяг"
+
+#. module: hse
+#: selection:hse.hazard.report,notify_emp_id:0
+#: selection:hse.hazard.report,responsible:0
+#: field:hse.my.safety,employee_ids:0
+#: selection:hse.workplace.ispection.line,responsible:0
+msgid "Employee"
+msgstr "Ажилтан"
+
+#. module: hse
+#: field:hse.corrective.actions,end_date:0
+#: field:hse.my.safety,end_date:0
+#: field:hse.safety.report,end_date:0
+msgid "End date"
+msgstr "Дуусах огноо"
+
+#. module: hse
+#: selection:hse.safety.indicator,type:0
+#: selection:hse.safety.plan,indicator_type:0
+msgid "Env"
+msgstr "Байгаль орчин"
+
+#. module: hse
+#: field:hse.consequence,env_healthy:0
+msgid "Env healthy"
+msgstr "Байгаль орчинд учруулж болзошгүй хохирол"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_report_xml.xml:33
+#, python-format
+msgid "Equipment downtime"
+msgstr "Техникийн цаг алдалт"
+
+#. module: hse
+#: code:addons/hse/hse.py:413
+#: code:addons/hse/hse.py:567
+#: code:addons/hse/hse.py:628
+#: code:addons/hse/hse.py:723
+#: code:addons/hse/hse.py:1100
+#: code:addons/hse/hse.py:1236
+#: code:addons/hse/hse.py:1244
+#: code:addons/hse/hse.py:1271
+#: code:addons/hse/hse.py:1322
+#: code:addons/hse/hse.py:1440
+#, python-format
+msgid "Error"
+msgstr "Алдаа"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:303
+#: code:addons/hse/static/src/js/hse_safety.js:453
+#: code:addons/hse/static/src/js/hse_safety.js:537
+#, python-format
+msgid "FA"
+msgstr "АТ"
+
+#. module: hse
+#: field:hse.accident.cause,factor_id:0
+#: field:hse.injury.accident.line,factor_id:0
+#: field:hse.injury.factor.line,factor_id:0
+#: field:report.hse.injury.entry,factor_id:0
+msgid "Factor"
+msgstr "Нөлөө"
+
+#. module: hse
+#: field:hse.injury.entry,factor_line:0
+msgid "Factor line"
+msgstr "Factor line"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_accident_factor
+#: model:ir.model,name:hse.model_hse_accident_factor
+msgid "Factors in accidents"
+msgstr "Ослын нөлөө"
+
+#. module: hse
+#: model:ir.ui.menu,name:hse.menu_hse_accident_factor
+msgid "Factors of accidents"
+msgstr "Ослын нөлөө"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,failure_and_hazard:0
+msgid "Failure and hazard"
+msgstr "Дутагдал ба аюул"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "February"
+msgstr "2-р сар"
+
+#. module: hse
+#: code:addons/hse/report/hse_safety_report.py:141
+#, python-format
+msgid "First aid"
+msgstr "First aid"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:537
+#, python-format
+msgid "First aid frequency rate"
+msgstr "Анхны тусламжийн давтамжийн зэрэг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:550
+#, python-format
+msgid "First aid severity rate"
+msgstr "Анхны тусламжийн хүндрэлийн зэрэг"
+
+#. module: hse
+#: field:hse.accident.category,message_follower_ids:0
+#: field:hse.accident.cause,message_follower_ids:0
+#: field:hse.accident.factor,message_follower_ids:0
+#: field:hse.accident.type,message_follower_ids:0
+#: field:hse.code.config,message_follower_ids:0
+#: field:hse.consequence,message_follower_ids:0
+#: field:hse.hazard.report,message_follower_ids:0
+#: field:hse.hazard.type,message_follower_ids:0
+#: field:hse.injury.entry,message_follower_ids:0
+#: field:hse.likelihood,message_follower_ids:0
+#: field:hse.location,message_follower_ids:0
+#: field:hse.nope.lti,message_follower_ids:0
+#: field:hse.risk.assessment,message_follower_ids:0
+#: field:hse.risk.rating,message_follower_ids:0
+#: field:hse.rules.documents,message_follower_ids:0
+#: field:hse.safety.meeting,message_follower_ids:0
+#: field:hse.safety.plan,message_follower_ids:0
+#: field:hse.workplace.ispection,message_follower_ids:0
+msgid "Followers"
+msgstr "Дагагчид"
+
+#. module: hse
+#: view:hse.safety.plan:hse.view_hse_safety_plan_filter
+#: field:hse.safety.plan,frequency:0
+msgid "Frequency"
+msgstr "Давтамж"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_safety_report.xml:23
+#, python-format
+msgid "Frequency rate"
+msgstr "Давтамжийн зэрэг"
+
+#. module: hse
+#: field:hse.injury.entry,general_master_id:0
+#: field:report.hse.injury.entry,general_master_id:0
+msgid "General master"
+msgstr "Ерөнхий мастер"
+
+#. module: hse
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_form
+#: field:hse.workplace.ispection,good_job:0
+msgid "Good job"
+msgstr "Сайшаалтай зүйлс"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:526
+#, python-format
+msgid "Growth rates"
+msgstr "Өссөн дүн"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:246
+#: code:addons/hse/static/src/js/hse_safety.js:436
+#, python-format
+msgid "HR"
+msgstr "AМХ"
+
+#. module: hse
+#: model:ir.actions.act_window,help:hse.action_hse_training_plan
+msgid "HR Training Plan's lists."
+msgstr "Сургалтын төлөвлөгөөний жагсаалт."
+
+#. module: hse
+#: model:ir.actions.act_window,help:hse.action_hse_training
+msgid "HR Training's lists."
+msgstr "Сургалтын жагсаалт."
+
+#. module: hse
+#: model:ir.module.category,name:hse.module_category_hse
+#: model:ir.ui.menu,name:hse.main_menu_hse
+msgid "HSE"
+msgstr "ХАБЭАБО"
+
+#. module: hse
+#: model:res.groups,name:hse.group_hse_manager
+msgid "HSE Manager"
+msgstr "ХАБЭАБО Менежер"
+
+#. module: hse
+#: model:res.groups,name:hse.group_hse_officer
+msgid "HSE Officer"
+msgstr "ХАБЭАБО Ажилтан"
+
+#. module: hse
+#: model:res.groups,name:hse.group_hse_user
+msgid "HSE User"
+msgstr "ХАБЭАБО Хэрэглэгч"
+
+#. module: hse
+#: field:hse.hazard.report.mail.line,hazard_id:0
+msgid "Hazard ID"
+msgstr "Hazard ID"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_form
+#: field:hse.hazard.report,hazard_identification:0
+msgid "Hazard identification"
+msgstr "Аюулын тодорхойлолт"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,hazard_rating:0
+msgid "Hazard rating"
+msgstr "Аюулын зэрэг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:500
+#: code:addons/hse/static/src/js/hse_js.js:263
+#: code:addons/hse/static/src/js/hse_my_safety.js:189
+#: code:addons/hse/static/src/xml/hse_corrective_actions.xml:10
+#: model:ir.actions.act_window,name:hse.action_hse_hazard_report
+#: model:ir.model,name:hse.model_hse_hazard_report
+#: model:ir.ui.menu,name:hse.menu_hse_hazard_report
+#, python-format
+msgid "Hazard report"
+msgstr "Аюулыг мэдээллэх хуудас"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_hazard_report_mail
+msgid "Hazard report mail"
+msgstr "Hazard report mail"
+
+#. module: hse
+#: field:hse.hazard.report,hazard_type:0
+msgid "Hazard type"
+msgstr "Аюулын төрөл"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_workplace_ispection_mail
+msgid "Hazard workplace ispection"
+msgstr "Hazard workplace ispection"
+
+#. module: hse
+#: selection:hse.risk.rating,assessment_type:0
+msgid "High risky"
+msgstr "Өндөр эрдэлтэй"
+
+#. module: hse
+#: help:hse.accident.category,message_summary:0
+#: help:hse.accident.cause,message_summary:0
+#: help:hse.accident.factor,message_summary:0
+#: help:hse.accident.type,message_summary:0
+#: help:hse.code.config,message_summary:0
+#: help:hse.consequence,message_summary:0
+#: help:hse.hazard.report,message_summary:0
+#: help:hse.hazard.type,message_summary:0
+#: help:hse.injury.entry,message_summary:0
+#: help:hse.likelihood,message_summary:0
+#: help:hse.location,message_summary:0
+#: help:hse.nope.lti,message_summary:0
+#: help:hse.risk.assessment,message_summary:0
+#: help:hse.risk.rating,message_summary:0
+#: help:hse.rules.documents,message_summary:0
+#: help:hse.safety.meeting,message_summary:0
+#: help:hse.safety.plan,message_summary:0
+#: help:hse.workplace.ispection,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: hse
+#: field:hse.injury.entry,how_do_injury:0
+msgid "How do injury"
+msgstr "Осол яаж болсон?"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,how:0
+msgid "How?"
+msgstr "Хэрхэн яаж?"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_ir_cron
+#: model:ir.ui.menu,name:hse.menu_hse_ir_cron
+msgid "Hse auto mail"
+msgstr "Автомат майл"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_training
+msgid "Hse training"
+msgstr "ХАБЭАБО сургалт"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_training_plan
+msgid "Hse training plan"
+msgstr "ХАБЭАБО сургалтын хөтөлтбөр"
+
+#. module: hse
+#: field:hse.accident.category,id:0
+#: field:hse.accident.cause,id:0
+#: field:hse.accident.factor,id:0
+#: field:hse.accident.type,id:0
+#: field:hse.code.config,id:0
+#: field:hse.consequence,id:0
+#: field:hse.corrective.actions,id:0
+#: field:hse.daily.report,id:0
+#: field:hse.hazard.report,id:0
+#: field:hse.hazard.report.mail.line,id:0
+#: field:hse.hazard.type,id:0
+#: field:hse.injury.accident.line,id:0
+#: field:hse.injury.audit.conclusion.line,id:0
+#: field:hse.injury.audit.line,id:0
+#: field:hse.injury.corrective.action.line,id:0
+#: field:hse.injury.entry,id:0
+#: field:hse.injury.entry.mail.line,id:0
+#: field:hse.injury.factor.line,id:0
+#: field:hse.likelihood,id:0
+#: field:hse.location,id:0
+#: field:hse.my.safety,id:0
+#: field:hse.nope.lti,id:0
+#: field:hse.nope.lti.line,id:0
+#: field:hse.partner,id:0
+#: field:hse.project.man.hour,id:0
+#: field:hse.risk.assessment,id:0
+#: field:hse.risk.assessment.table,id:0
+#: field:hse.risk.rating,id:0
+#: field:hse.rules.documents,id:0
+#: field:hse.safety.indicator,id:0
+#: field:hse.safety.meeting,id:0
+#: field:hse.safety.meeting.line,id:0
+#: field:hse.safety.plan,id:0
+#: field:hse.safety.report,id:0
+#: field:hse.workplace.ispection,id:0
+#: field:hse.workplace.ispection.line,id:0
+#: field:hse.workplace.ispection.mail.line,id:0
+#: field:report.hse.injury.entry,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_xml.xml:9
+#: code:addons/hse/static/src/xml/hse_xml.xml:105
+#, python-format
+msgid "IMMEDIATE CAUSE"
+msgstr "ШУУД ШАЛТГААН"
+
+#. module: hse
+#: help:hse.accident.category,message_unread:0
+#: help:hse.accident.cause,message_unread:0
+#: help:hse.accident.factor,message_unread:0
+#: help:hse.accident.type,message_unread:0
+#: help:hse.code.config,message_unread:0
+#: help:hse.consequence,message_unread:0
+#: help:hse.hazard.report,message_unread:0
+#: help:hse.hazard.type,message_unread:0
+#: help:hse.injury.entry,message_unread:0
+#: help:hse.likelihood,message_unread:0
+#: help:hse.location,message_unread:0
+#: help:hse.nope.lti,message_unread:0
+#: help:hse.risk.assessment,message_unread:0
+#: help:hse.risk.rating,message_unread:0
+#: help:hse.rules.documents,message_unread:0
+#: help:hse.safety.meeting,message_unread:0
+#: help:hse.safety.plan,message_unread:0
+#: help:hse.workplace.ispection,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: hse
+#: selection:hse.accident.factor,type:0
+msgid "Immediate cause"
+msgstr "Шууд шалтгаан"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+msgid "Import cause"
+msgstr "Шалтгаан импортлох"
+
+#. module: hse
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_form
+msgid "Import participants"
+msgstr "Оролцогчид импортлох"
+
+#. module: hse
+#: field:hse.nope.lti,inc_man_hour:0
+msgid "Increase man hour"
+msgstr "Хүн цаг өссөн дүнгээр"
+
+#. module: hse
+#: field:hse.nope.lti,inc_total_day:0
+msgid "Increase since the date registered lost time injury"
+msgstr "ХЧТА-гүй өдөр өссөн дүн"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:385
+#: code:addons/hse/static/src/js/hse_safety.js:416
+#: view:hse.safety.plan:hse.view_hse_safety_plan_filter
+#: field:hse.safety.plan,indicator_id:0
+#, python-format
+msgid "Indicator"
+msgstr "Үзүүлэлт"
+
+#. module: hse
+#: view:hse.safety.plan:hse.view_hse_safety_plan_filter
+#: field:hse.safety.plan,indicator_type:0
+msgid "Indicator type"
+msgstr "Үзүүлэлтийн төрөл"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:287
+#, python-format
+msgid "Indicators"
+msgstr "Үзүүлэлт"
+
+#. module: hse
+#: field:hse.injury.entry.mail.line,injury_id:0
+msgid "Injury ID"
+msgstr "Injury ID"
+
+#. module: hse
+#: model:ir.model,name:hse.model_hse_injury_accident_line
+msgid "Injury accident line"
+msgstr "Injury accident line"
+
+#. module: hse
+#: model:ir.model,name:hse.model_hse_injury_audit_conclusion_line
+msgid "Injury audit conclusion line"
+msgstr "Injury audit conclusion line"
+
+#. module: hse
+#: code:addons/hse/hse.py:1236
+#, python-format
+msgid "Injury audit conclusion line is empty"
+msgstr "Дүгнэлт бичих хүмүүс хоосон байна!!!"
+
+#. module: hse
+#: model:ir.model,name:hse.model_hse_injury_audit_line
+msgid "Injury audit line"
+msgstr "Injury audit line"
+
+#. module: hse
+#: code:addons/hse/hse.py:1244
+#, python-format
+msgid "Injury audit line is empty"
+msgstr "Шалгалтын баг хоосон байна!!!"
+
+#. module: hse
+#: model:ir.model,name:hse.model_hse_injury_corrective_action_line
+msgid "Injury corrective action line"
+msgstr "Injury corrective action line"
+
+#. module: hse
+#: code:addons/hse/hse.py:1322
+#, python-format
+msgid "Injury corrective action line is empty"
+msgstr "Хариу арга хэмжээ авах хүмүүс хоосон байна!!!"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_injury_entry
+#: model:ir.actions.act_window,name:hse.action_report_hse_injury_entry_tree
+#: model:ir.actions.report.xml,name:hse.action_hse_report_injury_pdf
+#: model:ir.model,name:hse.model_hse_injury_entry
+#: model:ir.model,name:hse.model_report_hse_injury_entry
+#: model:ir.ui.menu,name:hse.menu_hse_injury_entry
+#: model:ir.ui.menu,name:hse.menu_report_hse_injury_entry
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_graph
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "Injury entry"
+msgstr "Ослын судалгааны тайлан"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_injury_entry_mail
+msgid "Injury entry mail"
+msgstr "Injury entry mail"
+
+#. module: hse
+#: model:ir.model,name:hse.model_hse_injury_factor_line
+msgid "Injury factor line"
+msgstr "Injury factor line"
+
+#. module: hse
+#: field:hse.injury.entry,involved_employee:0
+msgid "Involved employee"
+msgstr "Холбогдсон ажилтан"
+
+#. module: hse
+#: field:hse.injury.entry,is_lti:0
+#: field:report.hse.injury.entry,is_lti:0
+msgid "Is LTI"
+msgstr "ХЧТА эсэх?"
+
+#. module: hse
+#: field:mining.plan.line,is_reclamation:0
+msgid "Is Reclamation ?"
+msgstr "Нөхөн сэргээлт эсэх?"
+
+#. module: hse
+#: field:hse.accident.category,message_is_follower:0
+#: field:hse.accident.cause,message_is_follower:0
+#: field:hse.accident.factor,message_is_follower:0
+#: field:hse.accident.type,message_is_follower:0
+#: field:hse.code.config,message_is_follower:0
+#: field:hse.consequence,message_is_follower:0
+#: field:hse.hazard.report,message_is_follower:0
+#: field:hse.hazard.type,message_is_follower:0
+#: field:hse.injury.entry,message_is_follower:0
+#: field:hse.likelihood,message_is_follower:0
+#: field:hse.location,message_is_follower:0
+#: field:hse.nope.lti,message_is_follower:0
+#: field:hse.risk.assessment,message_is_follower:0
+#: field:hse.risk.rating,message_is_follower:0
+#: field:hse.rules.documents,message_is_follower:0
+#: field:hse.safety.meeting,message_is_follower:0
+#: field:hse.safety.plan,message_is_follower:0
+#: field:hse.workplace.ispection,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Дагагчид"
+
+#. module: hse
+#: field:hse.safety.plan,is_count:0
+msgid "Is count"
+msgstr "Тоогоор"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,is_repaired:0
+msgid "Is repaired"
+msgstr "Засагдсан эсэх"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,is_taken:0
+msgid "Is taken"
+msgstr "Авагдсан эсэх"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "January"
+msgstr "1-р сар"
+
+#. module: hse
+#: field:hse.injury.audit.conclusion.line,job_id:0
+#: field:hse.injury.audit.line,job_id:0
+msgid "Job"
+msgstr "Албан тушаал"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "July"
+msgstr "7-р сар"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "June"
+msgstr "6-р сар"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:363
+#: code:addons/hse/report/hse_safety_report.py:198
+#: code:addons/hse/static/src/js/hse_daily_report.js:300
+#: code:addons/hse/static/src/js/hse_daily_report.js:436
+#: code:addons/hse/static/src/js/hse_daily_report.js:624
+#: code:addons/hse/static/src/js/hse_safety.js:371
+#: code:addons/hse/static/src/js/hse_safety.js:457
+#: code:addons/hse/static/src/js/hse_safety.js:529
+#, python-format
+msgid "LTI"
+msgstr "XЧТА"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:311
+#: code:addons/hse/static/src/js/hse_daily_report.js:624
+#: code:addons/hse/static/src/js/hse_safety.js:529
+#, python-format
+msgid "LTI frequency rate"
+msgstr "ХЧТА-ын давтамжийн зэрэг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:255
+#, python-format
+msgid "LTI frequency rate=(LTI*200,000) / Man/hour"
+msgstr "ХЧТА-ын давтамжийн зэрэг=(ХЧТА*200,000) / Хүн/цаг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:542
+#, python-format
+msgid "LTI severity rate"
+msgstr "ХЧТА-ын хүндрэлийн зэрэг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:614
+#: selection:hse.safety.indicator,type:0
+#: selection:hse.safety.plan,indicator_type:0
+#, python-format
+msgid "Lagging indicators"
+msgstr "Сурвалжит үзүүлэлт"
+
+#. module: hse
+#: field:hse.accident.category,message_last_post:0
+#: field:hse.accident.cause,message_last_post:0
+#: field:hse.accident.factor,message_last_post:0
+#: field:hse.accident.type,message_last_post:0
+#: field:hse.code.config,message_last_post:0
+#: field:hse.consequence,message_last_post:0
+#: field:hse.hazard.report,message_last_post:0
+#: field:hse.hazard.type,message_last_post:0
+#: field:hse.injury.entry,message_last_post:0
+#: field:hse.likelihood,message_last_post:0
+#: field:hse.location,message_last_post:0
+#: field:hse.nope.lti,message_last_post:0
+#: field:hse.risk.assessment,message_last_post:0
+#: field:hse.risk.rating,message_last_post:0
+#: field:hse.rules.documents,message_last_post:0
+#: field:hse.safety.meeting,message_last_post:0
+#: field:hse.safety.plan,message_last_post:0
+#: field:hse.workplace.ispection,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: hse
+#: field:hse.accident.category,__last_update:0
+#: field:hse.accident.cause,__last_update:0
+#: field:hse.accident.factor,__last_update:0
+#: field:hse.accident.type,__last_update:0
+#: field:hse.code.config,__last_update:0
+#: field:hse.consequence,__last_update:0
+#: field:hse.corrective.actions,__last_update:0
+#: field:hse.daily.report,__last_update:0
+#: field:hse.hazard.report,__last_update:0
+#: field:hse.hazard.report.mail.line,__last_update:0
+#: field:hse.hazard.type,__last_update:0
+#: field:hse.injury.accident.line,__last_update:0
+#: field:hse.injury.audit.conclusion.line,__last_update:0
+#: field:hse.injury.audit.line,__last_update:0
+#: field:hse.injury.corrective.action.line,__last_update:0
+#: field:hse.injury.entry,__last_update:0
+#: field:hse.injury.entry.mail.line,__last_update:0
+#: field:hse.injury.factor.line,__last_update:0
+#: field:hse.likelihood,__last_update:0
+#: field:hse.location,__last_update:0
+#: field:hse.my.safety,__last_update:0
+#: field:hse.nope.lti,__last_update:0
+#: field:hse.nope.lti.line,__last_update:0
+#: field:hse.partner,__last_update:0
+#: field:hse.project.man.hour,__last_update:0
+#: field:hse.risk.assessment,__last_update:0
+#: field:hse.risk.assessment.table,__last_update:0
+#: field:hse.risk.rating,__last_update:0
+#: field:hse.rules.documents,__last_update:0
+#: field:hse.safety.indicator,__last_update:0
+#: field:hse.safety.meeting,__last_update:0
+#: field:hse.safety.meeting.line,__last_update:0
+#: field:hse.safety.plan,__last_update:0
+#: field:hse.safety.report,__last_update:0
+#: field:hse.workplace.ispection,__last_update:0
+#: field:hse.workplace.ispection.line,__last_update:0
+#: field:hse.workplace.ispection.mail.line,__last_update:0
+#: field:report.hse.injury.entry,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: hse
+#: field:hse.accident.category,write_uid:0
+#: field:hse.accident.cause,write_uid:0
+#: field:hse.accident.factor,write_uid:0
+#: field:hse.accident.type,write_uid:0
+#: field:hse.code.config,write_uid:0
+#: field:hse.consequence,write_uid:0
+#: field:hse.corrective.actions,write_uid:0
+#: field:hse.daily.report,write_uid:0
+#: field:hse.hazard.report,write_uid:0
+#: field:hse.hazard.report.mail.line,write_uid:0
+#: field:hse.hazard.type,write_uid:0
+#: field:hse.injury.accident.line,write_uid:0
+#: field:hse.injury.audit.conclusion.line,write_uid:0
+#: field:hse.injury.audit.line,write_uid:0
+#: field:hse.injury.corrective.action.line,write_uid:0
+#: field:hse.injury.entry,write_uid:0
+#: field:hse.injury.entry.mail.line,write_uid:0
+#: field:hse.injury.factor.line,write_uid:0
+#: field:hse.likelihood,write_uid:0
+#: field:hse.location,write_uid:0
+#: field:hse.my.safety,write_uid:0
+#: field:hse.nope.lti,write_uid:0
+#: field:hse.nope.lti.line,write_uid:0
+#: field:hse.partner,write_uid:0
+#: field:hse.project.man.hour,write_uid:0
+#: field:hse.risk.assessment,write_uid:0
+#: field:hse.risk.assessment.table,write_uid:0
+#: field:hse.risk.rating,write_uid:0
+#: field:hse.rules.documents,write_uid:0
+#: field:hse.safety.indicator,write_uid:0
+#: field:hse.safety.meeting,write_uid:0
+#: field:hse.safety.meeting.line,write_uid:0
+#: field:hse.safety.plan,write_uid:0
+#: field:hse.safety.report,write_uid:0
+#: field:hse.workplace.ispection,write_uid:0
+#: field:hse.workplace.ispection.line,write_uid:0
+#: field:hse.workplace.ispection.mail.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: hse
+#: field:hse.accident.category,write_date:0
+#: field:hse.accident.cause,write_date:0
+#: field:hse.accident.factor,write_date:0
+#: field:hse.accident.type,write_date:0
+#: field:hse.code.config,write_date:0
+#: field:hse.consequence,write_date:0
+#: field:hse.corrective.actions,write_date:0
+#: field:hse.daily.report,write_date:0
+#: field:hse.hazard.report,write_date:0
+#: field:hse.hazard.report.mail.line,write_date:0
+#: field:hse.hazard.type,write_date:0
+#: field:hse.injury.accident.line,write_date:0
+#: field:hse.injury.audit.conclusion.line,write_date:0
+#: field:hse.injury.audit.line,write_date:0
+#: field:hse.injury.corrective.action.line,write_date:0
+#: field:hse.injury.entry,write_date:0
+#: field:hse.injury.entry.mail.line,write_date:0
+#: field:hse.injury.factor.line,write_date:0
+#: field:hse.likelihood,write_date:0
+#: field:hse.location,write_date:0
+#: field:hse.my.safety,write_date:0
+#: field:hse.nope.lti,write_date:0
+#: field:hse.nope.lti.line,write_date:0
+#: field:hse.partner,write_date:0
+#: field:hse.project.man.hour,write_date:0
+#: field:hse.risk.assessment,write_date:0
+#: field:hse.risk.assessment.table,write_date:0
+#: field:hse.risk.rating,write_date:0
+#: field:hse.rules.documents,write_date:0
+#: field:hse.safety.indicator,write_date:0
+#: field:hse.safety.meeting,write_date:0
+#: field:hse.safety.meeting.line,write_date:0
+#: field:hse.safety.plan,write_date:0
+#: field:hse.safety.report,write_date:0
+#: field:hse.workplace.ispection,write_date:0
+#: field:hse.workplace.ispection.line,write_date:0
+#: field:hse.workplace.ispection.mail.line,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:175
+#: code:addons/hse/static/src/js/hse_daily_report.js:433
+#: code:addons/hse/static/src/js/hse_daily_report.js:609
+#: code:addons/hse/static/src/js/hse_safety.js:368
+#: selection:hse.safety.indicator,type:0
+#: selection:hse.safety.plan,indicator_type:0
+#, python-format
+msgid "Leading indicators"
+msgstr "Хөтлөгч үзүүлэлт"
+
+#. module: hse
+#: field:hse.likelihood,name:0
+#: field:hse.risk.rating,likelihood_id:0
+#: model:ir.actions.act_window,name:hse.action_hse_likelihood
+#: model:ir.model,name:hse.model_hse_likelihood
+#: model:ir.ui.menu,name:hse.menu_hse_likelihood
+msgid "Likelihood"
+msgstr "Магадлал"
+
+#. module: hse
+#: field:hse.injury.entry,likelihood_id:0
+#: field:report.hse.injury.entry,likelihood_id:0
+msgid "Likelihood reoccure"
+msgstr "Дахин тохиолдох магадлал"
+
+#. module: hse
+#: field:hse.hazard.report,location_id:0
+#: field:hse.nope.lti.line,location_id:0
+#: field:hse.risk.assessment,location_id:0
+#: model:ir.actions.act_window,name:hse.action_hse_location
+#: model:ir.model,name:hse.model_hse_location
+#: model:ir.ui.menu,name:hse.menu_hse_location
+msgid "Location"
+msgstr "Байрлал"
+
+#. module: hse
+#: field:hse.injury.entry,lost_day:0
+#: field:report.hse.injury.entry,lost_day:0
+msgid "Lost day"
+msgstr "Алдсан ажлын өдөр"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:542
+#: code:addons/hse/static/src/js/hse_safety.js:546
+#: code:addons/hse/static/src/js/hse_safety.js:550
+#, python-format
+msgid "Lost days"
+msgstr "Алдсан ажлын өдөр"
+
+#. module: hse
+#: field:hse.consequence,lost_time:0
+msgid "Lost time"
+msgstr "Цаг алдалт"
+
+#. module: hse
+#: selection:hse.risk.rating,assessment_type:0
+msgid "Low risky"
+msgstr "Бага эрсдэлтэй"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:318
+#: code:addons/hse/static/src/js/hse_safety.js:454
+#: code:addons/hse/static/src/js/hse_safety.js:533
+#, python-format
+msgid "MA"
+msgstr "ЭТ"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:435
+#: code:addons/hse/static/src/js/hse_safety.js:370
+#, python-format
+msgid "MA, FA"
+msgstr "ЭТ, АТ"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_report_xml.xml:69
+#: code:addons/hse/static/src/xml/hse_safety_report.xml:70
+#, python-format
+msgid "MNO pyramid"
+msgstr "МАК гурвалжин"
+
+#. module: hse
+#: field:hse.risk.assessment,made_work:0
+msgid "Made Work"
+msgstr "Хийгдсэн ажил"
+
+#. module: hse
+#: field:hse.workplace.ispection,made_place:0
+msgid "Made place"
+msgstr "Хийгдсэн газар"
+
+#. module: hse
+#: field:hse.hazard.report.mail.line,mail:0
+#: field:hse.injury.entry.mail.line,mail:0
+#: field:hse.workplace.ispection.mail.line,mail:0
+msgid "Mail"
+msgstr "Майл"
+
+#. module: hse
+#: field:hse.hazard.report,mail_line:0
+#: field:hse.injury.entry,mail_line:0
+#: field:hse.workplace.ispection,mail_line:0
+#: model:ir.model,name:hse.model_hse_hazard_report_mail_line
+#: model:ir.model,name:hse.model_hse_injury_entry_mail_line
+#: model:ir.model,name:hse.model_hse_workplace_ispection_mail_line
+msgid "Mail line"
+msgstr "Майлын мөр"
+
+#. module: hse
+#: field:hse.hazard.report,mail_text:0
+#: field:hse.injury.entry,mail_text:0
+#: field:hse.workplace.ispection,mail_text:0
+msgid "Mail text"
+msgstr "Майл текст"
+
+#. module: hse
+#: field:hse.nope.lti.line,man:0
+msgid "Man"
+msgstr "Хүн"
+
+#. module: hse
+#: field:hse.consequence,man_healthy:0
+msgid "Man healthy"
+msgstr "Хүний эрүүл мэнд"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:281
+#: code:addons/hse/static/src/js/hse_daily_report.js:287
+#: code:addons/hse/static/src/js/hse_daily_report.js:451
+#: code:addons/hse/static/src/js/hse_daily_report.js:478
+#: code:addons/hse/static/src/js/hse_daily_report.js:483
+#: code:addons/hse/static/src/js/hse_safety.js:247
+#: code:addons/hse/static/src/js/hse_safety.js:272
+#: code:addons/hse/static/src/js/hse_safety.js:277
+#: field:hse.nope.lti,man_hour:0
+#: field:hse.nope.lti.line,man_hour:0
+#: field:hse.project.man.hour,man_hour:0
+#, python-format
+msgid "Man hour"
+msgstr "Хүн цаг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_report_xml.xml:11
+#, python-format
+msgid "Man hour /since the date of LTI/"
+msgstr "ХЧТА бүртгэгдсэн өдрөөс хойш"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_nope_lti
+#: model:ir.model,name:hse.model_hse_nope_lti
+#: model:ir.ui.menu,name:hse.menu_hse_nope_lti
+msgid "Man/Hour without LTI"
+msgstr "ХЧТА-гүй ажилласан хүн/цаг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:551
+#, python-format
+msgid "Man/hour"
+msgstr "Хүн/цаг"
+
+#. module: hse
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_form
+#: field:hse.safety.meeting,managing_employee_ids:0
+msgid "Managing employee"
+msgstr "Удирдсан ажилтан"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "March"
+msgstr "3-р сар"
+
+#. module: hse
+#: field:hse.injury.entry,master_id:0
+#: field:report.hse.injury.entry,master_id:0
+msgid "Master"
+msgstr "Ээлжийн мастер"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "May"
+msgstr "5-р сар"
+
+#. module: hse
+#: code:addons/hse/report/hse_safety_report.py:155
+#, python-format
+msgid "Medical aid"
+msgstr "Medical aid"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:533
+#, python-format
+msgid "Medical aid frequency rate"
+msgstr "Эмнэлэгийн тусламж давтамжийн зэрэг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:546
+#, python-format
+msgid "Medical aid severity rate"
+msgstr "Эмнэлэгийн тусламж хүндрэлийн зэрэг"
+
+#. module: hse
+#: selection:hse.hazard.report,hazard_type:0
+msgid "Medium"
+msgstr "Дунд"
+
+#. module: hse
+#: field:hse.risk.assessment,member_ids:0
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_form
+#: field:hse.workplace.ispection,member_ids:0
+msgid "Members"
+msgstr "Гишүүд"
+
+#. module: hse
+#: field:hse.accident.category,message_ids:0
+#: field:hse.accident.cause,message_ids:0
+#: field:hse.accident.factor,message_ids:0
+#: field:hse.accident.type,message_ids:0
+#: field:hse.code.config,message_ids:0
+#: field:hse.consequence,message_ids:0
+#: field:hse.hazard.report,message_ids:0
+#: field:hse.hazard.type,message_ids:0
+#: field:hse.injury.entry,message_ids:0
+#: field:hse.likelihood,message_ids:0
+#: field:hse.location,message_ids:0
+#: field:hse.nope.lti,message_ids:0
+#: field:hse.risk.assessment,message_ids:0
+#: field:hse.risk.rating,message_ids:0
+#: field:hse.rules.documents,message_ids:0
+#: field:hse.safety.meeting,message_ids:0
+#: field:hse.safety.plan,message_ids:0
+#: field:hse.workplace.ispection,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: hse
+#: help:hse.accident.category,message_ids:0
+#: help:hse.accident.cause,message_ids:0
+#: help:hse.accident.factor,message_ids:0
+#: help:hse.accident.type,message_ids:0
+#: help:hse.code.config,message_ids:0
+#: help:hse.consequence,message_ids:0
+#: help:hse.hazard.report,message_ids:0
+#: help:hse.hazard.type,message_ids:0
+#: help:hse.injury.entry,message_ids:0
+#: help:hse.likelihood,message_ids:0
+#: help:hse.location,message_ids:0
+#: help:hse.nope.lti,message_ids:0
+#: help:hse.risk.assessment,message_ids:0
+#: help:hse.risk.rating,message_ids:0
+#: help:hse.rules.documents,message_ids:0
+#: help:hse.safety.meeting,message_ids:0
+#: help:hse.safety.plan,message_ids:0
+#: help:hse.workplace.ispection,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: hse
+#: selection:hse.hazard.report,hazard_type:0
+msgid "Minor"
+msgstr "Бага"
+
+#. module: hse
+#: field:hse.code.config,model_id:0
+msgid "Model"
+msgstr "Загвар"
+
+#. module: hse
+#: field:hse.risk.assessment,monitoring_user_id:0
+#: field:hse.safety.meeting,monitoring_user_id:0
+msgid "Monitoring user"
+msgstr "Хянасан ажилтан"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_filter
+#: field:hse.hazard.report,month:0
+#: view:hse.injury.entry:hse.view_hse_injury_entry_filter
+#: field:hse.injury.entry,month:0
+#: view:hse.nope.lti:hse.view_hse_nope_lti_filter
+#: field:hse.nope.lti,month:0
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_filter
+#: field:hse.risk.assessment,month:0
+#: field:hse.rules.documents,month:0
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_filter
+#: field:hse.safety.meeting,month:0
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_filter
+#: field:hse.workplace.ispection,month:0
+msgid "Month"
+msgstr "Сар"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+msgid "More injury"
+msgstr "Осол тохиолдлын дэлгэрэнгүй"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_my_safety
+#: model:ir.model,name:hse.model_hse_my_safety
+#: model:ir.ui.menu,name:hse.menu_hse_my_safety
+msgid "My safety"
+msgstr "Миний аюулгүй ажиллагаа"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:281
+#: code:addons/hse/static/src/js/hse_safety.js:438
+#, python-format
+msgid "NMI"
+msgstr "OДТ"
+
+#. module: hse
+#: field:hse.accident.factor,name:0
+#: field:hse.code.config,name:0
+#: field:hse.consequence,name:0
+#: field:hse.corrective.actions,name:0
+#: field:hse.daily.report,name:0
+#: field:hse.hazard.type,name:0
+#: field:hse.injury.audit.conclusion.line,employee_id:0
+#: field:hse.injury.audit.line,employee_id:0
+#: field:hse.location,name:0
+#: field:hse.nope.lti,name:0
+#: field:hse.partner,name:0
+#: field:hse.risk.rating,name:0
+#: field:hse.safety.indicator,name:0
+#: field:hse.safety.plan,name:0
+#: field:hse.safety.report,name:0
+msgid "Name"
+msgstr "Нэр"
+
+#. module: hse
+#: sql_constraint:hse.hazard.type:0
+msgid "Name must be unique!"
+msgstr "Нэр давтагдахгүй!"
+
+#. module: hse
+#: field:hse.injury.entry,next_injury:0
+msgid "Next injury"
+msgstr "Ослын дараа юу болсон?"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:342
+#, python-format
+msgid "Non repair"
+msgstr "Засагдаагүй"
+
+#. module: hse
+#: field:hse.nope.lti.line,nope_lti_id:0
+msgid "Nope lti ID"
+msgstr "Nope lti ID"
+
+#. module: hse
+#: field:hse.nope.lti,line_ids:0
+#: model:ir.model,name:hse.model_hse_nope_lti_line
+msgid "Nope lti line"
+msgstr "Nope lti line"
+
+#. module: hse
+#: field:hse.injury.factor.line,notes:0
+msgid "Notes"
+msgstr "Тэмдэглэл"
+
+#. module: hse
+#: field:hse.hazard.report,notify_emp_id:0
+msgid "Notify employee"
+msgstr "Мэдээлсэн ажилтан"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "November"
+msgstr "11-р сар"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:290
+#: field:hse.hazard.report,name:0
+#: field:hse.injury.entry,name:0
+#: field:hse.risk.assessment,name:0
+#: field:hse.rules.documents,number:0
+#: field:hse.safety.meeting,name:0
+#: field:hse.workplace.ispection,name:0
+#: field:report.hse.injury.entry,name:0
+#, python-format
+msgid "Number"
+msgstr "Дугаар"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "Octomber"
+msgstr "10-р сар"
+
+#. module: hse
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_filter
+#: field:hse.safety.meeting,part:0
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_filter
+#: field:hse.workplace.ispection,part:0
+msgid "Part"
+msgstr "Ээлж"
+
+#. module: hse
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_form
+#: field:hse.safety.meeting.line,participant_id:0
+msgid "Participants"
+msgstr "Оролцогчид"
+
+#. module: hse
+#: field:hse.safety.meeting,participants_count:0
+msgid "Participants count"
+msgstr "Оролцогчидын тоо"
+
+#. module: hse
+#: selection:hse.hazard.report,notify_emp_id:0
+#: selection:hse.hazard.report,responsible:0
+#: selection:hse.workplace.ispection.line,responsible:0
+#: model:ir.actions.act_window,name:hse.action_hse_partner
+#: model:ir.model,name:hse.model_hse_partner
+#: model:ir.ui.menu,name:hse.menu_hse_partner
+msgid "Partner"
+msgstr "Харилцагч"
+
+#. module: hse
+#: field:hse.safety.plan,percent:0
+msgid "Percent %"
+msgstr "Хувь %"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_corrective_actions.xml:7
+#, python-format
+msgid "Percentage of Remedial action"
+msgstr "Хариу арга хэмжээ авагдсан хувь"
+
+#. module: hse
+#: field:hse.risk.assessment.table,potential_hazard:0
+msgid "Potential hazard"
+msgstr "Тухайн алхмыг гүйцэтгэхэд дагалдах аюул"
+
+#. module: hse
+#: field:hse.injury.entry,consequence_id:0
+#: field:report.hse.injury.entry,consequence_id:0
+msgid "Potential significance"
+msgstr "Болзошгүй үр дагавар"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:333
+#: code:addons/hse/static/src/js/hse_safety.js:455
+#, python-format
+msgid "Pro dam"
+msgstr "Өмч эвдp"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:308
+#: field:hse.code.config,project_id:0
+#: field:hse.corrective.actions,project_ids:0
+#: field:hse.daily.report,project_ids:0
+#: view:hse.hazard.report:hse.view_hse_hazard_report_filter
+#: field:hse.hazard.report,project_id:0
+#: view:hse.injury.entry:hse.view_hse_injury_entry_filter
+#: field:hse.injury.entry,project_id:0
+#: view:hse.location:hse.view_hse_location_filter
+#: field:hse.location,project_id:0
+#: view:hse.nope.lti:hse.view_hse_nope_lti_filter
+#: field:hse.nope.lti,project_id:0
+#: field:hse.partner,project_id:0
+#: field:hse.project.man.hour,project_id:0
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_filter
+#: field:hse.risk.assessment,project_id:0
+#: field:hse.rules.documents,project_ids:0
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_filter
+#: field:hse.safety.meeting,project_id:0
+#: field:hse.safety.report,project_ids:0
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_filter
+#: field:hse.workplace.ispection,project_id:0
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+#: field:report.hse.injury.entry,project_id:0
+#, python-format
+msgid "Project"
+msgstr "Төсөл"
+
+#. module: hse
+#: sql_constraint:hse.nope.lti:0
+msgid "Project and Date must be unique!"
+msgstr "Project and Date must be unique!"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_project_man_hour
+#: model:ir.model,name:hse.model_hse_project_man_hour
+#: model:ir.ui.menu,name:hse.menu_hse_project_man_hour
+msgid "Project man hour"
+msgstr "Төслийн хүн цаг"
+
+#. module: hse
+#: field:hse.injury.entry,project_manager_id:0
+#: field:report.hse.injury.entry,project_manager_id:0
+msgid "Project manager"
+msgstr "Төслийн менежер"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_safety_report.py:170
+#: code:addons/hse/static/src/js/hse_daily_report.js:434
+#: code:addons/hse/static/src/js/hse_safety.js:369
+#, python-format
+msgid "Property damage"
+msgstr "Property damage"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:266
+#: code:addons/hse/static/src/js/hse_safety.js:437
+#, python-format
+msgid "RA"
+msgstr "ЭY"
+
+#. module: hse
+#: field:hse.risk.rating,rating:0
+msgid "Rating"
+msgstr "Зэрэг"
+
+#. module: hse
+#: field:hse.risk.assessment.table,reduced_risk_rating_id:0
+msgid "Reduced risk rating"
+msgstr "Буурсан зэрэг"
+
+#. module: hse
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_form
+msgid "Repair"
+msgstr "Засах"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,repair_date:0
+msgid "Repair date"
+msgstr "Засагдсан огноо"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:341
+#: view:hse.hazard.report:hse.view_hse_hazard_report_filter
+#: view:hse.hazard.report:hse.view_hse_hazard_report_form
+#: selection:hse.hazard.report,state:0
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_filter
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_form
+#: selection:hse.workplace.ispection,state:0
+#, python-format
+msgid "Repaired"
+msgstr "Засагдсан"
+
+#. module: hse
+#: model:ir.ui.menu,name:hse.menu_hse_report
+msgid "Report"
+msgstr "Тайлан"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,required_corr_action:0
+msgid "Required corrective action"
+msgstr "Шаардлагатай хариу арга хэмжээ"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_js.js:305
+#: field:hse.hazard.report,responsible:0
+#: field:hse.location,responsible:0
+#: field:hse.workplace.ispection.line,responsible:0
+#, python-format
+msgid "Responsible"
+msgstr "Хариуцагч"
+
+#. module: hse
+#: field:hse.risk.assessment.table,employee_ids:0
+#: field:hse.workplace.ispection.line,employee_ids:0
+msgid "Responsible employee"
+msgstr "Хариуцагч ажилтан"
+
+#. module: hse
+#: field:hse.risk.assessment.table,partner_ids:0
+#: field:hse.workplace.ispection,partner_ids:0
+#: field:hse.workplace.ispection.line,partner_ids:0
+msgid "Responsible partner"
+msgstr "Хариуцагч харилцагч"
+
+#. module: hse
+#: model:ir.model,name:hse.model_hse_risk_rating
+msgid "Risk Rating"
+msgstr "Risk Rating"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_risk_assessment
+#: model:ir.model,name:hse.model_hse_risk_assessment
+#: model:ir.ui.menu,name:hse.menu_hse_risk_assessment
+msgid "Risk assessment"
+msgstr "Эрсдэлийн үнэлгээ"
+
+#. module: hse
+#: model:ir.model,name:hse.model_hse_risk_assessment_table
+msgid "Risk assessment table"
+msgstr "Risk assessment table"
+
+#. module: hse
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_form
+msgid "Risk assessments table"
+msgstr "Эрсдэлийн үнэлгээний хүснэгт"
+
+#. module: hse
+#: field:hse.risk.assessment.table,risk_rating_id:0
+#: model:ir.actions.act_window,name:hse.action_hse_risk_rating
+#: model:ir.ui.menu,name:hse.menu_hse_risk_rating
+msgid "Risk rating"
+msgstr "Эрсдэлийн зэрэг"
+
+#. module: hse
+#: selection:hse.risk.rating,assessment_type:0
+msgid "Risky"
+msgstr "Эрсдэлтэй"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_rules_documents
+#: model:ir.model,name:hse.model_hse_rules_documents
+#: model:ir.ui.menu,name:hse.menu_hse_rules
+#: model:ir.ui.menu,name:hse.menu_hse_rules_documents
+msgid "Rules documents"
+msgstr "Дүрэм журам бичиг баримт"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:203
+#: code:addons/hse/static/src/js/hse_safety.js:434
+#, python-format
+msgid "SM"
+msgstr "AAСХ"
+
+#. module: hse
+#: model:ir.ui.menu,name:hse.menu_hse_safety
+#: model:ir.ui.menu,name:hse.menu_hse_safety_config
+msgid "Safety"
+msgstr "Аюулгүй ажиллагаа"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_safety_indicator
+#: model:ir.model,name:hse.model_hse_safety_indicator
+#: model:ir.ui.menu,name:hse.menu_hse_safety_indicator
+msgid "Safety indicator"
+msgstr "Аюулгүй ажиллагааны үзүүлэлт"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_my_safety.js:191
+#: model:ir.actions.act_window,name:hse.action_hse_safety_meeting
+#: model:ir.model,name:hse.model_hse_safety_meeting
+#: model:ir.ui.menu,name:hse.menu_hse_safety_meeting
+#, python-format
+msgid "Safety meeting"
+msgstr "Аюулгүй ажиллагааны сэдэвчилсэн хурал"
+
+#. module: hse
+#: field:hse.safety.meeting.line,safety_meeting_id:0
+msgid "Safety meeting ID"
+msgstr "Safety meeting ID"
+
+#. module: hse
+#: field:hse.safety.meeting,meeting_line:0
+#: model:ir.model,name:hse.model_hse_safety_meeting_line
+msgid "Safety meeting line"
+msgstr "Safety meeting line"
+
+#. module: hse
+#: field:hse.safety.meeting,subject:0
+msgid "Safety meeting subject"
+msgstr "ААСХ-ын сэдэв"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_safety_plan
+#: model:ir.model,name:hse.model_hse_safety_plan
+#: model:ir.ui.menu,name:hse.menu_hse_safety_plan
+msgid "Safety plan"
+msgstr "Зорилт"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_safety_report
+#: model:ir.model,name:hse.model_hse_safety_report
+#: model:ir.ui.menu,name:hse.menu_hse_safety_report
+msgid "Safety report"
+msgstr "Газрын тайлан"
+
+#. module: hse
+#: selection:hse.safety.plan,frequency:0
+msgid "Season 1"
+msgstr "1-р улирал"
+
+#. module: hse
+#: selection:hse.safety.plan,frequency:0
+msgid "Season 2"
+msgstr "2-р улирал"
+
+#. module: hse
+#: selection:hse.safety.plan,frequency:0
+msgid "Season 3"
+msgstr "3-р улирал"
+
+#. module: hse
+#: selection:hse.safety.plan,frequency:0
+msgid "Season 4"
+msgstr "4-р улирал"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_filter
+#: view:hse.hazard.report:hse.view_hse_hazard_report_form
+#: view:hse.hazard.report:hse.view_hse_hazard_report_mail
+#: view:hse.injury.entry:hse.view_hse_injury_entry_filter
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:hse.injury.entry:hse.view_hse_injury_entry_mail
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_filter
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_form
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_mail
+msgid "Sent mail"
+msgstr "Майл илгээх"
+
+#. module: hse
+#: selection:hse.hazard.report,state:0
+#: selection:hse.injury.entry,state:0
+#: selection:hse.workplace.ispection,state:0
+msgid "Sent to mail"
+msgstr "Майл илгээгдсэн"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "September"
+msgstr "9-р сар"
+
+#. module: hse
+#: field:hse.accident.cause,sequence:0
+#: field:hse.injury.accident.line,sequence:0
+msgid "Sequence"
+msgstr "Дараалал"
+
+#. module: hse
+#: selection:hse.hazard.report,hazard_type:0
+msgid "Seriuos"
+msgstr "Ноцтой"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_safety_report.xml:41
+#, python-format
+msgid "Severity Rate"
+msgstr "Хүндрэлийн зэрэг"
+
+#. module: hse
+#: field:hse.nope.lti,total_day:0
+msgid "Since the date registered lost time injury"
+msgstr "Хөдөлмөрийн чадвар түр алдалт бүртгэгдсэн өдрөөс хойш"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:348
+#: code:addons/hse/report/hse_safety_report.py:184
+#: code:addons/hse/static/src/js/hse_safety.js:456
+#, python-format
+msgid "Spill"
+msgstr "Aсгаралт"
+
+#. module: hse
+#: field:hse.corrective.actions,start_date:0
+#: field:hse.my.safety,start_date:0
+#: field:hse.safety.report,start_date:0
+msgid "Start date"
+msgstr "Эхлэх огноо"
+
+#. module: hse
+#: field:hse.hazard.report,state:0
+#: field:hse.injury.accident.line,state:0
+#: field:hse.injury.audit.conclusion.line,state:0
+#: field:hse.injury.corrective.action.line,state:0
+#: field:hse.injury.entry,state:0
+#: field:hse.injury.factor.line,state:0
+#: field:hse.risk.assessment,state:0
+#: field:hse.safety.meeting,state:0
+#: field:hse.workplace.ispection,state:0
+#: field:hse.workplace.ispection.line,state:0
+msgid "State"
+msgstr "Төлөв"
+
+#. module: hse
+#: code:addons/hse/hse.py:413
+#: code:addons/hse/hse.py:723
+#: code:addons/hse/hse.py:1100
+#, python-format
+msgid "State is not draft"
+msgstr "Төлөв НООРОГ биш байна!!!"
+
+#. module: hse
+#: field:hse.risk.assessment.table,step:0
+msgid "Step"
+msgstr "Алхам"
+
+#. module: hse
+#: field:hse.rules.documents,subject:0
+msgid "Subject"
+msgstr "Гарчиг"
+
+#. module: hse
+#: field:hse.accident.category,message_summary:0
+#: field:hse.accident.cause,message_summary:0
+#: field:hse.accident.factor,message_summary:0
+#: field:hse.accident.type,message_summary:0
+#: field:hse.code.config,message_summary:0
+#: field:hse.consequence,message_summary:0
+#: field:hse.hazard.report,message_summary:0
+#: field:hse.hazard.type,message_summary:0
+#: field:hse.injury.entry,message_summary:0
+#: field:hse.likelihood,message_summary:0
+#: field:hse.location,message_summary:0
+#: field:hse.nope.lti,message_summary:0
+#: field:hse.risk.assessment,message_summary:0
+#: field:hse.risk.rating,message_summary:0
+#: field:hse.rules.documents,message_summary:0
+#: field:hse.safety.meeting,message_summary:0
+#: field:hse.safety.plan,message_summary:0
+#: field:hse.workplace.ispection,message_summary:0
+msgid "Summary"
+msgstr "Нийт"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+msgid "Take"
+msgstr "Авах"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+msgid "Taken"
+msgstr "Авагдсан"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,taken_date:0
+msgid "Taken date"
+msgstr "Арга хэмжээ авсан огноо"
+
+#. module: hse
+#: field:hse.hazard.report,taken_datetime:0
+msgid "Taken dateime"
+msgstr "Арга хэмжээ авсан огноо"
+
+#. module: hse
+#: field:hse.hazard.report,taken_employee_id:0
+#: field:hse.injury.corrective.action.line,taken_employee_id:0
+#: field:hse.workplace.ispection.line,taken_employee_id:0
+msgid "Taken employee"
+msgstr "Арга хэмжээ авсан ажилтан"
+
+#. module: hse
+#: field:hse.risk.assessment.table,task_steps:0
+msgid "Task steps"
+msgstr "Гүйцэтгэх ажлын дараалал"
+
+#. module: hse
+#: field:hse.injury.entry,technic_ids:0
+msgid "Technic"
+msgstr "Техник"
+
+#. module: hse
+#: field:hse.injury.entry,location_accident:0
+#: field:report.hse.injury.entry,location_accident:0
+msgid "The location of the accident"
+msgstr "Осол гарсан газар"
+
+#. module: hse
+#: view:report.hse.injury.entry:hse.view_report_hse_injury_entry_search
+msgid "This Year"
+msgstr "Энэ жил"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:555
+#: code:addons/hse/static/src/js/hse_daily_report.js:578
+#, python-format
+msgid "This month"
+msgstr "Энэ сар"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_daily_report.js:564
+#: code:addons/hse/static/src/js/hse_daily_report.js:587
+#, python-format
+msgid "This year"
+msgstr "Энэ жил"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:291
+#, python-format
+msgid "Tolerable"
+msgstr "Tolerable"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:112
+#, python-format
+msgid "Total"
+msgstr "Нийт"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_report_xml.xml:22
+#, python-format
+msgid "Total injury"
+msgstr "Осол тохиолдол"
+
+#. module: hse
+#: field:hse.nope.lti,total_man_hour:0
+msgid "Total man hour"
+msgstr "Нийт хүн цаг"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_my_safety.js:118
+#: selection:hse.safety.indicator,type:0
+#: selection:hse.safety.plan,indicator_type:0
+#: model:ir.ui.menu,name:hse.menu_hse_main_training
+#, python-format
+msgid "Training"
+msgstr "Сургалт"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_my_safety.xml:23
+#, python-format
+msgid "Training attended"
+msgstr "Суусан сургалт"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/xml/hse_my_safety.xml:26
+#, python-format
+msgid "Training to attend"
+msgstr "Суух сургалт"
+
+#. module: hse
+#: field:hse.accident.factor,type:0
+#: field:hse.injury.accident.line,type:0
+#: field:hse.injury.factor.line,type:0
+#: field:hse.safety.indicator,type:0
+msgid "Type"
+msgstr "Төрөл"
+
+#. module: hse
+#: field:hse.accident.category,name:0
+#: field:hse.accident.type,name:0
+#: model:ir.actions.act_window,name:hse.action_hse_accident_type
+#: model:ir.model,name:hse.model_hse_accident_type
+#: model:ir.ui.menu,name:hse.menu_hse_accident_type
+msgid "Types of accidents"
+msgstr "Ослын төрөл"
+
+#. module: hse
+#: model:ir.actions.act_window,name:hse.action_hse_hazard_type
+#: model:ir.model,name:hse.model_hse_hazard_type
+#: model:ir.ui.menu,name:hse.menu_hse_hazard_type
+msgid "Types of hazard"
+msgstr "Аюулын төрөл"
+
+#. module: hse
+#: field:hse.accident.category,message_unread:0
+#: field:hse.accident.cause,message_unread:0
+#: field:hse.accident.factor,message_unread:0
+#: field:hse.accident.type,message_unread:0
+#: field:hse.code.config,message_unread:0
+#: field:hse.consequence,message_unread:0
+#: field:hse.hazard.report,message_unread:0
+#: field:hse.hazard.type,message_unread:0
+#: field:hse.injury.entry,message_unread:0
+#: field:hse.likelihood,message_unread:0
+#: field:hse.location,message_unread:0
+#: field:hse.nope.lti,message_unread:0
+#: field:hse.risk.assessment,message_unread:0
+#: field:hse.risk.rating,message_unread:0
+#: field:hse.rules.documents,message_unread:0
+#: field:hse.safety.meeting,message_unread:0
+#: field:hse.safety.plan,message_unread:0
+#: field:hse.workplace.ispection,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: hse
+#: field:hse.accident.type,value:0
+#: field:hse.injury.entry,value:0
+#: field:hse.safety.indicator,value:0
+msgid "Value"
+msgstr "Утга"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:218
+#: code:addons/hse/static/src/js/hse_safety.js:435
+#, python-format
+msgid "WPI"
+msgstr "AБҮ"
+
+#. module: hse
+#: code:addons/hse/report/hr_training.py:109
+#, python-format
+msgid "Warning!"
+msgstr "Warning!"
+
+#. module: hse
+#: field:hse.accident.category,website_message_ids:0
+#: field:hse.accident.cause,website_message_ids:0
+#: field:hse.accident.factor,website_message_ids:0
+#: field:hse.accident.type,website_message_ids:0
+#: field:hse.code.config,website_message_ids:0
+#: field:hse.consequence,website_message_ids:0
+#: field:hse.hazard.report,website_message_ids:0
+#: field:hse.hazard.type,website_message_ids:0
+#: field:hse.injury.entry,website_message_ids:0
+#: field:hse.likelihood,website_message_ids:0
+#: field:hse.location,website_message_ids:0
+#: field:hse.nope.lti,website_message_ids:0
+#: field:hse.risk.assessment,website_message_ids:0
+#: field:hse.risk.rating,website_message_ids:0
+#: field:hse.rules.documents,website_message_ids:0
+#: field:hse.safety.meeting,website_message_ids:0
+#: field:hse.safety.plan,website_message_ids:0
+#: field:hse.workplace.ispection,website_message_ids:0
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: hse
+#: help:hse.accident.category,website_message_ids:0
+#: help:hse.accident.cause,website_message_ids:0
+#: help:hse.accident.factor,website_message_ids:0
+#: help:hse.accident.type,website_message_ids:0
+#: help:hse.code.config,website_message_ids:0
+#: help:hse.consequence,website_message_ids:0
+#: help:hse.hazard.report,website_message_ids:0
+#: help:hse.hazard.type,website_message_ids:0
+#: help:hse.injury.entry,website_message_ids:0
+#: help:hse.likelihood,website_message_ids:0
+#: help:hse.location,website_message_ids:0
+#: help:hse.nope.lti,website_message_ids:0
+#: help:hse.risk.assessment,website_message_ids:0
+#: help:hse.risk.rating,website_message_ids:0
+#: help:hse.rules.documents,website_message_ids:0
+#: help:hse.safety.meeting,website_message_ids:0
+#: help:hse.safety.plan,website_message_ids:0
+#: help:hse.workplace.ispection,website_message_ids:0
+msgid "Website communication history"
+msgstr "Website communication history"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,when:0
+msgid "When"
+msgstr "Арга хэмжээ авах огноо"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,when_end:0
+msgid "When end"
+msgstr "Хариу арга хэмжээ авах дуусах огноо"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,when_end:0
+msgid "When end?"
+msgstr "Хэзээ дуусах?"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,when_start:0
+msgid "When start"
+msgstr "Хариу арга хэмжээ авах эхлэх огноо"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,when:0
+#: field:hse.injury.corrective.action.line,when_start:0
+msgid "When start?"
+msgstr "Хэзээ эхлэх?"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,employee_ids:0
+msgid "Who employee"
+msgstr "Хэн ажилтан"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,partner_ids:0
+msgid "Who partner"
+msgstr "Хэн харилцагч"
+
+#. module: hse
+#: field:hse.injury.corrective.action.line,who:0
+msgid "Who?"
+msgstr "Хэн?"
+
+#. module: hse
+#: field:hse.workplace.ispection.line,workplace_is_id:0
+#: field:hse.workplace.ispection.mail.line,workplace_is_id:0
+msgid "Workplace ID"
+msgstr "Workplace ID"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/report/hse_report.py:477
+#: code:addons/hse/static/src/js/hse_js.js:266
+#: code:addons/hse/static/src/js/hse_my_safety.js:190
+#: code:addons/hse/static/src/xml/hse_corrective_actions.xml:13
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_form
+#: model:ir.actions.act_window,name:hse.action_hse_workplace_ispection
+#: model:ir.model,name:hse.model_hse_workplace_ispection
+#: model:ir.ui.menu,name:hse.menu_hse_workplace_ispection
+#, python-format
+msgid "Workplace ispection"
+msgstr "Ажлын байрны үзлэг"
+
+#. module: hse
+#: code:addons/hse/hse.py:567
+#, python-format
+msgid "Workplace ispection is empty"
+msgstr "Ажлын байрны үзлэгийн мөр хоосон байна!!!"
+
+#. module: hse
+#: model:ir.model,name:hse.model_hse_workplace_ispection_line
+msgid "Workplace ispection line"
+msgstr "Workplace ispection line"
+
+#. module: hse
+#: field:hse.risk.assessment,risk_assessment_table:0
+#: field:hse.workplace.ispection,wo_is_line:0
+msgid "Workplace ispection lines"
+msgstr "Workplace ispection lines"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_filter
+#: field:hse.hazard.report,year:0
+#: view:hse.injury.entry:hse.view_hse_injury_entry_filter
+#: field:hse.injury.entry,year:0
+#: view:hse.nope.lti:hse.view_hse_nope_lti_filter
+#: field:hse.nope.lti,year:0
+#: view:hse.risk.assessment:hse.view_hse_risk_assessment_filter
+#: field:hse.risk.assessment,year:0
+#: field:hse.rules.documents,year:0
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_filter
+#: field:hse.safety.meeting,year:0
+#: view:hse.safety.plan:hse.view_hse_safety_plan_filter
+#: field:hse.safety.plan,year:0
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_filter
+#: field:hse.workplace.ispection,year:0
+msgid "Year"
+msgstr "Жил"
+
+#. module: hse
+#: sql_constraint:hse.safety.plan:0
+msgid "Year and Indicator and Frequency must be unique!"
+msgstr "Year and Indicator and Frequency must be unique!"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:112
+#, python-format
+msgid "days"
+msgstr "хоногоос"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_safety.js:112
+#, python-format
+msgid "days safe production"
+msgstr "хоногт нь Аюулгүй Үйлдвэрлэлийн бүтээж ажиллав"
+
+#. module: hse
+#: view:hse.hazard.report:hse.view_hse_hazard_report_mail
+#: view:hse.injury.entry:hse.view_hse_injury_entry_mail
+#: view:hse.workplace.ispection:hse.view_hse_workplace_ispection_mail
+msgid "or"
+msgstr "эсвэл"
+
+#. module: hse
+#: field:hse.safety.meeting,safety_meeting_1:0
+msgid "safety_meeting_1"
+msgstr "safety_meeting_1"
+
+#. module: hse
+#: field:hse.safety.meeting,safety_meeting_2:0
+msgid "safety_meeting_2"
+msgstr "safety_meeting_2"
+
+#. module: hse
+#. openerp-web
+#: code:addons/hse/static/src/js/hse_my_safety.js:190
+#, python-format
+msgid "workplace_ispection"
+msgstr "workplace_ispection"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Авагдсан арга хэмжээ"
+msgstr "Авагдсан арга хэмжээ"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:website:hse.hse_report_injury_pdf
+msgid "Ажилтаны тайлбар"
+msgstr "Ажилтаны тайлбар"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Албан тушаал"
+msgstr "Албан тушаал"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Арга хэмжээ авсан ажилтан"
+msgstr "Арга хэмжээ авсан ажилтан"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Арга хэмжээ авсан огноо"
+msgstr "Арга хэмжээ авсан огноо"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Болзошгүй үр дагавар"
+msgstr "Болзошгүй үр дагавар"
+
+#. module: hse
+#: code:addons/hse/hse.py:556
+#: code:addons/hse/hse.py:575
+#: code:addons/hse/hse.py:614
+#: code:addons/hse/hse.py:836
+#: code:addons/hse/hse.py:851
+#: code:addons/hse/hse.py:1215
+#, python-format
+msgid "Дараах хүмүүст майл илгээж мэдэгдэх"
+msgstr "Дараах хүмүүст майл илгээж мэдэгдэх"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Дахин тохиолдох магадлал"
+msgstr "Дахин тохиолдох магадлал"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Дүгнэлт"
+msgstr "Дүгнэлт"
+
+#. module: hse
+#: code:addons/hse/hse.py:1255
+#, python-format
+msgid "Дүгнэлт бичих дараах хүмүүст майл илгээж мэдэгдэх"
+msgstr "Дүгнэлт бичих дараах хүмүүст майл илгээж мэдэгдэх"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Ерөнхий инженер"
+msgstr "Ерөнхий инженер"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:website:hse.hse_report_injury_pdf
+msgid "Жич: Ослын СУУРЬ шалтгаануудыг үндэслэж цаашид авах арга хэмжээг тодорхойлон ЮУГ ХЭН ХЭЗЭЭ авахыг дараах хүснэгтэнд бичнэ."
+msgstr "Жич: Ослын СУУРЬ шалтгаануудыг үндэслэж цаашид авах арга хэмжээг тодорхойлон ЮУГ ХЭН ХЭЗЭЭ авахыг дараах хүснэгтэнд бичнэ."
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:website:hse.hse_report_injury_pdf
+msgid "Жич: Осолтой холбоотой фото зураг болон схем зургийг оруулж, бусад мэдээллийг ослын шалгалтын тайланд хавсаргана уу."
+msgstr "Жич: Осолтой холбоотой фото зураг болон схем зургийг оруулж, бусад мэдээллийг ослын шалгалтын тайланд хавсаргана уу."
+
+#. module: hse
+#: code:addons/hse/report/hr_training.py:110
+#, python-format
+msgid "Ноорог төлөвтэй биш байгаа сургалтын төлөвлөгөөг устгаж болохгүй!"
+msgstr "Ноорог төлөвтэй биш байгаа сургалтын төлөвлөгөөг устгаж болохгүй!"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Огноо"
+msgstr "Огноо"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Ослын дараа юу болсон?"
+msgstr "Ослын дараа юу болсон?"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Осол болохын өмнө юу болсон?"
+msgstr "Осол болохын өмнө юу болсон?"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Осол гарсан газар"
+msgstr "Осол гарсан газар"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Осол тохиолдлын дэлгэрэнгүй"
+msgstr "Осол тохиолдлын дэлгэрэнгүй"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Осол яаж болсон?"
+msgstr "Осол яаж болсон?"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "СУУРЬ ШАЛТГААН"
+msgstr "СУУРЬ ШАЛТГААН"
+
+#. module: hse
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_form
+msgid "Санал: Компаний шинэ бодлого, журам, заавар буюу түүнтэй холбоотой асуудлыг хянан тодорхойл."
+msgstr "Санал: Компаний шинэ бодлого, журам, заавар буюу түүнтэй холбоотой асуудлыг хянан тодорхойл."
+
+#. module: hse
+#: model:ir.ui.menu,name:hse.menu_hse_training
+msgid "Сургалт"
+msgstr "Сургалт"
+
+#. module: hse
+#: model:ir.ui.menu,name:hse.menu_hse_training_plan
+msgid "Сургалтын төлөвлөгөө"
+msgstr "Сургалтын төлөвлөгөө"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "ТУХАЙН ХЭЛТЭСИЙН АХЛАХ АЖИЛТАН ТАЙЛАНГ 4 ЦАГИЙН ДОТОР БИЧИЖ ХАБЭАБО -Ы ХЭЛТЭСТ ХҮРГҮҮЛНЭ!"
+msgstr "ТУХАЙН ХЭЛТЭСИЙН АХЛАХ АЖИЛТАН ТАЙЛАНГ 4 ЦАГИЙН ДОТОР БИЧИЖ ХАБЭАБО -Ы ХЭЛТЭСТ ХҮРГҮҮЛНЭ!"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+msgid "ТУХАЙН ХЭЛТЭСИЙН АХЛАХ АЖИЛТАН ТАЙЛАНГ 4 ЦАГИЙН ДОТОР БИЧИЖ ХАБЭАБО-ы ХЭЛТЭСТ ХҮРГҮҮЛНЭ!"
+msgstr "ТУХАЙН ХЭЛТЭСИЙН АХЛАХ АЖИЛТАН ТАЙЛАНГ 4 ЦАГИЙН ДОТОР БИЧИЖ ХАБЭАБО-ы ХЭЛТЭСТ ХҮРГҮҮЛНЭ!"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Төслийн менежер"
+msgstr "Төслийн менежер"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Төсөл"
+msgstr "Төсөл"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "ХЭСЭГ 1: ТӨСӨЛ  ОСЛЫН ДЭЛГЭРЭНГҮЙ"
+msgstr "ХЭСЭГ 1: ТӨСӨЛ  ОСЛЫН ДЭЛГЭРЭНГҮЙ"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+msgid "ХЭСЭГ 1: ТӨСӨЛ ба ОСЛЫН ДЭЛГЭРЭНГҮЙ:"
+msgstr "ХЭСЭГ 1: ТӨСӨЛ ба ОСЛЫН ДЭЛГЭРЭНГҮЙ:"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:website:hse.hse_report_injury_pdf
+msgid "ХЭСЭГ 2: ОСОЛ ГАРАХАД НӨЛӨӨЛСӨН ГОЛ ХҮЧИН ЗҮЙЛҮҮД:"
+msgstr "ХЭСЭГ 2: ОСОЛ ГАРАХАД НӨЛӨӨЛСӨН ГОЛ ХҮЧИН ЗҮЙЛҮҮД:"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:website:hse.hse_report_injury_pdf
+msgid "ХЭСЭГ 3. ЦААШИД АВАХ ХАРИУ АРГА ХЭМЖЭЭ:"
+msgstr "ХЭСЭГ 3. ЦААШИД АВАХ ХАРИУ АРГА ХЭМЖЭЭ:"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:website:hse.hse_report_injury_pdf
+msgid "ХЭСЭГ 4. ШАЛГАЛТЫН БАГ БҮРЭЛДЭХҮҮН:"
+msgstr "ХЭСЭГ 4. ШАЛГАЛТЫН БАГ БҮРЭЛДЭХҮҮН:"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:website:hse.hse_report_injury_pdf
+msgid "ХЭСЭГ 5. ШАЛГАЛТЫН ДҮГНЭЛТ:"
+msgstr "ХЭСЭГ 5. ШАЛГАЛТЫН ДҮГНЭЛТ:"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+#: view:website:hse.hse_report_injury_pdf
+msgid "ХЭСЭГ 6: ЗУРАГ БОЛОН ХАВСРАЛТ"
+msgstr "ХЭСЭГ 6: ЗУРАГ БОЛОН ХАВСРАЛТ"
+
+#. module: hse
+#: code:addons/hse/hse.py:1426
+#, python-format
+msgid "Хариу арга хэмжээ авагдлаа дараах хүмүүст майл илгээж мэдэгдэх"
+msgstr "Хариу арга хэмжээ авагдлаа дараах хүмүүст майл илгээж мэдэгдэх"
+
+#. module: hse
+#: code:addons/hse/hse.py:1311
+#, python-format
+msgid "Хариу арга хэмжээ авах дараах хүмүүст майл илгээж мэдэгдэх"
+msgstr "Хариу арга хэмжээ авах дараах хүмүүст майл илгээж мэдэгдэх"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Хариу арга хэмжээ юуг?"
+msgstr "Хариу арга хэмжээ юуг?"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Холбогдсон ажилтан"
+msgstr "Холбогдсон ажилтан"
+
+#. module: hse
+#: view:hse.injury.entry:hse.view_hse_injury_entry_form
+msgid "Холбоотой хүмүүсийн нэрсийг бичихгүй. Оператор, механик, засварын мастер гэж албан тушаалаар нь оруулах"
+msgstr "Холбоотой хүмүүсийн нэрсийг бичихгүй. Оператор, механик, засварын мастер гэж албан тушаалаар нь оруулах"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Хэзээ?"
+msgstr "Хэзээ?"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Хэлтсийн менежер"
+msgstr "Хэлтсийн менежер"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Хэлтэс"
+msgstr "Хэлтэс"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Хэрхэн яаж?"
+msgstr "Хэрхэн яаж?"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "ШУУД ШАЛТГААН"
+msgstr "ШУУД ШАЛТГААН"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "Ээлжийн мастер"
+msgstr "Ээлжийн мастер"
+
+#. module: hse
+#: view:website:hse.hse_report_injury_pdf
+msgid "тайлан"
+msgstr "тайлан"
+
+#. module: hse
+#: view:hse.safety.meeting:hse.view_hse_safety_meeting_form
+msgid "Өмнөх ААСХ-ын болон төлөвлөгөөт шалгалтаас авах шаардлагатай арга хэмжээний тухай хяна:"
+msgstr "Өмнөх ААСХ-ын болон төлөвлөгөөт шалгалтаас авах шаардлагатай арга хэмжээний тухай хяна:"
+git ad      

@@ -1,0 +1,113 @@
+@charset "utf-8";
+.openerp .oe_hse_type {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+#wrappersitting_training {
+  z-index: 1;
+}
+#wrapperstay_training {
+  z-index: 1;
+}
+.openerp .oe_hse_responsible .oe_list_header_reference{
+  width: 200px;
+}
+.openerp .oe_hse_responsible .oe_list_header_many2many_tags{
+  width: 200px;
+}
+.openerp .oe_form_readonly .oe_hse_edit_only {
+  display: none !important;
+}
+#fixed_datetodate_hse{
+  position:fixed;
+  top: 124px;
+  left: 220px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  /*color: #004889;*/
+}
+#datetodate_hse{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body > div.date-picker-wrapper.no-shortcuts.two-months.no-gap{
+  z-index: 100;
+}
+#columntablehazard{
+  z-index: 1;
+}
+.oe_mno_dash_see_hse {
+  background-color: rgba(0, 0, 0, 0.8);
+  -moz-border-radius:7px;
+  -webkit-border-radius:7px;
+  border-radius:7px;
+  border:1px solid #33bdef;
+  display:inline-block;
+  cursor:pointer;
+  
+  font-family:Arial;
+  font-size:16px;
+  padding:0px 19px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+}
+#fixed_datetodate_hse a{
+  color: white;
+  /*color: #004889;*/
+}
+.oe_mno_dash_see_hse:hover {
+  background-color: GreenYellow;
+}
+.oe_mno_dash_see_hse:active {
+  position:relative;
+  top:1px;
+}
+.openerp .oe_hse_factor {
+  font-size: 16px;
+  font-weight: bold;
+}
+.openerp .oe_hse_check {
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.openerp .oe_hse_check label{ 
+  cursor: pointer;
+}
+.openerp .oe_hse_check input{ 
+  cursor: pointer;
+}
+.openerp .oe_hse_check label:hover{  
+    opacity: 0.5;
+    background-color: gold;
+}
+.openerp .oe_hse_factor_tr textarea{
+  margin: 0px;
+  height: 140px; 
+  width: 390px;
+}
+.chart-inner-text
+{
+    fill: #584712;
+    color: #584712;
+    font-size: 14px;
+    font-family: Verdana;
+}
+.chart-inner-text-big
+{
+    fill: #584712;
+    color: #584712;
+    font-size: 28px;
+    font-family: Verdana;
+}
+.openerp .oe_donut_table{
+   /* border-radius: 25px;
+    border: 1px solid #BCBCBC;
+    padding: 20px;
+    background-color: #FAFAFA;*/
+}
+
+.openerp .oe_donut_table rect{
+    stroke-width:0;
+}

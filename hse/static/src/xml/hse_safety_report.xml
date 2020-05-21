@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="hse.safety_report">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <div id="mtd_man_hour" style="width: 450px; height: 220px;">
+                    </div>
+                </td>
+                <td>
+                    <div id="ytd_man_hour" style="width: 350px; height: 220px;">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="safe_day" style="width: 800px; height: 220px;">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width:100%; height: 20px; text-align: center;">Frequency rate</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="frequency_lti" style="width: 800px; height: 220px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="frequency_fa" style="width: 800px; height: 220px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="frequency_ma" style="width: 800px; height: 220px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width:100%; height: 20px; text-align: center;">Severity Rate</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="severity_lti" style="width: 800px; height: 220px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="severity_fa" style="width: 800px; height: 220px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="severity_ma" style="width: 800px; height: 220px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="indicator_chart" style="width: 800px; height: 220px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="reclamation_chart" style="width: 800px; height: 250px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width:300px; height: 20px; text-align: center;">Bird's pyramid</td>
+                <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; height: 20px; padding-left: 110px;">MNO pyramid</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="bird_pyramid" style="width: 800px; height: 220px;"></div>
+                </td>
+            </tr>
+        </table>
+    </t>
+</templates>
