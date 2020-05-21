@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_mining_plan_line_add_inherit_hse" model="ir.ui.view">
+            <field name="name">mining.plan.line.add.inherit.hse</field>
+            <field name="model">mining.plan</field>
+        	<field name="inherit_id" ref="l10n_mn_mining.view_mining_plan_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='forecast_tn']"  position="after">
+                   <field name="is_reclamation"/>
+	            </xpath>
+            </field>
+        </record>
+	</data>
+</openerp>

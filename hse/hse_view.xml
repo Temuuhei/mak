@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    
+    <record  model="ir.actions.act_window" id='action_hse_training'>
+        <field name="name">Hse training</field>
+        <field name="res_model">hr.training</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type','=','training')]</field>
+        <field name="context">{'default_type':'training','search_default_group_state':1}</field>
+        <field name="help">HR Training's lists.</field>
+    </record>
+
+    
+    
+    <record  model="ir.actions.act_window" id='action_hse_training_plan'>
+        <field name="name">Hse training plan</field>
+        <field name="res_model">hr.training</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type','=','plan')]</field>
+        <field name="context">{'default_type':'plan','search_default_group_state':1}</field>
+        <field name="help">HR Training Plan's lists.</field>
+    </record>
+    
+
+    <!-- Man/Hour without LTI-->
+    <record id="view_hse_nope_lti_form" model="ir.ui.view">
+        <field name="name">hse.nope.lti.form</field>
+        <field name="model">hse.nope.lti</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="6">
+                        <field name="date"/>
+                        <field name="project_id" widget="selection"/>
+                        <field name="man_hour"/>
+                    </group>
+                    <group>
+                        <field name="line_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="location_id" widget="selection" domain="[('project_id','=', parent.project_id)]"/>
+                                <field name="man"/>
+                                <field name="man_hour"/>
+                            </tree>                             
+                        </field>
+                    </group>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="total_day"/>
+                        <field name="total_man_hour"/>
+                        <field name="inc_man_hour"/>
+                        <field name="inc_total_day"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_nope_lti_tree" model="ir.ui.view">
+        <field name="name">hse.nope.lti.tree</field>
+        <field name="model">hse.nope.lti</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="project_id"/>
+                <field name="man_hour"/>
+                <field name="inc_total_day"/>
+                <field name="inc_man_hour"/>
+                <field name="total_day"/>
+                <field name="total_man_hour"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_hse_nope_lti_filter" model="ir.ui.view">
+        <field name="name">hse.nope.lti.filter</field>
+        <field name="model">hse.nope.lti</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0">
+                    <filter string="Project" name="group_project_id" domain="[]" context="{'group_by':'project_id'}"/>
+                    <filter string="Year" name="group_year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" name="group_month" domain="[]" context="{'group_by':'month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_hse_nope_lti" model="ir.actions.act_window">
+        <field name="name">Man/Hour without LTI</field>
+        <field name="res_model">hse.nope.lti</field>
+        <field name="context">{'search_default_group_project_id': 1, 'search_default_group_year': 1,'search_default_group_month': 1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+    <!-- Safety plan-->
+    <record id="view_hse_safety_plan_form" model="ir.ui.view">
+        <field name="name">hse.safety.plan.form</field>
+        <field name="model">hse.safety.plan</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="indicator_id" widget="selection"/>
+                        <field name="year"/>
+                        <field name="frequency"/>
+                        <field name="indicator_type"/>
+                    </group>
+                    <group col="6">
+                        <field name="is_count"/>
+                        <field name="count" attrs="{'invisible':[('is_count','=',False)]}"/>
+                        <field name="percent" attrs="{'invisible':[('is_count','=',True)]}"/>
+                        <field name="actual"/>
+                        <field name="actual_percent"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_safety_plan_tree" model="ir.ui.view">
+        <field name="name">hse.safety.plan.tree</field>
+        <field name="model">hse.safety.plan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="indicator_id" />
+                <field name="year"/>
+                <field name="frequency"/>
+                <field name="count"/>
+                <field name="percent"/>
+                <field name="actual"/>
+                <field name="actual_percent"/>
+                <field name="indicator_type"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_hse_safety_plan_filter" model="ir.ui.view">
+        <field name="name">hse.safety.plan.filter</field>
+        <field name="model">hse.safety.plan</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0">
+                    <filter string="Year" name="group_year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Indicator type" name="group_indicator_type" domain="[]" context="{'group_by':'indicator_type'}"/>
+                    <filter string="Indicator" name="group_indicator_id" domain="[]" context="{'group_by':'indicator_id'}"/>
+                    <filter string="Frequency" name="group_frequency" domain="[]" context="{'group_by':'frequency'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="view_hse_safety_plan_graph" model="ir.ui.view">
+            <field name="name">hse.safety.plan.graph</field>
+            <field name="model">hse.safety.plan</field>
+            <field name="arch" type="xml">
+                <graph type="bar">
+                    <field name="year"/>
+                    <field name="count" operator="+"/>
+                </graph>
+            </field>
+        </record>
+    <record id="action_hse_safety_plan" model="ir.actions.act_window">
+        <field name="name">Safety plan</field>
+        <field name="res_model">hse.safety.plan</field>
+        <field name="context">{'search_default_group_year': 1,'search_default_group_indicator_type': 1,'search_default_group_indicator_id': 1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+    
+
+    <!-- Hse safety plan config -->
+    <record id="view_hse_safety_indicator_form" model="ir.ui.view">
+        <field name="name">hse.safety.indicator.form</field>
+        <field name="model">hse.safety.indicator</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="6">
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="value"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_safety_indicator_tree" model="ir.ui.view">
+        <field name="name">hse.safety.indicator.tree</field>
+        <field name="model">hse.safety.indicator</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="type"/>
+                <field name="value"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_safety_indicator" model="ir.actions.act_window">
+        <field name="name">Safety indicator</field>
+        <field name="res_model">hse.safety.indicator</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>    
+    
+
+
+
+    <!-- Safety Meeting -->
+    <record id="view_hse_safety_meeting_form" model="ir.ui.view">
+        <field name="name">hse.safety.meeting.form</field>
+        <field name="model">hse.safety.meeting</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_to_done" states="draft" string="Done" icon="gtk-apply" type="object" class="oe_highlight"/>
+                    <button name="action_to_draft" states="done" string="Draft" type="object"/>                     
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <group col="6">
+                        <field name="date"/>
+                        <field name="project_id" widget="selection"/>
+                        <field name="part"/>
+                        <field name="department_id" widget="selection" domain="[('parent_id.project_id','=', project_id)]"/>
+                        <field name="monitoring_user_id"/>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="subject"/>
+                    </group>
+                    <group class="oe_right">
+                        <field name="participants_count"/>
+                    </group>
+                    <separator colspan="2"/>
+                    
+                    <group>
+                        <notebook>
+                            <page string="Managing employee">
+                            <group>
+                                <field colspan="4" name="managing_employee_ids" widget="many2many_kanban" context="" domain="['|',('state_id.type', 'not in', ('resigned','contract','student','end_contract')),('state_id', '=',False)]">
+                                    <kanban quick_create="true" create="true" delete="true">
+                                        <field name="name"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div style="position: relative">
+                                                    <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+                                                    <div class="oe_module_vignette">
+                                                        <img t-att-src="kanban_image('hr.employee', 'image_small', record.id.value)" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                                        <div class="oe_module_desc">
+                                                            <field name="name"/>
+                                                        </div>
+                                                        <div class="oe_module_desc">
+                                                            <field name="job_id"/>
+                                                        </div>
+                                                        <div class="oe_module_desc">
+                                                            <field name="department_id"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                                
+                            </group>
+                            </page>
+                        </notebook>
+
+                    </group>
+                    <button name="import_participants" states="draft" string="Import participants" 
+                            icon="fa-download" class="oe_stat_button oe_edit_only"
+                            type="object"/>
+                    <group>
+                        <notebook>
+                            <page string="Participants">
+                                <field name="meeting_line" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="participant_id"/>
+                                    </tree>                             
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                    <group>
+                        <separator string="Өмнөх ААСХ-ын болон төлөвлөгөөт шалгалтаас авах шаардлагатай арга хэмжээний тухай хяна:" colspan="2"/>
+                        <field name="safety_meeting_1" nolabel="1"/>
+                    </group>
+                    <group>
+                        <separator string="Санал: Компаний шинэ бодлого, журам, заавар буюу түүнтэй холбоотой асуудлыг хянан тодорхойл." colspan="2"/>
+                        <field name="safety_meeting_2" nolabel="1"/>
+                    </group>
+                    <group>
+                        <separator string="Comment" colspan="2"/>
+                        <field name="comment" nolabel="1"/>
+                    </group>
+                    <group>
+                        <separator colspan="2"/>
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                    </group>
+                    <group>
+                        <widget type="hse_injury_image">
+                        </widget>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_safety_meeting_tree" model="ir.ui.view">
+        <field name="name">hse.safety.meeting.tree</field>
+        <field name="model">hse.safety.meeting</field>
+        <field name="arch" type="xml">
+            <tree colors="gray:state == 'done';blue:state == 'draft';">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="subject"/>
+                <field name="project_id"/>
+                <field name="part"/>
+                <field name="department_id"/>
+                <field name="participants_count"/>
+                <field name="monitoring_user_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_hse_safety_meeting_filter" model="ir.ui.view">
+        <field name="name">hse.safety.meeting.filter</field>
+        <field name="model">hse.safety.meeting</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="is_draft" string="Draft" domain="[('state','=',('draft'))]"/>
+                <filter name="is_done" string="Done" domain="[('state','=',('done'))]"/>
+                <separator/>
+                <group expand="0">
+                    <filter string="Project" name="group_project_id" domain="[]" context="{'group_by':'project_id'}"/>
+                    <filter string="Year" name="group_year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" name="group_month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Part" name="group_part" domain="[]" context="{'group_by':'part'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_hse_safety_meeting" model="ir.actions.act_window">
+        <field name="name">Safety meeting</field>
+        <field name="res_model">hse.safety.meeting</field>
+        <field name="context">{'search_default_group_project_id': 1, 'search_default_group_year': 1,'search_default_group_month': 1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+    <!-- Workplace Ispection -->
+    <record id="view_hse_workplace_ispection_form" model="ir.ui.view">
+        <field name="name">hse.workplace.ispection.form</field>
+        <field name="model">hse.workplace.ispection</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_to_draft" states="repaired" string="Draft" type="object" groups="hse.group_hse_manager"/>
+                    <!-- <button name="action_to_repaired" states="sent_mail" string="Repaired" type="object"/> -->
+                    <button name="action_to_sent_mail" states="draft" string="Sent mail" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent_mail,repaired"/>
+                </header>
+                <sheet>
+                    <group col="6">
+                        <field name="project_id" widget="selection" domain="[('project_type','=', True)]"/>
+                        <field name="department_id" widget="selection" domain="[('parent_id.project_id','=', project_id)]"/>
+                        <field name="part"/>
+                        <field name="date"/>
+                        <field name="made_place"/>
+                        <field name="name"/> 
+                    </group>
+                    <separator colspan="2"/>
+                    <group col="2">
+                        <notebook>
+                            <page string="Captian">
+                            <field name="captian_id"/>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Members">
+                            <field name="member_ids" widget="many2many_tags" domain="['|',('state_id.type', 'not in', ('resigned','contract','student','end_contract')),('state_id', '=',False)]"/>
+                            <field name="partner_ids" widget="many2many_tags" domain="[('project_id','=',project_id)]"/>
+                            </page>
+                        </notebook>
+                    </group>
+                    <group>
+                        <notebook>
+                            <page string="Workplace ispection">
+                                <div class="oe_hse_responsible">
+                                <field name="wo_is_line" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="hazard_rating"/>
+                                        <field name="failure_and_hazard"/>
+                                        <field name="required_corr_action"/>
+                                        <field name="employee_ids" widget="many2many_tags" attrs="{'required':[('partner_ids','=',[])]}" domain="['|',('state_id.type', 'not in', ('resigned','contract','student','end_contract')),('state_id', '=',False)]"/>
+                                        <field name="partner_ids" widget="many2many_tags" attrs="{'required':[('employee_ids','=',[])]}" domain="[('project_id','=',parent.project_id)]"/>
+                                        <field name="when_start"/>
+                                        <field name="when_end"/>
+                                        <field name="is_repaired"  invisible="1"/>
+                                        <field name="state" invisible="1"/>
+                                        <field name="corrective_action_taken"/>
+                                        <button name="action_to_repaired" string="Repair" icon="gtk-go-forward" type="object" attrs="{'invisible':['|',('is_repaired','=',True),('state','!=','sent_mail')]}"/>
+                                        <button icon="star-on" string="Repaired" type="object" attrs="{'invisible':[('is_repaired','=',False)]}"/>
+                                        <field name="taken_employee_id"/>
+                                        <field name="repair_date"/>
+                                    </tree>                             
+                                </field>
+                                </div>
+                            </page>
+                        </notebook>
+                    </group>
+                    <group>
+                        <separator string="Good job" colspan="2"/>
+                        <field name="good_job" nolabel="1"/>
+                    </group>
+                    <group>
+                        <separator colspan="2"/>
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                    </group>
+                    <group>
+                        <widget type="hse_injury_image">
+                        </widget>
+                    </group>
+                    <group>
+                        <separator colspan="2"/>
+                        <field name="cor_act_attach_ids" widget="many2many_binary"/>
+                    </group>
+                     <group>
+                        <widget type="hse_cor_act_injury_image">
+                        </widget>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_workplace_ispection_tree" model="ir.ui.view">
+        <field name="name">hse.workplace.ispection.tree</field>
+        <field name="model">hse.workplace.ispection</field>
+        <field name="arch" type="xml">
+            <tree colors="gray:state=='repaired'; red:state=='draft'; blue:state=='sent_mail';">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="project_id"/>
+                <field name="part"/>
+                <field name="department_id"/>
+                <field name="made_place"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_hse_workplace_ispection_filter" model="ir.ui.view">
+        <field name="name">hse.workplace.ispection.filter</field>
+        <field name="model">hse.workplace.ispection</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="made_place"/>
+                <filter name="is_draft" string="Draft" domain="[('state','=',('draft'))]"/>
+                <filter name="is_sent_mail" string="Sent mail" domain="[('state','=',('sent_mail'))]"/>
+                <filter name="is_repaired" string="Repaired" domain="[('state','=',('repaired'))]"/>
+                <separator/>
+                <group expand="0">
+                    <filter string="Project" name="group_project_id" domain="[]" context="{'group_by':'project_id'}"/>
+                    <filter string="Year" name="group_year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" name="group_month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Part" name="group_part" domain="[]" context="{'group_by':'part'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_hse_workplace_ispection" model="ir.actions.act_window">
+        <field name="name">Workplace ispection</field>
+        <field name="res_model">hse.workplace.ispection</field>
+        <field name="search_view_id" ref="view_hse_workplace_ispection_filter"/>
+        <field name="context">{'search_default_group_project_id': 1, 'search_default_group_year': 1,'search_default_group_month': 1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_hse_workplace_ispection_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_hse_workplace_ispection_tree"/>
+        <field name="act_window_id" ref="action_hse_workplace_ispection"/>
+    </record>
+    <record id="action_hse_workplace_ispection_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_hse_workplace_ispection_form"/>
+        <field name="act_window_id" ref="action_hse_workplace_ispection"/>
+    </record>
+
+    <record id="view_hse_workplace_ispection_mail" model="ir.ui.view">
+        <field name="name">hse.workplace.ispection.mail.form</field>
+        <field name="model">hse.workplace.ispection</field>
+        <field name="arch" type="xml">
+            <form>
+                 <group >
+                    <field name="mail_line" nolabel="1" >
+                        <tree editable="bottom">
+                            <field name="mail" widget="email"/>
+                        </tree>
+                    </field> 
+                </group>
+                <group>
+                    <field name="mail_text"/>
+                </group>
+                <footer>
+                    <button class="oe_highlight" name="mail_sent" string="Sent mail" type="object"/>
+                    or
+                    <button class="oe_link" special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hse_workplace_ispection_mail" model="ir.actions.act_window">
+           <field name="name">Hazard workplace ispection</field>
+           <field name="res_model">hse.workplace.ispection</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">form</field>
+    </record>
+    <record id="action_hse_workplace_ispection_mail_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_hse_workplace_ispection_mail"/>
+        <field name="act_window_id" ref="action_hse_workplace_ispection_mail"/>
+    </record>
+
+    
+
+    <!-- Hazard Report -->
+    <record id="view_hse_hazard_report_form" model="ir.ui.view">
+        <field name="name">hse.hazard.report.form</field>
+        <field name="model">hse.hazard.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_to_draft" states="repaired" string="Draft" type="object" groups="hse.group_hse_manager"/>
+                    <button name="action_to_sent_mail" states="draft" string="Sent mail" type="object" class="oe_highlight"/>
+                    <button name="action_to_repaired" states="sent_mail" string="Repaired" icon="gtk-apply" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent_mail,repaired"/>
+                </header>
+                <sheet>
+                    <group col="6">
+                        <field name="datetime"/>
+                        <field name="project_id" widget="selection" domain="[('project_type','=', True)]"/>
+                        <field name="hazard_type"/>
+                        <field name="location_id"  domain="[('project_id','=', project_id)]"/>
+                        <field name="responsible"/>
+                        <field name="notify_emp_id"/>
+                        <field name="auto_number"/>
+                        <field name="name" attrs="{'readonly':['|',('auto_number','=',True),('state','!=','draft')]}"/>
+                    </group>
+                    <group col="2">
+                        <group>
+                            <separator string="Hazard identification" colspan="2"/>
+                            <field name="hazard_identification" nolabel="1"/>
+                        </group>
+                        
+                        <group>
+                            <separator string="Corrective action to be taken" colspan="2"/>
+                            <field name="corrective_action_to_be_taken" nolabel="1"/>
+                        </group>
+                    </group>
+                    <group col="4">
+                        <group>
+                            <separator string="Corrective action taken" colspan="2"/>
+                            <field name="corrective_action_taken" nolabel="1"/>
+                        </group>
+                        <group>
+                            <field name="taken_datetime"/>
+                            <field name="taken_employee_id"/>
+                            
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_hazard_report_tree" model="ir.ui.view">
+        <field name="name">hse.hazard.report.tree</field>
+        <field name="model">hse.hazard.report</field>
+        <field name="arch" type="xml">
+            <tree colors="gray:state=='repaired'; red:state=='draft'; blue:state=='sent_mail';">
+                <field name="datetime"/>
+                <field name="name"/>  
+                <field name="project_id"/>
+                <field name="responsible"/>
+                <field name="notify_emp_id"/>
+                <field name="location_id"/>
+                <field name="hazard_type"/>
+                <field name="state"/>
+                <field name="hazard_identification"/>
+                <field name="corrective_action_to_be_taken"/>
+                <field name="corrective_action_taken"/>
+                <field name="taken_datetime"/>
+                <field name="taken_employee_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_hse_hazard_report_filter" model="ir.ui.view">
+        <field name="name">hse.hazard.report.filter</field>
+        <field name="model">hse.hazard.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="hazard_type"/>
+                <field name="hazard_identification"/>
+                <field name="corrective_action_to_be_taken"/>
+                <field name="location_id"/>
+                <field name="responsible"/>
+                <field name="notify_emp_id"/>
+                <filter name="is_draft" string="Draft" domain="[('state','=',('draft'))]"/>
+                <filter name="is_sent_mail" string="Sent mail" domain="[('state','=',('sent_mail'))]"/>
+                <filter name="is_repaired" string="Repaired" domain="[('state','=',('repaired'))]"/>
+                <separator/>
+                <group expand="0">
+                    <filter string="Project" name="group_project_id" icon="terp-personal" domain="[]" context="{'group_by':'project_id'}"/>
+                    <filter string="Year" name="group_year" icon="terp-go-year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" name="group_month" icon="terp-go-month" domain="[]" context="{'group_by':'month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hse_hazard_report" model="ir.actions.act_window">
+        <field name="name">Hazard report</field>
+        <field name="res_model">hse.hazard.report</field>
+        <field name="search_view_id" ref="view_hse_hazard_report_filter"/>
+        <field name="context">{'search_default_group_project_id': 1, 'search_default_group_year': 1,'search_default_group_month': 1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_hse_hazard_report_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_hse_hazard_report_tree"/>
+        <field name="act_window_id" ref="action_hse_hazard_report"/>
+    </record>
+    <record id="action_hse_hazard_report_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_hse_hazard_report_form"/>
+        <field name="act_window_id" ref="action_hse_hazard_report"/>
+    </record>
+
+    <record id="view_hse_hazard_report_mail" model="ir.ui.view">
+        <field name="name">hse.hazard.report.mail.form</field>
+        <field name="model">hse.hazard.report</field>
+        <field name="arch" type="xml">
+            <form>
+                 <group >
+                    <field name="mail_line" nolabel="1" >
+                        <tree editable="bottom">
+                            <field name="mail" widget="email"/>
+                        </tree>
+                    </field> 
+                </group>
+                <group>
+                    <field name="mail_text"/>
+                </group>
+                <footer>
+                    <button class="oe_highlight" name="mail_sent" string="Sent mail" type="object"/>
+                    or
+                    <button class="oe_link" special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_hse_hazard_report_mail" model="ir.actions.act_window">
+           <field name="name">Hazard report mail</field>
+           <field name="res_model">hse.hazard.report</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">form</field>
+    </record>
+    <record id="action_hse_hazard_report_mail_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_hse_hazard_report_mail"/>
+        <field name="act_window_id" ref="action_hse_hazard_report_mail"/>
+    </record>
+
+    
+    
+    <!-- Аюулыг мэдээллэх хуудас автомат майл -->
+    <record id="ir_cron_hse_hazard_report" model="ir.cron">
+        <field name="name">Аюулыг мэдээллэх хуудас автомат майл</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="doall" eval="False" />
+        <field name="model" eval="'hse.hazard.report'"  />
+        <field name="function" eval="'get_mail_notice_hazard_report'" />
+        <field name="args" eval="'()'"/>
+    </record>
+    <!-- Ажлын байрны үзлэг автомат майл -->
+    <record id="ir_cron_hse_workplace_ispection" model="ir.cron">
+        <field name="name">Ажлын байрны үзлэг автомат майл</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="doall" eval="False" />
+        <field name="model" eval="'hse.workplace.ispection'"/>
+        <field name="function" eval="'get_mail_notice_workplace_ispection'" />
+        <field name="args" eval="'()'"/>
+    </record>
+
+
+    <!-- Risk Assessment -->
+    <record id="view_hse_risk_assessment_form" model="ir.ui.view">
+        <field name="name">hse.risk.assessment.form</field>
+        <field name="model">hse.risk.assessment</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_to_done" states="draft" string="Done" icon="gtk-apply" type="object" class="oe_highlight"/>
+                    <button name="action_to_draft" states="done" string="Draft" type="object"/>                     
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <group col="6">
+                        <field name="datetime"/>
+                        <field name="project_id" widget="selection" domain="[('project_type','=', True)]"/>
+                        <field name="monitoring_user_id"/>
+                        <field name="made_work"/>
+                        <field name="location_id" widget="selection" domain="[('project_id','=', project_id)]"/>
+                        <field name="name"/>
+                    </group>
+                    <separator string="Assessment team" colspan="2"/>
+                    <group col="4">
+                        <field name="captian_user_id"/>
+                        <field name="member_ids" widget="many2many_tags" style="display: inline;" domain="['|',('state_id.type', 'not in', ('resigned','contract','student','end_contract')),('state_id', '=',False)]"/>
+                    </group>
+                    <separator string="Risk assessments table" colspan="2"/>
+                    <group>
+                        <field name="risk_assessment_table" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="step"/>
+                                <field name="task_steps"/>
+                                <field name="potential_hazard"/>
+                                <field name="risk_rating_id"/>
+                                <field name="controls_to_reduce_risk"/>
+                                <field name="reduced_risk_rating_id"/>
+                                <field name="employee_ids" widget="many2many_tags"  domain="['|',('state_id.type', 'not in', ('resigned','contract','student','end_contract')),('state_id', '=',False)]"/>
+                                <field name="partner_ids" widget="many2many_tags" domain="[('project_id','=',parent.project_id)]"/>
+                            </tree>                             
+                        </field>
+                    </group>
+                    <group>
+                        <field name="attachment_ids" widget="many2many_binary" nolabel="1"/>
+                    </group>
+                    <group>
+                        <widget type="hse_injury_image">
+                        </widget>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_risk_assessment_tree" model="ir.ui.view">
+        <field name="name">hse.risk.assessment.tree</field>
+        <field name="model">hse.risk.assessment</field>
+        <field name="arch" type="xml">
+            <tree colors="gray:state == 'done';blue:state == 'draft';">
+                <field name="name"/>
+                <field name="datetime"/>
+                <field name="project_id"/>
+                <field name="made_work"/>
+                <field name="monitoring_user_id"/>
+                <field name="captian_user_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_hse_risk_assessment_filter" model="ir.ui.view">
+        <field name="name">hse.risk.assessment.filter</field>
+        <field name="model">hse.risk.assessment</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="is_draft" string="Draft" domain="[('state','=',('draft'))]"/>
+                <filter name="is_done" string="Done" domain="[('state','=',('done'))]"/>
+                <separator/>
+                <group expand="0">
+                    <filter string="Project" name="group_project_id" icon="terp-personal" domain="[]" context="{'group_by':'project_id'}"/>
+                    <filter string="Year" name="group_year" icon="terp-go-year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" name="group_month" icon="terp-go-month" domain="[]" context="{'group_by':'month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_hse_risk_assessment" model="ir.actions.act_window">
+        <field name="name">Risk assessment</field>
+        <field name="res_model">hse.risk.assessment</field>
+        <field name="context">{'search_default_group_project_id': 1, 'search_default_group_year': 1,'search_default_group_month': 1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Injury entry -->
+    <record id="view_hse_injury_entry_form" model="ir.ui.view">
+        <field name="name">hse.injury.entry.form</field>
+        <field name="model">hse.injury.entry</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_to_draft" states="cor_act_closed" string="Draft" type="object" groups="hse.group_hse_manager"/>
+                    <button name="action_to_sent_mail" states="draft" string="Sent mail" type="object" class="oe_highlight"/>
+                    <button name="action_to_closed" states="sent_mail" string="Closed" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent_mail,closed,cor_act_closed"/>
+                </header>
+                <sheet>
+                    <separator string="ХЭСЭГ 1: ТӨСӨЛ ба ОСЛЫН ДЭЛГЭРЭНГҮЙ:" colspan="2"/>
+                    <label string="ТУХАЙН ХЭЛТЭСИЙН АХЛАХ АЖИЛТАН ТАЙЛАНГ 4 ЦАГИЙН ДОТОР БИЧИЖ ХАБЭАБО-ы ХЭЛТЭСТ ХҮРГҮҮЛНЭ! "/><label class="oe_highlight" string="24 ЦАГИЙН ДОТОР РЕПОРТЫГ ХААНА."/>
+                    <!-- <label string="Даамлууд 1 болон 3  хэсгийг, ХАБЭА БО-ы ажилтнууд 2 болон 4 хэсгийг бичнэ."/> -->
+                    <group col="6" >
+                        <field name="datetime"/>
+                        <field name="project_id" widget="selection" domain="[('project_type','=', True)]"/>
+                        <field name="project_manager_id"/>
+                        <field name="department_id" widget="selection" domain="[('parent_id.project_id','=', project_id)]"/>
+                        <field name="dep_manager_id"/>
+                        <field name="general_master_id"/>
+                        <field name="master_id"/>
+                        <field name="accident_type" widget="selection"/>
+                        <field name="is_lti"/>
+                        <field name="accident_name"/>
+                        <field name="involved_employee" widget="many2many_tags"/>
+                        <field name="technic_ids" widget="many2many_tags"/>
+                        <field name="name"/>
+                        <field name="lost_day" attrs="{'invisible':[('value','not in',('FIRST_AID','MEDICAL_AID')),('is_lti','=',False)]}"/>
+                        <field name="value" invisible="1"/>
+                    </group>
+                    <separator string="More injury" colspan="2"/>
+                    <group>
+                        <field name="location_accident"/>
+                        
+                    </group>
+                    <group col="4">
+                        <field name="consequence_id" widget="selection"/>
+                        <field name="likelihood_id" widget="selection"/>
+                    </group>
+                    <group>
+                        <field name="before_injury" placeholder="Холбоотой хүмүүсийн нэрсийг бичихгүй. Оператор, механик, засварын мастер гэж албан тушаалаар нь оруулах"/>
+                        <field name="how_do_injury" placeholder="Холбоотой хүмүүсийн нэрсийг бичихгүй. Оператор, механик, засварын мастер гэж албан тушаалаар нь оруулах"/>
+                        <field name="next_injury" placeholder="Холбоотой хүмүүсийн нэрсийг бичихгүй. Оператор, механик, засварын мастер гэж албан тушаалаар нь оруулах"/>
+                    </group>
+                    
+
+                    <separator string="ХЭСЭГ 2: ОСОЛ ГАРАХАД НӨЛӨӨЛСӨН ГОЛ ХҮЧИН ЗҮЙЛҮҮД:" colspan="2"/>
+                    <button name="import_cause" states="draft" string="Import cause" 
+                            icon="fa-download" class="oe_stat_button"
+                            type="object"/>
+                    <group>
+                        <field name="accident_line" invisible="1">
+                        </field>
+                    </group>
+                    
+                    <group>
+                        <field name="factor_line" invisible="1">
+                        </field>
+                    </group>
+                    <group>
+                        <widget type="hse_accident">
+                        </widget>
+                    </group>
+                    <separator string="ХЭСЭГ 3. ЦААШИД АВАХ ХАРИУ АРГА ХЭМЖЭЭ:" colspan="2"/>
+                    <label string="Жич: Ослын СУУРЬ шалтгаануудыг үндэслэж цаашид авах арга хэмжээг тодорхойлон ЮУГ ХЭН ХЭЗЭЭ авахыг дараах хүснэгтэнд бичнэ."/>
+                    <group>
+                        <field name="corrective_action_line" nolabel="1">                            
+                            <tree editable="bottom">
+                                <field name="corrective_action_what"/>
+                                <field name="employee_ids" widget="many2many_tags" attrs="{'required':[('partner_ids','=',[])]}" domain="['|',('state_id.type', 'not in', ('resigned','contract','student','end_contract')),('state_id', '=',False)]"/>
+                                <field name="partner_ids" widget="many2many_tags" attrs="{'required':[('employee_ids','=',[])]}" domain="[('project_id','=',parent.project_id)]"/>
+                                <field name="how"/>
+                                <field name="when_start"/>
+                                <field name="when_end"/>
+                                <field name="corrective_action_taken" class="oe_highlight"/>
+                                <field name="state" invisible="1"/>
+                                <field name="is_taken" invisible="1"/>
+                                <button name="action_to_taken" string="Take" icon="gtk-go-forward" type="object" attrs="{'invisible':['|',('is_taken','=',True),('state','!=','closed')]}"/>
+                                <button icon="star-on" string="Taken" type="object" attrs="{'invisible':[('is_taken','=',False)]}"/>
+                                <field name="taken_employee_id"/>
+                                <field name="taken_date"/>
+                            </tree>
+                        
+                        </field>
+                    </group>
+                    <group>
+                        <separator colspan="2"/>
+                        <field name="cor_act_attach_ids" widget="many2many_binary"/>
+                    </group>
+                     <group>
+                        <widget type="hse_cor_act_injury_image">
+                        </widget>
+                    </group>
+                    <separator string="ХЭСЭГ 4. ШАЛГАЛТЫН БАГ БҮРЭЛДЭХҮҮН:" colspan="2"/>
+                    <group>
+                        <field name="audit_line" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="employee_id"/>
+                                <field name="job_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <separator string="ХЭСЭГ 5. ШАЛГАЛТЫН ДҮГНЭЛТ:" colspan="2"/>
+                    <group>
+                        <field name="audit_conclusion_line" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="state" invisible="1"/>
+                                <field name="employee_id"/>
+                                <field name="job_id"/>
+                                <field name="conclusion" class="oe_highlight"/>
+                                <field name="date"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <separator string="ХЭСЭГ 6: ЗУРАГ БОЛОН ХАВСРАЛТ" colspan="2"/>
+                    <label string="Жич: Осолтой холбоотой фото зураг болон схем зургийг оруулж, бусад мэдээллийг ослын шалгалтын тайланд хавсаргана уу."/>
+                    <group>
+                        <field name="attachment_ids" widget="many2many_binary" nolabel="1"/>
+                    </group>
+                    <group>
+                        <widget type="hse_injury_image">
+                        </widget>
+                    </group>
+                    <label string="Ажилтаны тайлбар"/>
+                    <group>
+                        <field name="desc_attach_ids" widget="many2many_binary" nolabel="1"/>
+                    </group>
+                    <group>
+                        <widget type="hse_desc_injury_image">
+                        </widget>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_injury_entry_tree" model="ir.ui.view">
+        <field name="name">hse.injury.entry.tree</field>
+        <field name="model">hse.injury.entry</field>
+        <field name="arch" type="xml">
+            <tree colors="red:state == 'draft';blue:state == 'sent_mail';black:state == 'closed';gray:state == 'cor_act_closed';">
+                <field name="datetime"/>
+                <field name="name"/>
+                <field name="accident_type"/>
+                <field name="accident_name"/>
+                <field name="involved_employee"/>
+                <field name="is_lti"/>
+                <field name="lost_day"/>
+                <field name="department_id"/>
+                <field name="dep_manager_id"/>
+                <field name="general_master_id"/>
+                <field name="master_id"/>
+                <field name="project_manager_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_hse_injury_entry_filter" model="ir.ui.view">
+        <field name="name">hse.injury.entry.filter</field>
+        <field name="model">hse.injury.entry</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="accident_name"/>
+                <filter name="is_draft" string="Draft" domain="[('state','=',('draft'))]"/>
+                <filter name="is_sent_mail" string="Sent mail" domain="[('state','=',('sent_mail'))]"/>
+                <filter name="is_closed" string="Closed" domain="[('state','=',('closed'))]"/>
+                <filter name="is_cor_act_closed" string="Corrective actions closed" domain="[('state','=',('cor_act_closed'))]"/>
+                <separator/>
+                <group expand="0">
+                    <filter string="Accident type" name="group_accident_type" icon="terp-personal" domain="[]" context="{'group_by':'accident_type'}"/>
+                    <filter string="Project" name="group_project_id" icon="terp-personal" domain="[]" context="{'group_by':'project_id'}"/>
+                    <filter string="Year" name="group_year" icon="terp-go-year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" name="group_month" icon="terp-go-month" domain="[]" context="{'group_by':'month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_hse_injury_entry" model="ir.actions.act_window">
+        <field name="name">Injury entry</field>
+        <field name="res_model">hse.injury.entry</field>
+        <field name="search_view_id" ref="view_hse_injury_entry_filter"/>
+        <field name="context">{'search_default_group_project_id': 1, 'search_default_group_year': 1,'search_default_group_month': 1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="action_hse_injury_entry_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_hse_injury_entry_tree"/>
+        <field name="act_window_id" ref="action_hse_injury_entry"/>
+    </record>
+    <record id="action_hse_injury_entry_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_hse_injury_entry_form"/>
+        <field name="act_window_id" ref="action_hse_injury_entry"/>
+    </record>
+    
+    <record id="view_hse_injury_entry_mail" model="ir.ui.view">
+        <field name="name">hse.injury.entry.mail.form</field>
+        <field name="model">hse.injury.entry</field>
+        <field name="arch" type="xml">
+            <form>
+                 <group >
+                    <field name="mail_line" nolabel="1" >
+                        <tree editable="bottom">
+                            <field name="mail" widget="email"/>
+                        </tree>
+                    </field> 
+                </group>
+                <group>
+                    <field name="mail_text"/>
+                </group>
+                <footer>
+                    <button class="oe_highlight" name="mail_sent" string="Sent mail" type="object"/>
+                    or
+                    <button class="oe_link" special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hse_injury_entry_mail" model="ir.actions.act_window">
+           <field name="name">Injury entry mail</field>
+           <field name="res_model">hse.injury.entry</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">form</field>
+    </record>
+    <record id="action_hse_injury_entry_mail_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_hse_injury_entry_mail"/>
+        <field name="act_window_id" ref="action_hse_injury_entry_mail"/>
+    </record>
+
+    
+
+    <!-- Rules documents -->
+    <record id="view_hse_rules_documents_form" model="ir.ui.view">
+        <field name="name">hse.rules.documents.form</field>
+        <field name="model">hse.rules.documents</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="6" >
+                        <field name="date"/>
+                        <field name="number"/>  
+                        <field name="project_ids" widget="many2many_tags" domain="[('project_type','=', True)]"/>
+                    </group>
+                    <group>
+                        <field name="subject"/>
+                    </group>
+                    <group>
+                        <separator colspan="2"/>
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_rules_documents_tree" model="ir.ui.view">
+        <field name="name">hse.rules.documents.tree</field>
+        <field name="model">hse.rules.documents</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="number"/>
+                <field name="project_ids"/>
+                <field name="subject"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_rules_documents" model="ir.actions.act_window">
+        <field name="name">Rules documents</field>
+        <field name="res_model">hse.rules.documents</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- Hse code config -->
+    <record id="view_hse_code_config_form" model="ir.ui.view">
+        <field name="name">hse.code.config.form</field>
+        <field name="model">hse.code.config</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="project_id" widget="selection" domain="[('project_type','=', True)]"/>
+                        <field name="model_id"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_code_config_tree" model="ir.ui.view">
+        <field name="name">hse.code.config.tree</field>
+        <field name="model">hse.code.config</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="project_id"/>
+                <field name="model_id"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_code_config" model="ir.actions.act_window">
+        <field name="name">Code config</field>
+        <field name="res_model">hse.code.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>    
+    
+
+    <!-- IR CRON -->
+    <record id="view_hse_ir_cron_tree" model="ir.ui.view">
+        <field name="name">hse.ir.cron.tree</field>
+        <field name="model">ir.cron</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" readonly="1"/>
+                <field name="interval_type"/>
+                <field name="interval_number"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    
+
+    <record id="action_hse_ir_cron" model="ir.actions.act_window">
+           <field name="name">Hse auto mail</field>
+           <field name="res_model">ir.cron</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">tree</field>
+    </record>
+    <record id="action_hse_ir_cron_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_hse_ir_cron_tree"/>
+        <field name="act_window_id" ref="action_hse_ir_cron"/>
+    </record>
+    
+    
+
+    <!-- Types of Hazard -->
+    <record id="view_hse_hazard_type_form" model="ir.ui.view">
+        <field name="name">hse.hazard.type.form</field>
+        <field name="model">hse.hazard.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_hazard_type_tree" model="ir.ui.view">
+        <field name="name">hse.hazard.type.tree</field>
+        <field name="model">hse.hazard.type</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_hazard_type" model="ir.actions.act_window">
+        <field name="name">Types of hazard</field>
+        <field name="res_model">hse.hazard.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>    
+    
+    
+     <!-- Risk Rating -->
+    <record id="view_hse_risk_rating_form" model="ir.ui.view">
+        <field name="name">hse.risk.rating.form</field>
+        <field name="model">hse.risk.rating</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="rating"/>
+                        <field name="likelihood_id"/>
+                        <field name="consequence_id"/>
+                        <field name="assessment_type"/>
+                        <field name="assessment_description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_risk_rating_tree" model="ir.ui.view">
+        <field name="name">hse.risk.rating.tree</field>
+        <field name="model">hse.risk.rating</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom"  colors="red:assessment_type == 'high_risky'; gold:assessment_type == 'risky'; green:assessment_type == 'low_risky';">
+                <field name="rating"/>
+                <field name="likelihood_id"/>
+                <field name="consequence_id"/>
+                <field name="assessment_type"/>
+                <field name="assessment_description"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_risk_rating" model="ir.actions.act_window">
+        <field name="name">Risk rating</field>
+        <field name="res_model">hse.risk.rating</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- Hse Consequence -->
+    <record id="view_hse_consequence_form" model="ir.ui.view">
+        <field name="name">hse.consequence.form</field>
+        <field name="model">hse.consequence</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="consequence_rating"/>
+                        <field name="name"/>
+                        <field name="man_healthy"/>
+                        <field name="env_healthy"/>
+                        <field name="lost_time"/>
+                        <field name="asset_damage"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_consequence_tree" model="ir.ui.view">
+        <field name="name">hse.consequence.tree</field>
+        <field name="model">hse.consequence</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="consequence_rating"/>
+                <field name="name"/>
+                <field name="man_healthy"/>
+                <field name="env_healthy"/>
+                <field name="lost_time"/>
+                <field name="asset_damage"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_consequence" model="ir.actions.act_window">
+        <field name="name">Consequence</field>
+        <field name="res_model">hse.consequence</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+    <!-- Hse Likelihood -->
+    <record id="view_hse_likelihood_form" model="ir.ui.view">
+        <field name="name">hse.likelihood.form</field>
+        <field name="model">hse.likelihood</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="assessment"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_likelihood_tree" model="ir.ui.view">
+        <field name="name">hse.likelihood.tree</field>
+        <field name="model">hse.likelihood</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="assessment"/>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_likelihood" model="ir.actions.act_window">
+        <field name="name">Likelihood</field>
+        <field name="res_model">hse.likelihood</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+    <!-- Types of Accidents -->
+    <record id="view_hse_accident_type_form" model="ir.ui.view">
+        <field name="name">hse.accident.type.form</field>
+        <field name="model">hse.accident.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="value" groups="base.group_erp_manager"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_accident_type_tree" model="ir.ui.view">
+        <field name="name">hse.accident.type.tree</field>
+        <field name="model">hse.accident.type</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="value" groups="base.group_erp_manager"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_accident_type" model="ir.actions.act_window">
+        <field name="name">Types of accidents</field>
+        <field name="res_model">hse.accident.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+    <!-- Categories of Accident-->
+    <record id="view_hse_accident_category_form" model="ir.ui.view">
+        <field name="name">hse.accident.category.form</field>
+        <field name="model">hse.accident.category</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="accident_id"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_accident_category_tree" model="ir.ui.view">
+        <field name="name">hse.accident.category.tree</field>
+        <field name="model">hse.accident.category</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="accident_id"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_accident_category" model="ir.actions.act_window">
+        <field name="name">Categories of accidents</field>
+        <field name="res_model">hse.accident.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    <!-- Factors in Accidents-->
+    <record id="view_hse_accident_factor_form" model="ir.ui.view">
+        <field name="name">hse.accident.factor.form</field>
+        <field name="model">hse.accident.factor</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="type"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_accident_factor_tree" model="ir.ui.view">
+        <field name="name">hse.accident.factor.tree</field>
+        <field name="model">hse.accident.factor</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_accident_factor" model="ir.actions.act_window">
+        <field name="name">Factors in accidents</field>
+        <field name="res_model">hse.accident.factor</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+   <!-- Causes in Accidents-->
+    <record id="view_hse_accident_cause_form" model="ir.ui.view">
+        <field name="name">hse.accident.cause.form</field>
+        <field name="model">hse.accident.cause</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="sequence"/>
+                        <field name="name"/>
+                        <field name="factor_id"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_accident_cause_tree" model="ir.ui.view">
+        <field name="name">hse.accident.cause.tree</field>
+        <field name="model">hse.accident.cause</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="factor_id"/>                
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_accident_cause" model="ir.actions.act_window">
+        <field name="name">Causes of accidents</field>
+        <field name="res_model">hse.accident.cause</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+    <!-- Location -->
+    <record id="view_hse_location_form" model="ir.ui.view">
+        <field name="name">hse.location.form</field>
+        <field name="model">hse.location</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="project_id" widget="selection" domain="[('project_type','=', True)]"/>
+                        <field name="department_id" widget="selection" domain="[('parent_id.project_id','=', project_id)]"/>
+                        <field name="responsible"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_location_tree" model="ir.ui.view">
+        <field name="name">hse.location.tree</field>
+        <field name="model">hse.location</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="project_id"/>
+                <field name="department_id" widget="selection" domain="[('parent_id.project_id','=', project_id)]"/>
+                <field name="responsible"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_hse_location_filter" model="ir.ui.view">
+        <field name="name">hse.location.filter</field>
+        <field name="model">hse.location</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0">
+                    <filter string="Project" name="group_project_id" domain="[]" context="{'group_by':'project_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_hse_location" model="ir.actions.act_window">
+        <field name="name">Location</field>
+        <field name="res_model">hse.location</field>
+        <field name="context">{'search_default_group_project_id': 1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Partner -->
+    <record id="view_hse_partner_form" model="ir.ui.view">
+        <field name="name">hse.partner.form</field>
+        <field name="model">hse.partner</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="project_id" widget="selection" domain="[('project_type','=', True)]"/>
+                        <field name="email" widget="email"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_partner_tree" model="ir.ui.view">
+        <field name="name">hse.partner.tree</field>
+        <field name="model">hse.partner</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="project_id" widget="selection"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_partner" model="ir.actions.act_window">
+        <field name="name">Partner</field>
+        <field name="res_model">hse.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- project.man.hour -->
+    <record id="view_hse_project_man_hour_form" model="ir.ui.view">
+        <field name="name">hse.project.man.hour.form</field>
+        <field name="model">hse.project.man.hour</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="project_id" widget="selection" domain="[('project_type','=', True)]"/>
+                        <field name="man_hour"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_hse_project_man_hour_tree" model="ir.ui.view">
+        <field name="name">hse.project.man.hour.tree</field>
+        <field name="model">hse.project.man.hour</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="project_id"   domain="[('project_type','=', True)]"/>
+                <field name="man_hour"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_hse_project_man_hour" model="ir.actions.act_window">
+        <field name="name">Project man hour</field>
+        <field name="res_model">hse.project.man.hour</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+   
+</data>    
+</openerp>

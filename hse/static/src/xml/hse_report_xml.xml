@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="hse.daily_report">
+
+        <table cellspacing="10">
+            <tr>
+                <td style="padding-right:10px">
+                    <table class="oe_donut_table">
+                        <tr>
+                            <td colspan="2" style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width:270px; height: 20px; text-align: center;">Man hour /since the date of LTI/</td>
+                        </tr>
+                        <tr>
+                            <td><div id="nope_lti_day" style="width: 135px; height: 90px;"></div></td>
+                            <td><div id="nope_lti_hour" style="width: 135px; height: 90px;"></div></td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="padding-right:10px">
+                    <table class="oe_donut_table">
+                        <tr>
+                            <td colspan="2" style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width:270px; height: 20px; text-align: center;">Total injury</td>
+                        </tr>
+                        <tr>
+                            <td><div id="injury_this_month" style="width: 135px; height: 90px;"></div></td>
+                            <td><div id="injury_this_year" style="width: 135px; height: 90px;"></div></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="oe_donut_table">
+                        <tr>
+                            <td colspan="2" style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width:270px; height: 20px; text-align: center;">Equipment downtime</td>
+                        </tr>
+                        <tr>
+                            <td><div id="lost_time_month" style="width: 135px; height: 90px;"></div></td>
+                            <td><div id="lost_time_year" style="width: 135px; height: 90px;"></div></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <t t-foreach="widget.all_hse"  t-as="pr">
+                <tr>
+                    <td colspan="3">
+                        <table>
+                            <tr >
+                                <td>
+                                    <div t-att-id="'hutlugch'+pr.project_id" style="padding-top:8px; width: 465px; height:190px;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div t-att-id="'survaljit'+pr.project_id" style="padding-top:8px; width: 345px; height:190px;">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </t>
+            
+            <tr>
+                <td colspan="3">
+                    <table>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width:205px;  text-align: center;">Bird's pyramid</td>
+                                        <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; padding-left: 50px; width:205px;">MNO pyramid</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                        <div id="bird_pyramid" style="width:405px; height:110px;"></div>
+                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td><div id="injury_detail" style="padding-top:8px; width:405px; height:130px;"></div></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><div id="frequency_lti" style="padding-top:8px; width:810px; height:130px;"></div></td>
+            </tr>
+            
+            
+        </table>        
+
+    </t>
+</templates>

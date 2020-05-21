@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="hse.Accident">
+        <table style="width: 100%;">
+            <tr class="oe_hse_edit_only">
+            <td>
+        <table>
+            <tr>
+                <td class="oe_hse_type">IMMEDIATE CAUSE</td>
+            </tr>
+            <tbody >
+                <t t-set="factor" t-value="0"/>
+                <t t-foreach="widget.lines"  t-as="cause">
+                    <t t-if="cause.type =='immediate_cause'">
+                        <t t-if="cause.factor_id[0] != factor">
+                            <t t-set="factor" t-value="factor=cause.factor_id[0]"/>
+                            <tr class="oe_hse_factor">
+                                <td><t t-esc="cause.factor_id[1]"/></td>
+                            </tr>
+                        </t>
+                        <tr class="oe_hse_check">
+                            <td>
+                                <div style="margin-bottom: 5px;">
+                                <t t-if="cause.check == true">
+                                    <label t-att-data-label="cause.id" style="color: red">
+                                        <t t-if="cause.state == 'draft'">
+                                            <input t-att-data-id="cause.id" type="checkbox" t-att-checked="cause.check ? 'checked' : undefined"/> <t t-esc="cause.sequence"/>. <t t-esc="cause.accident_cause_id[1]"/>
+                                        </t>
+                                        <t t-if="cause.state != 'draft'">
+                                            <input t-att-data-id="cause.id" type="checkbox" t-att-checked="cause.check ? 'checked' : undefined" disabled="disabled"/> <t t-esc="cause.sequence"/>. <t t-esc="cause.accident_cause_id[1]"/>
+                                        </t>
+                                    </label>
+                                </t>
+                                <t t-if="cause.check == false">
+                                    <label t-att-data-label="cause.id" style="color: black">
+                                        <t t-if="cause.state == 'draft'">
+                                            <input t-att-data-id="cause.id" type="checkbox" t-att-checked="cause.check ? 'checked' : undefined"/> <t t-esc="cause.sequence"/>. <t t-esc="cause.accident_cause_id[1]"/>
+                                        </t>
+                                        <t t-if="cause.state != 'draft'">
+                                            <input t-att-data-id="cause.id" type="checkbox" t-att-checked="cause.check ? 'checked' : undefined" disabled="disabled"/> <t t-esc="cause.sequence"/>. <t t-esc="cause.accident_cause_id[1]"/>
+                                        </t>
+                                    </label>
+                                </t>
+                                </div>
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </tbody>
+                
+        </table>
+    </td>
+    <td>
+        <table>
+            <tr>
+                <td class="oe_hse_type">BASIC CAUSE</td>
+            </tr>
+            <tbody >
+                <t t-set="factor" t-value="0"/>
+                <t t-foreach="widget.lines"  t-as="cause">
+                    <t t-if="cause.type =='base_cause'">
+                        <t t-if="cause.factor_id[0] != factor">
+                            <t t-set="factor" t-value="factor=cause.factor_id[0]"/>
+                            <tr class="oe_hse_factor">
+                                <td><t t-esc="cause.factor_id[1]"/></td>
+                            </tr>
+                        </t>
+                        <tr class="oe_hse_check">
+                            <td>
+                                <div style="margin-bottom: 5px;">
+                                <t t-if="cause.check == true">
+                                    <label t-att-data-label="cause.id" style="color: red">
+                                        <t t-if="cause.state == 'draft'">
+                                            <input t-att-data-id="cause.id" type="checkbox" t-att-checked="cause.check ? 'checked' : undefined"/> <t t-esc="cause.sequence"/>. <t t-esc="cause.accident_cause_id[1]"/>
+                                        </t>
+                                        <t t-if="cause.state != 'draft'">
+                                            <input t-att-data-id="cause.id" type="checkbox" t-att-checked="cause.check ? 'checked' : undefined" disabled="disabled"/> <t t-esc="cause.sequence"/>. <t t-esc="cause.accident_cause_id[1]"/>
+                                        </t>
+                                    </label>
+                                </t>
+                                <t t-if="cause.check == false">
+                                    <label t-att-data-label="cause.id" style="color: black">
+                                        <t t-if="cause.state == 'draft'">
+                                            <input t-att-data-id="cause.id" type="checkbox" t-att-checked="cause.check ? 'checked' : undefined"/> <t t-esc="cause.sequence"/>. <t t-esc="cause.accident_cause_id[1]"/>
+                                        </t>
+                                        <t t-if="cause.state != 'draft'">
+                                            <input t-att-data-id="cause.id" type="checkbox" t-att-checked="cause.check ? 'checked' : undefined" disabled="disabled"/> <t t-esc="cause.sequence"/>. <t t-esc="cause.accident_cause_id[1]"/>
+                                        </t>
+                                    </label>
+                                </t>
+                                </div>
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </tbody>
+                
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+        <table>
+            <tr>
+                <td colspan="2" class="oe_hse_type">IMMEDIATE CAUSE</td>
+            </tr>
+            <tbody id="factor_immediate_cause">
+                
+            </tbody>
+                
+        </table>
+    </td>
+    <td>
+        <table>
+            <tr>
+                <td colspan="2" class="oe_hse_type">BASIC CAUSE</td>
+            </tr>
+            <tbody id="factor_base_cause">
+                
+            </tbody>
+                
+        </table>
+    </td>
+    </tr>
+    </table>
+    </t>
+</templates>

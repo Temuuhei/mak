@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="hse.corrective_actions">
+        <table style="width: 1050px;">
+            <tr>
+                <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width: 110px; height: 20px; text-align: center;">
+                    Percentage of Remedial action
+                </td>
+                <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width: 170px; height: 20px; text-align: center;">
+                    Hazard report
+                </td>
+                <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width: 170px; height: 20px; text-align: center;">
+                    Workplace ispection
+                </td>
+                <td style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; width: 170px; height: 20px; text-align: center;">
+                    Accident/Incident
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: -webkit-center;">
+                    <div id="linearGauge" style="width: 110px"></div>
+                </td>
+                <td>
+                    <div id="hazard_report" style="width: 285px; height: 250px;"></div>
+                </td>
+                <td>
+                    <div id="workplace_ispection" style="width: 285px; height: 250px;"></div>
+                </td>
+                <td>
+                    <div id="injury_entry" style="width: 285px; height: 250px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="fill: #111111; color: #111111; font-size: 14px; font-weight: bold; font-family: Verdana; height: 20px; text-align: center;">
+                    Detail of Remedial Action
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div id="hazard">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    
+    </t>
+</templates>

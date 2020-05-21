@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	<menuitem id="main_menu_hse" name="HSE" sequence="11" groups="hse.group_hse_user"/>
+    <menuitem id="menu_hse_safety" name="Safety" parent="main_menu_hse"  sequence="1"/>
+        <menuitem id="menu_hse_my_safety" name="My safety" parent="menu_hse_safety" action="action_hse_my_safety"  sequence="1"/>
+        <menuitem id="menu_hse_safety_plan" name="Safety plan" parent="menu_hse_safety" action="action_hse_safety_plan"  sequence="2" groups="hse.group_hse_officer"/>
+        <menuitem id="menu_hse_daily_report" name="Daily report" parent="menu_hse_safety" action="action_hse_daily_report"  sequence="3"/>
+        
+        <menuitem id="menu_hse_nope_lti" name="Man/Hour without LTI" parent="menu_hse_safety" action="action_hse_nope_lti"  sequence="4"/>
+        <menuitem id="menu_hse_hazard_report" name="Hazard report" parent="menu_hse_safety" action="action_hse_hazard_report"  sequence="5"/>
+        <menuitem id="menu_hse_risk_assessment" name="Risk assessment" parent="menu_hse_safety" action="action_hse_risk_assessment"  sequence="6"/>
+        <menuitem id="menu_hse_workplace_ispection" name="Workplace ispection" parent="menu_hse_safety" action="action_hse_workplace_ispection"  sequence="8"/>
+        <menuitem id="menu_hse_safety_meeting" name="Safety meeting" parent="menu_hse_safety" action="action_hse_safety_meeting"  sequence="9"/>
+        <menuitem id="menu_hse_injury_entry" name="Injury entry" parent="menu_hse_safety" action="action_hse_injury_entry"  sequence="11"/>
+    
+    <menuitem id="menu_hse_main_training" name="Training" parent="hse.main_menu_hse"  sequence="2"/>
+        <menuitem name="Сургалтын төлөвлөгөө" parent="menu_hse_main_training" id="menu_hse_training_plan" sequence="1" action="action_hse_training_plan" groups="hse.group_hse_user" />
+        <menuitem name="Сургалт" parent="menu_hse_main_training" id="menu_hse_training" sequence="2" action="action_hse_training" groups="hse.group_hse_user" />
+
+    <menuitem id="menu_hse_report" name="Report" parent="main_menu_hse"  sequence="6"/>
+        <menuitem id="menu_hse_safety_report" name="Safety report" parent="menu_hse_report" action="action_hse_safety_report" sequence="2"/>
+        <menuitem id="menu_hse_corrective_actions" name="Corrective actions" parent="menu_hse_report" action="action_hse_corrective_actions" sequence="3"/>
+        <menuitem action="action_report_hse_injury_entry_tree" id="menu_report_hse_injury_entry" parent="menu_hse_report" sequence="5"/>
+
+    <menuitem id="menu_hse_config" name="Configure" parent="main_menu_hse" sequence="10"/>
+        <menuitem id="menu_hse_safety_config" name="Safety" parent="menu_hse_config" sequence="1"/>
+
+            <menuitem id="menu_hse_safety_indicator" name="Safety indicator" parent="menu_hse_safety_config" action="action_hse_safety_indicator"  sequence="40"/>
+            <menuitem id="menu_hse_rules" name="Rules documents" parent="main_menu_hse"  sequence="5"/>
+            <menuitem id="menu_hse_rules_documents" name="Rules documents" parent="menu_hse_rules" action="action_hse_rules_documents"  sequence="1"/>
+            <menuitem id="menu_hse_code_config" name="Code config" parent="menu_hse_safety_config" action="action_hse_code_config"  sequence="20"/>
+            <menuitem id="menu_hse_ir_cron" name="Hse auto mail" parent="menu_hse_safety_config" action="action_hse_ir_cron"  sequence="30" groups="hse.group_hse_manager"/>
+            <menuitem id="menu_hse_hazard_type" name="Types of hazard" parent="menu_hse_safety_config" action="action_hse_hazard_type"  sequence="1"/>
+            <menuitem id="menu_hse_risk_rating" name="Risk rating" parent="menu_hse_safety_config" action="action_hse_risk_rating"  sequence="2"/>
+            <menuitem id="menu_hse_consequence" name="Consequence" parent="menu_hse_safety_config" action="action_hse_consequence"  sequence="3"/>
+            <menuitem id="menu_hse_likelihood" name="Likelihood" parent="menu_hse_safety_config" action="action_hse_likelihood"  sequence="4"/>
+            <menuitem id="menu_hse_accident_type" name="Types of accidents" parent="menu_hse_safety_config" action="action_hse_accident_type"  sequence="6"/>
+            <menuitem id="menu_hse_accident_category" name="Categories of accidents" parent="menu_hse_safety_config" action="action_hse_accident_category"  sequence="7"/>
+            <menuitem id="menu_hse_accident_factor" name="Factors of accidents" parent="menu_hse_safety_config" action="action_hse_accident_factor"  sequence="8"/>
+            <menuitem id="menu_hse_accident_cause" name="Causes of accidents" parent="menu_hse_safety_config" action="action_hse_accident_cause"  sequence="9"/>
+            <menuitem id="menu_hse_location" name="Location" parent="menu_hse_safety_config" action="action_hse_location"  sequence="11"/>
+            <menuitem id="menu_hse_partner" name="Partner" parent="menu_hse_safety_config" action="action_hse_partner"  sequence="12"/>
+            <menuitem id="menu_hse_project_man_hour" name="Project man hour" parent="menu_hse_safety_config" action="action_hse_project_man_hour"  sequence="13"/>
+
+    
+    
+    
+
+    
+	</data>    
+</openerp>

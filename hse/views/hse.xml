@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="hse assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/hse/static/src/css/hse_css.css"/>
+                <script type="text/javascript" src="/hse/static/src/js/hse_js.js"></script>
+                <script type="text/javascript" src="/hse/static/src/js/hse_safety.js"></script>
+                <script type="text/javascript" src="/hse/static/src/js/hse_daily_report.js"></script>
+                <script type="text/javascript" src="/hse/static/src/js/hse_my_safety.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>
