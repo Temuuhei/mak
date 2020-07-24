@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<menuitem
+    id="loan_saving_root_menu"
+    name="Loan &amp; Saving"
+    sequence="30"
+    />
+
+<menuitem
+    id="loan_saving_report_menu"
+    name="Report"
+    parent="loan_saving_root_menu"
+    sequence="98"
+    />
+
+<menuitem
+    id="loan_saving_configuration_menu"
+    name="Configuration"
+    parent="loan_saving_root_menu"
+    sequence="99"
+    />
+
+
+</data>
+</openerp>
