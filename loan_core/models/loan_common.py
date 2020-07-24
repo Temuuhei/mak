@@ -33,10 +33,16 @@ class LoanCommon(models.AbstractModel):
         for loan in self:
             loan.total_principle_amount = 0.0
             loan.total_interest_amount = 0.0
+            loan.total_undue_interest_amount = 0.0
+            loan.total_fine_interest_amount = 0.0
+            loan.total_other_amount = 0.0
             if loan.payment_schedule_ids:
                 for schedule in loan.payment_schedule_ids:
                     loan.total_principle_amount += schedule.principle_amount
                     loan.total_interest_amount += schedule.interest_amount
+                    loan.total_undue_interest_amount += schedule.undue_interest_amount
+                    loan.total_fine_interest_amount += schedule.difference_day
+                    loan.total_other_amount += schedule.other_expense
 
     @api.multi
     def _compute_realization(self):
@@ -255,6 +261,24 @@ class LoanCommon(models.AbstractModel):
         compute="_compute_total",
         store=True,
     )
+
+    total_undue_interest_amount = fields.Float(
+        string="Total Undue Interest Amount",
+        compute="_compute_total",
+        store=True,
+    )
+    total_fine_interest_amount = fields.Float(
+        string="Total Fine Interest Amount",
+        compute="_compute_total",
+        store=True,
+    )
+
+    total_other_amount = fields.Float(
+        string="Total Other Amount",
+        compute="_compute_total",
+        store=True,
+    )
+
     realized = fields.Boolean(
         string="Realized",
         compute="_compute_realization",
@@ -378,8 +402,8 @@ class LoanCommon(models.AbstractModel):
                 strWarning = _("Loan amount has to be greater than 0")
                 raise models.ValidationError(strWarning)
 
-            if loan.loan_amount > loan.maximum_loan_amount:
-                strWarning = _("Loan amount exceed maximum loan amount")
+            # if loan.loan_amount > loan.maximum_loan_amount:
+            #     strWarning = _("Loan amount exceed maximum loan amount")
                 raise models.ValidationError(strWarning)
 
     @api.multi
