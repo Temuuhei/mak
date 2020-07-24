@@ -229,6 +229,9 @@
                         <group name="group_schedulei_2" colspan="4" col="2">
                             <field name="total_principle_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
                             <field name="total_interest_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                            <field name="total_undue_interest_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                            <field name="total_fine_interest_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                            <field name="total_other_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
                             <button name="button_dummy" states="draft" string="(update)" type="object" class="oe_edit_only oe_link"/>
                         </group>
                     </page>
