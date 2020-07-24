@@ -378,8 +378,8 @@ class LoanCommon(models.AbstractModel):
                 strWarning = _("Loan amount has to be greater than 0")
                 raise models.ValidationError(strWarning)
 
-            if loan.loan_amount > loan.maximum_loan_amount:
-                strWarning = _("Loan amount exceed maximum loan amount")
+            # if loan.loan_amount > loan.maximum_loan_amount:
+            #     strWarning = _("Loan amount exceed maximum loan amount")
                 raise models.ValidationError(strWarning)
 
     @api.multi
