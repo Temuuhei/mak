@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="loan_payment_schedule_common_view_tree" model="ir.ui.view">
+    <field name="name">loan.payment_schedule_common tree</field>
+    <field name="model">loan.payment_schedule_common</field>
+    <field name="arch" type="xml">
+        <tree create="false" edit="false" delete="false">
+            <field name="loan_id"/>
+            <field name="partner_id"/>
+            <field name="schedule_date"/>
+            <field name="paid_date"/>
+            <field name="interest_day"/>
+            <field name="principle_amount" sum="Total Principle Amount"/>
+            <field name="interest_amount" sum="Total Interest Amount"/>
+            <field name="undue_interest_amount" sum="Total undue Interest Amount"/>
+            <field name="difference_day" sum="Total Fine Amount"/>
+            <field name="interest_move_line_id" invisible="1"/>
+            <button name="%(realize_interest_action)d" type="action"
+                attrs="{'invisible':[
+                    '|',
+                    ('state', '!=', 'active'),
+                    '&amp;',
+                    ('state', '=', 'active'),
+                    ('interest_move_line_id','!=',False)]}"
+                string="Realize Interest" icon="gtk-execute"/>
+            <field name="installment_amount" sum="Total Installment Amount"/>
+            <field name="balance_amount"/>
+            <field name="principle_payment_state"/>
+            <field name="interest_payment_state"/>
+            <field name="state"/>
+            <field name="old_principle_move_line_id" invisible="1"/>
+            <button name="action_long_to_short_term" type="object"
+                attrs="{'invisible':[
+                    '|',
+                    '&amp;',
+                    ('state', '=', 'active'),
+                    ('old_principle_move_line_id','!=',False),
+                    ('state', '!=', 'active'),
+                    ]}"
+                string="Convert Long Term Into Short Term Loan" icon="gtk-execute"/>
+        </tree>
+    </field>
+</record>
+
+<record id="loan_payment_schedule_common_view_form" model="ir.ui.view">
+    <field name="name">loan.payment_schedule_common form</field>
+    <field name="model">loan.payment_schedule_common</field>
+    <field name="arch" type="xml">
+        <form create="false" edit="false" delete="false">
+            <header>
+                <button name="%(realize_interest_action)d" type="action"
+                    attrs="{'invisible':[
+                        '|',
+                        ('state', '!=', 'active'),
+                        '&amp;',
+                        ('state', '=', 'active'),
+                        ('interest_move_line_id','!=',False)]}"
+                    string="Realize Interest" icon="gtk-execute"/>
+                    <button name="action_long_to_short_term" type="object"
+                        attrs="{'invisible':[
+                            '|',
+                            '&amp;',
+                            ('state', '=', 'active'),
+                            ('old_principle_move_line_id','!=',False),
+                            ('state', '!=', 'active'),
+                            ]}"
+                        string="Convert Long Term Into Short Term Loan" icon="gtk-execute"/>
+            </header>
+            <group name="group_main" colspan="4" col="2">
+                <field name="loan_id"/>
+                <field name="state" invisible="1"/>
+                <field name="schedule_date"/>
+                <field name="installment_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                <field name="currency_id" invisible="1"/>
+            </group>
+            <notebook colspan="4">
+                <page name="page_principle" string="Principle">
+                    <group name="group_principle" colspan="4" col="2">
+                        <field name="principle_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                        <field name="principle_payment_state"/>
+                        <field name="principle_move_id"/>
+                        <field name="principle_move_line_id"/>
+                        <field name="old_principle_move_line_id"/>
+                    </group>
+                </page>
+                <page name="page_interest" string="Interest">
+                    <group name="group_interest" colspan="4" col="2">
+                        <field name="interest_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                        <field name="interest_payment_state"/>
+                        <field name="interest_move_id"/>
+                        <field name="interest_move_line_id"/>
+                    </group>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="loan_payment_schedule_common_view_search" model="ir.ui.view">
+    <field name="name">loan.payment_schedule_common search</field>
+    <field name="model">loan.payment_schedule_common</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="loan_id"/>
+            <field name="partner_id"/>
+            <field name="schedule_date"/>
+            <field name="principle_payment_state"/>
+            <field name="interest_payment_state"/>
+            <field name="state"/>
+            <group name="dom_state" string="State">
+                <filter name="dom_state_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="dom_state_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
+                <filter name="dom_state_approve" string="Waiting for Realization" domain="[('state','=','approve')]"/>
+                <filter name="dom_state_active" string="Active" domain="[('state','=','active')]"/>
+                <filter name="dom_state_done" string="Done" domain="[('state','=','done')]"/>
+                <filter name="dom_state_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
+            </group>
+            <group name="dom_principle_state" string="Principle Payment State">
+                <filter name="dom_princple_state_unpaid" string="Unpaid" domain="[('principle_payment_state','=','unpaid')]"/>
+                <filter name="dom_princple_state_partial" string="Partial" domain="[('principle_payment_state','=','partial')]"/>
+                <filter name="dom_princple_state_paid" string="Paid" domain="[('principle_payment_state','=','paid')]"/>
+            </group>
+            <group name="dom_interest_state" string="Interest Payment State">
+                <filter name="dom_interest_state_unpaid" string="Unpaid" domain="[('interest_payment_state','=','unpaid')]"/>
+                <filter name="dom_interest_state_partial" string="Partial" domain="[('interest_payment_state','=','partial')]"/>
+                <filter name="dom_interest_state_paid" string="Paid" domain="[('interest_payment_state','=','paid')]"/>
+            </group>
+            <group name="grp_group" string="Group By..">
+                <filter name="group_loan" string="Loan" context="{'group_by':'loan_id'}"/>
+                <filter name="group_partner" string="Partner" context="{'group_by':'partner_id'}"/>
+                <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+                <filter name="group_principle_state" string="Principle Payment State" context="{'group_by':'principle_payment_state'}"/>
+                <filter name="group_interest_state" string="Interest Payment State" context="{'group_by':'interest_payment_state'}"/>
+                <filter name="group_schedule_date_year" string="Schedule Date by Year" context="{'group_by':'schedule_date:year'}"/>
+                <filter name="group_schedule_date_month" string="Schedule Date by Month" context="{'group_by':'schedule_date:month'}"/>
+                <filter name="group_schedule_date_week" string="Schedule Date by Week" context="{'group_by':'schedule_date:week'}"/>
+                <filter name="group_schedule_date_day" string="Schedule Date by Day" context="{'group_by':'schedule_date:day'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+</data>
+</openerp>

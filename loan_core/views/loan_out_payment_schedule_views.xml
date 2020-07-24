@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="loan_out_payment_schedule_view_tree" model="ir.ui.view">
+    <field name="name">loan.out_payment_schedule tree</field>
+    <field name="model">loan.out_payment_schedule</field>
+    <field name="inherit_id" ref="loan_payment_schedule_common_view_tree"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data/>
+    </field>
+</record>
+
+<record id="loan_out_payment_schedule_view_form" model="ir.ui.view">
+    <field name="name">loan.out_payment_schedule form</field>
+    <field name="model">loan.out_payment_schedule</field>
+    <field name="inherit_id" ref="loan_payment_schedule_common_view_form"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data/>
+    </field>
+</record>
+
+<record id="loan_out_payment_schedule_view_search" model="ir.ui.view">
+    <field name="name">loan.out_payment_schedule search</field>
+    <field name="model">loan.out_payment_schedule</field>
+    <field name="inherit_id" ref="loan_payment_schedule_common_view_search"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data/>
+    </field>
+</record>
+
+<record id="loan_out_payment_schedule_action" model="ir.actions.act_window">
+    <field name="name">Loan Out Payment Schedule</field>
+    <field name="res_model">loan.out_payment_schedule</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{}</field>
+</record>
+
+<menuitem
+    id="loan_out_payment_schedule_menu"
+    name="Loan Out Payment Schedule"
+    parent="loan_root_menu"
+    action="loan_out_payment_schedule_action"
+    sequence="4"/>
+
+</data>
+</openerp>

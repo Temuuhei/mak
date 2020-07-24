@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_loan_type_all,loan.type - all user,model_loan_type,,1,0,0,0
+access_loan_type_employee,loan.type - employee,model_loan_type,base.group_user,1,1,1,1
+access_loan_in_all,loan.in - all user,model_loan_in,,1,0,0,0
+access_loan_in_employee,loan.in - employee,model_loan_in,base.group_user,1,1,1,1
+access_loan_out_all,loan.out - all user,model_loan_out,,1,0,0,0
+access_loan_out_employee,loan.out - employee,model_loan_out,base.group_user,1,1,1,1
+access_loan_in_payment_schedule_all,loan.in_payment_schedule - all user,model_loan_in_payment_schedule,,1,0,0,0
+access_loan_in_payment_schedule_employee,loan.in_payment_schedule - employee,model_loan_in_payment_schedule,base.group_user,1,1,1,1
+access_loan_out_payment_schedule_all,loan.out_payment_schedule - all user,model_loan_out_payment_schedule,,1,0,0,0
+access_loan_out_payment_schedule_employee,loan.out_payment_schedule - employee,model_loan_out_payment_schedule,base.group_user,1,1,1,1
