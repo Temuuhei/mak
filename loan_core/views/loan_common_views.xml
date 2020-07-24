@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="loan_common_view_tree" model="ir.ui.view">
+    <field name="name">loan.common tree</field>
+    <field name="model">loan.common</field>
+    <field name="arch" type="xml">
+        <tree string="Loan">
+            <field name="display_name" string="# Loan"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="partner_id"/>
+            <field name="request_date"/>
+            <field name="type_id" invisible="1"/>
+            <field name="direction"/>
+            <field name="currency_id" invisible="0"/>
+            <field name="loan_amount" sum="Total Loan Amount"/>
+            <field name="manual_loan_period"/>
+            <field name="interest"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="loan_common_view_search" model="ir.ui.view">
+    <field name="name">loan.common search</field>
+    <field name="model">loan.common</field>
+    <field name="arch" type="xml">
+        <search string="Loan">
+            <field name="name"/>
+            <field name="partner_id"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="request_date"/>
+            <field name="type_id"/>
+            <field name="state"/>
+            <group name="grp_state" string="State">
+                <filter name="dom_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="dom_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
+                <filter name="dom_approve" string="Approved" domain="[('state','=','approve')]"/>
+                <filter name="dom_active" string="Actived" domain="[('state','=','active')]"/>
+                <filter name="dom_done" string="Done" domain="[('state','=','done')]"/>
+                <filter name="dom_cancel" string="Cancelled" domain="[('state','=','cancel')]"/>
+            </group>
+            <group name="grp_group" string="Group By..">
+                <filter name="group_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                <filter name="group_partner" string="Partner" context="{'group_by':'partner_id'}"/>
+                <filter name="group_type" string="Loan Type" context="{'group_by':'type_id'}"/>
+                <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+                <filter name="group_request_date_year" string="Date Request by Year" context="{'group_by':'request_date:year'}"/>
+                <filter name="group_request_date_month" string="Date Request by Month" context="{'group_by':'request_date:month'}"/>
+                <filter name="group_request_date_week" string="Date Request by Week" context="{'group_by':'request_date:week'}"/>
+                <filter name="group_request_date_day" string="Date Request by Day" context="{'group_by':'request_date:day'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="loan_common_view_form" model="ir.ui.view">
+    <field name="name">loan.common form</field>
+    <field name="model">loan.common</field>
+    <field name="arch" type="xml">
+        <form string="Loan">
+            <header>
+                <button name="workflow_action_confirm"
+                    string="Confirm"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                    confirm="Confirm loan. Are you sure?"
+                    />
+                <button
+                    name="workflow_action_approve"
+                    string="Approve"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}"
+                    confirm="Approve loan. Are you sure?"
+                    />
+                <button
+                    name="workflow_action_cancel"
+                    string="Cancel"
+                    type="object"
+                    attrs="{'invisible':['|',('state','not in',['draft','confirm','approve','active']),('cancel_ok','=',False)]}"
+                    confirm="Cancel loan. Are you sure?"
+                    />
+                <button
+                    string="Select Realization Entry"
+                    name="%(loan_select_realization_entry_action)d"
+                    type="action"
+                    attrs="{'invisible': [('state', '!=', 'approve')]}"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve,active"/>
+            </header>
+            <sheet>
+                <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
+                </div>
+                <div class="oe_left" style="width: 500px;">
+                    <div class="oe_title" style="width: 500px;">
+                        <label for="name"/>
+                        <h1>
+                            <field name="display_name" string="# Loan" class="oe_read_only"/>
+                            <field name="name" class="oe_edit_only"/>
+                        </h1>
+                    </div>
+                </div>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="partner_id"/>
+                        <field name="request_date"/>
+                    </group>
+                    <group name="group_1_2" colspan="1" col="2">
+                        <field name="type_id"/>
+                        <field name="direction" invisible="1"/>
+                        <field name="currency_id" invisible="0"/>
+                        <field name="maximum_loan_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                        <field name="loan_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                        <field name="maximum_installment_period"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page name="page_schedule" string="Repayment Terms">
+                        <button name="action_compute_payment" type="object" string="Compute Payment" icon="gtk-execute" states="draft"/>
+                        <group name="group_schedule_1" colspan="4" col="2">
+                            <group name="group_schedule_1_1" colspan="1" col="2">
+                                <field name="first_payment_date"/>
+                                <field name="interest"/>
+                                <field name="undue_interest"/>
+                                <field name="manual_loan_period"/>
+                            </group>
+                            <group name="group_schedule_1_2" colspan="1" col="2">
+                                <field name="annual_amount"  widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                <field name="first_principle_payment_date"/>
+                                <field name="manual_interest_period"/>
+                                <field name="manual_principle_period"/>
+                            </group>
+                        </group>
+                        <field name="payment_schedule_ids" colspan="4" nolabel="1" readonly="0" editable="bottom">
+                            <tree string="Payment Schedules">
+                                <field name="euribor"/>
+                                <field name="schedule_date"/>
+                                <field name="paid_date"/>
+                                <field name="pervious_payment_date" invisible="1"/>
+                                <field name="interest_day"/>
+                                <field name="principle_amount" sum="Total Principle Amount"/>
+                                <field name="interest_amount" sum="Total Interest Amount"/>
+                                <field name="undue_interest_amount" sum="Total Undue Interest Amount"/>
+                                <field name="difference_day" sum="Total Late Days"/>
+                                <field name="interest_move_line_id" invisible="1"/>
+                                <button name="%(realize_interest_action)d" type="action"
+                                    attrs="{'invisible':[
+                                        '|',
+                                        ('state', '!=', 'active'),
+                                        '&amp;',
+                                        ('state', '=', 'active'),
+                                        ('interest_move_line_id','!=',False)]}"
+                                    string="Realize Interest" icon="gtk-execute"/>
+                                <field name="installment_amount" sum="Total Installment Amount"/>
+                                <field name="balance_amount"/>
+                                <field name="other_expense" invisible="0"/>
+                                <field name="principle_payment_state"/>
+                                <field name="interest_payment_state"/>
+                                <field name="state" invisible="1"/>
+                                <field name="old_principle_move_line_id" invisible="1"/>
+                                <button name="action_long_to_short_term" type="object"
+                                    attrs="{'invisible':[
+                                        '|',
+                                        '&amp;',
+                                        ('state', '=', 'active'),
+                                        ('old_principle_move_line_id','!=',False),
+                                        ('state', '!=', 'active'),
+                                        ]}"
+                                    string="Convert Long Term Into Short Term Loan" icon="gtk-execute"/>
+                            </tree>
+                            <form string="Payment Schedule">
+                                <header>
+                                    <button name="%(realize_interest_action)d" type="action"
+                                        attrs="{'invisible':[
+                                            '|',
+                                            ('state', '!=', 'active'),
+                                            '&amp;',
+                                            ('state', '=', 'active'),
+                                            ('interest_move_line_id','!=',False)]}"
+                                        string="Realize Interest" icon="gtk-execute"/>
+                                        <button name="action_long_to_short_term" type="object"
+                                            attrs="{'invisible':[
+                                                '|',
+                                                '&amp;',
+                                                ('state', '=', 'active'),
+                                                ('old_principle_move_line_id','!=',False),
+                                                ('state', '!=', 'active'),
+                                                ]}"
+                                            string="Convert Long Term Into Short Term Loan" icon="gtk-execute"/>
+                                </header>
+                                <group name="group_main" colspan="4" col="2">
+                                    <field name="loan_id"/>
+                                    <field name="state" invisible="1"/>
+                                    <field name="euribor"/>
+                                    <field name="schedule_date"/>
+                                    <field name="paid_date"/>
+                                    <field name="interest_day"/>
+                                    <field name="installment_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                    <field name="currency_id" invisible="0"/>
+                                </group>
+                                <notebook colspan="4">
+                                    <page name="page_principle" string="Principle">
+                                        <group name="group_principle" colspan="4" col="2">
+                                            <field name="principle_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                            <field name="balance_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                            <field name="principle_payment_state"/>
+                                            <field name="principle_move_id"/>
+                                            <field name="principle_move_line_id"/>
+                                            <field name="old_principle_move_line_id"/>
+                                        </group>
+                                    </page>
+                                    <page name="page_interest" string="Interest">
+                                        <group name="group_interest" colspan="4" col="2">
+                                            <field name="interest_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                            <field name="interest_payment_state"/>
+                                            <field name="interest_move_id"/>
+                                            <field name="interest_move_line_id"/>
+                                        </group>
+                                    </page>
+                                </notebook>
+                            </form>
+                        </field>
+                        <group name="group_schedulei_2" colspan="4" col="2">
+                            <field name="total_principle_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                            <field name="total_interest_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                            <button name="button_dummy" states="draft" string="(update)" type="object" class="oe_edit_only oe_link"/>
+                        </group>
+                    </page>
+                    <page name="page_realization" string="Realization">
+                        <group name="grp_realization" colspan="4" col="2">
+                            <field name="date_realization"/>
+                        </group>
+                    </page>
+                    <page name="page_accounting" string="Accounting" groups="account.group_account_user">
+                        <group name="group_receivable" colspan="4" col="2" string="Realization">
+                            <field name="move_realization_id"/>
+                            <field name="move_line_header_id"/>
+                            <field name="realized"/>
+                        </group>
+                    </page>
+                    <page name="policy" string="Policy" groups="base.group_system">
+                        <group name="policy_1" colspan="4" col="2">
+                            <field name="confirm_ok"/>
+                            <field name="approve_ok"/>
+                            <field name="cancel_ok"/>
+                            <field name="restart_ok"/>
+                        </group>
+                    </page>
+                    <page name="page_audit" string="Audit">
+                        <group name="group_audit" colspan="4" col="3">
+                            <field name="confirm_date"/>
+                            <field name="confirm_uid" nolabel="1"/>
+                            <field name="approve_date"/>
+                            <field name="approve_uid" nolabel="1"/>
+                            <field name="realization_date"/>
+                            <field name="realization_uid" nolabel="1"/>
+                            <field name="done_date"/>
+                            <field name="done_uid" nolabel="1"/>
+                            <field name="cancel_date"/>
+                            <field name="cancel_uid" nolabel="1"/>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+    </field>
+</record>
+<!--
+<record id="loan_common_action" model="ir.actions.act_window">
+    <field name="name">Loans</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">loan.common</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="loan_common_view_search"/>
+</record>
+
+<menuitem
+    id="loan_header_menu"
+    name="Loan"
+    parent="hr.menu_hr_root"/>
+
+<menuitem
+    id="loan_common_menu"
+    name="Loans"
+    parent="loan_header_menu"
+    action="loan_common_action"/>
+
+<record id="loan_common_view_tree_my_loan" model="ir.ui.view">
+    <field name="name">loan.common tree - My Loan</field>
+    <field name="model">loan.common</field>
+    <field name="inherit_id" ref="loan_common_view_tree"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="loan_common_view_form_my_loan" model="ir.ui.view">
+    <field name="name">loan.common form - My Loan</field>
+    <field name="model">loan.common</field>
+    <field name="inherit_id" ref="loan_common_view_form"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//button[@name='workflow_action_approve']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='page_accounting']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='page_audit']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="loan_common_action_my_loan" model="ir.actions.act_window">
+    <field name="name">My Loans</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">loan.common</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="loan_common_view_search"/>
+    <field name="domain">[('partner_id.user_id', '=', uid)]</field>
+</record>
+
+<record id="loan_common_act_window_tree_my_loan" model="ir.actions.act_window.view">
+    <field name="sequence" eval="1"/>
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="loan_common_view_tree_my_loan"/>
+    <field name="act_window_id" ref="loan_common_action_my_loan"/>
+</record>
+
+<record id="loan_common_act_window_form_my_loan" model="ir.actions.act_window.view">
+    <field name="sequence" eval="1"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="loan_common_view_form_my_loan"/>
+    <field name="act_window_id" ref="loan_common_action_my_loan"/>
+</record>
+
+<menuitem
+    id="loan_common_menu_my_loan"
+    name="My Loans"
+    parent="loan_header_menu"
+    action="loan_common_action_my_loan"/>
+
+<record id="loan_common_payment_schedule_view_search" model="ir.ui.view">
+    <field name="name">loan.common.payment.schedule search</field>
+    <field name="model">loan.common.payment.schedule</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="loan_id"/>
+            <field name="schedule_date"/>
+            <field name="principle_payment_state"/>
+            <field name="interest_payment_state"/>
+        </search>
+    </field>
+</record>
+
+<record id="loan_common_payment_schedule_view_tree" model="ir.ui.view">
+    <field name="name">loan.common.payment.schedule tree</field>
+    <field name="model">loan.common.payment.schedule</field>
+    <field name="arch" type="xml">
+        <tree string="Loan Payment Schedule" create="false" edit="false" delete="false">
+            <field name="loan_id"/>
+            <field name="partner_id"/>
+            <field name="schedule_date"/>
+            <field name="currency_id" invisible="1"/>
+            <field name="principle_amount" sum="Total Principle Amount"/>
+            <field name="interest_amount" sum="Total Interest Amount"/>
+            <field name="interest_move_line_id" invisible="1"/>
+            <button name="%(realize_interest_action)d" type="action"
+                attrs="{'invisible':[
+                    '|',
+                    ('state', '!=', 'active'),
+                    '&amp;',
+                    ('state', '=', 'active'),
+                    ('interest_move_line_id','!=',False)]}"
+                string="Realize Interest" icon="gtk-execute"/>
+            <field name="installment_amount" sum="Total Installment Amount"/>
+            <field name="principle_payment_state"/>
+            <field name="interest_payment_state"/>
+            <field name="state" invisible="1"/>
+        </tree>
+    </field>
+</record>
+
+<record id="loan_common_payment_schedule_view_form" model="ir.ui.view">
+    <field name="name">loan.common.payment.schedule form</field>
+    <field name="model">loan.common.payment.schedule</field>
+    <field name="arch" type="xml">
+        <form string="Loan Payment Schedule" create="false" edit="false" delete="false">
+            <header>
+                <button name="%(realize_interest_action)d" type="action"
+                    attrs="{'invisible':[
+                        '|',
+                        ('state', '!=', 'active'),
+                        '&amp;',
+                        ('state', '=', 'active'),
+                        ('interest_move_line_id','!=',False)]}"
+                    string="Realize Interest"/>
+            </header>
+            <sheet>
+                <group name="group_main" colspan="4" col="2">
+                    <field name="loan_id"/>
+                    <field name="state" invisible="1"/>
+                    <field name="partner_id"/>
+                    <field name="schedule_date"/>
+                    <field name="installment_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                    <field name="currency_id" invisible="1"/>
+                </group>
+                <notebook colspan="4">
+                    <page name="page_principle" string="Principle">
+                        <group name="group_principle" colspan="4" col="2">
+                            <field name="principle_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                            <field name="principle_payment_state"/>
+                            <field name="principle_move_id" groups="account.group_account_user"/>
+                            <field name="principle_move_line_id" groups="account.group_account_user"/>/>
+                        </group>
+                    </page>
+                    <page name="page_interest" string="Interest">
+                        <group name="group_interest" colspan="4" col="2">
+                            <field name="interest_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                            <field name="interest_payment_state"/>
+                            <field name="interest_move_id" groups="account.group_account_user"/>
+                            <field name="interest_move_line_id" groups="account.group_account_user"/>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="loan_common_payment_schedule_action" model="ir.actions.act_window">
+    <field name="name">Loan Repayment Schedules</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">loan.common.payment.schedule</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="loan_common_payment_schedule_view_search"/>
+</record>
+
+<menuitem
+    id="loan_common_payment_schedule_menu"
+    name="Repayment Schedules"
+    parent="loan_header_menu"
+    action="loan_common_payment_schedule_action"/>
+
+<record id="loan_common_action_employee" model="ir.actions.act_window">
+    <field name="name">Loans</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">loan.common</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="loan_common_view_search"/>
+    <field name="domain">[('partner_id', '=', active_id)]</field>
+    <field name="context">{'default_partner_id': active_id}</field>
+</record>
+
+<record id="loan_common_payment_schedule_action_employee" model="ir.actions.act_window">
+    <field name="name">Loan Repayment Schedules</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">loan.common.payment.schedule</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="loan_common_payment_schedule_view_search"/>
+    <field name="domain">[('partner_id', '=', active_id)]</field>
+</record> -->
+</data>
+</openerp>

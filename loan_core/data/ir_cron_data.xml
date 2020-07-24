@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+<record forcecreate="True" id="ir_cron_loan_in_interest_realization" model="ir.cron">
+    <field name="name">Loan In Interest Realization</field>
+    <field eval="False" name="active"/>
+    <field name="user_id" ref="base.user_root"/>
+    <field name="interval_number">1</field>
+    <field name="interval_type">days</field>
+    <field name="numbercall">-1</field>
+    <field eval="False" name="doall"/>
+    <field eval="'loan.in_payment_schedule'" name="model"/>
+    <field eval="'realize_interest_income'" name="function"/>
+    <field eval="'()'" name="args"/>
+</record>
+
+<record forcecreate="True" id="ir_cron_loan_out_interest_realization" model="ir.cron">
+    <field name="name">Loan Out Interest Realization</field>
+    <field eval="False" name="active"/>
+    <field name="user_id" ref="base.user_root"/>
+    <field name="interval_number">1</field>
+    <field name="interval_type">days</field>
+    <field name="numbercall">-1</field>
+    <field eval="False" name="doall"/>
+    <field eval="'loan.out_payment_schedule'" name="model"/>
+    <field eval="'realize_interest_income'" name="function"/>
+    <field eval="'()'" name="args"/>
+</record>
+
+</data>
+</openerp>

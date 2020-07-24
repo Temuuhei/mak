@@ -1,0 +1,1278 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* loan_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.common:loan_core.loan_common_view_tree
+#: field:loan.common,name:0
+#: field:loan.in,name:0
+#: field:loan.in_payment_schedule,loan_id:0
+#: field:loan.out,name:0
+#: field:loan.out_payment_schedule,loan_id:0
+#: field:loan.payment_schedule_common,loan_id:0
+msgid "# Loan"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:339
+#, python-format
+msgid "%s %s interest income"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:297
+#, python-format
+msgid "%s %s interest receivable"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:445
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:473
+#, python-format
+msgid "%s %s long to short"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:256
+#, python-format
+msgid "%s %s principle receivable"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:573
+#, python-format
+msgid "%s loan realization"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:600
+#, python-format
+msgid "%s loan rounding"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.model,name:loan_core.model_loan_common
+msgid "Abstract Model for Loan"
+msgstr ""
+
+#. module: loan_core
+#: help:loan.type,account_realization_id:0
+msgid "Account that will server as cross-account for realization.\n"
+"\n"
+"It will use as debit account for loan in or credit account for loan out"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "Accounting"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.common,state:0
+#: selection:loan.in,state:0
+#: selection:loan.out,state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: selection:loan.payment_schedule_common,state:0
+#: field:loan.type,active:0
+msgid "Active"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+msgid "Actived"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,loan_approve_group_ids:0
+msgid "Allow To Approve Loan"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,loan_cancel_group_ids:0
+msgid "Allow To Cancel Loan"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,loan_confirm_group_ids:0
+msgid "Allow To Confirm Loan"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,loan_restart_group_ids:0
+msgid "Allow To Restart Loan"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.select_realization_entry,allowed_move_line_ids:0
+msgid "Allowed Move Lines"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.type,interest_method:0
+msgid "Anuity"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+msgid "Apply"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,approve_uid:0
+#: field:loan.in,approve_uid:0
+#: field:loan.out,approve_uid:0
+msgid "Approve By"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,approve_date:0
+#: field:loan.in,approve_date:0
+#: field:loan.out,approve_date:0
+msgid "Approve Date"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Approve loan. Are you sure?"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+msgid "Approved"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Audit"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,approve_ok:0
+#: field:loan.in,approve_ok:0
+#: field:loan.out,approve_ok:0
+msgid "Can Approve"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,cancel_ok:0
+#: field:loan.in,cancel_ok:0
+#: field:loan.out,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,confirm_ok:0
+#: field:loan.in,confirm_ok:0
+#: field:loan.out,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,restart_ok:0
+#: field:loan.in,restart_ok:0
+#: field:loan.out,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:356
+#, python-format
+msgid "Can not convert long term into short term"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: view:loan.realize_interest:loan_core.realize_interest_view_form
+#: view:loan.select_realization_entry:loan_core.loan_select_realization_entry_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,cancel_uid:0
+#: field:loan.in,cancel_uid:0
+#: field:loan.out,cancel_uid:0
+msgid "Cancel By"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,cancel_date:0
+#: field:loan.in,cancel_date:0
+#: field:loan.out,cancel_date:0
+msgid "Cancel Date"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Cancel loan. Are you sure?"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+#: selection:loan.common,state:0
+#: selection:loan.in,state:0
+#: selection:loan.out,state:0
+#: selection:loan.payment_schedule_common,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,code:0
+msgid "Code"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.model,name:loan_core.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+#: field:loan.common,company_id:0
+#: field:loan.config_setting,company_id:0
+#: field:loan.in,company_id:0
+#: field:loan.out,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Compute Payment"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.ui.menu,name:loan_core.loan_config_setting_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,confirm_uid:0
+#: field:loan.in,confirm_uid:0
+#: field:loan.out,confirm_uid:0
+msgid "Confirm By"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,confirm_date:0
+#: field:loan.in,confirm_date:0
+#: field:loan.out,confirm_date:0
+msgid "Confirm Date"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Confirm loan. Are you sure?"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_form
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_tree
+msgid "Convert Long Term Into Short Term Loan"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.config_setting,create_uid:0
+#: field:loan.in,create_uid:0
+#: field:loan.in_payment_schedule,create_uid:0
+#: field:loan.out,create_uid:0
+#: field:loan.out_payment_schedule,create_uid:0
+#: field:loan.realize_interest,create_uid:0
+#: field:loan.select_realization_entry,create_uid:0
+#: field:loan.type,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.config_setting,create_date:0
+#: field:loan.in,create_date:0
+#: field:loan.in_payment_schedule,create_date:0
+#: field:loan.out,create_date:0
+#: field:loan.out_payment_schedule,create_date:0
+#: field:loan.realize_interest,create_date:0
+#: field:loan.select_realization_entry,create_date:0
+#: field:loan.type,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,currency_id:0
+#: field:loan.in,currency_id:0
+#: field:loan.in_payment_schedule,currency_id:0
+#: field:loan.out,currency_id:0
+#: field:loan.out_payment_schedule,currency_id:0
+#: field:loan.payment_schedule_common,currency_id:0
+#: field:loan.type,currency_id:0
+msgid "Currency"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.realize_interest,date_realization:0
+msgid "Date Realization"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+msgid "Date Request by Day"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+msgid "Date Request by Month"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+msgid "Date Request by Week"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+msgid "Date Request by Year"
+msgstr ""
+
+#. module: loan_core
+#: help:loan.common,message_last_post:0
+#: help:loan.in,message_last_post:0
+#: help:loan.out,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,decription:0
+msgid "Description"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,direction:0
+#: field:loan.in,direction:0
+#: field:loan.out,direction:0
+#: field:loan.type,direction:0
+msgid "Direction"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,display_name:0
+#: field:loan.config_setting,display_name:0
+#: field:loan.in,display_name:0
+#: field:loan.in_payment_schedule,display_name:0
+#: field:loan.out,display_name:0
+#: field:loan.out_payment_schedule,display_name:0
+#: field:loan.payment_schedule_common,display_name:0
+#: field:loan.realize_interest,display_name:0
+#: field:loan.select_realization_entry,display_name:0
+#: field:loan.type,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+#: selection:loan.common,state:0
+#: selection:loan.in,state:0
+#: selection:loan.out,state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: selection:loan.payment_schedule_common,state:0
+msgid "Done"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,done_uid:0
+#: field:loan.in,done_uid:0
+#: field:loan.out,done_uid:0
+msgid "Done By"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,done_date:0
+#: field:loan.in,done_date:0
+#: field:loan.out,done_date:0
+msgid "Done Date"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+#: selection:loan.common,state:0
+#: selection:loan.in,state:0
+#: selection:loan.out,state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: selection:loan.payment_schedule_common,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.type,interest_method:0
+msgid "Effective"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+msgid "Feature"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+msgid "Feature & Integration"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,first_payment_date:0
+#: field:loan.in,first_payment_date:0
+#: field:loan.out,first_payment_date:0
+msgid "First Payment Date"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.type,interest_method:0
+msgid "Flat"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,message_follower_ids:0
+#: field:loan.in,message_follower_ids:0
+#: field:loan.out,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "General Information"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+msgid "Group By.."
+msgstr ""
+
+#. module: loan_core
+#: help:loan.common,message_summary:0
+#: help:loan.in,message_summary:0
+#: help:loan.out,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,id:0
+#: field:loan.config_setting,id:0
+#: field:loan.in,id:0
+#: field:loan.in_payment_schedule,id:0
+#: field:loan.out,id:0
+#: field:loan.out_payment_schedule,id:0
+#: field:loan.payment_schedule_common,id:0
+#: field:loan.realize_interest,id:0
+#: field:loan.select_realization_entry,id:0
+#: field:loan.type,id:0
+msgid "ID"
+msgstr ""
+
+#. module: loan_core
+#: help:loan.common,message_unread:0
+#: help:loan.in,message_unread:0
+#: help:loan.out,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.common,direction:0
+#: selection:loan.type,direction:0
+msgid "In"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,installment_amount:0
+#: field:loan.out_payment_schedule,installment_amount:0
+#: field:loan.payment_schedule_common,installment_amount:0
+msgid "Installment Amount"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+msgid "Integration"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_form
+msgid "Interest"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,interest:0
+#: field:loan.in,interest:0
+#: field:loan.out,interest:0
+msgid "Interest (p.a)"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,account_interest_id:0
+msgid "Interest Account"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,interest_amount:0
+#: field:loan.out_payment_schedule,interest_amount:0
+#: field:loan.payment_schedule_common,interest_amount:0
+#: field:loan.type,interest_amount:0
+msgid "Interest Amount"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,account_interest_income_id:0
+msgid "Interest Income Account"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,interest_journal_id:0
+msgid "Interest Journal"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,interest_method:0
+msgid "Interest Method"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,interest_move_id:0
+#: field:loan.out_payment_schedule,interest_move_id:0
+#: field:loan.payment_schedule_common,interest_move_id:0
+msgid "Interest Move"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,interest_move_line_id:0
+#: field:loan.out_payment_schedule,interest_move_line_id:0
+#: field:loan.payment_schedule_common,interest_move_line_id:0
+msgid "Interest Move Line"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,interest_payment_state:0
+#: field:loan.out_payment_schedule,interest_payment_state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: field:loan.payment_schedule_common,interest_payment_state:0
+msgid "Interest Payment State"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "Interest Realization"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+msgid "Interest Realization Cron"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,message_is_follower:0
+#: field:loan.in,message_is_follower:0
+#: field:loan.out,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,message_last_post:0
+#: field:loan.in,message_last_post:0
+#: field:loan.out,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,__last_update:0
+#: field:loan.config_setting,__last_update:0
+#: field:loan.in,__last_update:0
+#: field:loan.in_payment_schedule,__last_update:0
+#: field:loan.out,__last_update:0
+#: field:loan.out_payment_schedule,__last_update:0
+#: field:loan.payment_schedule_common,__last_update:0
+#: field:loan.realize_interest,__last_update:0
+#: field:loan.select_realization_entry,__last_update:0
+#: field:loan.type,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.config_setting,write_uid:0
+#: field:loan.in,write_uid:0
+#: field:loan.in_payment_schedule,write_uid:0
+#: field:loan.out,write_uid:0
+#: field:loan.out_payment_schedule,write_uid:0
+#: field:loan.realize_interest,write_uid:0
+#: field:loan.select_realization_entry,write_uid:0
+#: field:loan.type,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.config_setting,write_date:0
+#: field:loan.in,write_date:0
+#: field:loan.in_payment_schedule,write_date:0
+#: field:loan.out,write_date:0
+#: field:loan.out_payment_schedule,write_date:0
+#: field:loan.realize_interest,write_date:0
+#: field:loan.select_realization_entry,write_date:0
+#: field:loan.type,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.ui.menu,name:loan_core.loan_configuration_menu
+#: model:ir.ui.menu,name:loan_core.loan_root_menu
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.common:loan_core.loan_common_view_search
+#: view:loan.common:loan_core.loan_common_view_tree
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "Loan"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,loan_amount:0
+#: field:loan.in,loan_amount:0
+#: field:loan.out,loan_amount:0
+msgid "Loan Amount"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.act_window,name:loan_core.loan_config_setting_action
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "Loan Configuration"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.act_window,name:loan_core.loan_in_action
+#: model:ir.model,name:loan_core.model_loan_in
+#: model:ir.ui.menu,name:loan_core.loan_in_menu
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+msgid "Loan In"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.config_setting,cron_loan_in_interest_realization_id:0
+#: field:res.company,cron_loan_in_interest_realization_id:0
+msgid "Loan In Interest Realization Cron"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.server,name:loan_core.ir_action_server_02
+msgid "Loan In Payment"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.act_window,name:loan_core.loan_in_payment_schedule_action
+#: model:ir.ui.menu,name:loan_core.loan_in_payment_schedule_menu
+msgid "Loan In Payment Schedule"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.act_window,name:loan_core.loan_out_action
+#: model:ir.model,name:loan_core.model_loan_out
+#: model:ir.ui.menu,name:loan_core.loan_out_menu
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+msgid "Loan Out"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.config_setting,cron_loan_out_interest_realization_id:0
+#: field:res.company,cron_loan_out_interest_realization_id:0
+msgid "Loan Out Interest Realization Cron"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.server,name:loan_core.ir_action_server_04
+msgid "Loan Out Payment"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.act_window,name:loan_core.loan_out_payment_schedule_action
+#: model:ir.ui.menu,name:loan_core.loan_out_payment_schedule_menu
+msgid "Loan Out Payment Schedule"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.model,name:loan_core.model_loan_in_payment_schedule
+#: model:ir.model,name:loan_core.model_loan_out_payment_schedule
+#: model:ir.model,name:loan_core.model_loan_payment_schedule_common
+msgid "Loan Payment Schedule"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,manual_loan_period:0
+#: field:loan.in,manual_loan_period:0
+#: field:loan.out,manual_loan_period:0
+msgid "Loan Period"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.act_window,name:loan_core.loan_type_action
+#: model:ir.model,name:loan_core.model_loan_type
+#: model:ir.ui.menu,name:loan_core.loan_type_menu
+#: view:loan.common:loan_core.loan_common_view_search
+#: field:loan.common,type_id:0
+#: field:loan.in,type_id:0
+#: field:loan.out,type_id:0
+#: view:loan.type:loan_core.loan_type_view_form
+#: view:loan.type:loan_core.loan_type_view_tree
+#: field:loan.type,name:0
+msgid "Loan Type"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "Loan Type Code"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "Loan Type and Code"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:321
+#, python-format
+msgid "Loan amount exceed maximum loan amount"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:317
+#, python-format
+msgid "Loan amount has to be greater than 0"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:413
+#, python-format
+msgid "Loan can only be cancelled on draft, waiting for approval or ready to be process state"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:332
+#, python-format
+msgid "Loan period exceed maximum installment period"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:329
+#, python-format
+msgid "Loan period has to be greated than 0"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,long_account_principle_id:0
+msgid "Long-Term Principle Account"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,manual_realization:0
+#: field:loan.in,manual_realization:0
+#: field:loan.out,manual_realization:0
+msgid "Manual Realization"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,maximum_installment_period:0
+#: field:loan.in,maximum_installment_period:0
+#: field:loan.out,maximum_installment_period:0
+#: field:loan.type,maximum_installment_period:0
+msgid "Maximum Installment Period"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,maximum_loan_amount:0
+#: field:loan.in,maximum_loan_amount:0
+#: field:loan.out,maximum_loan_amount:0
+#: field:loan.type,maximum_loan_amount:0
+msgid "Maximum Loan Amount"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,message_ids:0
+#: field:loan.in,message_ids:0
+#: field:loan.out,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: loan_core
+#: help:loan.common,message_ids:0
+#: help:loan.in,message_ids:0
+#: help:loan.out,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.select_realization_entry,move_line_ids:0
+msgid "Move Lines"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:330
+#, python-format
+msgid "No interest income account defined"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:178
+#, python-format
+msgid "No interest journal defined"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:408
+#, python-format
+msgid "No interest realization journal defined"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/wizard/realize_interest.py:28
+#, python-format
+msgid "No loan repayment schedule selected"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:243
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:464
+#, python-format
+msgid "No long-term principle account defined"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:565
+#, python-format
+msgid "No realization account defined"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:525
+#, python-format
+msgid "No realization journal defined"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:592
+#, python-format
+msgid "No rounding account defined"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:248
+#: code:addons/loan_core/models/loan_payment_schedule_common.py:436
+#, python-format
+msgid "No short-term principle account defined"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,old_principle_move_line_id:0
+#: field:loan.out_payment_schedule,old_principle_move_line_id:0
+#: field:loan.payment_schedule_common,old_principle_move_line_id:0
+msgid "Old Principle Move Line"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.common,direction:0
+#: selection:loan.type,direction:0
+msgid "Out"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.in_payment_schedule,interest_payment_state:0
+#: selection:loan.in_payment_schedule,principle_payment_state:0
+#: selection:loan.out_payment_schedule,interest_payment_state:0
+#: selection:loan.out_payment_schedule,principle_payment_state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: selection:loan.payment_schedule_common,interest_payment_state:0
+#: selection:loan.payment_schedule_common,principle_payment_state:0
+msgid "Paid"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+msgid "Partial"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.in_payment_schedule,interest_payment_state:0
+#: selection:loan.in_payment_schedule,principle_payment_state:0
+#: selection:loan.out_payment_schedule,interest_payment_state:0
+#: selection:loan.out_payment_schedule,principle_payment_state:0
+#: selection:loan.payment_schedule_common,interest_payment_state:0
+#: selection:loan.payment_schedule_common,principle_payment_state:0
+msgid "Partial Paid"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+#: field:loan.common,partner_id:0
+#: field:loan.in,partner_id:0
+#: field:loan.in_payment_schedule,partner_id:0
+#: field:loan.out,partner_id:0
+#: field:loan.out_payment_schedule,partner_id:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: field:loan.payment_schedule_common,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Payment Schedule"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: field:loan.common,payment_schedule_ids:0
+#: field:loan.in,payment_schedule_ids:0
+#: field:loan.out,payment_schedule_ids:0
+msgid "Payment Schedules"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "Priciple Realization"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_form
+msgid "Principle"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,principle_amount:0
+#: field:loan.out_payment_schedule,principle_amount:0
+#: field:loan.payment_schedule_common,principle_amount:0
+msgid "Principle Amount"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,principle_move_id:0
+#: field:loan.out_payment_schedule,principle_move_id:0
+#: field:loan.payment_schedule_common,principle_move_id:0
+msgid "Principle Move"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,principle_move_line_id:0
+#: field:loan.out_payment_schedule,principle_move_line_id:0
+#: field:loan.payment_schedule_common,principle_move_line_id:0
+msgid "Principle Move Line"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,principle_payment_state:0
+#: field:loan.out_payment_schedule,principle_payment_state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: field:loan.payment_schedule_common,principle_payment_state:0
+msgid "Principle Payment State"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Realization"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,account_realization_id:0
+msgid "Realization Account"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,date_realization:0
+#: field:loan.common,realization_date:0
+#: field:loan.in,date_realization:0
+#: field:loan.in,realization_date:0
+#: field:loan.out,date_realization:0
+#: field:loan.out,realization_date:0
+msgid "Realization Date"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,realization_journal_id:0
+msgid "Realization Journal"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,move_realization_id:0
+#: field:loan.in,move_realization_id:0
+#: field:loan.out,move_realization_id:0
+msgid "Realization Journal Entry"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,move_line_header_id:0
+#: field:loan.in,move_line_header_id:0
+#: field:loan.out,move_line_header_id:0
+msgid "Realization Move Line Header"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,request_date:0
+#: field:loan.in,request_date:0
+#: field:loan.out,request_date:0
+msgid "Realization Request Date"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.realize_interest:loan_core.realize_interest_view_form
+msgid "Realize"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.act_window,name:loan_core.realize_interest_action
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_form
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_tree
+#: view:loan.realize_interest:loan_core.realize_interest_view_form
+msgid "Realize Interest"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.server,name:loan_core.ir_action_server_01
+msgid "Realize Loan In"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.model,name:loan_core.model_loan_realize_interest
+msgid "Realize Loan Interest"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.server,name:loan_core.ir_action_server_03
+msgid "Realize Loan Out"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,realized:0
+#: field:loan.in,realized:0
+#: field:loan.out,realized:0
+msgid "Realized"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,realization_uid:0
+#: field:loan.in,realization_uid:0
+#: field:loan.out,realization_uid:0
+msgid "Realized By"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.filters,name:loan_core.ir_filter_loan_in_02
+msgid "Realized Loan In"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.filters,name:loan_core.ir_filter_loan_02
+msgid "Reconcilled"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Repayment Terms"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,account_rounding_id:0
+msgid "Rounding Account"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.in_payment_schedule,schedule_date:0
+#: field:loan.out_payment_schedule,schedule_date:0
+#: field:loan.payment_schedule_common,schedule_date:0
+msgid "Schedule Date"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+msgid "Schedule Date by Day"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+msgid "Schedule Date by Month"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+msgid "Schedule Date by Week"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+msgid "Schedule Date by Year"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.select_realization_entry:loan_core.loan_select_realization_entry_view_form
+msgid "Select"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.actions.act_window,name:loan_core.loan_select_realization_entry_action
+#: model:ir.model,name:loan_core.model_loan_select_realization_entry
+#: view:loan.common:loan_core.loan_common_view_form
+msgid "Select Realization Entry"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,sequence_id:0
+msgid "Sequence"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.type,short_account_principle_id:0
+msgid "Short-Term Principle Account"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+#: field:loan.common,state:0
+#: field:loan.in,state:0
+#: field:loan.in_payment_schedule,state:0
+#: field:loan.out,state:0
+#: field:loan.out_payment_schedule,state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: field:loan.payment_schedule_common,state:0
+msgid "State"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,message_summary:0
+#: field:loan.in,message_summary:0
+#: field:loan.out,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: loan_core
+#: help:loan.in_payment_schedule,interest_move_id:0
+#: help:loan.in_payment_schedule,principle_move_id:0
+#: help:loan.out_payment_schedule,interest_move_id:0
+#: help:loan.out_payment_schedule,principle_move_id:0
+msgid "The move of this entry line."
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_tree
+msgid "Total Installment Amount"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: field:loan.common,total_interest_amount:0
+#: field:loan.in,total_interest_amount:0
+#: field:loan.out,total_interest_amount:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_tree
+msgid "Total Interest Amount"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_tree
+msgid "Total Loan Amount"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_form
+#: field:loan.common,total_principle_amount:0
+#: field:loan.in,total_principle_amount:0
+#: field:loan.out,total_principle_amount:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_tree
+msgid "Total Principle Amount"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.in_payment_schedule,interest_payment_state:0
+#: selection:loan.in_payment_schedule,principle_payment_state:0
+#: selection:loan.out_payment_schedule,interest_payment_state:0
+#: selection:loan.out_payment_schedule,principle_payment_state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: selection:loan.payment_schedule_common,interest_payment_state:0
+#: selection:loan.payment_schedule_common,principle_payment_state:0
+msgid "Unpaid"
+msgstr ""
+
+#. module: loan_core
+#: field:loan.common,message_unread:0
+#: field:loan.in,message_unread:0
+#: field:loan.out,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.filters,name:loan_core.ir_filter_loan_in_01
+msgid "Unrealized Loan In"
+msgstr ""
+
+#. module: loan_core
+#: model:ir.filters,name:loan_core.ir_filter_loan_01
+msgid "Unreconcilled"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.common:loan_core.loan_common_view_search
+#: selection:loan.common,state:0
+#: selection:loan.in,state:0
+#: selection:loan.out,state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: selection:loan.payment_schedule_common,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: loan_core
+#: selection:loan.common,state:0
+#: selection:loan.in,state:0
+#: selection:loan.out,state:0
+#: view:loan.payment_schedule_common:loan_core.loan_payment_schedule_common_view_search
+#: selection:loan.payment_schedule_common,state:0
+msgid "Waiting for Realization"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.type:loan_core.loan_type_view_form
+msgid "Workflow Policy"
+msgstr ""
+
+#. module: loan_core
+#: code:addons/loan_core/models/loan_common.py:348
+#, python-format
+msgid "You can not delete loan %s. \n"
+"\n"
+"                         Loan can be deleted only on cancel state and\n"
+"                         has not been assigned a\n"
+"                         loan number"
+msgstr ""
+
+#. module: loan_core
+#: view:loan.config_setting:loan_core.loan_config_setting_view_form
+#: view:loan.realize_interest:loan_core.realize_interest_view_form
+#: view:loan.select_realization_entry:loan_core.loan_select_realization_entry_view_form
+msgid "or"
+msgstr ""
+

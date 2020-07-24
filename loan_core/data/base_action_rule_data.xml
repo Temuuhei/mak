@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<!-- Loan In -->
+<record id="base_action_rule_01" model="base.action.rule">
+    <field name="name">Loan In Realization</field>
+    <field name="model_id" ref="account.model_account_move_line"/>
+    <field name="sequence" eval="1"/>
+    <field name="kind">on_write</field>
+    <field name="server_action_ids" eval="[(4, ref('loan_core.ir_action_server_01'))]"/>
+    <field name="filter_id" ref="loan_core.ir_filter_loan_02"/>
+</record>
+
+<record id="base_action_rule_02" model="base.action.rule">
+    <field name="name">Loan In Payment</field>
+    <field name="model_id" ref="account.model_account_move_line"/>
+    <field name="sequence" eval="1"/>
+    <field name="kind">on_write</field>
+    <field name="server_action_ids" eval="[(4, ref('loan_core.ir_action_server_02'))]"/>
+    <field name="filter_id" ref="loan_core.ir_filter_loan_02"/>
+</record>
+
+<!-- Loan Out -->
+<record id="base_action_rule_03" model="base.action.rule">
+    <field name="name">Loan Out Realization</field>
+    <field name="model_id" ref="account.model_account_move_line"/>
+    <field name="sequence" eval="1"/>
+    <field name="kind">on_write</field>
+    <field name="server_action_ids" eval="[(4, ref('loan_core.ir_action_server_03'))]"/>
+    <field name="filter_id" ref="loan_core.ir_filter_loan_02"/>
+</record>
+
+<record id="base_action_rule_04" model="base.action.rule">
+    <field name="name">Loan Out Payment</field>
+    <field name="model_id" ref="account.model_account_move_line"/>
+    <field name="sequence" eval="1"/>
+    <field name="kind">on_write</field>
+    <field name="server_action_ids" eval="[(4, ref('loan_core.ir_action_server_04'))]"/>
+    <field name="filter_id" ref="loan_core.ir_filter_loan_02"/>
+</record>
+</data>
+</openerp>
