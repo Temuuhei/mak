@@ -209,6 +209,7 @@
                                         <group name="group_principle" colspan="4" col="2">
                                             <field name="principle_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
                                             <field name="balance_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                            <field name="other_expense" widget="monetary" options="{'currency_field':'currency_id'}"/>
                                             <field name="principle_payment_state"/>
                                             <field name="principle_move_id"/>
                                             <field name="principle_move_line_id"/>
