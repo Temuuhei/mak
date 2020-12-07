@@ -42,7 +42,10 @@ class hse(http.Controller):
                 'description' : rec.description,
             }
             hse_rules.append(vals)
-        data = {'status':200, 'response' : hse_rules, 'message' : 'Done All Hse Rules Returned' }
+        if hse_rules:
+            data = {'status':200, 'response' : hse_rules, 'message' : 'Done All Hse Rules Returned' }
+        else:
+            data = {'status': 200, 'response': hse_rules, 'message': 'Hse Rules not found'}
         return data
 
 class hse_safety_plan(osv.osv):
