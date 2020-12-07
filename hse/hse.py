@@ -32,7 +32,6 @@ class hse(http.Controller):
 
     @http.route('/get_hse_rules', type = 'json',auth = 'user')
     def get_hse_rules(self):
-        print ('Yes entered here hse rules')
         hse_rules_recs = request.env['hse.rules.documents'].search([])
         hse_rules = []
         for rec in hse_rules_recs:
