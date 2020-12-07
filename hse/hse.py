@@ -23,7 +23,27 @@ from openerp.osv import fields, osv
 from datetime import datetime, timedelta
 from openerp.tools.translate import _
 from openerp.http import request
+from openerp import http
+from openerp.http import request
+
 import pytz
+
+class hse(http.Controller):
+
+    @http.route('/get_hse_rules', type = 'json',auth = 'user')
+    def get_hse_rules(self):
+        hse_rules_recs = request.env['hse.rules.documents'].search([])
+        hse_rules = []
+        for rec in hse_rules_recs:
+            vals = {
+                'id': rec.id,
+                'number' : rec.number,
+                'subject' : rec.subject,
+                'description' : rec.description,
+            }
+            hse_rules.append(vals)
+        data = {'status':200, 'response' : hse_rules, 'message' : 'Done All Hse Rules Returned' }
+        return data
 
 class hse_safety_plan(osv.osv):
     _name ='hse.safety.plan'
@@ -1506,6 +1526,7 @@ class hse_rules_documents(osv.osv):
         'number': fields.char('Number', required=True, size=40),
         'project_ids': fields.many2many('project.project', 'hse_rules_documents_project_rel', 'doc_id','project_id', 'Project', required=True),
         'subject': fields.char('Subject', required=True, size=200),
+        'description': fields.text('Description', size=320),
         'attachment_ids': fields.many2many('ir.attachment', 'hse_rules_documents_ir_attachments_rel','rules_documents_id', 'attachment_id', 'Attachments'),
     }
     
