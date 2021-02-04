@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+        <record id="group_mak_it_helpdesk_admin" model="res.groups">
+            <field name="name">IT-Helpdesk МТ ажилтан</field>
+            <field name="comment">Газар нэгжээс ирсэн МТ холбоотой хүсэлтийг шийдвэрлэх</field>
+    	</record>
+
+	</data>
+</openerp>
