@@ -5,7 +5,7 @@
 		 <record id="group_mak_audit" model="res.groups">
         <field name="name">Харилцагч гүйлгээ хийхэд имэйл хүлээн авах</field>
         <field name="comment">Энэ бүлгийн хэрэглэгчид хар жагсаалтад орсон харилцагчтай гүйлгээ хийхэд имэйл хүлээн авах эрхтэй байна</field>
-    </record>
+    	</record>
 
 		<!-- Sequences for Audit -->
 

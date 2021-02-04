@@ -1,0 +1,179 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mak_economic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-18 13:17+0000\n"
+"PO-Revision-Date: 2021-01-18 13:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.view_mak_economic_form
+msgid "Add a Description..."
+msgstr "Тайлбараа бичнэ үү.."
+
+#. module: mak_economic
+#: field:mak.economic,employee_id:0
+msgid "Assigned To"
+msgstr "Хариуцсан ажилтан"
+
+#. module: mak_economic
+#: field:mak.economic,create_uid:0
+msgid "Created by"
+msgstr "Үүсгэсэн хэрэглэгч"
+
+#. module: mak_economic
+#: field:mak.economic,create_date:0
+msgid "Created on"
+msgstr "Үүсгэсэн огноо"
+
+#. module: mak_economic
+#: field:mak.economic,date:0
+msgid "Date"
+msgstr "Огноо"
+
+#. module: mak_economic
+#: help:mak.economic,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.mak_economic_search_view
+#: field:mak.economic,day:0
+msgid "Day"
+msgstr "Өдөр"
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.view_mak_economic_form
+#: field:mak.economic,description:0
+msgid "Description"
+msgstr "Тайлбар"
+
+#. module: mak_economic
+#: field:mak.economic,display_name:0
+msgid "Display Name"
+msgstr "MAK Economic"
+
+#. module: mak_economic
+#: model:ir.model,name:mak_economic.model_mak_economic
+msgid "Email Thread"
+msgstr "MAK Economic"
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.mak_economic_search_view
+msgid "Employee"
+msgstr "Ажилтан"
+
+#. module: mak_economic
+#: field:mak.economic,message_follower_ids:0
+msgid "Followers"
+msgstr "Дагагчид"
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.mak_economic_search_view
+msgid "Group By"
+msgstr "Бүлэглэх"
+
+#. module: mak_economic
+#: help:mak.economic,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: mak_economic
+#: field:mak.economic,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mak_economic
+#: help:mak.economic,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: mak_economic
+#: field:mak.economic,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: mak_economic
+#: field:mak.economic,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: mak_economic
+#: field:mak.economic,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mak_economic
+#: field:mak.economic,write_uid:0
+msgid "Last Updated by"
+msgstr "Засвар хийсэн хэрэглэгч"
+
+#. module: mak_economic
+#: field:mak.economic,write_date:0
+msgid "Last Updated on"
+msgstr "Засвар хийсэн огноо"
+
+#. module: mak_economic
+#: model:ir.actions.act_window,name:mak_economic.action_mak_economic_window
+#: model:ir.ui.menu,name:mak_economic.menu_mak_hr_economic
+#: view:mak.economic:mak_economic.view_mak_economic_form
+#: view:mak.economic:mak_economic.view_mak_economic_tree
+msgid "Mak Economic"
+msgstr "Эдийн засгийн бүртгэл"
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.mak_economic_search_view
+msgid "Mak Economic Search"
+msgstr "Эдийн засаг хайлт"
+
+#. module: mak_economic
+#: field:mak.economic,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: mak_economic
+#: help:mak.economic,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.mak_economic_search_view
+#: field:mak.economic,month:0
+msgid "Month"
+msgstr "Сар"
+
+#. module: mak_economic
+#: field:mak.economic,name:0
+msgid "Name"
+msgstr "Нэр"
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.mak_economic_search_view
+#: field:mak.economic,department_id:0
+msgid "Sector"
+msgstr "Газар нэгж"
+
+#. module: mak_economic
+#: field:mak.economic,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: mak_economic
+#: field:mak.economic,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: mak_economic
+#: view:mak.economic:mak_economic.mak_economic_search_view
+#: field:mak.economic,year:0
+msgid "Year"
+msgstr "Жил"

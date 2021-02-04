@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+        <record id="group_mak_economic_admin" model="res.groups">
+        <field name="name">Экономик менежер</field>
+        <field name="comment">Эдийн засгийн бүх судалгааг харах өөрчлөх</field>
+    	<field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <record id="group_mak_economic" model="res.groups">
+        <field name="name">Экономик хэрэглэгч</field>
+        <field name="comment">Өөрийн нэгжийн эдийн засгийн судалгааг харах өөрчлөх</field>
+    	<field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+	</data>
+</openerp>
+
+<!--
+
+Bichlegiin durem deer oruulna
+
+['|',('department_id','=',False),('department_id','child_of',user.department_id.id)]
+
+Handah erhiin jargsaalt-d oruulna
+
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mak_economic_admin,access.mak.economic,model_mak_economic,group_mak_economic_admin,1,1,1,0
+access_mak_economic,access.mak.economic,model_mak_economic,group_mak_economic,1,1,1,0
+
+-->
