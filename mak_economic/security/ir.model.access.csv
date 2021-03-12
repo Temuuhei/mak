@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mak_economic_admin,access.mak.economic,model_mak_economic,group_mak_economic_admin,1,1,1,0
+access_mak_economic,access.mak.economic,model_mak_economic,group_mak_economic,1,1,1,0

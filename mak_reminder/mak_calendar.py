@@ -137,5 +137,3 @@ class  mak_reminder(osv.Model):
                         else:
                             raise ValidationError(
                                 _('Имэйл хаяггүй хэрэглэгч байгаа тул илгээж чадсангүй. Админтай холбогдоно уу.'))
-
-

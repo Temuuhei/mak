@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="seq_type_it_helpdesk" model="ir.sequence.type">
+			<field name="name">MAK IT Helpdesk Sequence</field>
+			<field name="code">mak.it.helpdesk</field>
+		</record>
+
+		<record id="sequence_it_helpdesk" model="ir.sequence">
+			<field name="name">MAK IT Helpdesk permission</field>
+			<field name="code">mak.it.helpdesk</field>
+			<field name="prefix">IT_%(year)s/%(month)s/%(day)s/</field>
+			<field name="padding">2</field>
+			<field name="reset_daily">True</field>
+		</record>
+
+    <record model="ir.ui.view" id="view_mak_it_helpdesk_form">
+        <field name="name">mak.it.helpdesk.form</field>
+        <field name="model">mak.it.helpdesk</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="IT Helpdesk">
+                <header>
+                    <button name="action_sent" states="draft" String="Илгээх" type="object" icon="gtk-apply"/>
+                    <button name="action_cancel" states="sent" String="Цуцлах" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                    <button name="action_done" states="sent" String="Дууссан" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,done"/>
+                </header>
+                <sheet>
+                    <div class="pull-left">
+          				<h1>
+							<field name="sequence_id" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+                    <group>
+                        <group>
+                        <field name="department_id"/>
+                        <field name="employee_id" domain="[('department_id','=',department_id)]" required = "1" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit' : True}"
+                        attrs="{'readonly': [('state','in',('done', 'sent', 'cancel'))]}"/>
+                        </group>
+                        <group>
+                        <field name="name" required = "1" attrs="{'readonly': [('state','in',('done','sent','cancel'))]}"/>
+                        <field name="type" required = "1" attrs="{'readonly': [('state','in',('done','sent','cancel'))]}"/>
+                        <field name="priority" required = "1" attrs="{'readonly': [('state','in',('done','sent','cancel'))]}"/>
+                        </group>
+                    </group>
+                    <separator string="Description" />
+                    <field name="description" placeholder="Add a Description..." attrs="{'readonly': [('state','in',('done','sent','cancel'))]}"/>
+                    <separator string="Done description" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                    <field name="done_description" placeholder="Add a Description..." attrs="{'readonly': [('state','in',('done', 'cancel'))]}" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+
+                </sheet>
+                <div class="oe_chatter">
+                    	<field name="message_follower_ids" widget="mail_followers"/>
+                    	<field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mak_it_helpdesk_tree">
+        <field name="name">mak.it.helpdesk.tree</field>
+        <field name="model">mak.it.helpdesk</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="IT Helpdesk" >
+                <!--colors="red:priority == 'a'"-->
+                <field name="sequence_id"/>
+                <field name="priority"/>
+                <field name="department_id"/>
+                <field name="employee_id"/>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="description"/>
+                <field name="assigned"/>
+                <field name="write_date"/>
+                <field name="done_description"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mak_it_helpdesk_search_view" model="ir.ui.view">
+        <field name="name">mak.it.helpdesk.search</field>
+        <field name="model">mak.it.helpdesk</field>
+        <field name="arch" type="xml">
+            <search string="IT Helpdesk search">
+                <group expand="0" string="Group By">
+                    <filter string="Year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
+                    <filter string="Employee" domain="[]" context="{'group_by':'employee_id'}"/>
+                    <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                    <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
+                    <filter string="Type" domain="[]" context="{'group_by':'type'}"/>
+                    <filter string="Priority" domain="[]" context="{'group_by':'priority'}"/>
+                    <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Assigned" domain="[]" context="{'group_by':'assigned'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_mak_it_helpdesk_window" model="ir.actions.act_window">
+        <field name="name">IT Helpdesk</field>
+        <field name="res_model">mak.it.helpdesk</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+        <menuitem name="IT Helpdesk" id="menu_mak_it_helpdesk" sequence="3" parent="mail.mail_my_stuff" action='action_mak_it_helpdesk_window'/>
+    </data>
+</openerp>
