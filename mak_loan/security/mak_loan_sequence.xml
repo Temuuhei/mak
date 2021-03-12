@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+        <record id="seq_type_loan" model="ir.sequence.type">
+            <field name="name">MAK Loan Sequence</field>
+            <field name="code">mak.loan</field>
+        </record>
+        <record id="sequence_loan" model="ir.sequence">
+            <field name="name">MAK Loan permission</field>
+            <field name="code">mak.loan</field>
+            <field name="prefix">ХОГ-Loan-№%(year)s/%(month)s/</field>
+            <field name="padding">3</field>
+            <field name="reset_yearly">True</field>
+        </record>
+    </data>
+</openerp>

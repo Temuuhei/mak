@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="view_mak_loan_form">
+        <field name="name">mak.loan.form</field>
+        <field name="model">mak.loan</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        	<form string="Mak Loan">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="pull-left">
+						<label for="sequence_id" class="oe_inline"/>
+          				<h1>
+							<field name="name" class="oe_inline" readonly="1" />
+						</h1>
+					</div>
+                <group>
+                    <group>
+                        <field name="partner_id" required = "1"/>
+                        <field name="company_id" required="1" />
+                        <field name="type" required="1" />
+                        <field name="loan_amount" required="1" widget="monetary" options="{'currency_field':'currency_id'}" />
+                        <field name="interest" required="1" />
+                        <field name="undue_interest" required="1" />
+                    </group>
+                    <group>
+                        <field name="interest_period" required="1" />
+                        <field name="first_period_date" required="1" />
+                        <field name="loan_period" required="1" />
+                        <field name="loan_period_amount" required="1" />
+                        <field name="first_loan_date" required="1" />
+                        <field name="date_realization" required="1" />
+                        <field name="currency_id" required="1" />
+                    </group>
+                </group>
+                    <notebook>
+                        <page name="Detail Lines" string="Detail Lines">
+                            <button name="action_compute_payment" type="object" string="Compute Payment" icon="gtk-execute"/>
+                             <button name="button_dummy"
+                                    states="draft" string="(update)" class="oe_edit_only oe_link"/>
+                            <field name="line_id" colspan="4" nolabel="1" readonly="0" editable="bottom">
+                                <tree string="Payment Schedules">
+                                    <field name="date" style="background-color:red;"/>
+                                    <field name="interest_day"/>
+                                    <field name="interest"/>
+                                    <field name="undue_interest"/>
+                                    <field name="total_interest"/>
+                                    <field name="calc_interest" sum="Total"/>
+                                    <field name="payment_interest" sum="Total"/>
+                                    <field name="payment_loan" sum="Total"/>
+                                    <field name="payment_total" sum="Total"/>
+                                    <field name="balance_loan" sum="Total"/>
+                                    <field name="previous_balance_loan" invisible="1"/>
+                                    <field name="add_loan"/>
+                                    <field name="zeel_uld"/>
+                                    <field name="huugiin_bod"/>
+                                    <field name="tuu_btulbur"/>
+                                    <field name="tuu_nhtulbur" sum="Total"/>
+                                    <field name="tuu_hetulult"/>
+                                    <field name="tuu_zetulult" sum="Total"/>
+                                    <field name="tg_btulbur"/>
+                                    <field name="tg_nhtulbur" sum="Total"/>
+                                    <field name="tg_hetulult" sum="Total"/>
+                                    <field name="tg_zetulult" sum="Total"/>
+                                    <field name="hhu_btulbur"/>
+                                    <field name="hhu_nhtulbur"/>
+                                    <field name="hhu_hetulult"/>
+                                    <field name="hhu_zetulult"/>
+                                    <field name="hhh_huu"/>
+                                    <field name="hhh_zeel"/>
+                                </tree>
+                            </field>
+                    </page>
+                        <page name = "Zeel tatalst" string = "Зээл таталт">
+                            <field name="line_zeel_tatalt_id" colspan="4" nolabel="1" readonly="0" editable="bottom">
+                                <form>
+                                     <field name = "date"/>
+                                    <field name = "amount"/>
+                                </form>
+                                <tree string = "Зээл таталт">
+                                    <field name = "date"/>
+                                    <field name = "amount" sum="Total"/>
+                                    <field name = "computed" widget="checkbox" readonly="1"/>
+                                    <field name = "user_id" readonly="1"/>
+                                    <button name="action_compute_zeel" type="object" string="Compute"
+                                            attrs="{'invisible':[('computed','=', True)]}"/>
+                                    <button name="action_draft" type="object" string="Cancel" attrs="{'invisible':[('computed','=', False)]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name = "Nemelt huu" string = "Нэмэлт хүү">
+                            <field name="line_nemelt_huu_id">
+                                <form>
+                                     <field name = "start_date"/>
+                                    <field name = "end_date"/>
+                                    <field name = "amount"/>
+                                </form>
+                            <tree string = "Нэмэлт хүү" editable="bottom">
+                                <field name = "start_date" required = "1"/>
+                                <field name = "end_date" required = "1"/>
+                                <field name = "amount" sum="Total"/>
+                                <field name = "computed" widget="checkbox" readonly="1"/>
+                                <field name = "user_id" readonly="1"/>
+                                <button name="action_compute_nemelt_huu" type="object" string="Compute"
+                                        attrs="{'invisible':[('computed','=', True)]}"/>
+                                <button name="action_draft" type="object" string="Cancel" attrs="{'invisible':[('computed','=', False)]}"/>
+                            </tree>
+                            </field>
+                        </page>
+                        <page name = "Interest payment" string = "Хүүгийн төлбөр">
+                            <field name="line_interest_payment_id">
+                            <form>
+                                 <field name = "date"/>
+                                <field name = "amount"/>
+                            </form>
+                            <tree string = "Interest payment line" editable="bottom">
+                                <field name = "date"/>
+                                <field name = "amount" sum="Total"/>
+                                <field name = "computed" widget="checkbox" readonly="1"/>
+                                <field name = "user_id" readonly="1"/>
+                                <button name="action_compute_interest_payment" type="object" string="Pay"
+                                        attrs="{'invisible':[('computed','=', True)]}"/>
+                                <button name="action_draft" type="object" string="Cancel" attrs="{'invisible':[('computed','=', False)]}"/>
+                            </tree>
+                            </field>
+                        </page>
+                        <page name = "Loan payment" string = "Зээлийн төлбөр">
+                            <field name="line_loan_payment_id">
+                                 <form>
+                                     <field name = "date"/>
+                                    <field name = "amount" />
+                                 </form>
+                            <tree string = "Loan payment line" editable="bottom">
+                                <field name = "date"/>
+                                <field name = "amount" sum="Total"/>
+                                <field name = "computed" widget="checkbox" readonly="1"/>
+                                <field name = "user_id" readonly="1"/>
+                                <button name="action_compute_loan_payment" type="object" string="Pay"
+                                        attrs="{'invisible':[('computed','=', True)]}"/>
+                                <button name="action_draft" type="object" string="Cancel" attrs="{'invisible':[('computed','=', False)]}"/>
+                            </tree>
+                            </field>
+                        </page>
+                        <page name = "Other payment" string = "Бусад төлбөр">
+                            <field name="line_other_payment_id">
+                                <form>
+                                     <field name = "date"/>
+                                    <field name = "amount"/>
+                                 </form>
+                            <tree string = "Other payment line" editable="bottom">
+                                <field name = "date"/>
+                                <field name = "amount" sum="Total"/>
+                                <field name = "computed" widget="checkbox" readonly="1"/>
+                                <field name = "user_id" readonly="1"/>
+                                <button name="action_compute_other_payment" type="object" string="Pay"
+                                        attrs="{'invisible':[('computed','=', True)]}"/>
+                                <button name="action_draft" type="object" string="Cancel" attrs="{'invisible':[('computed','=', False)]}"/>
+                            </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                 <div class="oe_chatter">
+                    	<field name="message_follower_ids" widget="mail_followers"/>
+                    	<field name="message_ids" widget="mail_thread"/>
+                	</div>
+            </form>
+        </field>
+    </record>
+
+	<record id="mak_loan_search_view" model="ir.ui.view">
+        <field name="name">mak.loan.search</field>
+        <field name="model">mak.loan</field>
+        <field name="arch" type="xml">
+            <search string="Mak Loan Search">
+            	<field name="partner_id"/>
+            	<field name="company_id"/>
+                <field name="currency_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter string="Company" domain="[]" context="{'group_by':'company_id'}"/>
+                    <filter string="Currency" domain="[]" context="{'group_by':'currency_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="mak_loan_line_search_view" model="ir.ui.view">
+        <field name="name">mak.loan.line.search</field>
+        <field name="model">mak.loan.line</field>
+        <field name="arch" type="xml">
+            <search string="Mak Loan Line Search">
+            	<field name="loan_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Loan" domain="[]" context="{'group_by':'loan_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mak_loan_tree">
+        <field name="name">mak.loan.tree</field>
+        <field name="model">mak.loan</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Loan">
+            	<field name="name"/>
+            	<field name="company_id"/>
+            	<field name="partner_id"/>
+            	<field name="type"/>
+	            <field name="date_realization"/>
+	            <field name="currency_id"/>
+	            <field name="loan_amount"/>
+	            <field name="interest"/>
+	            <field name="undue_interest"/>
+	            <field name="loan_period"/>
+	            <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mak_loan_line_tree">
+        <field name="name">mak.loan.line.tree</field>
+        <field name="model">mak.loan.line</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Mak Loan Line" create="false">
+            	<field name="date" style="background-color:red;"/>
+                <field name="interest_day"/>
+                <field name="interest"/>
+                <field name="undue_interest"/>
+                <field name="total_interest"/>
+                <field name="calc_interest" sum="Total"/>
+                <field name="payment_interest" sum="Total"/>
+                <field name="payment_loan" sum="Total"/>
+                <field name="payment_total" sum="Total"/>
+                <field name="balance_loan" sum="Total"/>
+                <field name="previous_balance_loan" invisible="1"/>
+                <field name="add_loan"/>
+                <field name="zeel_uld"/>
+                <field name="huugiin_bod"/>
+                <field name="tuu_btulbur"/>
+                <field name="tuu_nhtulbur" sum="Total"/>
+                <field name="tuu_hetulult"/>
+                <field name="tuu_zetulult" sum="Total"/>
+                <field name="tg_btulbur"/>
+                <field name="tg_nhtulbur" sum="Total"/>
+                <field name="tg_hetulult" sum="Total"/>
+                <field name="tg_zetulult" sum="Total"/>
+                <field name="hhu_btulbur"/>
+                <field name="hhu_nhtulbur"/>
+                <field name="hhu_hetulult"/>
+                <field name="hhu_zetulult"/>
+                <field name="hhh_huu"/>
+                <field name="hhh_zeel"/>
+            </tree>
+        </field>
+    </record>
+
+   <record id="action_mak_loan_line_window" model="ir.actions.act_window">
+        <field name="name">Mak Loan Lines</field>
+        <field name="res_model">mak.loan.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+
+    <record id="action_mak_loan_window" model="ir.actions.act_window">
+        <field name="name">Mak Loans</field>
+        <field name="res_model">mak.loan</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+
+        <menuitem id="menu_mak_loan_main" name="Loan MAK" sequence="4"/>
+        <menuitem name="Loan" id="menu_mak_loan_left" sequence="1" parent="menu_mak_loan_main"/>
+        <menuitem action="action_mak_loan_window" name="Зээлийн бүртгэл" id="menu_sub_mak_loan" sequence="1" parent="menu_mak_loan_left"/>
+        <menuitem action="action_mak_loan_line_window" name="Зээлийн бүртгэлийн дэлгэрэнгүй" id="menu_sub_mak_loan_line" sequence="2" parent="menu_mak_loan_left"/>
+
+	</data>
+</openerp>
