@@ -54,24 +54,24 @@
                                     <field name="payment_loan" sum="Total"/>
                                     <field name="payment_total" sum="Total"/>
                                     <field name="balance_loan" sum="Total"/>
-                                    <field name="previous_balance_loan" invisible="1"/>
+                                    <!--<field name="previous_balance_loan" invisible="1"/>-->
                                     <field name="add_loan"/>
-                                    <field name="zeel_uld"/>
-                                    <field name="huugiin_bod"/>
-                                    <field name="tuu_btulbur"/>
-                                    <field name="tuu_nhtulbur" sum="Total"/>
-                                    <field name="tuu_hetulult"/>
-                                    <field name="tuu_zetulult" sum="Total"/>
-                                    <field name="tg_btulbur"/>
-                                    <field name="tg_nhtulbur" sum="Total"/>
-                                    <field name="tg_hetulult" sum="Total"/>
-                                    <field name="tg_zetulult" sum="Total"/>
-                                    <field name="hhu_btulbur"/>
-                                    <field name="hhu_nhtulbur"/>
-                                    <field name="hhu_hetulult"/>
-                                    <field name="hhu_zetulult"/>
-                                    <field name="hhh_huu"/>
-                                    <field name="hhh_zeel"/>
+                                    <!--<field name="zeel_uld" invisible="1"/>-->
+                                    <!--<field name="huugiin_bod" invisible="1"/>-->
+                                    <!--<field name="tuu_btulbur" invisible="1"/>-->
+                                    <!--<field name="tuu_nhtulbur" sum="Total"/>-->
+                                    <!--<field name="tuu_hetulult" invisible="1"/>-->
+                                    <!--<field name="tuu_zetulult" sum="Total"/>-->
+                                    <!--<field name="tg_btulbur" invisible="1"/>-->
+                                    <!--<field name="tg_nhtulbur" sum="Total"/>-->
+                                    <!--<field name="tg_hetulult" sum="Total"/>-->
+                                    <!--<field name="tg_zetulult" sum="Total"/>-->
+                                    <!--<field name="hhu_btulbur" invisible="1"/>-->
+                                    <!--<field name="hhu_nhtulbur" invisible="1"/>-->
+                                    <!--<field name="hhu_hetulult" invisible="1"/>-->
+                                    <!--<field name="hhu_zetulult" invisible="1"/>-->
+                                    <!--<field name="hhh_huu" invisible="1"/>-->
+                                    <!--<field name="hhh_zeel" invisible="1"/>-->
                                 </tree>
                             </field>
                     </page>
