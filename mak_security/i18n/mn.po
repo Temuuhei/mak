@@ -1,0 +1,220 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mak_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-16 01:34+0000\n"
+"PO-Revision-Date: 2021-04-16 01:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+msgid "Add a Description..."
+msgstr "Рапортоо оруулна уу..."
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+#: field:mak.security,breach:0
+msgid "Breach"
+msgstr "Зөрчил"
+
+#. module: mak_security
+#: field:mak.security,create_uid:0
+msgid "Created by"
+msgstr "Илгээсэн"
+
+#. module: mak_security
+#: field:mak.security,create_date:0
+msgid "Created on"
+msgstr "Илгээсэн огноо"
+
+#. module: mak_security
+#: field:mak.security,date:0
+msgid "Date"
+msgstr "Огноо"
+
+#. module: mak_security
+#: help:mak.security,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+#: field:mak.security,day:0
+msgid "Day"
+msgstr "Өдөр"
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+msgid "Department"
+msgstr "Газар нэгж"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,description:0
+msgid "Description"
+msgstr "Рапорт"
+
+#. module: mak_security
+#: field:mak.security,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mak_security
+#: selection:mak.security,state:0
+msgid "Draft"
+msgstr "Ноорог"
+
+#. module: mak_security
+#: model:ir.model,name:mak_security.model_mak_security
+msgid "Email Thread"
+msgstr "MAK security"
+
+#. module: mak_security
+#: field:mak.security,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+msgid "Group By"
+msgstr "Бүлэглэх"
+
+#. module: mak_security
+#: help:mak.security,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: mak_security
+#: field:mak.security,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mak_security
+#: help:mak.security,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: mak_security
+#: field:mak.security,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: mak_security
+#: field:mak.security,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: mak_security
+#: field:mak.security,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mak_security
+#: field:mak.security,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mak_security
+#: field:mak.security,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mak_security
+#: model:ir.actions.act_window,name:mak_security.action_mak_security_window
+#: model:ir.ui.menu,name:mak_security.menu_mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: view:mak.security:mak_security.view_mak_security_tree
+msgid "MAK security"
+msgstr "MAK security"
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+msgid "MAK security search"
+msgstr "MAK security search"
+
+#. module: mak_security
+#: field:mak.security,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: mak_security
+#: help:mak.security,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+#: field:mak.security,month:0
+msgid "Month"
+msgstr "Сар"
+
+#. module: mak_security
+#: selection:mak.security,breach:0
+msgid "No"
+msgstr "Үгүй"
+
+#. module: mak_security
+#: field:mak.security,department_id:0
+msgid "Sector"
+msgstr "Газар нэгж"
+
+#. module: mak_security
+#: selection:mak.security,state:0
+msgid "Sent"
+msgstr "Илгээсэн"
+
+#. module: mak_security
+#: field:mak.security,state:0
+msgid "State"
+msgstr "Төлөв"
+
+#. module: mak_security
+#: field:mak.security,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: mak_security
+#: field:mak.security,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+#: field:mak.security,year:0
+msgid "Year"
+msgstr "Жил"
+
+#. module: mak_security
+#: selection:mak.security,breach:0
+msgid "Yes"
+msgstr "Тийм"
+
+#. module: mak_security
+#: model:res.groups,comment:mak_security.group_mak_security_admin
+msgid "Бүх рапорт харах"
+msgstr "Бүх рапорт харах"
+
+#. module: mak_security
+#: model:res.groups,name:mak_security.group_mak_security_admin
+msgid "ХХА менежер"
+msgstr "ХХА менежер"
+
+#. module: mak_security
+#: model:res.groups,name:mak_security.group_mak_security
+msgid "ХХА хамгаалагч"
+msgstr "ХХА хамгаалагч"
+
+#. module: mak_security
+#: model:res.groups,comment:mak_security.group_mak_security
+msgid "Өөрийн нэгжийн рапорт харах өөрчлөх"
+msgstr "Өөрийн нэгжийн рапорт харах өөрчлөх"
+

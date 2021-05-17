@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mak_security_admin,access.mak.security,model_mak_security,group_mak_security_admin,1,1,1,0
+access_mak_security,access.mak.security,model_mak_security,group_mak_security,1,1,1,0

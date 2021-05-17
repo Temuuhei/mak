@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    <record model="ir.ui.view" id="view_mak_security_form">
+        <field name="name">mak.security</field>
+        <field name="model">mak.security</field>
+        <field name="arch" type="xml">
+            <form string="MAK security" version="7.0">
+                <header>
+                    <button name="action_sent" states="draft" String="Илгээх" type="object" icon="gtk-apply" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent"/>
+                </header>
+                <sheet>
+                     <group>
+                        <field name="department_id" readonly = "1"/>
+                        <field name="date" required = "1"/>
+                        <field name="breach" required = "1" style="width:10%"/>
+                     </group>
+                    <separator string="Description"/>
+                    <field name="description" placeholder="Add a Description..." required = "1"/>
+                </sheet>
+                <div class="oe_chatter">
+                    	<field name="message_follower_ids" widget="mail_followers"/>
+                    	<field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mak_security_tree">
+        <field name="name">mak.security.tree</field>
+        <field name="model">mak.security</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="MAK security">
+                <field name="department_id"/>
+                <field name="date"/>
+                <field name="breach"/>
+                <field name="description" style="width:40%"/>
+                <field name="create_date"/>
+                <field name="create_uid"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mak_security_search_view" model="ir.ui.view">
+        <field name="name">mak.security.search</field>
+        <field name="model">mak.security</field>
+        <field name="arch" type="xml">
+            <search string="MAK security search">
+                <group expand="0" string="Group By">
+                    <filter string="Year" domain="[]" context="{'group_by':'year'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
+                    <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
+                    <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                    <filter string="Breach" domain="[]" context="{'group_by':'breach'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_mak_security_window" model="ir.actions.act_window">
+        <field name="name">MAK security</field>
+        <field name="res_model">mak.security</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+        <menuitem name="MAK security" id="menu_mak_security" sequence="5" parent="mail.mail_my_stuff" action='action_mak_security_window'/>
+    </data>
+</openerp>

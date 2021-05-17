@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+        <record id="group_mak_security_admin" model="res.groups">
+        <field name="name">ХХА менежер</field>
+        <field name="comment">Бүх рапорт харах</field>
+    	<field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <record id="group_mak_security" model="res.groups">
+        <field name="name">ХХА хамгаалагч</field>
+        <field name="comment">Өөрийн нэгжийн рапорт харах өөрчлөх</field>
+    	<field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+	</data>
+</openerp>
