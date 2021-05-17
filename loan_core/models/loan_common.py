@@ -290,6 +290,14 @@ class LoanCommon(models.AbstractModel):
         inverse_name="loan_id",
         copy=False,
     )
+
+    payment_detailed_schedule_ids = fields.One2many(
+        string="Payment Detailed Schedules",
+        comodel_name="loan.out_payment_schedule_detail",
+        inverse_name="loan_id",
+        copy=False,
+    )
+
     confirm_date = fields.Datetime(
         string="Confirm Date",
         readonly=True,

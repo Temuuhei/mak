@@ -139,7 +139,7 @@
                         </group>
                         <field name="payment_schedule_ids" colspan="4" nolabel="1" readonly="0" editable="bottom">
                             <tree string="Payment Schedules">
-                                <field name="euribor"/>
+                                <field name="euribor" style="background-color:red;"/>
                                 <field name="schedule_date"/>
                                 <field name="paid_date"/>
                                 <field name="pervious_payment_date" invisible="1"/>
