@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 01:34+0000\n"
-"PO-Revision-Date: 2021-04-16 01:34+0000\n"
+"POT-Creation-Date: 2021-05-21 02:09+0000\n"
+"PO-Revision-Date: 2021-05-21 02:09+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,29 +17,23 @@ msgstr ""
 
 #. module: mak_security
 #: view:mak.security:mak_security.view_mak_security_form
-msgid "Add a Description..."
-msgstr "Рапортоо оруулна уу..."
+msgid "Add note..."
+msgstr "Тэмдэглэл оруулах..."
 
 #. module: mak_security
-#: view:mak.security:mak_security.mak_security_search_view
-#: field:mak.security,breach:0
-msgid "Breach"
-msgstr "Зөрчил"
+#: field:mak.security,employee_id:0
+msgid "Assigned To"
+msgstr "Үүрэг гүйцэтгэсэн"
 
 #. module: mak_security
 #: field:mak.security,create_uid:0
 msgid "Created by"
-msgstr "Илгээсэн"
+msgstr "Үүсгэсэн хэрэглэгч"
 
 #. module: mak_security
 #: field:mak.security,create_date:0
 msgid "Created on"
-msgstr "Илгээсэн огноо"
-
-#. module: mak_security
-#: field:mak.security,date:0
-msgid "Date"
-msgstr "Огноо"
+msgstr "Үүсгэсэн огноо"
 
 #. module: mak_security
 #: help:mak.security,message_last_post:0
@@ -54,14 +48,9 @@ msgstr "Өдөр"
 
 #. module: mak_security
 #: view:mak.security:mak_security.mak_security_search_view
+#: field:mak.security,department_id:0
 msgid "Department"
 msgstr "Газар нэгж"
-
-#. module: mak_security
-#: view:mak.security:mak_security.view_mak_security_form
-#: field:mak.security,description:0
-msgid "Description"
-msgstr "Рапорт"
 
 #. module: mak_security
 #: field:mak.security,display_name:0
@@ -79,6 +68,16 @@ msgid "Email Thread"
 msgstr "MAK security"
 
 #. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+msgid "Employee"
+msgstr "Ажилтан"
+
+#. module: mak_security
+#: field:mak.security,end_datetime:0
+msgid "End date"
+msgstr "Хүлээлгэн өгсөн огноо"
+
+#. module: mak_security
 #: field:mak.security,message_follower_ids:0
 msgid "Followers"
 msgstr "Followers"
@@ -86,7 +85,7 @@ msgstr "Followers"
 #. module: mak_security
 #: view:mak.security:mak_security.mak_security_search_view
 msgid "Group By"
-msgstr "Бүлэглэх"
+msgstr "Group By"
 
 #. module: mak_security
 #: help:mak.security,message_summary:0
@@ -139,7 +138,7 @@ msgstr "MAK security"
 #. module: mak_security
 #: view:mak.security:mak_security.mak_security_search_view
 msgid "MAK security search"
-msgstr "MAK security search"
+msgstr "MAK security хайлт"
 
 #. module: mak_security
 #: field:mak.security,message_ids:0
@@ -158,19 +157,93 @@ msgid "Month"
 msgstr "Сар"
 
 #. module: mak_security
-#: selection:mak.security,breach:0
-msgid "No"
-msgstr "Үгүй"
+#: selection:mak.security,problem:0
+msgid "Normal"
+msgstr "Хэвийн"
 
 #. module: mak_security
-#: field:mak.security,department_id:0
-msgid "Sector"
-msgstr "Газар нэгж"
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,note_car:0
+msgid "Note car"
+msgstr "Гараж болон гадна талбайд тавигдсан тээврийн хэрэгсэлийн бүртгэл/автомашины дугаар,сер,марк/"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+msgid "Note check"
+msgstr "Объектын өрөө тасалгаа,лац,ломбо,ил тавьсан бараа,материал,машин техникийг хэдэн цагт шалгасан тухай"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,note_electric:0
+msgid "Note electric"
+msgstr "Гэрэл цахилгаан тасарсан,сантехникийн аваар осол гарсан эсэх"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,note_gate:0
+msgid "Note gate"
+msgstr "Объектод шалган нэвтрүүлэх үйл ажиллагаа явуулсан тэмдэглэл"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,note_motion:0
+msgid "Note motion"
+msgstr "Хамгаалалтанд илэрсэн хөдөлгөөний тэмдэглэл"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,note_security:0
+msgid "Note security"
+msgstr "Хамгаалалтын үйл ажиллагааг сайжруулах тухай хамгаалагчийн санал"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,note_time:0
+msgid "Note time"
+msgstr "Объектын нөхцөл байдлын мэдээг ээлжийн ахлагчид өгсөн цаг"
+
+#. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,note_check:0
+#: field:mak.security,note_work:0
+msgid "Note work"
+msgstr "Ажлын бус цагаар аль өрөө,тасалгаанд хэн хэдэн цаг хүртэл ажилласан болох"
+
+#. module: mak_security
+#: field:mak.security,point:0
+msgid "Point"
+msgstr "Цэг"
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+#: field:mak.security,problem:0
+#: selection:mak.security,problem:0
+msgid "Problem"
+msgstr "Албан үүрэг гүйцэтгэх хугацаанд үйл ажиллагаа"
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+#: field:mak.security,problem:0
+#: selection:mak.security,problem:0
+msgid "Notnormal"
+msgstr "Зөрчилтэй"
+
+
+#. module: mak_security
+#: view:mak.security:mak_security.mak_security_search_view
+#: field:mak.security,received_employee_id:0
+msgid "Received"
+msgstr "Хүлээн авсан"
 
 #. module: mak_security
 #: selection:mak.security,state:0
 msgid "Sent"
 msgstr "Илгээсэн"
+
+#. module: mak_security
+#: field:mak.security,start_datetime:0
+msgid "Start date"
+msgstr "Ээлж авсан огноо"
 
 #. module: mak_security
 #: field:mak.security,state:0
@@ -183,6 +256,12 @@ msgid "Summary"
 msgstr "Summary"
 
 #. module: mak_security
+#: view:mak.security:mak_security.view_mak_security_form
+#: field:mak.security,task:0
+msgid "Task"
+msgstr "Үүрэг даалгавар"
+
+#. module: mak_security
 #: field:mak.security,message_unread:0
 msgid "Unread Messages"
 msgstr "Unread Messages"
@@ -192,11 +271,6 @@ msgstr "Unread Messages"
 #: field:mak.security,year:0
 msgid "Year"
 msgstr "Жил"
-
-#. module: mak_security
-#: selection:mak.security,breach:0
-msgid "Yes"
-msgstr "Тийм"
 
 #. module: mak_security
 #: model:res.groups,comment:mak_security.group_mak_security_admin

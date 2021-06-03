@@ -5,19 +5,35 @@
         <field name="name">mak.security</field>
         <field name="model">mak.security</field>
         <field name="arch" type="xml">
-            <form string="MAK security" version="7.0">
+            <form string="MAK security">
                 <header>
                     <button name="action_sent" states="draft" String="Илгээх" type="object" icon="gtk-apply" />
                     <field name="state" widget="statusbar" statusbar_visible="draft,sent"/>
                 </header>
                 <sheet>
                      <group>
-                        <field name="department_id" readonly = "1"/>
-                        <field name="date" required = "1"/>
-                        <field name="breach" required = "1" style="width:10%"/>
+                     <group>
+                        <field name="department_id" />
+                        <field name="employee_id" domain="[('department_id.is_sec','=',True),('state_id.type', 'not in', ('resigned','contract','student','end_contract'))]" required = "1" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit' : True}"/>
+                        <field name="received_employee_id" domain="[('department_id.is_sec','=',True),('state_id.type', 'not in', ('resigned','contract','student','end_contract'))]" required = "1" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit' : True}"/>
+                        <field name="problem" required = "1" style="width:50%"/>
                      </group>
-                    <separator string="Description"/>
-                    <field name="description" placeholder="Add a Description..." required = "1"/>
+                     <group>
+                        <field name="point" required = "1" style="width:50%"/>
+                        <field name="start_datetime" required = "1"/>
+                        <field name="end_datetime" required = "1"/>
+                     </group>
+                     </group>
+                    <separator string="Note motion"/><field name="note_motion" placeholder="Add note..." required = "1"/>
+                    <separator string="Note electric"/><field name="note_electric" placeholder="Add note..."/>
+                    <separator string="Note car"/><field name="note_car" placeholder="Add note..." />
+                    <separator string="Note work"/><field name="note_work" placeholder="Add note..." />
+                    <separator string="Note check"/><field name="note_check" placeholder="Add note..." required = "1"/>
+                    <separator string="Note gate"/><field name="note_gate" placeholder="Add note..." />
+                    <separator string="Note time"/><field name="note_time" placeholder="Add note..." required = "1"/>
+                    <separator string="Note security"/><field name="note_security" placeholder="Add note..." />
+                    <separator string="Task"/><field name="task" placeholder="Add note..." />
+
                 </sheet>
                 <div class="oe_chatter">
                     	<field name="message_follower_ids" widget="mail_followers"/>
@@ -34,9 +50,12 @@
         <field name="arch" type="xml">
             <tree string="MAK security">
                 <field name="department_id"/>
-                <field name="date"/>
-                <field name="breach"/>
-                <field name="description" style="width:40%"/>
+                <field name="point"/>
+                <field name="employee_id"/>
+                <field name="start_datetime"/>
+                <field name="end_datetime"/>
+                <field name="problem"/>
+                <field name="received_employee_id"/>
                 <field name="create_date"/>
                 <field name="create_uid"/>
                 <field name="state"/>
@@ -54,7 +73,9 @@
                     <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
                     <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
                     <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>
-                    <filter string="Breach" domain="[]" context="{'group_by':'breach'}"/>
+                    <filter string="Employee" domain="[]" context="{'group_by':'employee_id'}"/>
+                    <filter string="Received" domain="[]" context="{'group_by':'received_employee_id'}"/>
+                    <filter string="Problem" domain="[]" context="{'group_by':'problem'}"/>
                 </group>
             </search>
         </field>
@@ -69,6 +90,6 @@
         <field name="context">{}</field>
     </record>
 
-        <menuitem name="MAK security" id="menu_mak_security" sequence="5" parent="mail.mail_my_stuff" action='action_mak_security_window'/>
+        <menuitem name="MAK security" id="menu_mak_security" sequence="5" parent="mail.mail_my_stuff" action='action_mak_security_window' groups="mak_security.group_mak_security_admin,mak_security.group_mak_security"/>
     </data>
 </openerp>
