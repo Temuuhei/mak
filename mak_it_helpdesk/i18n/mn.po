@@ -1,0 +1,341 @@
+Email# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mak_it_helpdesk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-24 09:13+0000\n"
+"PO-Revision-Date: 2021-05-24 09:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.view_mak_it_helpdesk_form
+msgid "Add a Description..."
+msgstr "Тайлбараа оруулна уу..."
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,state:0
+msgid "Approved"
+msgstr "Зөвшөөрсөн"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,assigned:0
+msgid "Assigned"
+msgstr "IT ажилтан"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,state:0
+msgid "Cancel"
+msgstr "Цуцлах"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,type:0
+msgid "Change user password"
+msgstr "Нууц үг солиулах"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "Computer"
+msgstr "Компьютер"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,create_uid:0
+msgid "Created by"
+msgstr "Үүссэн"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,create_date:0
+msgid "Created on"
+msgstr "Үүссэн"
+
+#. module: mak_it_helpdesk
+#: help:mak.it.helpdesk,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,day:0
+msgid "Day"
+msgstr "Өдөр"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,department_id:0
+msgid "Department"
+msgstr "Газар нэгж"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.view_mak_it_helpdesk_form
+#: field:mak.it.helpdesk,description:0
+msgid "Description"
+msgstr "Тайлбар"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,dir:0
+msgid "Director"
+msgstr "Захирал"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,state:0
+msgid "Disapproved"
+msgstr "Зөвшөөрөхгүй"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,state:0
+msgid "Done"
+msgstr "Дууссан"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.view_mak_it_helpdesk_form
+#: field:mak.it.helpdesk,done_description:0
+msgid "Done description"
+msgstr "IT тайлбар"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,state:0
+msgid "Draft"
+msgstr "Ноорог"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "ERP"
+msgstr "ERP"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "Email"
+msgstr "Имэйл"
+
+#. module: mak_it_helpdesk
+#: model:ir.model,name:mak_it_helpdesk.model_mak_it_helpdesk
+msgid "Email Thread"
+msgstr "MAK IT helpdesk"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,employee_id:0
+msgid "Employee"
+msgstr "Ажилтан"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,type:0
+msgid "Get program right"
+msgstr "Програмын эрх авах"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,type:0
+msgid "Get service"
+msgstr "IT дэмжлэг авах"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+msgid "Group By"
+msgstr "Бүлэглэх"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,priority:0
+msgid "High"
+msgstr "Яаралтай"
+
+#. module: mak_it_helpdesk
+#: help:mak.it.helpdesk,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mak_it_helpdesk
+#: model:ir.actions.act_window,name:mak_it_helpdesk.action_mak_it_helpdesk_window
+#: model:ir.ui.menu,name:mak_it_helpdesk.menu_mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.view_mak_it_helpdesk_form
+#: view:mak.it.helpdesk:mak_it_helpdesk.view_mak_it_helpdesk_tree
+msgid "IT Helpdesk"
+msgstr "IT Helpdesk"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+msgid "IT Helpdesk search"
+msgstr "IT Helpdesk search"
+
+#. module: mak_it_helpdesk
+#: model:res.groups,name:mak_it_helpdesk.group_mak_it_helpdesk
+msgid "IT-Helpdesk Ажилтан"
+msgstr "IT-Helpdesk Ажилтан"
+
+#. module: mak_it_helpdesk
+#: model:res.groups,name:mak_it_helpdesk.group_mak_it_helpdesk_dir
+msgid "IT-Helpdesk Захирал"
+msgstr "IT-Helpdesk Захирал"
+
+#. module: mak_it_helpdesk
+#: model:res.groups,name:mak_it_helpdesk.group_mak_it_helpdesk_admin
+msgid "IT-Helpdesk МТ ажилтан"
+msgstr "IT-Helpdesk МТ ажилтан"
+
+#. module: mak_it_helpdesk
+#: help:mak.it.helpdesk,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "Internet"
+msgstr "Интернэт"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+msgid "Job"
+msgstr "Програм"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,priority:0
+msgid "Medium"
+msgstr "Хэвийн"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: mak_it_helpdesk
+#: help:mak.it.helpdesk,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,month:0
+msgid "Month"
+msgstr "Сар"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,job:0
+msgid "Name"
+msgstr "Програм"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "Network"
+msgstr "Сүлжээ"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "Pitram"
+msgstr "Питрам"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "Printer/Scanner"
+msgstr "Принтер/Скайнер"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,priority:0
+msgid "Priority"
+msgstr "Яаралтай эсэх"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "Program"
+msgstr "Програм"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,state:0
+msgid "Sent"
+msgstr "Илгээсэн"
+
+#. module: mak_it_helpdesk
+#: selection:mak.it.helpdesk,job:0
+msgid "Spark"
+msgstr "Spark"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,state:0
+msgid "State"
+msgstr "Төлөв"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,type:0
+msgid "Type"
+msgstr "Төрөл"
+
+#. module: mak_it_helpdesk
+#: field:mak.it.helpdesk,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: mak_it_helpdesk
+#: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
+#: field:mak.it.helpdesk,year:0
+msgid "Year"
+msgstr "Жил"
+
+#. module: mak_it_helpdesk
+#: model:res.groups,comment:mak_it_helpdesk.group_mak_it_helpdesk
+msgid "Газар нэгжийхээ хүсэлтийг харах"
+msgstr "Газар нэгжийхээ хүсэлтийг харах"
+
+#. module: mak_it_helpdesk
+#: model:res.groups,comment:mak_it_helpdesk.group_mak_it_helpdesk_dir
+msgid "Газар нэгжийхээ хүсэлтийг шийдвэрлэх"
+msgstr "Газар нэгжийхээ хүсэлтийг шийдвэрлэх"
+
+#. module: mak_it_helpdesk
+#: model:res.groups,comment:mak_it_helpdesk.group_mak_it_helpdesk_admin
+msgid "Газар нэгжээс ирсэн МТ холбоотой хүсэлтийг шийдвэрлэх"
+msgstr "Газар нэгжээс ирсэн МТ холбоотой хүсэлтийг шийдвэрлэх"
+
