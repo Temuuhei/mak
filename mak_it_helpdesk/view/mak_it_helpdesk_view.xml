@@ -1,19 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
     <data>
-        <record id="seq_type_it_helpdesk" model="ir.sequence.type">
-			<field name="name">MAK IT Helpdesk Sequence</field>
-			<field name="code">mak.it.helpdesk</field>
-		</record>
-
-		<record id="sequence_it_helpdesk" model="ir.sequence">
-			<field name="name">MAK IT Helpdesk permission</field>
-			<field name="code">mak.it.helpdesk</field>
-			<field name="prefix">IT_%(year)s/%(month)s/%(day)s/</field>
-			<field name="padding">2</field>
-			<field name="reset_daily">True</field>
-		</record>
-
     <record model="ir.ui.view" id="view_mak_it_helpdesk_form">
         <field name="name">mak.it.helpdesk.form</field>
         <field name="model">mak.it.helpdesk</field>
@@ -22,32 +9,29 @@
             <form string="IT Helpdesk">
                 <header>
                     <button name="action_sent" states="draft" String="Илгээх" type="object" icon="gtk-apply"/>
-                    <button name="action_cancel" states="sent" String="Цуцлах" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
-                    <button name="action_done" states="sent" String="Дууссан" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
-                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,done"/>
+                    <button name="action_cancel" states="sent,approve" String="Цуцлах" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                    <button name="action_done" states="sent,approve" String="Хийсэн" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                    <button name="action_disapprove" String="Цуцлах" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_dir" attrs="{'invisible':['|',('state','in',['draft','done','cancel','approve','disapprove']),('type','!=','right')]}"/>
+                    <button name="action_approve"  String="Зөвшөөрөх" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_dir" attrs="{'invisible':['|',('state','in',['draft','done','cancel','approve','disapprove']),('type','!=','right')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,approve,done"/>
                 </header>
                 <sheet>
-                    <div class="pull-left">
-          				<h1>
-							<field name="sequence_id" class="oe_inline" readonly="1" />
-						</h1>
-					</div>
                     <group>
                         <group>
                         <field name="department_id"/>
-                        <field name="employee_id" domain="[('department_id','=',department_id)]" required = "1" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit' : True}"
-                        attrs="{'readonly': [('state','in',('done', 'sent', 'cancel'))]}"/>
+                        <field name="employee_id" domain="[('department_id','=',department_id)]" required = "1" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit' : True} "
+                        attrs="{'readonly': [('state','!=','draft')]}" />
                         </group>
                         <group>
-                        <field name="name" required = "1" attrs="{'readonly': [('state','in',('done','sent','cancel'))]}"/>
-                        <field name="type" required = "1" attrs="{'readonly': [('state','in',('done','sent','cancel'))]}"/>
-                        <field name="priority" required = "1" attrs="{'readonly': [('state','in',('done','sent','cancel'))]}"/>
+                        <field name="type" required = "1" attrs="{'readonly': [('state','!=','draft')]}"/>
+                        <field name="job" required = "1" attrs="{'readonly': [('state','!=','draft')]}"/>
+                        <field name="priority" required = "1" attrs="{'readonly': [('state','!=','draft')]}"/>
                         </group>
                     </group>
                     <separator string="Description" />
-                    <field name="description" placeholder="Add a Description..." attrs="{'readonly': [('state','in',('done','sent','cancel'))]}"/>
+                    <field name="description" placeholder="Add a Description..." attrs="{'readonly': [('state','!=','draft')]}"/>
                     <separator string="Done description" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
-                    <field name="done_description" placeholder="Add a Description..." attrs="{'readonly': [('state','in',('done', 'cancel'))]}" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                    <field name="done_description" placeholder="Add a Description..." attrs="{'readonly': [('state','not in',('sent','approve'))]}" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
 
                 </sheet>
                 <div class="oe_chatter">
@@ -64,16 +48,16 @@
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="IT Helpdesk" >
-                <!--colors="red:priority == 'a'"-->
-                <field name="sequence_id"/>
+                <field name="type"/>
                 <field name="priority"/>
                 <field name="department_id"/>
                 <field name="employee_id"/>
-                <field name="name"/>
-                <field name="type"/>
+                <field name="job"/>
                 <field name="description"/>
+                <field name="create_date"/>
+                <field name="create_uid"/>
+                <field name="dir"/>
                 <field name="assigned"/>
-                <field name="write_date"/>
                 <field name="done_description"/>
                 <field name="state"/>
             </tree>
@@ -91,7 +75,7 @@
                     <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
                     <filter string="Employee" domain="[]" context="{'group_by':'employee_id'}"/>
                     <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>
-                    <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
+                    <filter string="Job" domain="[]" context="{'group_by':'job'}"/>
                     <filter string="Type" domain="[]" context="{'group_by':'type'}"/>
                     <filter string="Priority" domain="[]" context="{'group_by':'priority'}"/>
                     <filter string="State" domain="[]" context="{'group_by':'state'}"/>
@@ -110,6 +94,6 @@
         <field name="context">{}</field>
     </record>
 
-        <menuitem name="IT Helpdesk" id="menu_mak_it_helpdesk" sequence="3" parent="mail.mail_my_stuff" action='action_mak_it_helpdesk_window'/>
+        <menuitem name="IT Helpdesk" id="menu_mak_it_helpdesk" sequence="3" parent="mail.mail_my_stuff" action="action_mak_it_helpdesk_window" groups="group_mak_it_helpdesk_admin,group_mak_it_helpdesk_dir,group_mak_it_helpdesk"/>
     </data>
 </openerp>

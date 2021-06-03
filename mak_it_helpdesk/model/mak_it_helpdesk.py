@@ -10,7 +10,6 @@
 ##############################################################################
 
 from openerp.osv import osv, fields
-from datetime import date
 from datetime import datetime
 
 class mak_it_helpdesk(osv.Model):
@@ -21,31 +20,31 @@ class mak_it_helpdesk(osv.Model):
     STATE_SELECTION = [
         ('draft', 'Draft'),
         ('sent', 'Sent'),
+        ('approve', 'Approved'),
+        ('disapprove', 'Disapproved'),
         ('done', 'Done'),
         ('cancel', 'Cancel')
     ]
 
-    NAME_SELECTION = [
+    PROGRAM_SELECTION = [
         ('program', 'Program'),
         ('internet', 'Internet'),
         ('computer', 'Computer'),
         ('printer', 'Printer/Scanner'),
         ('network', 'Network'),
-        ('spark', 'Spark'),
         ('erp', 'ERP'),
         ('email', 'Email'),
-        ('petram', 'Petram')
+        ('spark', 'Spark'),
+        ('pitram', 'Pitram'),
     ]
 
     TYPE_SELECTION = [
-        ('install', 'Install Program'),
-        ('error', 'Error correction'),
-        ('right', 'Get right'),
-        ('fix', 'Fix the problem')
+        ('service', 'Get service'),
+        ('right', 'Get program right'),
+        ('pass', 'Change user password')
     ]
 
     PRIORITY_SELECTION = [
-        ('c', 'Low'),
         ('b', 'Medium'),
         ('a', 'High')
     ]
@@ -62,18 +61,18 @@ class mak_it_helpdesk(osv.Model):
         return res
 
     _columns = {
-        'sequence_id': fields.char('Sequence', size=16, required=True),
-        'employee_id': fields.many2one('hr.employee', string='Employee', track_visiblity='onchange',required=True),
         'department_id': fields.many2one('hr.department', string='Department', track_visiblity='onchange',readonly=True),
+        'employee_id': fields.many2one('hr.employee', string='Employee', track_visiblity='onchange',required=True),
         'year': fields.function(_set_date, type='integer', string='Year', multi='dates', readonly=True, store=True),
         'month': fields.function(_set_date, type='integer', string='Month', multi='dates', readonly=True, store=True),
         'day': fields.function(_set_date, type='integer', string='Day', multi='dates', readonly=True, store=True),
         'priority': fields.selection(PRIORITY_SELECTION, 'Priority', track_visibility='onchange', required=True),
-        'state': fields.selection(STATE_SELECTION, 'State', track_visibility='onchange', readonly=True),
-        'name': fields.selection(NAME_SELECTION, 'Name', track_visibility='onchange', required=True),
+        'job': fields.selection(PROGRAM_SELECTION, 'Job', track_visibility='onchange', required=True),
         'type': fields.selection(TYPE_SELECTION, 'Type', track_visibility='onchange', required=True),
-        'assigned': fields.many2one('res.users', 'Assigned', readonly=True),
         'description': fields.text('Description', size=160,states={'done': [('readonly', True)]}),
+        'state': fields.selection(STATE_SELECTION, 'State', track_visibility='onchange', readonly=True),
+        'dir': fields.many2one('res.users', 'Director', readonly=True),
+        'assigned': fields.many2one('res.users', 'Assigned', readonly=True),
         'done_description': fields.char('Done description', size=50, states={'done': [('readonly', True)]}),
     }
 
@@ -86,20 +85,14 @@ class mak_it_helpdesk(osv.Model):
             return None
 
     def _department_get(self, cr, uid, ids, context=None):
-        user = self.pool.get('res.users').browse(cr, uid, uid)
-        employee_ids = self.pool.get('hr.employee').search(cr, uid, [('user_id', '=', user.id)])
-        if employee_ids:
-            employee = self.pool.get('hr.employee').browse(cr, uid, employee_ids)[0]
-            return employee.department_id.id
-        else:
-            return None
+        dep_id = self.pool.get('res.users').browse(cr, uid, uid)['department_id'].id
+        return dep_id
 
     _defaults = {
         'employee_id': _employee_get,
         'department_id': _department_get,
-        'sequence_id': '/',
-        'name': 'computer',
-        'type': 'error',
+        'job': 'computer',
+        'type': 'service',
         'state': 'draft',
         'priority': 'b'
     }
@@ -113,6 +106,16 @@ class mak_it_helpdesk(osv.Model):
 
     def action_sent(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state': 'sent'})
+        return True
+
+    def action_approve(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state': 'approve'})
+        self.write(cr, uid, ids, {'dir': uid})
+        return True
+
+    def action_disapprove(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state': 'disapprove'})
+        self.write(cr, uid, ids, {'dir': uid})
         return True
 
     def action_done(self, cr, uid, ids, context=None):
