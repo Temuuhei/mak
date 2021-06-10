@@ -11,6 +11,7 @@
 
 from openerp.osv import osv, fields
 from datetime import datetime
+from openerp.tools.translate import _
 
 class mak_it_helpdesk(osv.Model):
     _name = 'mak.it.helpdesk'
@@ -62,7 +63,7 @@ class mak_it_helpdesk(osv.Model):
 
     _columns = {
         'department_id': fields.many2one('hr.department', string='Department', track_visiblity='onchange',readonly=True),
-        'employee_id': fields.many2one('hr.employee', string='Employee', track_visiblity='onchange',required=True),
+        'employee_id': fields.many2one('hr.employee', string='Employee', track_visiblity='onchange',required=True, domain="[('department_id','=',department_id),('state_id.type', 'not in', ('resigned', 'contract', 'student', 'end_contract'))]"),
         'year': fields.function(_set_date, type='integer', string='Year', multi='dates', readonly=True, store=True),
         'month': fields.function(_set_date, type='integer', string='Month', multi='dates', readonly=True, store=True),
         'day': fields.function(_set_date, type='integer', string='Day', multi='dates', readonly=True, store=True),
@@ -75,6 +76,24 @@ class mak_it_helpdesk(osv.Model):
         'assigned': fields.many2one('res.users', 'Assigned', readonly=True),
         'done_description': fields.char('Done description', size=50, states={'done': [('readonly', True)]}),
     }
+
+    def name_get(self, cr, uid, ids, context=None):
+        res = []
+        for doc in self.browse(cr, uid, ids, context=None):
+            res.append( (doc.id, u'[%s] [%s] [%s]' % (doc.employee_id.name, doc.job, doc.type)))
+        return res
+
+    def unlink(self, cr, uid, ids, context=None):
+        regulation = self.read(cr, uid, ids, ['state'], context=context)
+        unlink_ids = []
+        for s in regulation:
+            if s['state'] in ['draft']:
+                unlink_ids.append(s['id'])
+                super(mak_it_helpdesk, self).unlink(cr, uid, unlink_ids, context=context)
+            else:
+                raise osv.except_osv(_('Invalid Action!'),
+                                     _('In order to delete a task, you must Draft it first.'))
+
 
     def _employee_get(self, cr, uid, context=None):
         user = self.pool.get('res.users').browse(cr, uid, uid)
