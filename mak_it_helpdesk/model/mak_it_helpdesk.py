@@ -74,7 +74,7 @@ class mak_it_helpdesk(osv.Model):
         'state': fields.selection(STATE_SELECTION, 'State', track_visibility='onchange', readonly=True),
         'dir': fields.many2one('res.users', 'Director', readonly=True),
         'assigned': fields.many2one('res.users', 'Assigned', readonly=True),
-        'done_description': fields.char('Done description', size=50, states={'done': [('readonly', True)]}),
+        'done_description': fields.text('Done description', size=150, states={'done': [('readonly', True)]}),
     }
 
     def name_get(self, cr, uid, ids, context=None):
@@ -108,10 +108,7 @@ class mak_it_helpdesk(osv.Model):
         return dep_id
 
     _defaults = {
-        'employee_id': _employee_get,
         'department_id': _department_get,
-        'job': 'computer',
-        'type': 'service',
         'state': 'draft',
         'priority': 'b'
     }

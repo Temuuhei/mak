@@ -34,7 +34,7 @@ msgstr "IT ажилтан"
 #. module: mak_it_helpdesk
 #: selection:mak.it.helpdesk,state:0
 msgid "Cancel"
-msgstr "Цуцлах"
+msgstr "Цуцласан"
 
 #. module: mak_it_helpdesk
 #: selection:mak.it.helpdesk,type:0
@@ -54,7 +54,7 @@ msgstr "Үүссэн"
 #. module: mak_it_helpdesk
 #: field:mak.it.helpdesk,create_date:0
 msgid "Created on"
-msgstr "Үүссэн"
+msgstr "Огноо"
 
 #. module: mak_it_helpdesk
 #: help:mak.it.helpdesk,message_last_post:0
