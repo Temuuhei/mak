@@ -4,7 +4,7 @@
 <template id="assets_editor" inherit_id="website.assets_editor" name="website_files editor assets">
     <xpath expr="." position="inside">
         <script type="text/javascript" src="/website_files/static/src/js/website_files.editor.js"></script>
-        <link rel="stylesheet" href="/website_files/static/src/css/website_files.css"/>
+        <link rel="stylesheet" href="/mak/website_files/static/src/css/website_files.css"/>
     </xpath>
 </template>
 
