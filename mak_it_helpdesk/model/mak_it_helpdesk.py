@@ -95,17 +95,16 @@ class mak_it_helpdesk(osv.Model):
                                      _('In order to delete a task, you must Draft it first.'))
 
 
-    def _employee_get(self, cr, uid, context=None):
+    def _department_get(self, cr, uid, ids, context=None):
         user = self.pool.get('res.users').browse(cr, uid, uid)
         employee_ids = self.pool.get('hr.employee').search(cr, uid, [('user_id', '=', user.id)])
-        if employee_ids[0]:
-            return employee_ids[0]
+        if employee_ids:
+            employee = self.pool.get('hr.employee').browse(cr, uid, employee_ids)[0]
+            return employee.department_id.id
         else:
+            raise osv.except_osv(_('Warning!'), _('You don\'t have related employee. Please contact administrator.'))
             return None
 
-    def _department_get(self, cr, uid, ids, context=None):
-        dep_id = self.pool.get('res.users').browse(cr, uid, uid)['department_id'].id
-        return dep_id
 
     _defaults = {
         'department_id': _department_get,
