@@ -14,7 +14,7 @@
                     <button name="action_disapprove" String="Цуцлах" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_dir" attrs="{'invisible':['|',('state','in',['draft','done','cancel','approve','disapprove']),('type','!=','right')]}"/>
                     <button name="action_approve"  String="Зөвшөөрөх" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_dir" attrs="{'invisible':['|',('state','in',['draft','done','cancel','approve','disapprove']),('type','!=','right')]}"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,sent,approve,done"/>
-		<div style="text-align:right"><br><a href="/ithelpdesk" target="_blank">[ Мэдээлэл технологи болон Мэдээллийн аюулгүй байдлын гарын авлага ] </a></br>
+		<div style="text-align:right"><br><a href="/page/ithelpdesk" target="_blank">[ Мэдээлэл технологи болон Мэдээллийн аюулгүй байдлын гарын авлага ] </a></br>
 		</div>
                 </header>
                 <sheet>
