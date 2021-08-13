@@ -14,6 +14,8 @@
                     <button name="action_disapprove" String="Цуцлах" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_dir" attrs="{'invisible':['|',('state','in',['draft','done','cancel','approve','disapprove']),('type','!=','right')]}"/>
                     <button name="action_approve"  String="Зөвшөөрөх" type="object" icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_dir" attrs="{'invisible':['|',('state','in',['draft','done','cancel','approve','disapprove']),('type','!=','right')]}"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,sent,approve,done"/>
+		<div style="text-align:right"><br><a href="/ithelpdesk" target="_blank">[ Мэдээлэл технологи болон Мэдээллийн аюулгүй байдлын гарын авлага ] </a></br>
+		</div>
                 </header>
                 <sheet>
                     <group>
@@ -28,6 +30,8 @@
                         <field name="priority" required = "1" attrs="{'readonly': [('state','!=','draft')]}"/>
                         </group>
                     </group>
+                    <div style="text-align:right; color: #FF0000;">Програмын эрх авах бол харьяа нэгжийн удирдлагаас зөвшөөрөл авна уу</div>
+
                     <separator string="Description" />
                     <field name="description" placeholder="Add a Description..." attrs="{'readonly': [('state','!=','draft')]}"/>
                     <separator string="Done description" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
@@ -78,7 +82,7 @@
                     <filter string="Job" domain="[]" context="{'group_by':'job'}"/>
                     <filter string="Type" domain="[]" context="{'group_by':'type'}"/>
                     <filter string="Priority" domain="[]" context="{'group_by':'priority'}"/>
-                    <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                    <filter name="group_state" string="State" domain="[]" context="{'group_by':'state'}"/>
                     <filter string="Assigned" domain="[]" context="{'group_by':'assigned'}"/>
                 </group>
             </search>
@@ -90,8 +94,7 @@
         <field name="res_model">mak.it.helpdesk</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[]</field>
-        <field name="context">{}</field>
+        <field name="context">{'search_default_group_state':1}</field>
     </record>
 
         <menuitem name="IT Helpdesk" id="menu_mak_it_helpdesk" sequence="3" parent="mail.mail_my_stuff" action="action_mak_it_helpdesk_window" groups="group_mak_it_helpdesk_admin,group_mak_it_helpdesk_dir,group_mak_it_helpdesk"/>
