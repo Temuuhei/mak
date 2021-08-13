@@ -24,6 +24,7 @@ from dateutil import parser
 from openerp import SUPERUSER_ID
 from openerp.http import request
 from lxml import etree
+
 _logger = logging.getLogger('openerp')
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATE_FORMAT = "%Y-%m-%d"
@@ -33,8 +34,9 @@ class res_partner(osv.osv):
 
     _columns = {
         'is_blackened': fields.boolean(string = 'Is Blackened'),
-        'date_blackened': fields.date(string = 'Date blackened')
+        'date_blackened': fields.date(string = 'Date blackened', track_visibility='onchange')
     }
+
 
 class mak_audit(osv.osv):
     _name = 'mak.audit'
@@ -115,16 +117,16 @@ class mak_audit(osv.osv):
         model_obj = openerp.pooler.get_pool(cr.dbname).get('ir.model.data')
         partner_obj = self.pool.get('res.partner')
         aml_obj = self.pool.get('account.move.line')
+        # 56656
         partner_ids = partner_obj.search(cr,uid,[('is_blackened','=',True),('date_blackened','<>',None)])
-        notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_audit',
-                                                      'group_mak_audit')
-
+        # partner_ids = partner_obj.search(cr, uid, [('id', '=', 56656)])
+        notif_groups = model_obj.get_object_reference(cr, SUPERUSER_ID, 'mak_audit', 'group_mak_audit')
         if partner_ids:
             print 'Partner ids \n\n\n',partner_ids
             for x in partner_ids:
                 pr_obj = partner_obj.browse(cr,uid,x)
                 for pr in pr_obj:
-                    check_aml_ids = aml_obj.search(cr, uid, [('partner_id','=',pr.id),('create_date','>',pr.date_blackened)])
+                    check_aml_ids = aml_obj.search(cr, uid, [('partner_id','=',pr.id),('create_date','>=',pr.date_blackened)])
                     if check_aml_ids:
                         check_aml_obj = aml_obj.browse(cr, uid, check_aml_ids)
                         for aml in check_aml_obj:
@@ -132,24 +134,25 @@ class mak_audit(osv.osv):
                                 'date': aml.date,
                                 'partner_id': aml.partner_id.name,
                                 'ref': aml.ref,
+                                'id': aml.move_id.id,
                                 'move_id': aml.move_id.name,
                                 'create_uid': aml.create_uid.login,
                                 'base_url': self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url'),
                                 'action_id':self.pool.get('ir.model.data').get_object_reference(cr, uid, 'account','action_move_line_form')[1],
                             }
                             if notif_groups:
-                                sel_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,
-                                                                                 [('groups_id', 'in', [notif_groups[1]])])
-
-                                template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_audit',
-                                                                                                  'audit_email_template_to_audit')[
-                                    1]
+                                sel_user_ids = self.pool.get('res.users').search(cr, SUPERUSER_ID,[('groups_id', 'in', [notif_groups[1]])])
+                                template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_audit','audit_email_template_to_audit')[1]
                                 users = self.pool.get('res.users').browse(cr, uid, sel_user_ids)
                                 user_emails = []
                                 for user in users:
                                     user_emails.append(user.login)
+                                    print(user.login)
                                     self.pool.get('email.template').send_mail(cr, uid, template_id, user.id, force_send = True, context=data)
                                 email = u'.\n Дараах хэрэглэгчид рүү имэйл илгээгдэв: ' + (
                                     '<b>' + ('</b>, <b>'.join(user_emails)) + '</b>')
-
+                                pr.update({
+                                    'date_blackened': datetime.today().strftime('%Y-%m-%d')
+                                })
                             # self.pool.get('hr.contract').message_post(cr, uid, contracts_main.id, body=email, context=None)
+
