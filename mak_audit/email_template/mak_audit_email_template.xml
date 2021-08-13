@@ -37,7 +37,7 @@
 
 <p>
 Холбоос:
-<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=account.move&action=${ctx["action_id"]}">Ажил гүйлгээ </a></b>
+<b><a href="${ctx["base_url"]}/web?db=${ctx["db_name"]}#id=${ctx["id"]}&view_type=form&model=account.move.line&action=${ctx["action_id"]}">Ажил гүйлгээ </a></b>
 
 
 </p>
