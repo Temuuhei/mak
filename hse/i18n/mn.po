@@ -2265,6 +2265,34 @@ msgid "Subject"
 msgstr "Гарчиг"
 
 #. module: hse
+#: field:hse.rules.documents,title:0
+msgid "Title"
+msgstr "Зүйл анги"
+
+#. module: hse
+#: field:hse.rules.documents,name_id:0
+msgid "Name"
+msgstr "Хуулийн нэр"
+
+#. module: hse
+#: field:hse.rules.documents.name,name:0
+msgid "Name"
+msgstr "Хуулийн нэр"
+
+#. module: hse
+#: field:hse.rules.documents,description_id:0
+msgid "Descriptions"
+msgstr "Хуулиуд"
+
+#. module: hse
+#: field:hse.rules.documents.description,description:0
+msgid "Description"
+msgstr "Хууль"
+
+
+
+
+#. module: hse
 #: field:hse.accident.category,message_summary:0
 #: field:hse.accident.cause,message_summary:0
 #: field:hse.accident.factor,message_summary:0
