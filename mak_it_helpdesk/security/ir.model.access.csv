@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_mak_it_helpdesk_adm,Mak IT Helpdesk Adm,model_mak_it_helpdesk,mak_it_helpdesk.group_mak_it_helpdesk_admin,1,1,1,1
+access_mak_it_helpdesk_dir,Mak IT Helpdesk Dir,model_mak_it_helpdesk,mak_it_helpdesk.group_mak_it_helpdesk_dir,1,1,1,1
+access_mak_it_helpdesk_emp,Mak IT Helpdesk Emp,model_mak_it_helpdesk,mak_it_helpdesk.group_mak_it_helpdesk,1,1,1,1
+
+access_mak_erp_dev_helpdesk_adm,Mak IT Helpdesk Adm,model_mak_erp_dev_helpdesk,mak_it_helpdesk.group_mak_it_helpdesk_admin,1,1,1,1
+access_mak_erp_dev_helpdesk_dir,Mak IT Helpdesk Dir,model_mak_erp_dev_helpdesk,mak_it_helpdesk.group_mak_it_helpdesk_dir,1,1,1,1
+access_mak_erp_dev_helpdesk_emp,Mak IT Helpdesk Emp,model_mak_erp_dev_helpdesk,mak_it_helpdesk.group_mak_it_helpdesk,1,1,1,1

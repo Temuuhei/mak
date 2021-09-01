@@ -14,10 +14,11 @@ from datetime import datetime
 from openerp.tools.translate import _
 
 
-class mak_it_helpdesk(osv.Model):
-    _name = 'mak.it.helpdesk'
-    _descriptions = "MAK IT Helpdesk"
-    _inherit = 'mail.thread'
+class mak_erp_dev_helpdesk(osv.Model):
+    _name = 'mak.erp.dev.helpdesk'
+    _descriptions = "MAK ERP development Helpdesk"
+    _inherit = ['mail.thread', 'ir.needaction_mixin']
+    _order = "create_date desc"
 
     STATE_SELECTION = [
         ('draft', 'Draft'),
@@ -28,27 +29,26 @@ class mak_it_helpdesk(osv.Model):
         ('cancel', 'Cancel')
     ]
 
-    PROGRAM_SELECTION = [
-        ('program', 'Program'),
-        ('internet', 'Internet'),
-        ('computer', 'Computer'),
-        ('printer', 'Printer/Scanner'),
-        ('network', 'Network'),
-        ('erp', 'ERP'),
-        ('email', 'Email'),
-        ('spark', 'Spark'),
-        ('pitram', 'Pitram'),
+    TYPE_SELECTION = [
+        ('error', u'Алдаа'),
+        ('imp', u'Сайжруулалт'),
+        ('new_report', u'Шинэ тайлан'),
     ]
 
-    TYPE_SELECTION = [
-        ('service', 'Get service'),
-        ('right', 'Get program right'),
-        ('pass', 'Change user password')
+    DONE_TYPE_SELECTION = [
+        ('user', u'Хэрэглэгчийн гаргасан алдаа'),
+        ('acl', u'Эрхийн тохиргооноос болсон'),
+        ('config', u'Тохиргоо буруу хийгдсэн'),
+        ('requirement', u'Хэрэглэгчийн шаардлага дутуу байсан'),
+        ('development', u'Хөгжүүлэлтийн алдаа'),
+        ('oderp_solution', u'OdErp шийдээс хамаарсан'),
+        ('core_solution', u'Core шийдээс хамаарсан'),
     ]
 
     PRIORITY_SELECTION = [
-        ('b', 'Medium'),
-        ('a', 'High')
+        ('r', 'Regular'),
+        ('m', 'Medium'),
+        ('h', 'High')
     ]
 
     def _set_date(self, cr, uid, ids, name, args, context=None):
@@ -71,19 +71,19 @@ class mak_it_helpdesk(osv.Model):
         'month': fields.function(_set_date, type='integer', string='Month', multi='dates', readonly=True, store=True),
         'day': fields.function(_set_date, type='integer', string='Day', multi='dates', readonly=True, store=True),
         'priority': fields.selection(PRIORITY_SELECTION, 'Priority', track_visibility='onchange', required=True),
-        'job': fields.selection(PROGRAM_SELECTION, 'Job', track_visibility='onchange', required=True),
         'type': fields.selection(TYPE_SELECTION, 'Type', track_visibility='onchange', required=True),
         'description': fields.text('Description', size=160, states={'done': [('readonly', True)]}),
         'state': fields.selection(STATE_SELECTION, 'State', track_visibility='onchange', readonly=True),
         'dir': fields.many2one('res.users', 'Director', readonly=True),
         'assigned': fields.many2one('res.users', 'Assigned', readonly=True),
         'done_description': fields.text('Done description', size=150, states={'done': [('readonly', True)]}),
+        'done_type': fields.selection(DONE_TYPE_SELECTION, 'Done type', track_visibility='onchange'),
     }
 
     def name_get(self, cr, uid, ids, context=None):
         res = []
         for doc in self.browse(cr, uid, ids, context=None):
-            res.append((doc.id, u'[%s] [%s] [%s]' % (doc.employee_id.name, doc.job, doc.type)))
+            res.append((doc.id, u'[%s] [%s] [%s]' % (doc.employee_id.name, doc.type, doc.create_date)))
         return res
 
     def unlink(self, cr, uid, ids, context=None):
@@ -92,7 +92,7 @@ class mak_it_helpdesk(osv.Model):
         for s in regulation:
             if s['state'] in ['draft']:
                 unlink_ids.append(s['id'])
-                super(mak_it_helpdesk, self).unlink(cr, uid, unlink_ids, context=context)
+                super(mak_erp_dev_helpdesk, self).unlink(cr, uid, unlink_ids, context=context)
             else:
                 raise osv.except_osv(_('Invalid Action!'),
                                      _('In order to delete a task, you must Draft it first.'))
@@ -110,18 +110,20 @@ class mak_it_helpdesk(osv.Model):
     _defaults = {
         'department_id': _department_get,
         'state': 'draft',
-        'priority': 'b'
+        'priority': 'r'
     }
 
-    _order = "create_date desc"
-
     def create(self, cr, uid, vals, context=None):
-        vals['sequence_id'] = self.pool.get('ir.sequence').get(cr, uid, 'mak.it.helpdesk')
-        reg = super(mak_it_helpdesk, self).create(cr, uid, vals, context=context)
+        vals['sequence_id'] = self.pool.get('ir.sequence').get(cr, uid, 'mak.erp.dev.helpdesk')
+        reg = super(mak_erp_dev_helpdesk, self).create(cr, uid, vals, context=context)
         return reg
 
     def action_sent(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'state': 'sent'})
+        obj = self.browse(cr, uid, ids)[0]
+        if obj.type == "error":
+            obj.write({'state': 'approve'})
+        else:
+            self.write(cr, uid, ids, {'state': 'sent'})
         return True
 
     def action_approve(self, cr, uid, ids, context=None):

@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_mak_erp_dev_helpdesk_form">
+            <field name="name">mak.erp.dev.helpdesk.form</field>
+            <field name="model">mak.erp.dev.helpdesk</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="ERP development">
+                    <header>
+                        <button name="action_sent" states="draft" String="Илгээх" type="object" icon="gtk-apply"/>
+                        <button name="action_disapprove" states="sent" String="Цуцлах" type="object" icon="gtk-apply"
+                                groups="mak_it_helpdesk.group_mak_it_helpdesk_dir"/>
+                        <button name="action_approve" states="sent" String="Зөвшөөрөх" type="object" icon="gtk-apply"
+                                groups="mak_it_helpdesk.group_mak_it_helpdesk_dir"/>
+                        <button name="action_cancel" states="approve" String="Цуцлах" type="object"
+                                icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                        <button name="action_done" states="approve" String="Хийсэн" type="object" icon="gtk-apply"
+                                groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,sent,approve,done"/>
+                        <div style="text-align:right">
+                            <br>
+                                <a href="/page/ithelpdesk" target="_blank">[ Мэдээлэл технологи болон Мэдээллийн аюулгүй
+                                    байдлын гарын авлага ]
+                                </a>
+                            </br>
+                        </div>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="department_id"/>
+                                <field name="employee_id" required="1"
+                                       options="{'no_create': True, 'no_quick_create': True, 'no_create_edit' : True} "
+                                       attrs="{'readonly': [('state','!=','draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="type" required="1" attrs="{'readonly': [('state','!=','draft')]}"/>
+<!--                                <field name="priority" required="1" attrs="{'readonly': [('state','!=','draft')]}"/>-->
+                                <div style="color: #FF0000;" colspan="2">
+                                    <div attrs="{'invisible': [('type','!=','error')]}">
+                                                Алдаа гарсан тохиолдолд доорхи зүйлсийг заавал явуулж байна уу
+                                                <ul>
+                                                    <li>
+                                                        Дэлгэцийн зураг / Хавсралтаар /
+                                                    </li>
+                                                    <li>
+                                                        Алдаа гарахын өмнө хийсэн үйлдэл
+                                                    </li>
+                                                </ul>
+                                    </div>
+                                    <div attrs="{'invisible': [('type','!=','imp')]}">
+                                                Сайжруулалт хийлгэх бол
+                                                <ul>
+                                                    <li>
+                                                        Өөрчилөлт оруулах Дэлгэцийн зураг / Хавсралтаар /
+                                                    </li>
+                                                    <li>
+                                                        Өөрчилөлтийн дэлгэрэнгүй тайлбар
+                                                    </li>
+                                                </ul>
+                                    </div>
+                                    <div attrs="{'invisible': [('type','!=','new_report')]}">
+                                                Шинэ тайлан хийлгэх бол
+                                                <ul>
+                                                    <li>
+                                                        Тайлангийн загвар файл / Хавсралтаар /
+                                                    </li>
+                                                    <li>
+                                                        Тайлангийн цэсний байршил
+                                                    </li>
+                                                    <li>
+                                                        Тайлангийн дэлгэрэнгүй тайлбар
+                                                    </li>
+                                                </ul>
+                                    </div>
+                                </div>
+                            </group>
+                        </group>
+
+                        <separator string="Description"/>
+                        <field name="description" placeholder="Add a Description..."
+                               attrs="{'readonly': [('state','!=','draft')]}"/>
+                        <separator string="Done description" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                        <field name="done_type" placeholder="Алдааны төрлийг сонгоно уу"
+                               attrs="{'readonly': [('state','in',('draft','sent'))], 'required': [('state','=','approved')]}"
+                               groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                        <field name="done_description" placeholder="Add a Description..."
+                               attrs="{'readonly': [('state','in',('draft','sent'))], 'required': [('state','=','approved')]}"
+                               groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_mak_erp_dev_helpdesk_tree">
+            <field name="name">mak.erp.dev.helpdesk.tree</field>
+            <field name="model">mak.erp.dev.helpdesk</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="ERP Developments">
+                    <field name="type"/>
+<!--                    <field name="priority"/>-->
+                    <field name="department_id"/>
+                    <field name="employee_id"/>
+                    <field name="description"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                    <field name="dir"/>
+                    <field name="assigned"/>
+                    <field name="done_description"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="mak_erp_dev_helpdesk_search_view" model="ir.ui.view">
+            <field name="name">mak.erp.dev.helpdesk.search</field>
+            <field name="model">mak.erp.dev.helpdesk</field>
+            <field name="arch" type="xml">
+                <search string="ERP Development search">
+                    <group expand="0" string="Group By">
+                        <filter string="Year" domain="[]" context="{'group_by':'year'}"/>
+                        <filter string="Month" domain="[]" context="{'group_by':'month'}"/>
+                        <filter string="Day" domain="[]" context="{'group_by':'day'}"/>
+                        <filter string="Employee" domain="[]" context="{'group_by':'employee_id'}"/>
+                        <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                        <filter string="Type" domain="[]" context="{'group_by':'type'}"/>
+<!--                        <filter string="Priority" domain="[]" context="{'group_by':'priority'}"/>-->
+                        <filter name="group_state" string="State" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Assigned" domain="[]" context="{'group_by':'assigned'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_mak_erp_dev_helpdesk_window" model="ir.actions.act_window">
+            <field name="name">ERP development</field>
+            <field name="res_model">mak.erp.dev.helpdesk</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_group_state':1}</field>
+        </record>
+
+        <menuitem name="ERP development" id="menu_mak_erp_dev_helpdesk" sequence="2" parent="mak_it_helpdesk.menu_mak_it_helpdesk_main"
+                  action="action_mak_erp_dev_helpdesk_window"
+                  groups="mak_it_helpdesk.group_mak_it_helpdesk_admin,mak_it_helpdesk.group_mak_it_helpdesk_dir,mak_it_helpdesk.group_mak_it_helpdesk"/>
+    </data>
+</openerp>

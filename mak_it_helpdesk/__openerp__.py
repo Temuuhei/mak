@@ -16,11 +16,13 @@
     "description": "MAK IT Helpdesk",
     "website": True,
     "category": "base",
-    "depends": ['mail','calendar'],
+    "depends": ['mail', 'calendar'],
     "init": [],
     "data": [
         'security/mak_it_helpdesk_security.xml',
-        'view/mak_it_helpdesk_view.xml'
+        "security/ir.model.access.csv",
+        'view/mak_it_helpdesk_view.xml',
+        'view/mak_erp_dev_helpdesk_view.xml'
     ],
     "demo_xml": [
     ],
