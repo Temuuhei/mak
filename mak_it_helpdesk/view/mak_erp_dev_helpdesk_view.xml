@@ -33,6 +33,19 @@
                                 <field name="employee_id" required="1"
                                        options="{'no_create': True, 'no_quick_create': True, 'no_create_edit' : True} "
                                        attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <div style="color: #FF0000;" colspan="2">
+                                        <ul>
+                                            <li>
+                                                Эрхийн хүсэлтийг "IT Helpdesk" -д оруулна уу
+                                            </li>
+                                            <li>
+                                                Энд зөвхөн ИРП-ийн хөгжүүлэлттэй холбоотой алдаа, санал, хүсэлтийг оруулна
+                                            </li>
+                                            <li>
+                                                Зөвхөн батлагдсан төлөвтэй санал, хүсэлтэнд хариу өгнө.
+                                            </li>
+                                        </ul>
+                                </div>
                             </group>
                             <group>
                                 <field name="type" required="1" attrs="{'readonly': [('state','!=','draft')]}"/>
@@ -77,7 +90,6 @@
                                 </div>
                             </group>
                         </group>
-
                         <separator string="Description"/>
                         <field name="description" placeholder="Add a Description..."
                                attrs="{'readonly': [('state','!=','draft')]}"/>
@@ -105,7 +117,6 @@
             <field name="arch" type="xml">
                 <tree string="ERP Developments">
                     <field name="type"/>
-<!--                    <field name="priority"/>-->
                     <field name="department_id"/>
                     <field name="employee_id"/>
                     <field name="description"/>

@@ -41,8 +41,8 @@ class mak_erp_dev_helpdesk(osv.Model):
         ('config', u'Тохиргоо буруу хийгдсэн'),
         ('requirement', u'Хэрэглэгчийн шаардлага дутуу байсан'),
         ('development', u'Хөгжүүлэлтийн алдаа'),
-        ('oderp_solution', u'OdErp шийдээс хамаарсан'),
-        ('core_solution', u'Core шийдээс хамаарсан'),
+        ('oderp_solution', u'OdErp шийдлээс хамаарсан'),
+        ('core_solution', u'Core шийдлээс хамаарсан'),
     ]
 
     PRIORITY_SELECTION = [
