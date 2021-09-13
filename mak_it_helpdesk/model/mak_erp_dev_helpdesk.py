@@ -184,14 +184,6 @@ class mak_erp_dev_helpdesk(osv.Model):
         # new_mak_it_helpdesk_create_obj = self.env['mak.it.helpdesk'].create(new_mak_it_helpdesk_create_dict)
         new_mak_it_helpdesk_create_obj = self.pool.get('mak.it.helpdesk').create(cr, uid, new_mak_it_helpdesk_create_dict, context=context)
 
-        print("#################################################################")
-        print("#################################################################")
-        print("#################################################################")
-        print(new_mak_it_helpdesk_create_obj)
-        print("#################################################################")
-        print("#################################################################")
-        print("#################################################################")
-
         obj.write({
             'state': 'cancel',
             'assigned': uid
