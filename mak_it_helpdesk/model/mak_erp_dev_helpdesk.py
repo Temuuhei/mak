@@ -141,6 +141,63 @@ class mak_erp_dev_helpdesk(osv.Model):
         self.write(cr, uid, ids, {'assigned': uid})
         return True
 
+    def action_move_it(self, cr, uid, ids, context=None):
+        obj = self.browse(cr, uid, ids)[0]
+        new_mak_it_helpdesk_create_dict = {
+            "priority": "b",
+            "job": "erp",
+            "type": "right",
+        }
+        if obj.department_id:
+            new_mak_it_helpdesk_create_dict.update(
+                {"department_id": obj.department_id.id}
+            )
+        if obj.employee_id:
+            new_mak_it_helpdesk_create_dict.update(
+                {"employee_id": obj.employee_id.id}
+            )
+        if obj.year:
+            new_mak_it_helpdesk_create_dict.update(
+                {"year": obj.year}
+            )
+        if obj.month:
+            new_mak_it_helpdesk_create_dict.update(
+                {"month": obj.month}
+            )
+        if obj.day:
+            new_mak_it_helpdesk_create_dict.update(
+                {"day": obj.day}
+            )
+        if obj.description:
+            new_mak_it_helpdesk_create_dict.update(
+                {"description": obj.description}
+            )
+        if obj.state:
+            new_mak_it_helpdesk_create_dict.update(
+                {"state": obj.state}
+            )
+        if obj.dir:
+            new_mak_it_helpdesk_create_dict.update(
+                {"dir": obj.dir.id}
+            )
+
+        # new_mak_it_helpdesk_create_obj = self.env['mak.it.helpdesk'].create(new_mak_it_helpdesk_create_dict)
+        new_mak_it_helpdesk_create_obj = self.pool.get('mak.it.helpdesk').create(cr, uid, new_mak_it_helpdesk_create_dict, context=context)
+
+        print("#################################################################")
+        print("#################################################################")
+        print("#################################################################")
+        print(new_mak_it_helpdesk_create_obj)
+        print("#################################################################")
+        print("#################################################################")
+        print("#################################################################")
+
+        obj.write({
+            'state': 'cancel',
+            'assigned': uid
+        })
+        return True
+
     def action_cancel(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state': 'cancel'})
         self.write(cr, uid, ids, {'assigned': uid})

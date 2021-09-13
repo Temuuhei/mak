@@ -17,7 +17,7 @@ from openerp.tools.translate import _
 class mak_it_helpdesk(osv.Model):
     _name = 'mak.it.helpdesk'
     _descriptions = "MAK IT Helpdesk"
-    _inherit = 'mail.thread'
+    _inherit = ['mail.thread', 'ir.needaction_mixin']
 
     STATE_SELECTION = [
         ('draft', 'Draft'),

@@ -9,13 +9,15 @@
                 <form string="ERP development">
                     <header>
                         <button name="action_sent" states="draft" String="Илгээх" type="object" icon="gtk-apply"/>
-                        <button name="action_disapprove" states="sent" String="Цуцлах" type="object" icon="gtk-apply"
+                        <button name="action_disapprove" states="sent" String="Зөвшөөрөхгүй" type="object" icon="gtk-apply"
                                 groups="mak_it_helpdesk.group_mak_it_helpdesk_dir"/>
                         <button name="action_approve" states="sent" String="Зөвшөөрөх" type="object" icon="gtk-apply"
                                 groups="mak_it_helpdesk.group_mak_it_helpdesk_dir"/>
-                        <button name="action_cancel" states="approve" String="Цуцлах" type="object"
+                        <button name="action_cancel" states="sent,approve" String="Цуцлах" type="object"
                                 icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <button name="action_done" states="approve" String="Хийсэн" type="object" icon="gtk-apply"
+                                groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                        <button name="action_move_it" states="approve" String="IT-руу шилжүүлэх" type="object" icon="gtk-apply"
                                 groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,sent,approve,done"/>
                         <div style="text-align:right">
@@ -101,6 +103,11 @@
                                attrs="{'readonly': [('state','in',('draft','sent'))], 'required': [('state','=','approved')]}"
                                groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
 
+                        <group class="oe_subtotal_footer oe_right">
+                            <field name="dir" readonly="1" attrs="{'invisible': [('dir','=',False)]}"/>
+                            <field name="assigned" readonly="1" attrs="{'invisible': [('assigned','=',False)]}"/>
+                        </group>
+                        <div class="oe_clear"/>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>

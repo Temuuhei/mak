@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-10 03:21+0000\n"
-"PO-Revision-Date: 2021-09-10 11:26+0800\n"
+"POT-Creation-Date: 2021-09-13 09:17+0000\n"
+"PO-Revision-Date: 2021-09-13 17:21+0800\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -138,24 +138,24 @@ msgstr "Ноорог"
 #. module: mak_it_helpdesk
 #: selection:mak.it.helpdesk,job:0
 msgid "ERP"
-msgstr "ИРП"
+msgstr "ERP"
 
 #. module: mak_it_helpdesk
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.mak_erp_dev_helpdesk_search_view
 msgid "ERP Development search"
-msgstr "ИРП хөгжүүлэлтийн хайлт"
+msgstr "ERP Development search"
 
 #. module: mak_it_helpdesk
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.view_mak_erp_dev_helpdesk_tree
 msgid "ERP Developments"
-msgstr "ИРП хөгжүүлэлтүүд"
+msgstr "ERP хөгжүүлэлтүүд"
 
 #. module: mak_it_helpdesk
 #: model:ir.actions.act_window,name:mak_it_helpdesk.action_mak_erp_dev_helpdesk_window
 #: model:ir.ui.menu,name:mak_it_helpdesk.menu_mak_erp_dev_helpdesk
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.view_mak_erp_dev_helpdesk_form
 msgid "ERP development"
-msgstr "ИРП хөгжүүлэлт"
+msgstr "ERP хөгжүүлэлт"
 
 #. module: mak_it_helpdesk
 #: selection:mak.it.helpdesk,job:0
@@ -363,7 +363,7 @@ msgstr "Програм"
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,priority:0
 msgid "Regular"
-msgstr "Энгийн"
+msgstr "Regular"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,state:0 selection:mak.it.helpdesk,state:0
@@ -477,8 +477,8 @@ msgstr "Дэлгэцийн зураг / Хавсралтаар /"
 
 #. module: mak_it_helpdesk
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.view_mak_erp_dev_helpdesk_form
-msgid "Зөвхөн батлагдсан төлөвтэй санал, хүсэлтэнд хариу өгнө."
-msgstr "Зөвхөн батлагдсан төлөвтэй санал, хүсэлтэнд хариу өгнө."
+msgid "Зөвхөн \"Зөвшөөрсөн\" төлөвтэй санал, хүсэлтэнд хариу өгнө."
+msgstr "Зөвхөн \"Зөвшөөрсөн\" төлөвтэй санал, хүсэлтэнд хариу өгнө."
 
 #. module: mak_it_helpdesk
 #: view:mak.it.helpdesk:mak_it_helpdesk.view_mak_it_helpdesk_form
@@ -547,7 +547,7 @@ msgstr "Шинэ тайлан хийлгэх бол"
 #. module: mak_it_helpdesk
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.view_mak_erp_dev_helpdesk_form
 msgid "Энд зөвхөн ИРП-ийн хөгжүүлэлттэй холбоотой алдаа, санал, хүсэлтийг оруулна"
-msgstr "Энд зөвхөн ИРП-ийн хөгжүүлэлттэй холбоотой алдаа, санал, хүсэлтийг оруулна"
+msgstr "Энд зөвхөн ERP-ийн хөгжүүлэлттэй холбоотой алдаа, санал, хүсэлтийг оруулна"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,done_type:0
