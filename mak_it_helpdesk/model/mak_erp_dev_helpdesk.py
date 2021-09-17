@@ -127,6 +127,10 @@ class mak_erp_dev_helpdesk(osv.Model):
             self.write(cr, uid, ids, {'state': 'sent'})
         return True
 
+    def action_return(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state': 'draft'})
+        return True
+
     def action_approve(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state': 'approve'})
         self.write(cr, uid, ids, {'dir': uid})

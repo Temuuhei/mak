@@ -24,6 +24,7 @@
         'view/mak_it_helpdesk_view.xml',
         'view/mak_erp_dev_helpdesk_view.xml',
         'wizard/migrate_to_it_helpdesk.xml',
+        'wizard/migrate_to_dev_helpdesk.xml',
     ],
     "demo_xml": [
     ],

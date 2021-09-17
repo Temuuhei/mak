@@ -12,9 +12,13 @@
                 <form string="IT Helpdesk">
                     <header>
                         <button name="action_sent" states="draft" String="Илгээх" type="object" icon="gtk-apply"/>
+                        <button name="action_return" states="sent,approve" String="Буцаах" type="object"
+                                icon="gtk-return" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <button name="action_cancel" states="sent,approve" String="Цуцлах" type="object"
                                 icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <button name="action_done" states="sent,approve" String="Хийсэн" type="object" icon="gtk-apply"
+                                groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
+                        <button name="action_migrate" states="sent,approve" String="Шилжүүлэх" type="object" icon="gtk-apply"
                                 groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <button name="action_disapprove" String="Цуцлах" type="object" icon="gtk-apply"
                                 groups="mak_it_helpdesk.group_mak_it_helpdesk_dir"

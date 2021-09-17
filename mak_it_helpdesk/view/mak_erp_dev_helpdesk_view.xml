@@ -9,6 +9,8 @@
                 <form string="ERP development">
                     <header>
                         <button name="action_sent" states="draft" String="Илгээх" type="object" icon="gtk-apply"/>
+                        <button name="action_return" states="sent,approve" String="Буцаах" type="object"
+                                icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <button name="action_disapprove" states="sent" String="Зөвшөөрөхгүй" type="object" icon="gtk-apply"
                                 groups="mak_it_helpdesk.group_mak_it_helpdesk_dir"/>
                         <button name="action_approve" states="sent" String="Зөвшөөрөх" type="object" icon="gtk-apply"

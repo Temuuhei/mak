@@ -9,26 +9,8 @@ from openerp.tools.translate import _
 
 
 class MigrateToItHelpdesk(models.TransientModel):
-    _name = 'migrate.to.it.helpdesk'
-    _description = "Migrate To IT Helpdesk"
-
-    PROGRAM_SELECTION = [
-        ('program', 'Program'),
-        ('internet', 'Internet'),
-        ('computer', 'Computer'),
-        ('printer', 'Printer/Scanner'),
-        ('network', 'Network'),
-        ('erp', 'ERP'),
-        ('email', 'Email'),
-        ('spark', 'Spark'),
-        ('pitram', 'Pitram'),
-    ]
-
-    TYPE_SELECTION = [
-        ('service', 'Get service'),
-        ('right', 'Get program right'),
-        ('pass', 'Change user password')
-    ]
+    _name = 'migrate.to.dev.helpdesk'
+    _description = "Migrate To Dev Helpdesk"
 
     STATE_SELECTION = [
         ('draft', 'Draft'),
@@ -39,78 +21,93 @@ class MigrateToItHelpdesk(models.TransientModel):
         ('cancel', 'Cancel')
     ]
 
-    dev_helpdesk = fields.Many2one('mak.erp.dev.helpdesk', string='dev_helpdesk')
+    TYPE_SELECTION = [
+        ('error', u'Алдаа'),
+        ('imp', u'Сайжруулалт'),
+        ('new_report', u'Шинэ тайлан'),
+    ]
+
+    PRIORITY_SELECTION = [
+        ('r', 'Regular'),
+        ('m', 'Medium'),
+        ('h', 'High')
+    ]
+
+    it_helpdesk = fields.Many2one('mak.it.helpdesk', string='it_helpdesk')
     department_id = fields.Many2one('hr.department', string='Department')
     employee_id = fields.Many2one('hr.employee', string='Employee')
     dir = fields.Many2one('res.users', string='Director')
     year = fields.Integer(string='Year')
     month = fields.Integer(string='Month')
     day = fields.Integer(string='Day')
-    priority = fields.Selection(string='Priority', selection=[('b', 'Medium'), ('a', 'High')])
-    job = fields.Selection(string='Job', selection=PROGRAM_SELECTION)
+    priority = fields.Selection(string='Priority', selection=PRIORITY_SELECTION, default='r')
     type = fields.Selection(string='Type', selection=TYPE_SELECTION)
-    description = fields.Text(string='Description')
     state = fields.Selection(string='State', selection=STATE_SELECTION)
+    description = fields.Text(string='Description')
 
     @api.multi
     def action_migrate(self):
-        new_mak_it_helpdesk_create_dict = {}
+        new_mak_dev_helpdesk_create_dict = {}
         if self.department_id:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"department_id": self.department_id.id}
             )
         if self.employee_id:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"employee_id": self.employee_id.id}
             )
         if self.dir:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"dir": self.dir.id}
             )
         if self.year:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"year": self.year}
             )
         if self.month:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"month": self.month}
             )
         if self.day:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"day": self.day}
             )
         if self.description:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"description": self.description}
             )
         if self.priority:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"priority": self.priority}
             )
-        if self.job:
-            new_mak_it_helpdesk_create_dict.update(
-                {"job": self.job}
+        else:
+            new_mak_dev_helpdesk_create_dict.update(
+                {"priority": 'r'}
             )
         if self.type:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"type": self.type}
             )
         if self.state == "approve":
             if self.dir:
-                new_mak_it_helpdesk_create_dict.update(
+                new_mak_dev_helpdesk_create_dict.update(
                     {"state": 'approve'}
                 )
             else:
-                new_mak_it_helpdesk_create_dict.update(
+                new_mak_dev_helpdesk_create_dict.update(
                     {"state": 'sent'}
                 )
         else:
-            new_mak_it_helpdesk_create_dict.update(
+            new_mak_dev_helpdesk_create_dict.update(
                 {"state": self.state}
             )
-        new_mak_it_helpdesk_create_obj = self.env['mak.it.helpdesk'].create(new_mak_it_helpdesk_create_dict)
+        print("# # # # # # # # # # # # # # # # # # # # # #")
+        print("# new_mak_dev_helpdesk_create_dict")
+        print("# ", new_mak_dev_helpdesk_create_dict)
+        print("# # # # # # # # # # # # # # # # # # # # # #")
+        new_mak_erp_dev_helpdesk_create_obj = self.env['mak.erp.dev.helpdesk'].create(new_mak_dev_helpdesk_create_dict)
 
-        self.dev_helpdesk.write({
+        self.it_helpdesk.write({
             'state': 'cancel',
             'assigned': self.env.uid
         })

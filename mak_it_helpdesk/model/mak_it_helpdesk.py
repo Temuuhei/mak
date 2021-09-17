@@ -124,6 +124,10 @@ class mak_it_helpdesk(osv.Model):
         self.write(cr, uid, ids, {'state': 'sent'})
         return True
 
+    def action_return(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state': 'draft'})
+        return True
+
     def action_approve(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state': 'approve'})
         self.write(cr, uid, ids, {'dir': uid})
@@ -142,4 +146,60 @@ class mak_it_helpdesk(osv.Model):
     def action_cancel(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state': 'cancel'})
         self.write(cr, uid, ids, {'assigned': uid})
+        return True
+
+    def action_migrate(self, cr, uid, ids, context=None):
+        # id = self.copy(cr, uid, ids[0], context=context)
+        view_ref = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'mak_it_helpdesk', 'migrate_to_dev_helpdesk_form')
+        view_id = view_ref and view_ref[1] or False,
+
+        current_helpdesk = self.browse(cr, uid, ids[0], context)
+
+        context = dict(context or {})
+        context.update({
+            'default_it_helpdesk': current_helpdesk.id
+        })
+        if current_helpdesk.department_id:
+            context.update({
+                'default_department_id': current_helpdesk.department_id.id,
+            })
+        if current_helpdesk.employee_id:
+            context.update({
+                'default_employee_id': current_helpdesk.employee_id.id,
+            })
+        if current_helpdesk.dir:
+            context.update({
+                'default_dir': current_helpdesk.dir.id,
+            })
+        if current_helpdesk.year:
+            context.update({
+                'default_year': current_helpdesk.year,
+            })
+        if current_helpdesk.month:
+            context.update({
+                'default_month': current_helpdesk.month,
+            })
+        if current_helpdesk.day:
+            context.update({
+                'default_day': current_helpdesk.day,
+            })
+        if current_helpdesk.description:
+            context.update({
+                'default_description': current_helpdesk.description,
+            })
+        if current_helpdesk.state:
+            context.update({
+                'default_state': current_helpdesk.state,
+            })
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('Migrate to ERP dev Helpdesk'),
+            'res_model': 'migrate.to.dev.helpdesk',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'view_id': view_id,
+            'target': 'new',
+            'nodestroy': True,
+            'context': context,
+        }
         return True
