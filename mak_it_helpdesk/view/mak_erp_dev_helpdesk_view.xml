@@ -17,7 +17,7 @@
                                 icon="gtk-apply" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <button name="action_done" states="approve" String="Хийсэн" type="object" icon="gtk-apply"
                                 groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
-                        <button name="action_move_it" states="approve" String="IT-руу шилжүүлэх" type="object" icon="gtk-apply"
+                        <button name="action_migrate" states="approve" String="IT-руу шилжүүлэх" type="object" icon="gtk-apply"
                                 groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,sent,approve,done"/>
                         <div style="text-align:right">
