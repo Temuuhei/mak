@@ -25,7 +25,8 @@ class mak_it_helpdesk(osv.Model):
         ('approve', 'Approved'),
         ('disapprove', 'Disapproved'),
         ('done', 'Done'),
-        ('cancel', 'Cancel')
+        ('cancel', 'Cancel'),
+        ('moved', 'Moved')
     ]
 
     PROGRAM_SELECTION = [

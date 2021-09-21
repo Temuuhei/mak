@@ -101,14 +101,20 @@ class MigrateToItHelpdesk(models.TransientModel):
             new_mak_dev_helpdesk_create_dict.update(
                 {"state": self.state}
             )
-        print("# # # # # # # # # # # # # # # # # # # # # #")
-        print("# new_mak_dev_helpdesk_create_dict")
-        print("# ", new_mak_dev_helpdesk_create_dict)
-        print("# # # # # # # # # # # # # # # # # # # # # #")
+
         new_mak_erp_dev_helpdesk_create_obj = self.env['mak.erp.dev.helpdesk'].create(new_mak_dev_helpdesk_create_dict)
 
+        attachment_search_dict = [('res_model', '=', 'mak.it.helpdesk'), ('res_id', '=', self.it_helpdesk.id)]
+        exist_attachments = self.env['ir.attachment'].search(attachment_search_dict)
+        for exist_attachment in exist_attachments:
+            attachment_update_dict = {
+                'res_model': 'mak.erp.dev.helpdesk',
+                'res_id': new_mak_erp_dev_helpdesk_create_obj.id,
+            }
+            exist_attachment.write(attachment_update_dict)
+
         self.it_helpdesk.write({
-            'state': 'cancel',
+            'state': 'moved',
             'assigned': self.env.uid
         })
         return True

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 06:56+0000\n"
-"PO-Revision-Date: 2021-09-17 14:59+0800\n"
+"POT-Creation-Date: 2021-09-21 03:37+0000\n"
+"PO-Revision-Date: 2021-09-21 11:39+0800\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,7 @@ msgstr "Тайлбараа оруулна уу..."
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,state:0 selection:mak.it.helpdesk,state:0
+#: selection:migrate.to.dev.helpdesk,state:0
 #: selection:migrate.to.it.helpdesk,state:0
 msgid "Approved"
 msgstr "Зөвшөөрсөн"
@@ -39,6 +40,8 @@ msgstr "IT ажилтан"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,state:0 selection:mak.it.helpdesk,state:0
+#: view:migrate.to.dev.helpdesk:mak_it_helpdesk.migrate_to_dev_helpdesk_form
+#: selection:migrate.to.dev.helpdesk,state:0
 #: view:migrate.to.it.helpdesk:mak_it_helpdesk.migrate_to_it_helpdesk_form
 #: selection:migrate.to.it.helpdesk,state:0
 msgid "Cancel"
@@ -61,12 +64,14 @@ msgstr "Үндсэн шийдлээс хамаарсан"
 
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,create_uid:0 field:mak.it.helpdesk,create_uid:0
+#: field:migrate.to.dev.helpdesk,create_uid:0
 #: field:migrate.to.it.helpdesk,create_uid:0
 msgid "Created by"
 msgstr "Үүссэн"
 
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,create_date:0 field:mak.it.helpdesk,create_date:0
+#: field:migrate.to.dev.helpdesk,create_date:0
 #: field:migrate.to.it.helpdesk,create_date:0
 msgid "Created on"
 msgstr "Үүссэн"
@@ -81,7 +86,8 @@ msgstr "Date of the last message posted on the record."
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.mak_erp_dev_helpdesk_search_view
 #: field:mak.erp.dev.helpdesk,day:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
-#: field:mak.it.helpdesk,day:0 field:migrate.to.it.helpdesk,day:0
+#: field:mak.it.helpdesk,day:0 field:migrate.to.dev.helpdesk,day:0
+#: field:migrate.to.it.helpdesk,day:0
 msgid "Day"
 msgstr "Өдөр"
 
@@ -90,6 +96,7 @@ msgstr "Өдөр"
 #: field:mak.erp.dev.helpdesk,department_id:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
 #: field:mak.it.helpdesk,department_id:0
+#: field:migrate.to.dev.helpdesk,department_id:0
 #: field:migrate.to.it.helpdesk,department_id:0
 msgid "Department"
 msgstr "Газар нэгж"
@@ -99,6 +106,8 @@ msgstr "Газар нэгж"
 #: field:mak.erp.dev.helpdesk,description:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.view_mak_it_helpdesk_form
 #: field:mak.it.helpdesk,description:0
+#: view:migrate.to.dev.helpdesk:mak_it_helpdesk.migrate_to_dev_helpdesk_form
+#: field:migrate.to.dev.helpdesk,description:0
 #: view:migrate.to.it.helpdesk:mak_it_helpdesk.migrate_to_it_helpdesk_form
 #: field:migrate.to.it.helpdesk,description:0
 msgid "Description"
@@ -106,12 +115,13 @@ msgstr "Тайлбар"
 
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,dir:0 field:mak.it.helpdesk,dir:0
-#: field:migrate.to.it.helpdesk,dir:0
+#: field:migrate.to.dev.helpdesk,dir:0 field:migrate.to.it.helpdesk,dir:0
 msgid "Director"
 msgstr "Захирал"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,state:0 selection:mak.it.helpdesk,state:0
+#: selection:migrate.to.dev.helpdesk,state:0
 #: selection:migrate.to.it.helpdesk,state:0
 msgid "Disapproved"
 msgstr "Зөвшөөрөхгүй"
@@ -119,12 +129,14 @@ msgstr "Зөвшөөрөхгүй"
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,display_name:0
 #: field:mak.it.helpdesk,display_name:0
+#: field:migrate.to.dev.helpdesk,display_name:0
 #: field:migrate.to.it.helpdesk,display_name:0
 msgid "Display Name"
 msgstr "Display Name"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,state:0 selection:mak.it.helpdesk,state:0
+#: selection:migrate.to.dev.helpdesk,state:0
 #: selection:migrate.to.it.helpdesk,state:0
 msgid "Done"
 msgstr "Дууссан"
@@ -144,6 +156,7 @@ msgstr "Done type"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,state:0 selection:mak.it.helpdesk,state:0
+#: selection:migrate.to.dev.helpdesk,state:0
 #: selection:migrate.to.it.helpdesk,state:0
 msgid "Draft"
 msgstr "Ноорог"
@@ -161,14 +174,14 @@ msgstr "ERP Development search"
 #. module: mak_it_helpdesk
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.view_mak_erp_dev_helpdesk_tree
 msgid "ERP Developments"
-msgstr "ERP хөгжүүлэлтүүд"
+msgstr "ИРП хөгжүүлэлтүүд"
 
 #. module: mak_it_helpdesk
 #: model:ir.actions.act_window,name:mak_it_helpdesk.action_mak_erp_dev_helpdesk_window
 #: model:ir.ui.menu,name:mak_it_helpdesk.menu_mak_erp_dev_helpdesk
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.view_mak_erp_dev_helpdesk_form
 msgid "ERP development"
-msgstr "ERP хөгжүүлэлт"
+msgstr "ИРП хөгжүүлэлт"
 
 #. module: mak_it_helpdesk
 #: selection:mak.it.helpdesk,job:0 selection:migrate.to.it.helpdesk,job:0
@@ -186,6 +199,7 @@ msgstr "Өргөдөл, Албан бичгийн бүртгэл"
 #: field:mak.erp.dev.helpdesk,employee_id:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
 #: field:mak.it.helpdesk,employee_id:0
+#: field:migrate.to.dev.helpdesk,employee_id:0
 #: field:migrate.to.it.helpdesk,employee_id:0
 msgid "Employee"
 msgstr "Ажилтан"
@@ -215,6 +229,7 @@ msgstr "Бүлэглэх"
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,priority:0
 #: selection:mak.it.helpdesk,priority:0
+#: selection:migrate.to.dev.helpdesk,priority:0
 #: selection:migrate.to.it.helpdesk,priority:0
 msgid "High"
 msgstr "Яаралтай"
@@ -227,7 +242,7 @@ msgstr "Holds the Chatter summary (number of messages, ...). This summary is dir
 
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,id:0 field:mak.it.helpdesk,id:0
-#: field:migrate.to.it.helpdesk,id:0
+#: field:migrate.to.dev.helpdesk,id:0 field:migrate.to.it.helpdesk,id:0
 msgid "ID"
 msgstr "ID"
 
@@ -268,8 +283,8 @@ msgid "If checked new messages require your attention."
 msgstr "If checked new messages require your attention."
 
 #. module: mak_it_helpdesk
-#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:99
-#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:98
+#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:100
+#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:99
 #, python-format
 msgid "In order to delete a task, you must Draft it first."
 msgstr "In order to delete a task, you must Draft it first."
@@ -280,8 +295,8 @@ msgid "Internet"
 msgstr "Интернэт"
 
 #. module: mak_it_helpdesk
-#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:98
-#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:97
+#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:99
+#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:98
 #, python-format
 msgid "Invalid Action!"
 msgstr "Invalid Action!"
@@ -307,18 +322,21 @@ msgstr "Last Message Date"
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,__last_update:0
 #: field:mak.it.helpdesk,__last_update:0
+#: field:migrate.to.dev.helpdesk,__last_update:0
 #: field:migrate.to.it.helpdesk,__last_update:0
 msgid "Last Modified on"
 msgstr "Last Modified on"
 
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,write_uid:0 field:mak.it.helpdesk,write_uid:0
+#: field:migrate.to.dev.helpdesk,write_uid:0
 #: field:migrate.to.it.helpdesk,write_uid:0
 msgid "Last Updated by"
 msgstr "Last Updated by"
 
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,write_date:0 field:mak.it.helpdesk,write_date:0
+#: field:migrate.to.dev.helpdesk,write_date:0
 #: field:migrate.to.it.helpdesk,write_date:0
 msgid "Last Updated on"
 msgstr "Last Updated on"
@@ -326,6 +344,7 @@ msgstr "Last Updated on"
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,priority:0
 #: selection:mak.it.helpdesk,priority:0
+#: selection:migrate.to.dev.helpdesk,priority:0
 #: selection:migrate.to.it.helpdesk,priority:0
 msgid "Medium"
 msgstr "Хэвийн"
@@ -341,13 +360,28 @@ msgid "Messages and communication history"
 msgstr "Messages and communication history"
 
 #. module: mak_it_helpdesk
+#: model:ir.model,name:mak_it_helpdesk.model_migrate_to_dev_helpdesk
+msgid "Migrate To Dev Helpdesk"
+msgstr "Migrate To Dev Helpdesk"
+
+#. module: mak_it_helpdesk
 #: model:ir.model,name:mak_it_helpdesk.model_migrate_to_it_helpdesk
 msgid "Migrate To IT Helpdesk"
 msgstr "IT Helpdesk-рүү шилжүүлэх"
 
 #. module: mak_it_helpdesk
-#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:243
-#: model:ir.actions.act_window,name:mak_it_helpdesk.migrate_to_it_helpdesk_action
+#: view:migrate.to.dev.helpdesk:mak_it_helpdesk.migrate_to_dev_helpdesk_form
+msgid "Migrate to Dev Helpdesk"
+msgstr "Migrate to Dev Helpdesk"
+
+#. module: mak_it_helpdesk
+#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:197
+#, python-format
+msgid "Migrate to ERP dev Helpdesk"
+msgstr "Migrate to ERP dev Helpdesk"
+
+#. module: mak_it_helpdesk
+#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:248
 #: view:migrate.to.it.helpdesk:mak_it_helpdesk.migrate_to_it_helpdesk_form
 #, python-format
 msgid "Migrate to IT Helpdesk"
@@ -357,9 +391,15 @@ msgstr "IT Helpdesk-рүү шилжүүлэх"
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.mak_erp_dev_helpdesk_search_view
 #: field:mak.erp.dev.helpdesk,month:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
-#: field:mak.it.helpdesk,month:0 field:migrate.to.it.helpdesk,month:0
+#: field:mak.it.helpdesk,month:0 field:migrate.to.dev.helpdesk,month:0
+#: field:migrate.to.it.helpdesk,month:0
 msgid "Month"
 msgstr "Сар"
+
+#. module: mak_it_helpdesk
+#: selection:mak.erp.dev.helpdesk,state:0 selection:mak.it.helpdesk,state:0
+msgid "Moved"
+msgstr "Шилжсэн"
 
 #. module: mak_it_helpdesk
 #: selection:mak.it.helpdesk,job:0 selection:migrate.to.it.helpdesk,job:0
@@ -384,7 +424,8 @@ msgstr "Принтер/Скайнер"
 #. module: mak_it_helpdesk
 #: field:mak.erp.dev.helpdesk,priority:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
-#: field:mak.it.helpdesk,priority:0 field:migrate.to.it.helpdesk,priority:0
+#: field:mak.it.helpdesk,priority:0 field:migrate.to.dev.helpdesk,priority:0
+#: field:migrate.to.it.helpdesk,priority:0
 msgid "Priority"
 msgstr "Яаралтай эсэх"
 
@@ -395,11 +436,13 @@ msgstr "Програм"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,priority:0
+#: selection:migrate.to.dev.helpdesk,priority:0
 msgid "Regular"
 msgstr "Regular"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,state:0 selection:mak.it.helpdesk,state:0
+#: selection:migrate.to.dev.helpdesk,state:0
 #: selection:migrate.to.it.helpdesk,state:0
 msgid "Sent"
 msgstr "Илгээсэн"
@@ -413,7 +456,8 @@ msgstr "Spark"
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.mak_erp_dev_helpdesk_search_view
 #: field:mak.erp.dev.helpdesk,state:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
-#: field:mak.it.helpdesk,state:0 field:migrate.to.it.helpdesk,state:0
+#: field:mak.it.helpdesk,state:0 field:migrate.to.dev.helpdesk,state:0
+#: field:migrate.to.it.helpdesk,state:0
 msgid "State"
 msgstr "Төлөв"
 
@@ -427,7 +471,8 @@ msgstr "Summary"
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.mak_erp_dev_helpdesk_search_view
 #: field:mak.erp.dev.helpdesk,type:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
-#: field:mak.it.helpdesk,type:0 field:migrate.to.it.helpdesk,type:0
+#: field:mak.it.helpdesk,type:0 field:migrate.to.dev.helpdesk,type:0
+#: field:migrate.to.it.helpdesk,type:0
 msgid "Type"
 msgstr "Төрөл"
 
@@ -438,8 +483,8 @@ msgid "Unread Messages"
 msgstr "Unread Messages"
 
 #. module: mak_it_helpdesk
-#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:108
-#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:107
+#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:109
+#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:108
 #, python-format
 msgid "Warning!"
 msgstr "Warning!"
@@ -448,13 +493,14 @@ msgstr "Warning!"
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.mak_erp_dev_helpdesk_search_view
 #: field:mak.erp.dev.helpdesk,year:0
 #: view:mak.it.helpdesk:mak_it_helpdesk.mak_it_helpdesk_search_view
-#: field:mak.it.helpdesk,year:0 field:migrate.to.it.helpdesk,year:0
+#: field:mak.it.helpdesk,year:0 field:migrate.to.dev.helpdesk,year:0
+#: field:migrate.to.it.helpdesk,year:0
 msgid "Year"
 msgstr "Жил"
 
 #. module: mak_it_helpdesk
-#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:108
-#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:107
+#: code:addons/mak_it_helpdesk/model/mak_erp_dev_helpdesk.py:109
+#: code:addons/mak_it_helpdesk/model/mak_it_helpdesk.py:108
 #, python-format
 msgid "You don't have related employee. Please contact administrator."
 msgstr "You don't have related employee. Please contact administrator."
@@ -475,12 +521,19 @@ msgid "dev_helpdesk"
 msgstr "dev_helpdesk"
 
 #. module: mak_it_helpdesk
+#: field:migrate.to.dev.helpdesk,it_helpdesk:0
+msgid "it_helpdesk"
+msgstr "it_helpdesk"
+
+#. module: mak_it_helpdesk
+#: view:migrate.to.dev.helpdesk:mak_it_helpdesk.migrate_to_dev_helpdesk_form
 #: view:migrate.to.it.helpdesk:mak_it_helpdesk.migrate_to_it_helpdesk_form
 msgid "or"
 msgstr "or"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,type:0
+#: selection:migrate.to.dev.helpdesk,type:0
 msgid "Алдаа"
 msgstr "Алдаа"
 
@@ -535,6 +588,7 @@ msgstr ""
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,type:0
+#: selection:migrate.to.dev.helpdesk,type:0
 msgid "Сайжруулалт"
 msgstr "Сайжруулалт"
 
@@ -579,12 +633,14 @@ msgid "Хөгжүүлэлтийн алдаа"
 msgstr "Хөгжүүлэлтийн алдаа"
 
 #. module: mak_it_helpdesk
+#: view:migrate.to.dev.helpdesk:mak_it_helpdesk.migrate_to_dev_helpdesk_form
 #: view:migrate.to.it.helpdesk:mak_it_helpdesk.migrate_to_it_helpdesk_form
 msgid "Шилжүүлэх"
 msgstr "Шилжүүлэх"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,type:0
+#: selection:migrate.to.dev.helpdesk,type:0
 msgid "Шинэ тайлан"
 msgstr "Шинэ тайлан"
 
@@ -596,7 +652,7 @@ msgstr "Шинэ тайлан хийлгэх бол"
 #. module: mak_it_helpdesk
 #: view:mak.erp.dev.helpdesk:mak_it_helpdesk.view_mak_erp_dev_helpdesk_form
 msgid "Энд зөвхөн ИРП-ийн хөгжүүлэлттэй холбоотой алдаа, санал, хүсэлтийг оруулна"
-msgstr "Энд зөвхөн ERP-ийн хөгжүүлэлттэй холбоотой алдаа, санал, хүсэлтийг оруулна"
+msgstr "Энд зөвхөн ИРП-ийн хөгжүүлэлттэй холбоотой алдаа, санал, хүсэлтийг оруулна"
 
 #. module: mak_it_helpdesk
 #: selection:mak.erp.dev.helpdesk,done_type:0

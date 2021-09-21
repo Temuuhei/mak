@@ -27,7 +27,8 @@ class mak_erp_dev_helpdesk(osv.Model):
         ('approve', 'Approved'),
         ('disapprove', 'Disapproved'),
         ('done', 'Done'),
-        ('cancel', 'Cancel')
+        ('cancel', 'Cancel'),
+        ('moved', 'Moved')
     ]
 
     TYPE_SELECTION = [
