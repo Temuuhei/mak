@@ -57,6 +57,29 @@ class hse(http.Controller):
             data = {'status': 200, 'response': hse_rules, 'message': 'Hse Rules not found'}
         return data
 
+    @http.route('/get_hr_user', type='json', auth='user')
+    def get_hr_user(self, **rec):
+        if request.jsonrequest:
+            if rec['user_id']:
+                user = request.env['hr.employee'].search([('resource_id.user_id', '=', rec['user_id'])])
+                if user:
+                    vals = {
+                        'uid': user.user_id.id,
+                        'UserName': user.user_id.name,
+                        'email': user.user_id.login,
+                        'office':user.job_id.name,
+                        'image': "https://erp.mak.mn/web/binary/image?model=res.users&id="+str(user.user_id.id)+"&field=image_medium",
+                        'role': user.department_id.name,
+                        'company': user.company_id.name
+                        # 'runtime': rec['shipment_amount'],
+                    }
+                    data = {'status': False, 'message': "MAK ERP", 'response': vals}
+                else:
+                    data = {'status': False, 'message': "MAK ERP",
+                            'response': "Ажилтан олдсонгүй"}
+            else:
+                data = {'status': False, 'message': "MAK ERP", 'response': "Харилцагч хоорондын зайг оруулна уу"}
+            return data
 
 class hse_safety_plan(osv.osv):
     _name = 'hse.safety.plan'
