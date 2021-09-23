@@ -73,7 +73,16 @@ class mak_erp_dev_helpdesk(osv.Model):
         'month': fields.function(_set_date, type='integer', string='Month', multi='dates', readonly=True, store=True),
         'day': fields.function(_set_date, type='integer', string='Day', multi='dates', readonly=True, store=True),
         'priority': fields.selection(PRIORITY_SELECTION, 'Priority', track_visibility='onchange', required=True),
-        'type': fields.selection(TYPE_SELECTION, 'Type', track_visibility='onchange', required=True),
+        'type': fields.selection(TYPE_SELECTION, 'Type', track_visibility='onchange', required=True, default='error'),
+
+        'purpose': fields.text('Purpose', states={'done': [('readonly', True)]}),
+        'problem': fields.text('Problem', states={'done': [('readonly', True)]}),
+        'result': fields.text('Result', states={'done': [('readonly', True)]}),
+
+        'menu_sequence': fields.text('Menu sequence', states={'done': [('readonly', True)]}),
+        'window_name': fields.text('Window name', states={'done': [('readonly', True)]}),
+        'done_action': fields.text('Done action', states={'done': [('readonly', True)]}),
+
         'description': fields.text('Description', size=160, states={'done': [('readonly', True)]}),
         'state': fields.selection(STATE_SELECTION, 'State', track_visibility='onchange', readonly=True),
         'dir': fields.many2one('res.users', 'Director', readonly=True),

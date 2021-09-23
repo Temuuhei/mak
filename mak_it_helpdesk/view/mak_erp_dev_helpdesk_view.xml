@@ -53,50 +53,86 @@
                             </group>
                             <group>
                                 <field name="type" required="1" attrs="{'readonly': [('state','!=','draft')]}"/>
-<!--                                <field name="priority" required="1" attrs="{'readonly': [('state','!=','draft')]}"/>-->
                                 <div style="color: #FF0000;" colspan="2">
                                     <div attrs="{'invisible': [('type','!=','error')]}">
-                                                Алдаа гарсан тохиолдолд доорхи зүйлсийг заавал явуулж байна уу
-                                                <ul>
-                                                    <li>
-                                                        Дэлгэцийн зураг / Хавсралтаар /
-                                                    </li>
-                                                    <li>
-                                                        Алдаа гарахын өмнө хийсэн үйлдэл
-                                                    </li>
-                                                </ul>
+                                        Алдаа гарсан тохиолдолд доорхи зүйлсийг заавал явуулж байна уу
+                                        <ul>
+                                            <li>
+                                                Дэлгэцийн зураг / Хавсралтаар /
+                                            </li>
+                                            <li>
+                                                Алдаа гарахын өмнө хийсэн үйлдэл
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div attrs="{'invisible': [('type','!=','imp')]}">
-                                                Сайжруулалт хийлгэх бол
-                                                <ul>
-                                                    <li>
-                                                        Өөрчилөлт оруулах Дэлгэцийн зураг / Хавсралтаар /
-                                                    </li>
-                                                    <li>
-                                                        Өөрчилөлтийн дэлгэрэнгүй тайлбар
-                                                    </li>
-                                                </ul>
+                                        Сайжруулалт хийлгэх бол
+                                        <ul>
+                                            <li>
+                                                Өөрчилөлт оруулах Дэлгэцийн зураг / Хавсралтаар /
+                                            </li>
+                                            <li>
+                                                Өөрчилөлтийн дэлгэрэнгүй тайлбар
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div attrs="{'invisible': [('type','!=','new_report')]}">
-                                                Шинэ тайлан хийлгэх бол
-                                                <ul>
-                                                    <li>
-                                                        Тайлангийн загвар файл / Хавсралтаар /
-                                                    </li>
-                                                    <li>
-                                                        Тайлангийн цэсний байршил
-                                                    </li>
-                                                    <li>
-                                                        Тайлангийн дэлгэрэнгүй тайлбар
-                                                    </li>
-                                                </ul>
+                                        Шинэ тайлан хийлгэх бол
+                                        <ul>
+                                            <li>
+                                                Тайлангийн загвар файл / Хавсралтаар /
+                                            </li>
+                                            <li>
+                                                Тайлангийн цэсний байршил
+                                            </li>
+                                            <li>
+                                                Тайлангийн дэлгэрэнгүй тайлбар
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </group>
                         </group>
+
+                        <separator string="Зорилго" attrs="{'invisible': [('type', '=', 'error')]}"/>
+                        <field name="purpose" placeholder="Сайжруулалт болон шинэ тайлангийн зорилгыг бичнэ"
+                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '!=', 'error')], 'invisible': [('type', '=', 'error')]}"/>
+                        <separator string="Үүсэж байгаа асуудал" attrs="{'invisible': [('type', '=', 'error')]}"/>
+                        <field name="problem" placeholder="Сайжруулалт болон шинэ тайлан байхгүгээс гарч байгаа асуудлыг бичнэ"
+                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '!=', 'error')], 'invisible': [('type', '=', 'error')]}"/>
+                        <separator string="Гарах үр дүн" attrs="{'invisible': [('type', '=', 'error')]}"/>
+                        <field name="result" placeholder="Сайжруулалт болон шинэ тайланг хийснээр гарах үр дүнг бичнэ"
+                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '!=', 'error')], 'invisible': [('type', '=', 'error')]}"/>
+
+                        <separator string="Цэс, товчлуурын дараалал" attrs="{'invisible': [('type', '!=', 'error')]}"/>
+                        <div style="color: #FF0000;" colspan="2">
+                            <div attrs="{'invisible': [('type', '!=', 'error')]}">
+                                Жишээ: Худалдан авалт -> Урьдчилсан захиалга -> Үүсгэх
+                            </div>
+                        </div>
+                        <field name="menu_sequence" placeholder="Цэсний дарааллыг бичнэ уу"
+                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '=', 'error')], 'invisible': [('type', '!=', 'error')]}"/>
+                        <separator string="Алдаа гарсан цонхны нэр" attrs="{'invisible': [('type', '!=', 'error')]}"/>
+                        <div style="color: #FF0000;" colspan="2">
+                            <div attrs="{'invisible': [('type', '!=', 'error')]}">
+                                Жишээ: Урьдчилсан захиалга / Шинэ
+                            </div>
+                        </div>
+                        <field name="window_name" placeholder="Цонхны нэрийг бичнэ уу"
+                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '=', 'error')], 'invisible': [('type', '!=', 'error')]}"/>
+                        <separator string="Алдаа гарахын өмнө хийсэн үйлдэл" attrs="{'invisible': [('type', '!=', 'error')]}"/>
+                        <div style="color: #FF0000;" colspan="2">
+                            <div attrs="{'invisible': [('type', '!=', 'error')]}">
+                                Жишээ: Хадгалах товч дарсан
+                            </div>
+                        </div>
+                        <field name="done_action" placeholder="Хийсэн үйлдлээ бичнэ үү"
+                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '=', 'error')], 'invisible': [('type', '!=', 'error')]}"/>
+
                         <separator string="Description"/>
                         <field name="description" placeholder="Add a Description..."
                                attrs="{'readonly': [('state','!=','draft')]}"/>
+
                         <separator string="Done description" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <field name="done_type" placeholder="Алдааны төрлийг сонгоно уу"
                                attrs="{'readonly': [('state','in',('draft','sent'))], 'required': [('state','=','approved')]}"

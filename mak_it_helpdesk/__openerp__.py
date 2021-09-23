@@ -14,7 +14,7 @@
     "version": "1.0",
     "author": "Munkhbat",
     "description": "MAK IT Helpdesk",
-    "website": True,
+    "website": "https://mak.mn",
     "category": "base",
     "depends": ['mail', 'calendar'],
     "init": [],

@@ -47,7 +47,7 @@ class MigrateToItHelpdesk(models.TransientModel):
 
     @api.multi
     def action_migrate(self):
-        new_mak_dev_helpdesk_create_dict = {}
+        new_mak_dev_helpdesk_create_dict = {"state": "draft"}
         if self.department_id:
             new_mak_dev_helpdesk_create_dict.update(
                 {"department_id": self.department_id.id}
@@ -87,19 +87,6 @@ class MigrateToItHelpdesk(models.TransientModel):
         if self.type:
             new_mak_dev_helpdesk_create_dict.update(
                 {"type": self.type}
-            )
-        if self.state == "approve":
-            if self.dir:
-                new_mak_dev_helpdesk_create_dict.update(
-                    {"state": 'approve'}
-                )
-            else:
-                new_mak_dev_helpdesk_create_dict.update(
-                    {"state": 'sent'}
-                )
-        else:
-            new_mak_dev_helpdesk_create_dict.update(
-                {"state": self.state}
             )
 
         new_mak_erp_dev_helpdesk_create_obj = self.env['mak.erp.dev.helpdesk'].create(new_mak_dev_helpdesk_create_dict)
