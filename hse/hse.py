@@ -61,18 +61,13 @@ class hse(http.Controller):
     def get_hr_user(self, **rec):
         if request.jsonrequest:
             if rec['user_id']:
-                roles = []
                 role = 0
                 user = request.env['hr.employee'].search([('resource_id.user_id', '=', rec['user_id'])])
-                job = request.env['hr.job.classification'].search([])
-                for i in job:
-                    if i.id == 6 or i.id == 7:
-                        roles.append(i.id)
                 if user:
-                    if user.job_classification.id in roles:
-                        role =1
+                    if user.job_classification.id == 6 or user.job_classification.id == 7:
+                        role = 1
                     else:
-                        role =0
+                        role = 0
                     vals = {
                         'uid': user.user_id.id,
                         'UserName': user.user_id.name,
