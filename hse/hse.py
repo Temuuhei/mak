@@ -61,22 +61,32 @@ class hse(http.Controller):
     def get_hr_user(self, **rec):
         if request.jsonrequest:
             if rec['user_id']:
+                roles = []
+                role = 0
                 user = request.env['hr.employee'].search([('resource_id.user_id', '=', rec['user_id'])])
+                job = request.env['hr.job.classification'].search([])
+                for i in job:
+                    if i.id == 6 or i.id == 7:
+                        roles.append(i.id)
                 if user:
+                    if user.job_classification.id in roles:
+                        role =1
+                    else:
+                        role =0
                     vals = {
                         'uid': user.user_id.id,
                         'UserName': user.user_id.name,
                         'email': user.user_id.login,
                         'office':user.job_id.name,
                         'image': "https://erp.mak.mn/web/binary/image?model=res.users&id="+str(user.user_id.id)+"&field=image_medium",
-                        'role': user.department_id.name,
+                        'role': role,
                         'company': user.company_id.name
                         # 'runtime': rec['shipment_amount'],
                     }
-                    data = {'status': False, 'message': "MAK ERP", 'response': vals}
+                    data = {'status': True, 'message': "MAK ERP", 'response': vals}
                 else:
                     data = {'status': False, 'message': "MAK ERP",
-                            'response': "Ажилтан олдсонгүй"}
+                                'response': "Ажилтан олдсонгүй"}
             else:
                 data = {'status': False, 'message': "MAK ERP", 'response': "Харилцагч хоорондын зайг оруулна уу"}
             return data
