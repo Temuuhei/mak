@@ -94,15 +94,19 @@
                             </group>
                         </group>
 
+                        <separator string="Алдаа, Хүсэлтйин тайлбар"/>
+                        <field name="description" placeholder="Тайлбараа дэлгэрэнгүй оруулна уу..."
+                               attrs="{'readonly': [('state','not in',['draft', 'sent'])]}"/>
+
                         <separator string="Зорилго" attrs="{'invisible': [('type', '=', 'error')]}"/>
                         <field name="purpose" placeholder="Сайжруулалт болон шинэ тайлангийн зорилгыг бичнэ"
-                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '!=', 'error')], 'invisible': [('type', '=', 'error')]}"/>
+                               attrs="{'readonly': [('state','not in',['draft', 'sent'])], 'required': [('type', '!=', 'error'), ('state','in',['draft', 'sent'])], 'invisible': [('type', '=', 'error')]}"/>
                         <separator string="Үүсэж байгаа асуудал" attrs="{'invisible': [('type', '=', 'error')]}"/>
                         <field name="problem" placeholder="Сайжруулалт болон шинэ тайлан байхгүгээс гарч байгаа асуудлыг бичнэ"
-                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '!=', 'error')], 'invisible': [('type', '=', 'error')]}"/>
+                               attrs="{'readonly': [('state','not in',['draft', 'sent'])], 'required': [('type', '!=', 'error'), ('state','in',['draft', 'sent'])], 'invisible': [('type', '=', 'error')]}"/>
                         <separator string="Гарах үр дүн" attrs="{'invisible': [('type', '=', 'error')]}"/>
                         <field name="result" placeholder="Сайжруулалт болон шинэ тайланг хийснээр гарах үр дүнг бичнэ"
-                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '!=', 'error')], 'invisible': [('type', '=', 'error')]}"/>
+                               attrs="{'readonly': [('state','not in',['draft', 'sent'])], 'required': [('type', '!=', 'error'), ('state','in',['draft', 'sent'])], 'invisible': [('type', '=', 'error')]}"/>
 
                         <separator string="Цэс, товчлуурын дараалал" attrs="{'invisible': [('type', '!=', 'error')]}"/>
                         <div style="color: #FF0000;" colspan="2">
@@ -111,7 +115,7 @@
                             </div>
                         </div>
                         <field name="menu_sequence" placeholder="Цэсний дарааллыг бичнэ уу"
-                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '=', 'error')], 'invisible': [('type', '!=', 'error')]}"/>
+                               attrs="{'readonly': [('state','not in',['draft', 'sent'])], 'required': [('type', '=', 'error'), ('state','in',['draft', 'sent'])], 'invisible': [('type', '!=', 'error')]}"/>
                         <separator string="Алдаа гарсан цонхны нэр" attrs="{'invisible': [('type', '!=', 'error')]}"/>
                         <div style="color: #FF0000;" colspan="2">
                             <div attrs="{'invisible': [('type', '!=', 'error')]}">
@@ -119,7 +123,7 @@
                             </div>
                         </div>
                         <field name="window_name" placeholder="Цонхны нэрийг бичнэ уу"
-                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '=', 'error')], 'invisible': [('type', '!=', 'error')]}"/>
+                               attrs="{'readonly': [('state','not in',['draft', 'sent'])], 'required': [('type', '=', 'error'), ('state','in',['draft', 'sent'])], 'invisible': [('type', '!=', 'error')]}"/>
                         <separator string="Алдаа гарахын өмнө хийсэн үйлдэл" attrs="{'invisible': [('type', '!=', 'error')]}"/>
                         <div style="color: #FF0000;" colspan="2">
                             <div attrs="{'invisible': [('type', '!=', 'error')]}">
@@ -127,11 +131,7 @@
                             </div>
                         </div>
                         <field name="done_action" placeholder="Хийсэн үйлдлээ бичнэ үү"
-                               attrs="{'readonly': [('state','!=','draft')], 'required': [('type', '=', 'error')], 'invisible': [('type', '!=', 'error')]}"/>
-
-                        <separator string="Description"/>
-                        <field name="description" placeholder="Add a Description..."
-                               attrs="{'readonly': [('state','!=','draft')]}"/>
+                               attrs="{'readonly': [('state','not in',['draft', 'sent'])], 'required': [('type', '=', 'error'), ('state','in',['draft', 'sent'])], 'invisible': [('type', '!=', 'error')]}"/>
 
                         <separator string="Done description" groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
                         <field name="done_type" placeholder="Алдааны төрлийг сонгоно уу"
@@ -140,7 +140,6 @@
                         <field name="done_description" placeholder="Add a Description..."
                                attrs="{'readonly': [('state','in',('draft','sent'))], 'required': [('state','=','approved')]}"
                                groups="mak_it_helpdesk.group_mak_it_helpdesk_admin"/>
-
                         <group class="oe_subtotal_footer oe_right">
                             <field name="dir" readonly="1" attrs="{'invisible': [('dir','=',False)]}"/>
                             <field name="assigned" readonly="1" attrs="{'invisible': [('assigned','=',False)]}"/>

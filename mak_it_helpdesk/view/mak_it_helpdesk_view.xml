@@ -46,6 +46,8 @@
                             <group>
                                 <field name="type" required="1" attrs="{'readonly': [('state','!=','draft')]}"/>
                                 <field name="job" required="1" attrs="{'readonly': [('state','!=','draft')]}"/>
+<!--                                <field name="job" required="1" attrs="{'readonly': [('state','!=','draft')]}" widget="it_helpdesk_job_selection"/>-->
+
                                 <field name="priority" required="1" attrs="{'readonly': [('state','!=','draft')]}"/>
                             </group>
                         </group>

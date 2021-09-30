@@ -36,8 +36,9 @@ class mak_it_helpdesk(osv.Model):
         ('printer', 'Printer/Scanner'),
         ('network', 'Network'),
         ('erp', 'ERP'),
-        ('email', 'Email'),
-        ('spark', 'Spark'),
+        # ('email', 'Email'),
+        # ('spark', 'Spark'),
+        ('office365', 'Office 365'),
         ('pitram', 'Pitram'),
     ]
 
