@@ -24,6 +24,8 @@ class MigrateToItHelpdesk(models.TransientModel):
     TYPE_SELECTION = [
         ('error', u'Алдаа'),
         ('imp', u'Сайжруулалт'),
+        ('delete', u'Мэдээлэл устгах'),
+        ('change', u'Мэдээлэл өөрчилөх'),
         ('new_report', u'Шинэ тайлан'),
     ]
 
