@@ -62,8 +62,15 @@ class hse(http.Controller):
         if request.jsonrequest:
             if rec['user_id']:
                 role = 0
-                user = request.env['hr.employee'].search([('resource_id.user_id', '=', rec['user_id'])])
+                dispatcher = False
+                user = request.env['hr.employee'].search([('user_id', '=', rec['user_id'])])
+                dis = request.env['res.users'].search([('id', '=', rec['user_id'])]).has_group('l10n_mn_technic_order.group_technic_order_dispatcher')
                 if user:
+                    if dis:
+                        dispatcher = True
+                    else:
+                        dispatcher = False
+
                     if user.job_classification.id == 6 or user.job_classification.id == 7:
                         role = 1
                     else:
@@ -76,6 +83,8 @@ class hse(http.Controller):
                         'image': "https://erp.mak.mn/web/binary/image?model=res.users&id=" + str(
                             user.user_id.id) + "&field=image_medium",
                         'role': role,
+                        'dispatcher':dispatcher,
+                        'phone': user.mobile_phone,
                         'company': user.company_id.name
                         # 'runtime': rec['shipment_amount'],
                     }
