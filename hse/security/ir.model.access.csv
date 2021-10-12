@@ -33,8 +33,6 @@ access_hse_hazard_report_mail_line,hse.hazard.report.mail.line,model_hse_hazard_
 access_hse_workplace_ispection_mail_line,hse.workplace.ispection.mail.line,model_hse_workplace_ispection_mail_line,hse.group_hse_user,1,1,1,1
 access_hse_injury_entry_mail_line,hse.injury.entry.mail.line,model_hse_injury_entry_mail_line,hse.group_hse_user,1,1,1,1
 access_hse_partner,hse.partner,model_hse_partner,hse.group_hse_user,1,0,0,0
-access_hse_training,hr.training,l10n_mn_hr_training.model_hr_training,hse.group_hse_user,1,0,0,0
-access_hse_training,hr.training,l10n_mn_hr_training.model_hr_training,hse.group_hse_user,1,0,0,0
 access_hse_safety_plan_hse,hse.safety.plan,model_hse_safety_plan,hse.group_hse_user,1,0,0,0
 access_report_hse_injury_entry,report.hse.injury.entry,model_report_hse_injury_entry,hse.group_hse_user,1,0,0,0
 
